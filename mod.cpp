@@ -1,0 +1,13 @@
+name = "ITC Land Systems";
+picture = " ";
+actionName = "";
+action = "";
+logo = "logo_ALFR_small_ca.paa";
+logoOver = " ";
+tooltip = " ";
+tooltipOwned = " ";
+overview = " ";
+author = "ITC Addons Team";
+overviewPicture = "logo_ALFR_ca.paa";
+overviewText = "ITC Addons - Land Systems";
+overviewFootnote = "";
