@@ -11,6 +11,6 @@ class CfgPatches {
 };
 
 #include "ITC_Land_CfgFuzes.hpp"
-#include "CfgFunctions.hpp"
+//#include "CfgFunctions.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgMagazines.hpp"
