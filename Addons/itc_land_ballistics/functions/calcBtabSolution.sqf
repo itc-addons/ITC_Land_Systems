@@ -35,7 +35,7 @@ for "_i" from 1 to ((count _table) - 2) step 1 do {
     if ((count _slices) > _heightIndexHigher && _prevSliceCount > _heightIndexHigher && _nextSliceCount > _heightIndexHigher) then {
         _sliceLow = _slices # _heightIndexLower;
         _sliceHigh = _slices # _heightIndexHigher;
-        _testSlice = [_sliceLow, _sliceHigh, _heightFactor] call itc_land_ballistics_fnc_interpolate_slices;
+        _testSlice = [_sliceLow, _sliceHigh, _heightFactor] call itc_land_ballistics_fnc_interpolateSlices;
         _testDist = _testSlice # 0;
 
         if (abs(_testDist - _distance) < _distanceNearest) then {
@@ -50,9 +50,9 @@ if (_elevNearestRow < 1) exitWith {
 
 // Find the nearest neighboring _solutions
 _sliceNearestLowerBase = _table # (_elevNearestRow-1) # 2;
-_sliceNearestLower = [_sliceNearestLowerBase # _heightIndexLower, _sliceNearestLowerBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolate_slices;
+_sliceNearestLower = [_sliceNearestLowerBase # _heightIndexLower, _sliceNearestLowerBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolateSlices;
 _sliceNearestHigherBase = _table # (_elevNearestRow+1) # 2;
-_sliceNearestHigher = [_sliceNearestHigherBase # _heightIndexLower, _sliceNearestHigherBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolate_slices;
+_sliceNearestHigher = [_sliceNearestHigherBase # _heightIndexLower, _sliceNearestHigherBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolateSlices;
 
 _distanceNearestLower = _sliceNearestLower # 0;
 _distanceNearestHigher = _sliceNearestHigher # 0;
@@ -71,7 +71,7 @@ if ((_distance < _distanceNearestLower && _distance < _distanceNearestHigher) ||
 };
 
 _sliceNearestBase = _table # _elevNearestRow # 2;
-_sliceNearest = [_sliceNearestBase # _heightIndexLower, _sliceNearestBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolate_slices;
+_sliceNearest = [_sliceNearestBase # _heightIndexLower, _sliceNearestBase # _heightIndexHigher, _heightFactor] call itc_land_ballistics_fnc_interpolateSlices;
 
 _distanceFactor = (_distance - _sliceNearest # 0) / (_sliceNextNearest # 0 - _sliceNearest # 0);
 
@@ -96,7 +96,7 @@ _solution =  [
     [_elevNextNearest, _sliceNextNearest # 0, _sliceNextNearest # 2, _sliceNextNearest # 1, _sliceNextNearest # 3, _sliceNextNearest # 4, _maxOrdNextNearest
     ],
     _distanceFactor
-] call itc_land_ballistics_fnc_interpolate_slices;
+] call itc_land_ballistics_fnc_interpolateSlices;
 
 _rs = [round(_solution # 0 *17.77777778), _solution # 2, _solution # 4, _solution # 5, _solution # 6, _solution # 1, _solution # 3];
 _rs

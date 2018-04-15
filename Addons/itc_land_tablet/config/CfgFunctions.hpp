@@ -8,16 +8,16 @@ class CfgFunctions
       class interact {
         file = "itc_land_tablet\functions\interact.sqf";
       };
-      class compile_app {
+      class compileApp {
         file = "itc_land_tablet\functions\util\compileApp.sqf";
       };
-      class compile_page {
+      class compilePage {
         file = "itc_land_tablet\functions\util\compilePage.sqf";
       };
-      class set_text {
+      class setText {
         file = "itc_land_tablet\functions\util\setText.sqf";
       };
-      class set_fade {
+      class setFade {
         file = "itc_land_tablet\functions\util\setFade.sqf";
       };
     };

@@ -16,7 +16,7 @@ _solutions = [];
 for "_i" from 0 to (count _charges) - 1 step 1 do {
   _table = _tables # _i;
   _btab = []  call compile preProcessFile _table;
-  _solution = [_btab, _distance, _elevDiff] call itc_land_ballistics_fnc_calc_btab_solution;
+  _solution = [_btab, _distance, _elevDiff] call itc_land_ballistics_fnc_calcBtabSolution;
   if(count _solution > 0) then {
     _solutions = _solutions + [[_charges # _i, _dir, _df] + _solution];
   };

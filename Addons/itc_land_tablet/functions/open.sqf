@@ -19,8 +19,8 @@ _vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
 
   if(_vehicle getVariable "app" != _app) then { //check if app switched
     _app = _vehicle getVariable "app"; //switch the app variable
-    [_app] call itc_land_tablet_fnc_compile_app;
-    _newPage = [_display] call itc_land_tablet_fnc_app_init; //initialize the new app
+    [_app] call itc_land_tablet_fnc_compileApp;
+    _newPage = [_display] call itc_land_tablet_fnc_appInit; //initialize the new app
     _vehicle setVariable ["page", _newPage];
   };
   [_display] call itc_land_tablet_fnc_app_render; //render the app
@@ -28,11 +28,11 @@ _vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
   if(!isNil{_vehicle getVariable "page"}) then { //if there's a page, render it
     if(_vehicle getVariable "page" != _page) then { //check if page switched
       _page = _vehicle getVariable "page"; //switch the app variable
-      [_app,_page] call itc_land_tablet_fnc_compile_page;
-      [_display] call itc_land_tablet_fnc_app_clear; //clear app pages
-      [_display] call itc_land_tablet_fnc_page_init; //initialise the new page
+      [_app,_page] call itc_land_tablet_fnc_compilePage;
+      [_display] call itc_land_tablet_fnc_appClear; //clear app pages
+      [_display] call itc_land_tablet_fnc_pageInit; //initialise the new page
     };
-    [_display] call itc_land_tablet_fnc_page_render; //render the page
+    [_display] call itc_land_tablet_fnc_pageRender; //render the page
   };
   (_this select 0) set [2, _app];
   (_this select 0) set [3, _page];
