@@ -33,7 +33,7 @@ if((count _this) < 9) then {
 };
 hint "2...";
 
-_btab = [_magazine, _elevMin, _elevMax, _elevStep, _heightMin, _heightMax, _heightStep, _muzzleVelocity, _airFriction] call compile preprocessFileLineNumbers "tables\fnc_calcBallistics.sqf";
+_btab = [_magazine, _elevMin, _elevMax, _elevStep, _heightMin, _heightMax, _heightStep, _muzzleVelocity, _airFriction] call compile preprocessFileLineNumbers "itc_land_ballistics\functions\tables\calcBallistics.sqf";
 
 _btab = _btab select 0;
 

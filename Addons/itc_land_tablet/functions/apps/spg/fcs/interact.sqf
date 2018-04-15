@@ -4,7 +4,7 @@ switch(_action) do {
   case "calc": {
     _gridField = ctrlText 1400;
     _elField = parseNumber (ctrlText 1401);
-    _solutions = [vehicle player, _gridField, _elField] call itc_land_bcs_fnc_getAllSolutions;
+    _solutions = [vehicle player, _gridField, _elField] call itc_land_ballistics_fnc_solutions;
     _vehicle setVariable ["itc_land_tablet_fcs_solutions", _solutions];
     _vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];
   };
