@@ -10,9 +10,8 @@
  * number <STRING>
  *
  * Example:
- * [45, 90] call ace_mk6mortar_fnc_dev_formatNumber = "0800"
+ * [16, 16] call itc_land_fnc_getDeflection = "3200"
  *
- * Public: No
  */
  
  params ["_fixed","_deflecting"];
