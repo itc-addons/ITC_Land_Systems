@@ -17,10 +17,16 @@
  
  params ["_fixed","_deflecting"];
  
- _fixed = _fixed * (6400 / 360);
- _deflecting = _deflecting * (6400 / 360);
- 
- 
- 
- private _def = (_fixed - _def) + 3200;
- 
+ //convert degrees to mills
+_fixed = (_fixed / 360) * 6400;
+_deflecting = (_wepDir / 360) * 6400;
+if ((_fixed < 1) && (_deflecting > 3200)) then {_fixed = 6400};
+
+//calculate deflection using mills
+private _df = 3200 - (_fixed - _deflecting);
+
+// ensure numbers are in range 0 - 6400
+_df = if(_df < 0) then [{_df + 6400}, {_df}];
+_df = if(_df > 6400) then [{_df - 6400}, {_df}];
+
+[_df,4,0] call CBA_fnc_formatNumber;
