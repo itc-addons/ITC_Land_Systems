@@ -20,7 +20,7 @@ class RscInGameUI {
 			w = "53.5 * 		(0.01875 * SafezoneH)";
 			h = "40 * 		(0.025 * SafezoneH)";
 			class controls {
-				class ITC_Land_Deflection: RscText {
+				/*class ITC_Land_Deflection: RscText {
 					idc = 81010;
 					style = 1;
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
@@ -32,7 +32,7 @@ class RscInGameUI {
 					y = "19.46 * 		(0.025 * SafezoneH)";
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
-				};
+				};*/
 				class CA_OpticsZoom: RscText {
 					idc = 180;
 					style = 1;
@@ -46,7 +46,7 @@ class RscInGameUI {
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_Azimuth_text: RscText {
+				class ITC_Land_Deflection_text: RscText {
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -59,7 +59,7 @@ class RscInGameUI {
 					w = "7.5 * 		(0.01875 * SafezoneH)";
 					h = "1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURAzimuth_text: RscText {
+				class ITC_Land_CURDeflection_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -72,7 +72,7 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURAzimuth_value: RscText {
+				class ITC_Land_CURDeflection_value: RscText {
 					idc = 81014;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";
@@ -85,7 +85,7 @@ class RscInGameUI {
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISAzimuth_text: RscText {
+				class ITC_Land_MISDeflection_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -98,7 +98,7 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISAzimuth_value: RscText {
+				class ITC_Land_MISDeflection_value: RscText {
 					idc = 81016;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";

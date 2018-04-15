@@ -1,70 +1,55 @@
-["tb_ar2i_onLoadTurretDisplay", {
+["itc_land_onLoadSPHGunnerDisplay", {
 
 	[{  
 		params ["_args","_pfID"];
-		
+		['itc_land_onLoadSPHGunnerDisplay', []] call CBA_fnc_localEvent;
 		disableSerialization; 
-		private _display = uiNamespace getVariable ["TB_AR2I_RscOptics_UAV_gunner",displayNull];	
+		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightSPH",displayNull];	
 		if (isNull _display) exitWith {};
 		
-		private _uavControlPos =  [ACE_Player] call ace_common_fnc_getUavControlPosition;
+		private _vehRole = ACE_player call CBA_fnc_vehicleRole;
 		//hide control group if the camera is anything but GUNNER or the player is no longer controlling the turret
 		//also remove PFH in this case.
-		if ( (cameraView != "GUNNER") || (_uavControlPos != "GUNNER") ) then {			
+		if ( (cameraView != "GUNNER") || ( _vehRole != "GUNNER") ) then {			
 			if (cameraView != "GUNNER") then {
-				(_display displayCtrl 75001) ctrlShow false; 
+				(_display displayCtrl 81001) ctrlShow false; 
 			};
-			if (_uavControlPos != "GUNNER") then {
-				(_display displayCtrl 75001) ctrlShow false; 
+			if (_vehRole != "GUNNER") then {
+				(_display displayCtrl 81001) ctrlShow false; 
 				[_pfID] call CBA_fnc_removePerFrameHandler;
 			};
 		} else {
 
 			//make sure control group is visible
-			(_display displayCtrl 75001) ctrlShow true;
+			(_display displayCtrl 81001) ctrlShow true;
 			
-			//get connected UAV
-		   private _uav = getConnectedUAV ACE_player; 
-			
+			//get vehicle
+		   private _veh = vehicle ACE_player; 
 
-		   //Get direction 
-		   private _weaponDirVector = _uav weaponDirection currentWeapon _uav; //Vector (array) 
+		   //Get current azimuth 
+		   private _weaponDirVector = _veh weaponDirection currentWeapon _veh; //Vector (array) 
 		   private _weaponDir = (_weaponDirVector call CBA_fnc_vect2Polar) select 1; 
-		   private _weaponDirD = [ _weaponDir , 3 ] call CBA_fnc_formatNumber;     //Take weapon direction in degrees and format as 3 figure string 
-		   private _weaponDirM = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string 
-			
-		   //Format direction values: "000 / 0000" 
-		   private _displayedDir = format ["%1 / %2", _weaponDirD, _weaponDirM]; 
-		   (_display displayCtrl 75013) ctrlSetText _displayedDir; 
-			 
-		   //Get TGT grid  
-		   private _tgtposWorld = (screenToWorld [0.5,0.5]); 
-		   private _tgtposMGRS = [_tgtposWorld] call ace_common_fnc_getMapGridFromPos; 
-		   private _tgtposDisplayed = format ["%1 %2",_tgtposMGRS # 0,_tgtposMGRS # 1]; 
-			
-		   private _uavpos = [position _uav] call ace_common_fnc_getMapGridFromPos; 
-		   private _uavposDisplayed = format ["%1 %2",_uavpos # 0,_uavpos # 1];  
+		   private _displayedDir = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string 
+			//display current azimuth
+		  // (_display displayCtrl 81014) ctrlSetText _displayedDir; 
 
-		   //display grids 
-		   (_display displayCtrl 75015) ctrlSetText _tgtposDisplayed; 
-		   (_display displayCtrl 75018) ctrlSetText _uavposDisplayed;   
-		   
-		   private _uavASL = getPosASL _uav; 
-		   private _uavASLdisplayed = [_uavASL select 2, "meters4", true] call ace_mk6mortar_fnc_dev_formatNumber; 
-		   
-		   private _tgtASL = getTerrainHeightASL (_tgtposWorld);
-		  
-		  //make sure _tgtASL is not returning depth of water: getTrrainHeightASL will return negative values for terrain underwater
-		  private _tgtASLdisplayed = 0;
-		   if (_tgtASL < 0) then {
-				_tgtASLdisplayed = [0, "meters4", true] call ace_mk6mortar_fnc_dev_formatNumber; 
-		   } else {
-				_tgtASLdisplayed = [_tgtASL, "meters4", true] call ace_mk6mortar_fnc_dev_formatNumber; 
-			};
+			//Get current deflection
 			
-		   //display ALTS 
-		   (_display displayCtrl 75017) ctrlSetText _tgtASLdisplayed; 
-		   (_display displayCtrl 75011) ctrlSetText _uavASLDisplayed;   
+			//Get mission deflection
+			private _displayedMISdef = "----";
+			private _slnIndex = getVariable ["itc_land_tablet_fcs_solutions_index";
+			if !(isNil _slnIndex) then {
+				private _sln = _veh getVariable "itc_land_tablet_fcs_solutions";
+				_sln = _sln select _slnIndex;
+				private _MISdef = _sln select 1;
+				_displayedMISdef = [_MISdef, 4, 0] call CBA_fnc_formatNumber;
+			//_solution params ["_charge", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
+			//_vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
+			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];			
+			};
+			//display deflection values
+			(_display displayCtrl 81016) ctrlSetText _displayedMISdef;
+  
 
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
