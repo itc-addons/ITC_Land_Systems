@@ -10,17 +10,11 @@ class RscStructuredText;
 
 class RscInGameUI {
     class ITC_Land_RscGunnerSightSPH {
-		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ['itc_land_onLoadSPHGunnerDisplay', []] call CBA_fnc_localEvent;";
+		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ";
 		idd = 513;
 		controls[] = {"ITC_Land_IGUI_elements_group"};
 		class ITC_Land_IGUI_elements_group: RscControlsGroup {
 			idc = 81001;
-			class VScrollbar: VScrollbar {
-				width = 0;
-			};
-			class HScrollbar: HScrollbar {
-				height = 0;
-			};
 			x = "0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
 			y = "0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
 			w = "53.5 * 		(0.01875 * SafezoneH)";
@@ -40,7 +34,7 @@ class RscInGameUI {
 					h = "1.1 * 		(0.025 * SafezoneH)";
 				};
 				class CA_OpticsZoom: RscText {
-					idc = 81011;
+					idc = 180;
 					style = 1;
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					sizeEx = "0.028*SafezoneH";
@@ -197,5 +191,5 @@ class RscInGameUI {
 				};
 			};
 		};
-		onLoad = "uiNamespace setVariable ['ACE_dlgArtillery',_this select 0]; ['ace_infoDisplayChanged',[_this select 0,'Artillery']] call CBA_fnc_localEvent;";
 	};
+};
