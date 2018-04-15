@@ -1,0 +1,8 @@
+ctrlShow [13401, true];
+
+if(isNil{_vehicle getVariable "itc_land_tablet_fcs_solutions"}) then {
+  _vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
+};
+if(isNil{_vehicle getVariable "itc_land_tablet_fcs_solutions_index"}) then {
+  _vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];
+};
