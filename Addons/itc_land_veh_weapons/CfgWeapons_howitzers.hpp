@@ -1,7 +1,7 @@
 	class itc_land_howitzer_base: CannonCore {
 		class mode_semiauto;
-	};	
-	
+	};
+
 	class itc_land_155mm_howitzer: itc_land_howitzer_base {
 			scope = 1;
 			nameSound = "cannon";
@@ -26,7 +26,6 @@
 			magazineReloadTime = 0.01;
 			autoReload = 0;
 			canLock = 0;
-			#include "CfgWeapons_Magazines.hpp"			
 			//magazines[] = {"32Rnd_155mm_Mo_shells", "6Rnd_155mm_Mo_smoke", "2Rnd_155mm_Mo_guided", "2Rnd_155mm_Mo_LG", "6Rnd_155mm_Mo_mine", "2Rnd_155mm_Mo_Cluster", "6Rnd_155mm_Mo_AT_mine"};
 			modes[] = {"Single"};
 			class GunParticles {
@@ -46,7 +45,7 @@
 					directionName = "Usti hlavne b";
 				};
 			};
-			
+
 			class Single: Mode_SemiAuto {
 				displayName = "";
 				sounds[] = {"StandardSound"};
@@ -68,8 +67,7 @@
 			ace_overpressure_range = 60;
 			ace_overpressure_damage = 1;
 			displayName = "L/52";
-		};		
-		
-		
-	};
+		};
 
+
+	};
