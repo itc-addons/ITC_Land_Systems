@@ -31,6 +31,7 @@ class CfgVehicles {
 	};
 		
 	class itc_land_SPH01_base: MBT_01_arty_base_F {
+		crew = "B_crew_F";
 		typicalCargo[] = {"B_Soldier_F"};
 		side = 1;
 		faction = "BLU_F";
