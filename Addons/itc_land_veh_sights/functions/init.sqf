@@ -2,7 +2,6 @@
 
 	[{  
 		params ["_args","_pfID"];
-		['itc_land_onLoadSPHGunnerDisplay', []] call CBA_fnc_localEvent;
 		disableSerialization; 
 		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightSPH",displayNull];	
 		if (isNull _display) exitWith {};
@@ -65,8 +64,8 @@
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];			
 			};	
-			(_display displayCtrl 81016) ctrlSetText _displayedMISquad;
-		    (_display displayCtrl 81014) ctrlSetText _displayedQuad; 				
+			(_display displayCtrl 81021) ctrlSetText _displayedMISquad;
+		    (_display displayCtrl 81019) ctrlSetText _displayedQuad; 				
 			
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
