@@ -20,11 +20,19 @@ class itc_land_tablet {
 
 		page_spg_controls,
 		page_spg_status,
+		page_bcs_settings,
+		page_bcs_setup,
 
     sidebar_button1,
     sidebar_button2,
     sidebar_button3,
     sidebar_button4,
+    sidebar_button5,
+
+    app1,
+    app2,
+    app3,
+    app4
   };
   class workspace_header_bar: ITC_ARTY_RscText {
     idc = 15103;
@@ -129,6 +137,61 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side4""] call itc_land_tablet_fnc_interact";
   };
-  #include "workspaces\fcs.hpp"
-  #include "workspaces\status.hpp"
+  class sidebar_button5: ITC_ARTY_RscButton {
+    idc = 15112;
+    text = "Page 5";
+		x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
+		y = (0.445+ POSYADJUST) * safezoneH + safezoneY;
+		w = 0.0928125 * safezoneW;
+		h = 0.044 * safezoneH;
+    colorBackground[] = {0,0,0,0.9};
+    colorActive[] = {0.1,0.1,0.1,0.9};
+		action = "[""side5""] call itc_land_tablet_fnc_interact";
+  };
+	class app1: ITC_ARTY_RscButton
+	{
+	  idc = 15600;
+	  x = 0.200937 * safezoneW + safezoneX;
+	  y = 0.39 * safezoneH + safezoneY;
+	  w = 0.0257812 * safezoneW;
+	  h = 0.044 * safezoneH;
+	  colorBackground[] = {-1,-1,-1,0};
+		action = "[""app"", 0] call itc_land_tablet_fnc_interact";
+	};
+	class app2: ITC_ARTY_RscButton
+	{
+    idc = 15601;
+    x = 0.200937 * safezoneW + safezoneX;
+    y = 0.434 * safezoneH + safezoneY;
+    w = 0.0257812 * safezoneW;
+    h = 0.055 * safezoneH;
+    colorBackground[] = {-1,-1,-1,0};
+		action = "[""app"", 1] call itc_land_tablet_fnc_interact";
+	};
+	class app3: ITC_ARTY_RscButton
+	{
+    idc = 15602;
+    x = 0.200937 * safezoneW + safezoneX;
+    y = 0.489 * safezoneH + safezoneY;
+    w = 0.0257812 * safezoneW;
+    h = 0.044 * safezoneH;
+    colorBackground[] = {-1,-1,-1,0};
+		action = "[""app"", 2] call itc_land_tablet_fnc_interact";
+	};
+	class app4: ITC_ARTY_RscButton
+	{
+    idc = 15603;
+    x = 0.200937 * safezoneW + safezoneX;
+    y = 0.533 * safezoneH + safezoneY;
+    w = 0.0257812 * safezoneW;
+    h = 0.055 * safezoneH;
+    colorBackground[] = {-1,-1,-1,0};
+		action = "[""app"", 3] call itc_land_tablet_fnc_interact";
+	};
+
+  #include "workspaces\spg\fcs.hpp"
+  #include "workspaces\spg\status.hpp"
+
+  #include "workspaces\bcs\settings.hpp"
+  #include "workspaces\bcs\setup.hpp"
 };
