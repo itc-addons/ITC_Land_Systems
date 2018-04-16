@@ -69,7 +69,7 @@ class page_bcs_settings:itc_land_workspace
     class bcs_settings_firemission_start_text: ITC_ARTY_RscTextBox
     {
     	idc = 3207;
-    	text = "001";
+    	text = "0001";
     	x = (0.479375 + POSXADJUST) * safezoneW + safezoneX;
     	y = (0.412 + POSYADJUST) * safezoneH + safezoneY;
     	w = 0.0721875 * safezoneW;
@@ -102,17 +102,7 @@ class page_bcs_settings:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
 
-    };
-    class bcs_settings_discard_button: ITC_ARTY_RscButton {
-    	idc = 3210;
-
-    	text = "Discard";
-    	x = 0.587656 * safezoneW + safezoneX;
-    	y = 0.685 * safezoneH + safezoneY;
-    	w = 0.061875 * safezoneW;
-    	h = 0.022 * safezoneH;
-    	colorBackground[] = {0,0,0,0.9};
-    	colorActive[] = {0,0,0,0.9};
+      action = "[""save""] call itc_land_tablet_fnc_pageInteract";
     };
   };
 };
