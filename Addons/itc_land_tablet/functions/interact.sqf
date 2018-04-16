@@ -2,10 +2,11 @@ params ["_action", "_value"];
 _vehicle = (vehicle player);
 
 if(_action == "app" && !isNil{_value}) exitWith {
-  _newApp = (_vehicle getVariable "apps") # _value;
-  if(!isNil{_newApp}) then {
-    player sideChat format ["Setting app to %1", _newApp];
-    _vehicle setVariable ["app", _newApp];
+  if(count (_vehicle getVariable "apps") > _value) then {
+    _newApp = (_vehicle getVariable "apps") # _value;
+    if(!isNil{_newApp}) then {
+      _vehicle setVariable ["app", _newApp];
+    };
   };
 };
 

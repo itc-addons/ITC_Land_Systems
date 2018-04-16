@@ -7,4 +7,7 @@ switch(_action) do {
   case "side2": {
     _vehicle setVariable ["page", "setup"];
   };
+  case "side3": {
+    _vehicle setVariable ["page", "locStores"];
+  };
 };

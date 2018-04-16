@@ -91,7 +91,7 @@ class RscControlsGroup
 		autoScrollRewind = 0;
                 shadow=0;
 	};
-
+/*
 	class ScrollBar
 	{
     color[] = {1,1,1,0.6};
@@ -102,6 +102,7 @@ class RscControlsGroup
 		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
 		border = "#(argb,8,8,3)color(1,1,1,1)";
 	};
+	*/
 	class Controls{};// an empty class telling the engine, no custom, additional controls
 };
 
@@ -362,8 +363,8 @@ class ITC_ARTY_RscButton {
 	colorDisabled[] = {1,1,1,0.25};
 	colorBackground[] = {0,0,0,0.5};
 	colorBackgroundDisabled[] = {0,0,0,0.5};
-	colorBackgroundActive[] = {0,0,0,1};
-	colorFocused[] = AIFMSGRN;
+	colorBackgroundActive[] = {0.2,0.2,0.2,1};
+	colorFocused[] = {0,0,0,0.5};
 	colorShadow[] ={0,0,0,0};
 	colorBorder[] = AIFMSGRN;
 	soundEnter[] ={"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};

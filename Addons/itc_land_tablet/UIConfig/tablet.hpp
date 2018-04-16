@@ -9,25 +9,27 @@ class itc_land_tablet {
       workspace_background,
       workspace_header_bar,
       sidebar_background,
-      workspace_background,
-      screen_image
+      screen_image,
+
+			page_spg_controls,
+			page_spg_status,
+			page_bcs_settings,
+			page_bcs_setup,
+			page_bcs_locations
   };
   objects[] = { };
   controls[]=
   {
     header1,
     header2,
-
-		page_spg_controls,
-		page_spg_status,
-		page_bcs_settings,
-		page_bcs_setup,
+		workspace_header,
 
     sidebar_button1,
     sidebar_button2,
     sidebar_button3,
     sidebar_button4,
     sidebar_button5,
+		fire_mission_list,
 
     app1,
     app2,
@@ -44,6 +46,16 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,1};
 
   };
+	class workspace_header: ITC_ARTY_RscText {
+		idc = 15104;
+		text = "Workspace Header";
+		x = (0.402031 + POSXADJUST) * safezoneW + safezoneX;
+		y = 0.1825 * safezoneH + safezoneY;
+		w = (0.299062 + WSWADJUST) * safezoneW;
+		h = 0.044 * safezoneH;
+
+		sizeEx = 1.5 * GUI_GRID_H;
+	};
   class header1: ITC_ARTY_RscText {
     idc = 15106;
     text = "FDC SUITE";
@@ -148,6 +160,16 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side5""] call itc_land_tablet_fnc_interact";
   };
+	class fire_mission_list: ITC_ARTY_RscListbox {
+		idc = 15114;
+		x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
+		y = (0.5+ POSYADJUST) * safezoneH + safezoneY;
+		w = 0.0928125 * safezoneW;
+		h = 0.154 * safezoneH;
+		colorBackground[] = {0,0,0,0.9};
+		colorActive[] = {0,0,0,0.9};
+
+	};
 	class app1: ITC_ARTY_RscButton
 	{
 	  idc = 15600;
@@ -156,6 +178,9 @@ class itc_land_tablet {
 	  w = 0.0257812 * safezoneW;
 	  h = 0.044 * safezoneH;
 	  colorBackground[] = {-1,-1,-1,0};
+    colorActive[] = {-1,-1,-1,-1};
+		colorBackgroundActive[] = {-1,-1,-1,-1};
+		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 0] call itc_land_tablet_fnc_interact";
 	};
 	class app2: ITC_ARTY_RscButton
@@ -166,6 +191,9 @@ class itc_land_tablet {
     w = 0.0257812 * safezoneW;
     h = 0.055 * safezoneH;
     colorBackground[] = {-1,-1,-1,0};
+    colorActive[] = {-1,-1,-1,-1};
+		colorBackgroundActive[] = {-1,-1,-1,-1};
+		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 1] call itc_land_tablet_fnc_interact";
 	};
 	class app3: ITC_ARTY_RscButton
@@ -176,6 +204,9 @@ class itc_land_tablet {
     w = 0.0257812 * safezoneW;
     h = 0.044 * safezoneH;
     colorBackground[] = {-1,-1,-1,0};
+    colorActive[] = {-1,-1,-1,-1};
+		colorBackgroundActive[] = {-1,-1,-1,-1};
+		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 2] call itc_land_tablet_fnc_interact";
 	};
 	class app4: ITC_ARTY_RscButton
@@ -186,6 +217,9 @@ class itc_land_tablet {
     w = 0.0257812 * safezoneW;
     h = 0.055 * safezoneH;
     colorBackground[] = {-1,-1,-1,0};
+    colorActive[] = {-1,-1,-1,0};
+		colorBackgroundActive[] = {-1,-1,-1,-1};
+		colorFocused[] = {-1,-1,-1,0};
 		action = "[""app"", 3] call itc_land_tablet_fnc_interact";
 	};
 
@@ -194,4 +228,5 @@ class itc_land_tablet {
 
   #include "workspaces\bcs\settings.hpp"
   #include "workspaces\bcs\setup.hpp"
+  #include "workspaces\bcs\locStores.hpp"
 };

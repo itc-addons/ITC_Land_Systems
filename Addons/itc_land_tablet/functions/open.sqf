@@ -18,6 +18,7 @@ _vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
   //[_display] call itc_land_tablet_fnc_render;
 
   if(_vehicle getVariable "app" != _app) then { //check if app switched
+    [_display] call itc_land_tablet_fnc_clear; //clear app pages
     if(_app != "") then { //clear the previous app if it existed
       [_display] call itc_land_tablet_fnc_appClear; //clear app pages
     };
