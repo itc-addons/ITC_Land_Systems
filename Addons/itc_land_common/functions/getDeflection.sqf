@@ -13,12 +13,12 @@
  * [16, 16] call itc_land_fnc_getDeflection = "3200"
  *
  */
- 
+
  params ["_fixed","_deflecting"];
- 
+
  //convert degrees to mills
 _fixed = (_fixed / 360) * 6400;
-_deflecting = (_wepDir / 360) * 6400;
+_deflecting = (_deflecting / 360) * 6400;
 if ((_fixed < 1) && (_deflecting > 3200)) then {_fixed = 6400};
 
 //calculate deflection using mills
