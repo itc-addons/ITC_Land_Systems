@@ -23,13 +23,13 @@ class CfgVehicles {
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
-	};	
+	};
 	class MBT_01_arty_base_F: MBT_01_base_F {
 		class Turrets: Turrets {
 				class MainTurret: MainTurret { };
 		};
 	};
-		
+
 	class itc_land_SPH01_base: MBT_01_arty_base_F {
 		crew = "B_crew_F";
 		typicalCargo[] = {"B_Soldier_F"};
@@ -37,14 +37,20 @@ class CfgVehicles {
 		faction = "BLU_F";
 		mapSize = 11.83;
 		class Turrets: Turrets {
-			class MainTurret: MainTurret {	
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";			
+			class MainTurret: MainTurret {
+				turretInfoType = "ITC_Land_RscGunnerSightSPH";
 			};
 		};
 	};
 	class itc_land_SPH_Sholef2: itc_land_SPH01_base {
 		scope = 2;
 		displayName = "M5 mod. 0 Sholef 2";
+    class itc_land {
+      tabletInterfaces[] = {"spg"};
+      class fcs {
+        tableList = "b_155";
+      };
+    };
 
 		class SimpleObject {
 			eden = 1;
@@ -53,9 +59,9 @@ class CfgVehicles {
 			verticalOffset = 2.925;
 			verticalOffsetWorld = 0.031;
 			init = "''";
-		};		
-		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_MBT_01_arty_F.jpg";		
+		};
+		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_MBT_01_arty_F.jpg";
 		hiddenSelectionsTextures[] = {"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa", "A3\armor_f_gamma\MBT_01\data\MBT_01_scorcher_co.paa", "A3\Data_F\Vehicles\Turret_CO.paa"};
-		availableForSupportTypes[] = {"Artillery"};		
+		availableForSupportTypes[] = {"Artillery"};
 	};
 };
