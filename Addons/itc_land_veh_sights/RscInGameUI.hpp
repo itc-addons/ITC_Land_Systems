@@ -10,7 +10,7 @@ class RscStructuredText;
 
 class RscInGameUI {
     class ITC_Land_RscGunnerSightSPH {
-		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ";
+		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ['itc_land_onLoadSPHGunnerDisplay', []] call CBA_fnc_localEvent;";
 		idd = 513;
 		controls[] = {"ITC_Land_IGUI_elements_group"};
 		class ITC_Land_IGUI_elements_group: RscControlsGroup {
@@ -46,7 +46,7 @@ class RscInGameUI {
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_Deflection_text: RscText {
+				class ITC_Land_Azimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -59,7 +59,7 @@ class RscInGameUI {
 					w = "7.5 * 		(0.01875 * SafezoneH)";
 					h = "1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURDeflection_text: RscText {
+				class ITC_Land_CURAzimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -72,7 +72,7 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURDeflection_value: RscText {
+				class ITC_Land_CURAzimuth_value: RscText {
 					idc = 81014;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";
@@ -85,7 +85,7 @@ class RscInGameUI {
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISDeflection_text: RscText {
+				class ITC_Land_MISAzimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -98,7 +98,7 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISDeflection_value: RscText {
+				class ITC_Land_MISAzimuth_value: RscText {
 					idc = 81016;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";

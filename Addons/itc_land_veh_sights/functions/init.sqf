@@ -31,30 +31,45 @@
 		   private _weaponDir = (_weaponDirVector call CBA_fnc_vect2Polar) select 1; 
 		   private _displayedDir = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string 
 			//display current azimuth
-		  // (_display displayCtrl 81014) ctrlSetText _displayedDir; 
 
-			//Get current deflection
 			
-			//Get mission deflection
-			private _displayedMISdef = "----";
-			private _slnIndex = getVariable ["itc_land_tablet_fcs_solutions_index";
+			//Get mission azimuth
+			private _displayedMISazi = "----";
+			private _slnIndex = _veh getVariable "itc_land_tablet_fcs_solutions_index";
 			if !(isNil _slnIndex) then {
 				private _sln = _veh getVariable "itc_land_tablet_fcs_solutions";
 				_sln = _sln select _slnIndex;
-				private _MISdef = _sln select 1;
-				_displayedMISdef = [_MISdef, 4, 0] call CBA_fnc_formatNumber;
-			//_solution params ["_charge", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
+				private _MISazi = _sln select 1;
+				_displayedMISazi = [_MISazi, 4, 0] call CBA_fnc_formatNumber;
+			//_solution params ["_charge", "_az", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];			
 			};
-			//display deflection values
-			(_display displayCtrl 81016) ctrlSetText _displayedMISdef;
-  
-
+			//display azimuth values
+			(_display displayCtrl 81016) ctrlSetText _displayedMISazi;
+		    (_display displayCtrl 81014) ctrlSetText _displayedDir; 			
+			
+			//Get current quadrant
+			private _weaponQuad = (_weaponDirVector call CBA_fnc_vect2Polar) select 2;
+			private _displayedQuad = [_weaponQuad, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber;  
+			
+			//Get mission quadrant
+			private _displayedMISquad = "----";
+			_slnIndex = _veh getVariable "itc_land_tablet_fcs_solutions_index";
+			if !(isNil _slnIndex) then {
+				private _sln = _veh getVariable "itc_land_tablet_fcs_solutions";
+				_sln = _sln select _slnIndex;
+				private _MISquad = _sln select 3;
+				_displayedMISquad = [_MISquad, 4, 0] call CBA_fnc_formatNumber;
+			//_solution params ["_charge", "_az", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
+			//_vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
+			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];			
+			};	
+			(_display displayCtrl 81016) ctrlSetText _displayedMISquad;
+		    (_display displayCtrl 81014) ctrlSetText _displayedQuad; 				
+			
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
 
 }] call CBA_fnc_addEventHandler;
-//["tb_ar2i_onLoadTurretDisplay", []] call CBA_fnc_localEvent;
-//["cameraView", {_this call tb_ar2i_fnc_cameraPEH},true] call CBA_fnc_addPlayerEventHandler; 
