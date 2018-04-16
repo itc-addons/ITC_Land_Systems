@@ -5,6 +5,9 @@ class CfgFunctions
       class open {
         file = "itc_land_tablet\functions\open.sqf";
       };
+      class clear {
+        file = "itc_land_tablet\functions\clear.sqf";
+      };
       class interact {
         file = "itc_land_tablet\functions\interact.sqf";
       };
