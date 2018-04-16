@@ -33,7 +33,7 @@ class page_spg_controls:RscControlsGroup
         y = 0.335 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;
         h = 0.044 * safezoneH;
-        action = "[""calc""] call itc_land_tablet_fnc_page_interact";
+        action = "[""calc""] call itc_land_tablet_fnc_pageInteract";
     };
     class fcs_results: ITC_ARTY_RscStructuredText
     {
@@ -197,7 +197,7 @@ class page_spg_controls:RscControlsGroup
         y = 0.335 * safezoneH + safezoneY;
         w = 0.0464063 * safezoneW;
         h = 0.044 * safezoneH;
-        action = "[""next""] call itc_land_tablet_fnc_page_interact";
+        action = "[""next""] call itc_land_tablet_fnc_pageInteract";
     };
     class fcs_prev: ITC_ARTY_RscButton
     {
@@ -207,7 +207,7 @@ class page_spg_controls:RscControlsGroup
         y = 0.335 * safezoneH + safezoneY;
         w = 0.0464063 * safezoneW;
         h = 0.044 * safezoneH;
-        action = "[""prev""] call itc_land_tablet_fnc_page_interact";
+        action = "[""prev""] call itc_land_tablet_fnc_pageInteract";
     };
   };
 };
