@@ -1,11 +1,6 @@
-class page_spg_controls:RscControlsGroup
+class page_spg_controls:itc_land_workspace
 {
   idc = 13401;
-  x = (0.344062+ POSXADJUST) * safezoneW + safezoneX;
-  y = 0.225 * safezoneH + safezoneY;
-  w = 0.422812 * safezoneW;
-  h = 0.506 * safezoneH;
-
   class Controls {
     class fcs_target_pos: ITC_ARTY_RscText
     {

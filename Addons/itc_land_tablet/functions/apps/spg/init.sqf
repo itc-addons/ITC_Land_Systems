@@ -10,13 +10,11 @@ if(_canOpen) then { //check if it has the right interfaces
 if(!_canOpen) exitWith {
   [_display] call itc_land_tablet_fnc_appClear;
 
-  [_display, IDC_header1, "APP ERR"] call itc_land_tablet_fnc_setText;
+  [_display, IDC_header1, "SPG APP"] call itc_land_tablet_fnc_setText;
   [_display, IDC_header2, "NO INTERFACE"] call itc_land_tablet_fnc_setText;
-
-  [_display, IDC_sidebar_button1, 1] call itc_land_tablet_fnc_setFade;
-  [_display, IDC_sidebar_button2, 1] call itc_land_tablet_fnc_setFade;
-  [_display, IDC_sidebar_button3, 1] call itc_land_tablet_fnc_setFade;
-  [_display, IDC_sidebar_button4, 1] call itc_land_tablet_fnc_setFade;
+  [_display, IDC_sidebar_button5, 1] call itc_land_tablet_fnc_setFade;
+  [_display, IDC_workspace_header, "Self Propelled Gun Interface not found"] call itc_land_tablet_fnc_setText;
+  ""
 };
 
 _vehicleName = (configFile >> "CfgVehicles" >> typeOf (vehicle player) >> "displayName")  call BIS_fnc_getCfgData;
@@ -25,7 +23,5 @@ _vehicleName = (configFile >> "CfgVehicles" >> typeOf (vehicle player) >> "displ
 
 [_display, IDC_sidebar_button1, "CFCS"] call itc_land_tablet_fnc_setText;
 [_display, IDC_sidebar_button2, "Status"] call itc_land_tablet_fnc_setText;
-[_display, IDC_sidebar_button3, 1] call itc_land_tablet_fnc_setFade;
-[_display, IDC_sidebar_button4, 1] call itc_land_tablet_fnc_setFade;
 
 "fcs"

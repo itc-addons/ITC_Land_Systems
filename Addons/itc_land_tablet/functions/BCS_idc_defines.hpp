@@ -13,6 +13,7 @@
 #define IDC_sidebar_button2						15109
 #define IDC_sidebar_button3					  15110
 #define IDC_sidebar_button4						15111
+#define IDC_sidebar_button5						15112
 #define IDC_direct_fire_button						15112
 #define IDC_new_fire_mission_button					15113
 #define IDC_fire_mission_list						15114

@@ -91,16 +91,10 @@ class RscControlsGroup
 		autoScrollRewind = 0;
                 shadow=0;
 	};
-
-	class HScrollbar
-	{
-		height = 0.028;
-                shadow=0;
-	};
-
+/*
 	class ScrollBar
 	{
-                color[] = {1,1,1,0.6};
+    color[] = {1,1,1,0.6};
 		colorActive[] = {1,1,1,1};
 		colorDisabled[] = {1,1,1,0.3};
 		thumb = "#(argb,8,8,3)color(1,1,1,1)";
@@ -108,6 +102,7 @@ class RscControlsGroup
 		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
 		border = "#(argb,8,8,3)color(1,1,1,1)";
 	};
+	*/
 	class Controls{};// an empty class telling the engine, no custom, additional controls
 };
 
@@ -241,27 +236,12 @@ class ITC_ARTY_RscTextBox {
 	tooltipColorBox[] = AIFMSGRN;
 	tooltipColorShade[] = {0,0,0,0.65};
 };
-class ITC_ARTY_RscControlsGroup:RscControlsGroup {
-	deletable = 0;
-	fade = 0;
-	class VScrollbar {
-		color[] = AIFMSGRN;
-		width = 0.021;
-		autoScrollEnabled = 1;
-	};
-	class HScrollbar {
-		color[] = AIFMSGRN;
-		height = 0.028;
-	};
-	class Controls {};
-	type = 15;
-	idc = -1;
-	x = 0;
-	y = 0;
-	w = 1;
-	h = 1;
-	shadow = 0;
-	style = 16;
+class itc_land_workspace:RscControlsGroup {
+	onLoad = "(_this # 0) ctrlShow false";
+	x = (0.344062+ POSXADJUST) * safezoneW + safezoneX;
+	y = 0.225 * safezoneH + safezoneY;
+	w = 0.422812 * safezoneW;
+	h = 0.506 * safezoneH;
 };
 class ITC_ARTY_ScrollBar {
 		color[] = AIFMSGRN;
@@ -367,8 +347,8 @@ class ITC_ARTY_RscComboBox {
 	y = 0;
 	w = 0.12;
 	h = 0.035;
-	arrowEmpty = "arrow_combo_ca.paa";
-	arrowFull = "arrow_combo_active_ca.paa";
+	arrowEmpty = "itc_land_tablet\UI\arrow_combo_ca.paa";
+	arrowFull = "itc_land_tablet\UI\arrow_combo_active_ca.paa";
 	wholeHeight = 0.45;
 	colorActive[] = {1,0,0,1};
 };
@@ -383,8 +363,8 @@ class ITC_ARTY_RscButton {
 	colorDisabled[] = {1,1,1,0.25};
 	colorBackground[] = {0,0,0,0.5};
 	colorBackgroundDisabled[] = {0,0,0,0.5};
-	colorBackgroundActive[] = {0,0,0,1};
-	colorFocused[] = AIFMSGRN;
+	colorBackgroundActive[] = {0.2,0.2,0.2,1};
+	colorFocused[] = {0,0,0,0.5};
 	colorShadow[] ={0,0,0,0};
 	colorBorder[] = AIFMSGRN;
 	soundEnter[] ={"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
