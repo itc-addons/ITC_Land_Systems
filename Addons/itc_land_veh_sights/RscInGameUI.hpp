@@ -10,7 +10,7 @@ class RscStructuredText;
 
 class RscInGameUI {
     class ITC_Land_RscGunnerSightSPH {
-		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ";
+		onLoad = "uiNamespace setVariable ['ITC_Land_RscGunnerSightSPH', _this select 0]; ['itc_land_onLoadSPHGunnerDisplay', []] call CBA_fnc_localEvent;";
 		idd = 513;
 		controls[] = {"ITC_Land_IGUI_elements_group"};
 		class ITC_Land_IGUI_elements_group: RscControlsGroup {
@@ -20,19 +20,34 @@ class RscInGameUI {
 			w = "53.5 * 		(0.01875 * SafezoneH)";
 			h = "40 * 		(0.025 * SafezoneH)";
 			class controls {
-				/*class ITC_Land_Deflection: RscText {
-					idc = 81010;
+				/*class CA_Heading: RscText
+				{
+					idc = 156;
+					style = 0;
+					colorText[] = {0.706, 0.0745, 0.0196, 1};
+					sizeEx = "0.028*SafezoneH";
+					shadow = 0;
+					font = "EtelkaMonospacePro";
+					text = "015";
+					x = "25.3 * 		(0.01875 * SafezoneH)";
+					y = "6.3 * 		(0.025 * SafezoneH)";
+					w = "2.2 * 		(0.01875 * SafezoneH)";
+					h = "1 * 		(0.025 * SafezoneH)";
+				};*/
+				class CA_VisionMode: RscText
+				{
+					idc = 179;
 					style = 1;
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					sizeEx = "0.028*SafezoneH";
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "34.5";
-					x = "11.8 * 		(0.01875 * SafezoneH)";
+					text = "VIS";
+					x = "11.5 * 		(0.01875 * SafezoneH)";
 					y = "19.46 * 		(0.025 * SafezoneH)";
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
-				};*/
+				};			
 				class CA_OpticsZoom: RscText {
 					idc = 180;
 					style = 1;
@@ -41,12 +56,12 @@ class RscInGameUI {
 					shadow = 0;
 					font = "EtelkaMonospacePro";
 					text = "4.5";
-					x = "38.3 * 		(0.01875 * SafezoneH)";
+					x = "38 * 		(0.01875 * SafezoneH)";
 					y = "19.46 * 		(0.025 * SafezoneH)";
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_Deflection_text: RscText {
+				class ITC_Land_Azimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -59,7 +74,7 @@ class RscInGameUI {
 					w = "7.5 * 		(0.01875 * SafezoneH)";
 					h = "1 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURDeflection_text: RscText {
+				class ITC_Land_CURAzimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -72,7 +87,7 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURDeflection_value: RscText {
+				class ITC_Land_CURAzimuth_value: RscText {
 					idc = 81014;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";
@@ -85,7 +100,7 @@ class RscInGameUI {
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISDeflection_text: RscText {
+				class ITC_Land_MISAzimuth_text: RscText {
 					style = 0;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
@@ -98,14 +113,14 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_MISDeflection_value: RscText {
+				class ITC_Land_MISAzimuth_value: RscText {
 					idc = 81016;
 					style = 1;
 					sizeEx = "0.038*SafezoneH";
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "0000";
+					text = "----";
 					x = "13.8 * 		(0.01875 * SafezoneH)";
 					y = "30.8 * 		(0.025 * SafezoneH)";
 					w = "5.2 * 		(0.01875 * SafezoneH)";
@@ -144,7 +159,7 @@ class RscInGameUI {
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "80.5";
+					text = "0000";
 					x = "36.8 * 		(0.01875 * SafezoneH)";
 					y = "29.3 * 		(0.025 * SafezoneH)";
 					w = "5.2 * 		(0.01875 * SafezoneH)";
@@ -157,7 +172,7 @@ class RscInGameUI {
 					shadow = 0;
 					font = "EtelkaMonospacePro";
 					idc = 81020;
-					text = "REL";
+					text = "MIS";
 					x = "33.8 * 		(0.01875 * SafezoneH)";
 					y = "30.8 * 		(0.025 * SafezoneH)";
 					w = "3 * 		(0.01875 * SafezoneH)";
@@ -170,23 +185,24 @@ class RscInGameUI {
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "35.4";
+					text = "----";
 					x = "36.8 * 		(0.01875 * SafezoneH)";
 					y = "30.8 * 		(0.025 * SafezoneH)";
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class CA_VisionMode: RscText {
-					idc = 179;
+				class ITC_Land_AutoLoader: RscText
+				{
+					idc = 81022;
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "VIS";
+					text = "AUTOLOADER QUEUE";
 					x = "10.5 * 		(0.01875 * SafezoneH)";
 					y = "32.6 * 		(0.025 * SafezoneH)";
-					w = "4.5 * 		(0.01875 * SafezoneH)";
+					w = "10 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
 			};

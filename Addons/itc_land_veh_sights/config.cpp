@@ -8,5 +8,5 @@
 		authors[] = {"ToadBall","Yax"};
 	};
 };
-
+#include "CfgFunctions.hpp"
 #include "RscInGameUI.hpp"
