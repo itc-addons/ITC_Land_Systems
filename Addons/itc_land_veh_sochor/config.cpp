@@ -1,9 +1,9 @@
  class CfgPatches {
 	class itc_land_veh_sochor	{
-		units[] = {	"itc_land_sph_sochor2"};
+		units[] = {	};
 		weapons[] = {};
 		requiredVersion = 0.10;
-		requiredAddons[] = {"A3_Weapons_F","itc_land_veh_sights"};
+		requiredAddons[] = {"itc_land_veh_sights"};
 		author = "ITC Addons Team";
 		authors[] = {"ToadBall","Yax"};
 	};
