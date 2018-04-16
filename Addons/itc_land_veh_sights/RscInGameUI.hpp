@@ -191,12 +191,12 @@ class RscInGameUI {
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_AutoLoader: RscText
-				{
+				/*class ITC_Land_AutoLoader_text: RscText {
 					idc = 81022;
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
-					colorText[] = {0.706, 0.0745, 0.0196, 1};
+					colorText[] = {0.95, 0.95, 0.95, 1};
+					//colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
 					text = "AUTOLOADER QUEUE";
@@ -205,6 +205,34 @@ class RscInGameUI {
 					w = "10 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
+				class ITC_Land_CURAutoLoader_text: RscText {
+					idc = 81023;
+					style = 0;
+					sizeEx = "0.028*SafezoneH";
+					colorText[] = {0.95, 0.95, 0.95, 1};
+					//colorText[] = {0.706, 0.0745, 0.0196, 1};
+					shadow = 0;
+					font = "EtelkaMonospacePro";
+					text = "CUR:";
+					x = "10.5 * 		(0.01875 * SafezoneH)";
+					y = "33.4 * 		(0.025 * SafezoneH)";
+					w = "10 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};	
+				class ITC_Land_NEXTAutoLoader_text: RscText {
+					idc = 81024;
+					style = 0;
+					sizeEx = "0.028*SafezoneH";
+					colorText[] = {0.95, 0.95, 0.95, 1};
+					//colorText[] = {0.706, 0.0745, 0.0196, 1};
+					shadow = 0;
+					font = "EtelkaMonospacePro";
+					text = "NEXT:";
+					x = "10.5 * 		(0.01875 * SafezoneH)";
+					y = "34.2 * 		(0.025 * SafezoneH)";
+					w = "10 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};*/					
 			};
 		};
 	};
