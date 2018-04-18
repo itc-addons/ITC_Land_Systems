@@ -6,7 +6,7 @@ switch(_action) do {
     _elField = parseNumber (ctrlText 1401);
     _vehicle = vehicle player;
     _shellType = [_vehicle] call itc_land_ballistics_fnc_getVehicleShellType;
-    _targetPos = [_gridField, true] call ace_common_fnc_getMapPosFromGrid;
+    _targetPos = [_gridField, false] call ace_common_fnc_getMapPosFromGrid;
     _gunPos = getPosASL _vehicle;
     _solutions = [_shellType, _gunPos, _gunPos # 2, getDir _vehicle, _targetPos, _elField] call itc_land_ballistics_fnc_calcShellTypeSolutions;
     _vehicle setVariable ["itc_land_tablet_fcs_solutions", _solutions];
