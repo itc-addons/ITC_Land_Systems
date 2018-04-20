@@ -14,6 +14,7 @@ switch(_action) do {
     _elev = parseNumber (ctrlText 4310);
     _dir = parseNumber (ctrlText 4312);
     _pos = [_posString, false] call ace_common_fnc_getMapPosFromGrid;
+    _pos = _pos vectorAdd [0,0,_elev];
 
     _guns = (_vehicle getVariable "bcs_bty_guns");
     _gunString = format["%1               %2              %3               %4", _num, _posString, _elev, _dir];

@@ -10,5 +10,6 @@ if(_action == "app" && !isNil{_value}) exitWith {
   };
 };
 
+_display = findDisplay 32562;
 _app = _vehicle getVariable "app";
-_page = [_action] call itc_land_tablet_fnc_appInteract;
+_page = [_action, _display] call itc_land_tablet_fnc_appInteract;

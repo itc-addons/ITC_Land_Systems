@@ -15,7 +15,9 @@ class itc_land_tablet {
 			page_spg_status,
 			page_bcs_settings,
 			page_bcs_setup,
-			page_bcs_locations
+			page_bcs_locations,
+			page_bcs_firemission_new,
+			page_bcs_firemission_engage
   };
   objects[] = { };
   controls[]=
@@ -229,4 +231,6 @@ class itc_land_tablet {
   #include "workspaces\bcs\settings.hpp"
   #include "workspaces\bcs\setup.hpp"
   #include "workspaces\bcs\locStores.hpp"
+  #include "workspaces\bcs\newFiremission.hpp"
+  #include "workspaces\bcs\engageFiremission2.hpp"
 };

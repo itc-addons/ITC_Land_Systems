@@ -27,7 +27,7 @@ _vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
     _newPage = [_display] call itc_land_tablet_fnc_appInit; //initialize the new app
     _vehicle setVariable ["page", _newPage];
   };
-  [_display] call itc_land_tablet_fnc_app_render; //render the app
+  [_display] call itc_land_tablet_fnc_appRender; //render the app
 
   if(_vehicle getVariable "page" != _page) then { //check if page switched
     _page = _vehicle getVariable "page"; //switch the app variable

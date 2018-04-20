@@ -26,7 +26,8 @@ _defaults = [
   ["bcs_bty_type", "itc_land_sph_sochor2"],
   ["bcs_bty_guns", []],
   ["bcs_locations", []],
-  ["bcs_missions", []]
+  ["bcs_missions", []],
+  ["bcs_mission_index", 0]
 ];
 {
   if(isNil{_vehicle getVariable (_x # 0)}) then {

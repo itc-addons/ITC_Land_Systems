@@ -10,7 +10,5 @@ lbSetCurSel [5408, 0];
 
 lbClear 5411;
 _locations = _vehicle getVariable "bcs_locations";
-for "_i" from 0 to (count _locations) - 1 step 1 do {
-  _location = _locations # _i;
-  lbAdd [5411, format["%1               %2              %3               %4", _location # 0, _location # 1, _location # 3, _location # 4]];
-};
+_locationsStrings = _locations apply {format["%1               %2              %3               %4", _x # 0, _x # 1, _x # 3, _x # 4]};
+[5411, _locationsStrings, 0] call itc_land_tablet_fnc_fillComboBox;
