@@ -14,11 +14,11 @@ class RscInGameUI {
 		class CA_IGUI_elements_group;
 		//class Controls;
 	};
-    class TB_AR2I_RscOptics_UAV_gunner: RscOptics_UAV_gunner {
-		onLoad = "uiNamespace setVariable ['TB_AR2I_RscOptics_UAV_gunner', _this select 0]; ['tb_ar2i_onLoadTurretDisplay', []] call CBA_fnc_localEvent;";		
-		controls[] = {"TB_AR2i_IGUI_elements_group"};
+    class ITC_Land_AR2I_RscOptics_UAV_gunner: RscOptics_UAV_gunner {
+		onLoad = "uiNamespace setVariable ['ITC_Land_AR2I_RscOptics_UAV_gunner', _this select 0]; ['ITC_Land_ar2i_onLoadTurretDisplay', []] call CBA_fnc_localEvent;";		
+		controls[] = {"ITC_Land_AR2i_IGUI_elements_group"};
 		idd = 512;
-		class TB_AR2i_IGUI_elements_group: CA_IGUI_elements_group {
+		class ITC_Land_AR2i_IGUI_elements_group: CA_IGUI_elements_group {
 			idc = 75001;
 			x = "0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
 			y = "0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
@@ -108,7 +108,7 @@ class RscInGameUI {
 					w = "5 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_Alt_text: RangeText
+				class ITC_Land_AR2i_Alt_text: RangeText
 				{
 					idc = 75010;
 					text = "ALT [ASL]:";
@@ -117,7 +117,7 @@ class RscInGameUI {
 					w = "5 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_Alt_value: RangeText
+				class ITC_Land_AR2i_Alt_value: RangeText
 				{
 					idc = 75011;
 					text = "3825";
@@ -126,7 +126,7 @@ class RscInGameUI {
 					w = "5 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_DIR_text: RangeText {
+				class ITC_Land_AR2i_DIR_text: RangeText {
 					idc = 75012;
 					text = "DIR [DEG/MIL]:";
 					x = "18.5 * 		(0.01875 * SafezoneH)";
@@ -134,7 +134,7 @@ class RscInGameUI {
 					w = "12 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_DIR_value: RangeText {
+				class ITC_Land_AR2i_DIR_value: RangeText {
 					idc = 75013;
 					text = "120 / 1200";
 					x = "24.2 * 		(0.01875 * SafezoneH)";
@@ -142,7 +142,7 @@ class RscInGameUI {
 					w = "10 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_TGT_text: RangeText {
+				class ITC_Land_AR2i_TGT_text: RangeText {
 					idc = 75014;
 					text = "TGT GRID:";
 					x = "18.5 * 		(0.01875 * SafezoneH)";
@@ -150,7 +150,7 @@ class RscInGameUI {
 					w = "8 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_TGT_value: RangeText {
+				class ITC_Land_AR2i_TGT_value: RangeText {
 					idc = 75015;
 					text = "01234 01234";
 					x = "24.2 * 		(0.01875 * SafezoneH)";
@@ -158,7 +158,7 @@ class RscInGameUI {
 					w = "6 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_TGTalt_text: RangeText {
+				class ITC_Land_AR2i_TGTalt_text: RangeText {
 					idc = 75016;
 					text = "TGT ALT [ASL]:";
 					x = "18.5 * 		(0.01875 * SafezoneH)";
@@ -166,7 +166,7 @@ class RscInGameUI {
 					w = "8 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_TGTalt_value: RangeText {
+				class ITC_Land_AR2i_TGTalt_value: RangeText {
 					idc = 75017;
 					text = "3825";
 					x = "24.2 * 		(0.01875 * SafezoneH)";
@@ -182,7 +182,7 @@ class RscInGameUI {
 					w = "5 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class TB_AR2i_ValueGrid: RangeText {
+				class ITC_Land_AR2i_ValueGrid: RangeText {
 					idc = 75018;
 					text = "01234 01234";
 					x = "10.3 * 		(0.01875 * SafezoneH)";

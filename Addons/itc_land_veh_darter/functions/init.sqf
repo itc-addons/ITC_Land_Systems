@@ -1,10 +1,10 @@
-["tb_ar2i_onLoadTurretDisplay", {
+["itc_land_ar2i_onLoadTurretDisplay", {
 
 	[{  
 		params ["_args","_pfID"];
 		
 		disableSerialization; 
-		private _display = uiNamespace getVariable ["TB_AR2I_RscOptics_UAV_gunner",displayNull];	
+		private _display = uiNamespace getVariable ["ITC_Land_AR2I_RscOptics_UAV_gunner",displayNull];	
 		if (isNull _display) exitWith {};
 		
 		private _uavControlPos =  [ACE_Player] call ace_common_fnc_getUavControlPosition;
@@ -65,7 +65,7 @@
 		   (_display displayCtrl 75017) ctrlSetText _tgtASLdisplayed; 
 		   (_display displayCtrl 75011) ctrlSetText _uavASLDisplayed;   
 			//Draw Situational Awareness Compass
-			[] call itc_land_veh_darter_fnc_drawCompass;
+			//[] call itc_land_veh_darter_fnc_drawCompass;
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
