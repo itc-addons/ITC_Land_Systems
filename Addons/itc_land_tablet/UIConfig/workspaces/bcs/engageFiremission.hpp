@@ -73,6 +73,16 @@ class page_bcs_firemission_engage:itc_land_workspace
         w = 0.0825 * safezoneW;
         h = 0.022 * safezoneH;
     };
+    class itc_land_firemission_back: ITC_ARTY_RscButton
+    {
+        idc = 6601;
+        text = "Back"; //--- ToDo: Localize;
+        x = 0.365937 * safezoneW + safezoneX;
+        y = 0.511 * safezoneH + safezoneY;
+        w = 0.0515625 * safezoneW;
+        h = 0.044 * safezoneH;
+        action = "[""back""] call itc_land_tablet_fnc_pageInteract";
+    };
     class itc_land_firemission_next: ITC_ARTY_RscButton
     {
         idc = 6600;

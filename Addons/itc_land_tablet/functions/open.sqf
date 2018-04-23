@@ -7,7 +7,8 @@ if(!(_vehicle isKindOf "Man")) then {
   //_tabletClass = (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "itc_land" >> "tablet")  call BIS_fnc_getCfgData;
 };
 _vehicle setVariable ["apps", (configFile >> "CfgWeapons" >> _tabletClass >> "apps")  call BIS_fnc_getCfgData];
-_vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
+//_vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
+_vehicle setVariable ["app", "home"];
 
 [{
   _this select 0 params ["_display","_vehicle", "_app", "_page"];

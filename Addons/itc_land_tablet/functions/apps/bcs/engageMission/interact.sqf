@@ -1,6 +1,5 @@
 params ["_action", "_listBox", "_target", "_value"];
 _vehicle = vehicle player;
-/*
 _display = findDisplay 32562;
 if(_action == "sheafType") then {
   _type = lbText [7101, lbCurSel 7101];
@@ -13,11 +12,15 @@ if(_action == "sheafType") then {
   [_display, 7403, _hide] call itc_land_tablet_fnc_setFade;
 };
 
+if(_action == "back") then {
+  _vehicle setVariable ["page", "newMission"];
+};
 
 if(_action == "save") then {
   _curIndex = _vehicle getVariable "bcs_mission_index";
   _fireMissions = _vehicle getVariable "bcs_missions";
   _curMission = _fireMissions # _curIndex;
+  _curMission set [1, "solutionMission"];
   _type = lbText [7101, lbCurSel 7101];
   _sheaf = [_type];
   if(_type == "Special") then {
@@ -26,10 +29,7 @@ if(_action == "save") then {
     _length = parseNumber (ctrlText 7403);
     _sheaf = _sheaf + [_quick, _dir, _length];
   };
-  _fireMissions set [_curIndex, _curMission + [_sheaf]]
-};
-*/
-
-if(_action == "list") then {
-
+  _fireMissions set [_curIndex, _curMission + [_sheaf]];
+  _vehicle setVariable ["bcs_missions", _fireMissions];
+  _vehicle setVariable ["page", "solutionMission"];
 };

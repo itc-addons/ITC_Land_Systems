@@ -30,8 +30,8 @@ _defaults = [
   ["bcs_mission_index", 0]
 ];
 {
-  if(isNil{_vehicle getVariable (_x # 0)}) then {
-    _vehicle setVariable [_x # 0, _x # 1];
+  if(isNil{missionNameSpace getVariable (_x # 0)}) then {
+    missionNameSpace setVariable [_x # 0, _x # 1];
   };
 } forEach _defaults;
 

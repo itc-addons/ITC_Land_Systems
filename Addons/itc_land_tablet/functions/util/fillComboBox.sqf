@@ -3,7 +3,9 @@ lbClear _idc;
 {
   lbAdd [_idc, _x];
 }forEach _entries;
-lbSetCurSel [_idc, _selected];
+if(_selected > -1) then {
+  lbSetCurSel [_idc, _selected];
+};
 
 if(!isNil{_data}) then {
   {
