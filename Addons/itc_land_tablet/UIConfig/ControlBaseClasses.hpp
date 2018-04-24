@@ -76,6 +76,7 @@
 
 #define AIFMSGRN {172/255,255/255,153/255,1}
 
+class RscMapControl;
 class RscControlsGroup
 {
 	type = CT_CONTROLS_GROUP;
