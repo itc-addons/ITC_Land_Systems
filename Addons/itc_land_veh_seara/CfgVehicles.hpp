@@ -4,13 +4,13 @@ class CfgVehicles {
 		class Turrets {
 			class MainTurret;
 		};
-		class AnimationSources;
+		class AnimationSources;		
 	};
 	class MBT_01_base_F: Tank_F {
 		class Turrets: Turrets {
-			class MainTurret: MainTurret {};
-			class AnimationSources: AnimationSources {};			
+				class MainTurret: MainTurret {};
 		};
+		class AnimationSources: AnimationSources {};		
 	};	
 	class MBT_01_mlrs_base_F : MBT_01_base_F {
 		class Turrets : Turrets {
