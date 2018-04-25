@@ -65,6 +65,7 @@ class page_bcs_firemission_solution:itc_land_workspace
         y = 0.555 * safezoneH + safezoneY;
         w = 0.061875 * safezoneW;
         h = 0.044 * safezoneH;
+        action = "[""adjust""] call itc_land_tablet_fnc_pageInteract";
     };
     class itc_land_solution_eom: ITC_ARTY_RscButton
     {
@@ -74,6 +75,7 @@ class page_bcs_firemission_solution:itc_land_workspace
         y = 0.555 * safezoneH + safezoneY;
         w = 0.061875 * safezoneW;
         h = 0.044 * safezoneH;
+      	colorText[] = {0,0,0,0.5};
     };
     class itc_land_solution_datalink: ITC_ARTY_RscButton
     {
@@ -83,6 +85,7 @@ class page_bcs_firemission_solution:itc_land_workspace
         y = 0.467 * safezoneH + safezoneY;
         w = 0.061875 * safezoneW;
         h = 0.044 * safezoneH;
+      	colorText[] = {0,0,0,0.5};
     };
     class itc_land_solution_solup: ITC_ARTY_RscButton
     {

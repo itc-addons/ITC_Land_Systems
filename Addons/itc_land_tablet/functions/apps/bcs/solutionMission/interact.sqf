@@ -5,6 +5,9 @@ bcs_solutions params ["_btySolutions", "_gunSolutions"];
 if(_action == "back") then {
   (vehicle player) setVariable ["page", "newMission"];
 };
+if(_action == "adjust") then {
+  (vehicle player) setVariable ["page", "adjustMission"];
+};
 
 if(_action == "solup") then {
   if(_curSolution < _solutionLimit) then {
