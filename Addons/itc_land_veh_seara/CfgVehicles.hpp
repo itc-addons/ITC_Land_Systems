@@ -49,7 +49,7 @@ class CfgVehicles {
 			};
 		};		
 	};
-	class itc_land_mlrs_seara2 : itc_land_MLRS01_base {
+	class itc_land_b_mlrs_seara2 : itc_land_MLRS01_base {
 		author = "Yax";
 		displayName = "M5 mod. 0 Seara 2";
 		scope = 2;		

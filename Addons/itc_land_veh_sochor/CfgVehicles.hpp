@@ -58,7 +58,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class itc_land_sph_sochor2: itc_land_SPH02_base {
+	class itc_land_o_sph_sochor2: itc_land_SPH02_base {
 		author = "Toadball";
 		displayName = "2S9 mod. 0 Sochor 2";
 		mapSize = 12.09;

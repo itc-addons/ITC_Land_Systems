@@ -62,7 +62,7 @@ class CfgVehicles {
 		class AnimationSources: AnimationSources {};
 	
 	};
-	class itc_land_SPH_Sholef2: itc_land_SPH01_base {
+	class itc_land_b_SPH_Sholef2: itc_land_SPH01_base {
 		author = "Toadball";		
 		scope = 2;
 		displayName = "M4 mod. 0 Sholef 2";
