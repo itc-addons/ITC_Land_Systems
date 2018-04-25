@@ -36,7 +36,7 @@ _defaults = [
 } forEach _defaults;
 
 bcs_bty_guns = [["1","018058",[1800,5800,5],5,1],["2","018059",[1800,5900,5],5,1]];
-bcs_missions = [["FM0001","solutionMission",[0,-1,"020035","5","0","0",[2000,3500,5]],["Parallel","ON",0,0],0]];
+bcs_missions = [["FM0001","solutionMission",[0,-1,"020035","5","0","0",[2000,3500,5]],["Parallel","ON",0,0],0,0,0]];
 bcs_bty_name = "asdf";
 bcs_bty_type = [3,"b_82"];
 bcs_mission_index = 0;
