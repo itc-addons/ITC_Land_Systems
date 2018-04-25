@@ -9,6 +9,6 @@ if(_selected > -1) then {
 
 if(!isNil{_data}) then {
   {
-    lbSetData [_idc, _x];
+    lbSetData [_idc, _forEachIndex, _x];
   }forEach _data;
 };

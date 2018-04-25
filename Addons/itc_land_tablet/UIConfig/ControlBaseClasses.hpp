@@ -240,7 +240,7 @@ class itc_land_workspace:RscControlsGroup {
 	onLoad = "(_this # 0) ctrlShow false";
 	x = (0.344062+ POSXADJUST) * safezoneW + safezoneX;
 	y = 0.225 * safezoneH + safezoneY;
-	w = 0.422812 * safezoneW;
+	w = 0.622812 * safezoneW;
 	h = 0.506 * safezoneH;
 };
 class ITC_ARTY_ScrollBar {

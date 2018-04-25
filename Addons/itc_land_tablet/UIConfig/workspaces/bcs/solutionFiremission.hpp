@@ -83,6 +83,26 @@ class page_bcs_firemission_solution:itc_land_workspace
         w = 0.061875 * safezoneW;
         h = 0.044 * safezoneH;
     };
+    class itc_land_solution_solup: ITC_ARTY_RscButton
+    {
+        idc = 1600;
+        text = "SLN+"; //--- ToDo: Localize;
+        x = 0.70625 * safezoneW + safezoneX;
+        y = 0.324 * safezoneH + safezoneY;
+        w = 0.04125 * safezoneW;
+        h = 0.055 * safezoneH;
+        action = "[""solup""] call itc_land_tablet_fnc_pageInteract";
+    };
+    class itc_land_solution_soldn: ITC_ARTY_RscButton
+    {
+        idc = 1601;
+        text = "SLN-"; //--- ToDo: Localize;
+        x = 0.70625 * safezoneW + safezoneX;
+        y = 0.269 * safezoneH + safezoneY;
+        w = 0.04125 * safezoneW;
+        h = 0.055 * safezoneH;
+        action = "[""soldn""] call itc_land_tablet_fnc_pageInteract";
+    };
     class itc_land_solution_ordinate_text: ITC_ARTY_RscText
     {
         idc = 8018;

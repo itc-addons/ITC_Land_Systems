@@ -116,5 +116,6 @@ if(_action == "save") then {
   _mission = _missions # _index;
   _mission set [2, _saveInfo];
   _missions set [_index, _mission];
-  _vehicle setVariable ["page", "engageMission"];
+  _mission set [1, "solutionMission"];
+  _vehicle setVariable ["page", "solutionMission"];
 };
