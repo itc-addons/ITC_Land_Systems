@@ -11,6 +11,7 @@
 #define mag_10(a) a, a, a, a, a, a, a, a, a, a
 #define mag_11(a) a, a, a, a, a, a, a, a, a, a, a
 #define mag_12(a) a, a, a, a, a, a, a, a, a, a, a, a
+#define mag_24(a) a, a, a, a, a, a, a, a, a, a, a, a,a, a, a, a, a, a, a, a, a, a, a, a
 
 class CfgVehicles {
 	class Tank;
@@ -49,7 +50,13 @@ class CfgVehicles {
 		};		
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {	
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";			
+				turretInfoType = "ITC_Land_RscGunnerSightSPH";
+				weapons[] = {"itc_land_155mm_howitzer"};
+				magazines[] = {
+					mag_24("itc_land_g155hex")
+				};
+				lockWhenVehicleSpeed= 5;
+				maxHorizontalRotSpeed = "((360/20)/45)";				
 			};
 		};
 		class AnimationSources: AnimationSources {};

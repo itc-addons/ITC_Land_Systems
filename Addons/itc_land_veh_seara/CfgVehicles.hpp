@@ -35,7 +35,10 @@ class CfgVehicles {
 		};		
 		class Turrets : Turrets {
 			class MainTurret : MainTurret {
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";							
+				turretInfoType = "ITC_Land_RscGunnerSightSPH";	
+				lockWhenVehicleSpeed= 5;
+				maxHorizontalRotSpeed = "((360/20)/45)";
+				
 				weapons[] = {"itc_land_230mm_mlrs"};
 			};
 		};	
