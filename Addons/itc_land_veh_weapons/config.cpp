@@ -5,10 +5,16 @@ class CfgPatches {
 		requiredaddons[] = {"A3_Weapons_F"};
 		requiredversion = 1.8;
 		units[] = {};
-		weapons[] = {};
-		magazines[] = {};
+		weapons[] = {
+			"itc_land_155mm_howitzer",
+			"itc_land_152mm_howitzer"
+		};
+		magazines[] = {
+		};
 	};
 };
+
+class mode_semiauto;
 
 #include "ITC_Land_CfgFuzes.hpp"
 //#include "CfgFunctions.hpp"
