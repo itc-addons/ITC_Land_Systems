@@ -14,7 +14,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_referenceID_text: ITC_ARTY_RscTextBox {
     	idc = 5402;
 
-    	text = "AB1234";
+    	text = "AB0001";
     	x = 0.4175 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0464063 * safezoneW;
@@ -34,7 +34,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_position_text: ITC_ARTY_RscTextBox {
     	idc = 5404;
 
-    	text = "1234512345";
+    	text = "";
     	x = 0.5 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0515625 * safezoneW;
@@ -54,7 +54,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_elevation_text: ITC_ARTY_RscTextBox {
     	idc = 5406;
 
-    	text = "0123";
+    	text = "";
     	x = 0.592812 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0309375 * safezoneW;

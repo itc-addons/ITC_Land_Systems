@@ -110,7 +110,7 @@ class page_bcs_firemission_solution:itc_land_workspace
     class itc_land_solution_ordinate_text: ITC_ARTY_RscText
     {
         idc = 8018;
-        text = "1234m AGL"; //--- ToDo: Localize;
+        text = ""; //--- ToDo: Localize;
         x = 0.448438 * safezoneW + safezoneX;
         y = 0.467 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;
@@ -119,7 +119,7 @@ class page_bcs_firemission_solution:itc_land_workspace
     class itc_land_solution_angle_text: ITC_ARTY_RscText
     {
         idc = 8019;
-        text = "360 noscope"; //--- ToDo: Localize;
+        text = ""; //--- ToDo: Localize;
         x = 0.448438 * safezoneW + safezoneX;
         y = 0.489 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;
@@ -128,7 +128,7 @@ class page_bcs_firemission_solution:itc_land_workspace
     class itc_land_solution_distance_text: ITC_ARTY_RscText
     {
         idc = 8020;
-        text = "1337"; //--- ToDo: Localize;
+        text = ""; //--- ToDo: Localize;
         x = 0.448438 * safezoneW + safezoneX;
         y = 0.511 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;

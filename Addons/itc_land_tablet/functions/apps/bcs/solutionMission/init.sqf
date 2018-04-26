@@ -11,6 +11,17 @@ if(_calculate) then {
 };
 
 bcs_solutions params ["_btySolutions", "_gunSolutions"];
+if(count _btySolutions == 0) exitWith {
+  SETTEXT(8022,"NO SOLUTIONS");
+  lbClear 8500;
+  SETTEXT(8018,"");//ordinate
+  SETTEXT(8019,"");//angle
+  SETTEXT(8020,"");//distance
+  if(count bcs_bty_guns > 0) then {
+    _btyPos = [bcs_bty_guns] call itc_land_bcs_fnc_getBatterySolution;
+    SETTEXT(8020, str round (_btyPos distance _tgtPos));//distance
+  };
+};
 _mission set [5, (count _btySolutions) - 1];
 (_btySolutions # _curSolution) params ["_charge", "_az", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
 SETTEXT(8018, str (round _maxOrd));//ordinate

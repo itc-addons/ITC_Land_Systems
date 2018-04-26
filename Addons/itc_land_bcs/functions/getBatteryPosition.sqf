@@ -4,7 +4,7 @@
  * Returns: positionASL
  */
 params ["_gunList"];
-
+if(count _gunList == 0) exitWith {[0,0,0]};
 //add up all the eastings, northings and elevations
 _totalEasting = 0;
 _totalNorthing = 0;
