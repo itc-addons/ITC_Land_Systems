@@ -1,10 +1,8 @@
 params ["_action"];
-_vehicle = vehicle player;
+#include "..\bcsDefines.hpp"
+
 if(_action == "save") then {
-  _splashTime = ctrlText 3205;
-  _vehicle setVariable ["bcs_splash_time", _splashTime];
-  _missionCode = ctrlText 3206;
-  _vehicle setVariable ["bcs_mission_code", _missionCode];
-  _missionStart = ctrlText 3207;
-  _vehicle setVariable ["bcs_mission_start", _missionStart];
+  bcs_splash_time = UINUMBER(3205);
+  bcs_mission_code = UITEXT(3206);
+  bcs_mission_start = UINUMBER(3207);
 };

@@ -7,7 +7,8 @@ if(!(_vehicle isKindOf "Man")) then {
   //_tabletClass = (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "itc_land" >> "tablet")  call BIS_fnc_getCfgData;
 };
 _vehicle setVariable ["apps", (configFile >> "CfgWeapons" >> _tabletClass >> "apps")  call BIS_fnc_getCfgData];
-_vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
+//_vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
+_vehicle setVariable ["app", "home"];
 
 [{
   _this select 0 params ["_display","_vehicle", "_app", "_page"];
@@ -27,7 +28,7 @@ _vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
     _newPage = [_display] call itc_land_tablet_fnc_appInit; //initialize the new app
     _vehicle setVariable ["page", _newPage];
   };
-  [_display] call itc_land_tablet_fnc_app_render; //render the app
+  [_display] call itc_land_tablet_fnc_appRender; //render the app
 
   if(_vehicle getVariable "page" != _page) then { //check if page switched
     _page = _vehicle getVariable "page"; //switch the app variable

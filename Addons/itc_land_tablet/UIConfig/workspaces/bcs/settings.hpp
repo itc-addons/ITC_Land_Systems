@@ -51,6 +51,9 @@ class page_bcs_settings:itc_land_workspace
     	w = 0.0721875 * safezoneW;
     	h = 0.022 * safezoneH;
 
+      key = "splashTime";
+      setMethod = "ctrlSetText";
+
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };

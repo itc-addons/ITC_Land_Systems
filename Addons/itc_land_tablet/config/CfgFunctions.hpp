@@ -23,6 +23,9 @@ class CfgFunctions
       class setFade {
         file = "itc_land_tablet\functions\util\setFade.sqf";
       };
+      class fillComboBox {
+        file = "itc_land_tablet\functions\util\fillComboBox.sqf";
+      };
     };
   };
 };
