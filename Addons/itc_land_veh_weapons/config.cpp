@@ -17,7 +17,7 @@ class CfgPatches {
 class mode_semiauto;
 
 #include "ITC_Land_CfgFuzes.hpp"
-//#include "CfgFunctions.hpp"
+#include "CfgFunctions.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgMagazines.hpp"
