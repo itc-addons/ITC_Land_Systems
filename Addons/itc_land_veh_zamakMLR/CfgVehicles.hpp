@@ -31,8 +31,9 @@ class CfgVehicles {
 			};
 		};
 		class Turrets: Turrets {
-			class MainTurret: MainTurret {	
+			class MainTurret: MainTurret {
 				weapons[] = {"itc_land_230mm_mlrs"};
+				magazines[] = {"itc_land_m230hex_12rnd"};
 				maxHorizontalRotSpeed = "((360/20)/45)";
 				turretInfoType = "ITC_Land_RscGunnerSightSPH";
 			};
@@ -43,7 +44,7 @@ class CfgVehicles {
 				weapon = "itc_land_230mm_mlrs";
 			};
 		};
-			
+
 	};
 	class itc_land_i_mlrs_zamak: itc_land_MLRS02_base {
 		author = "Toadball";
@@ -54,7 +55,7 @@ class CfgVehicles {
 		side = 2;
 		faction = "IND_F";
 		crew = "I_Soldier_F";
-		typicalCargo[] = {"I_Soldier_F","I_Soldier_F"};		
+		typicalCargo[] = {"I_Soldier_F","I_Soldier_F"};
 	};
 	class itc_land_o_mlrs_zamak: itc_land_MLRS02_base {
 		author = "Toadball";
@@ -65,9 +66,9 @@ class CfgVehicles {
 		side = 0;
 		faction = "OPF_F";
 		crew = "O_Soldier_F";
-		typicalCargo[] = {"O_Soldier_F","O_Soldier_F"};		
+		typicalCargo[] = {"O_Soldier_F","O_Soldier_F"};
 		textureList[] = {"Hex",1};
 		hiddenSelections[] = {"Camo1","Camo2","camo3"};
-		hiddenSelectionsTextures[] = {"\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa","\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa","\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"};		
-	};	
+		hiddenSelectionsTextures[] = {"\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa","\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa","\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"};
+	};
 };

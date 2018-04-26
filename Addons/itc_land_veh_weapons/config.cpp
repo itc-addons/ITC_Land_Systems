@@ -21,3 +21,4 @@ class mode_semiauto;
 #include "CfgAmmo.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgMagazines.hpp"
+#include "CfgEventHandlers.hpp"

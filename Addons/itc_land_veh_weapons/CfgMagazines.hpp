@@ -4,7 +4,8 @@ class CfgMagazines {
         scope = 2;
         count = 1;
         nameSound = "cannon";
-    };	
+    };
 	#include "CfgMagazines_155mm.hpp"
-	#include "CfgMagazines_152mm.hpp"	
-};	
+	#include "CfgMagazines_152mm.hpp"
+	#include "CfgMagazines_230mm.hpp"	
+};

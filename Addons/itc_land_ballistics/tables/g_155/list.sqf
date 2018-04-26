@@ -1,0 +1,15 @@
+[
+  ["1","1","2","2","3","3","4","4","5","5"],
+  [
+    "itc_land_ballistics\tables\g_155\g155_chg1_la.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg1_ha.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg2_la.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg2_ha.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg3_la.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg3_ha.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg4_la.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg4_ha.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg5_la.sqf",
+    "itc_land_ballistics\tables\g_155\g155_chg5_ha.sqf"
+  ]
+]
