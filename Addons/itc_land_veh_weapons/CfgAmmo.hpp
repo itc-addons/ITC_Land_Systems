@@ -3,14 +3,14 @@ class CfgAmmo {
 	class itc_land_155mm_illum: FlareCore {
 		model = "\A3\weapons_f\ammo\shell";
 		effectFlare = "CounterMeasureFlare";
-		aimAboveTarget[] = {30, 60, 120, 180, 240, 300, 360};
+		aimAboveTarget[] = {50, 80, 140, 200, 260, 320, 380};
 		aimAboveDefault = 4;
-		triggerTime = -1;
 		triggerSpeedCoef = 1;
 		lightColor[] = {0.95, 0.95, 1, 0.5};
 		smokeColor[] = {1, 1, 1, 0.5};
-		intensity = 120000;
-		flareSize = 20;
+		brightness = 200;
+		//intensity = 180000;
+		//flareSize = 500;
 		timeToLive = 90;
 		ace_rearm_caliber = 155;
 	};	
