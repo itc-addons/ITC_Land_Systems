@@ -8,7 +8,7 @@ if (!local _gunner) exitWith {};
 _fuzeType = (vehicle _gunner) getVariable "fuzeType";
 _fuzeValue = (vehicle _gunner) getVariable "fuzeSetting";
 
-if(_fuzeType == "pd") exitWith {};
+if(_fuzeType == "pd" || isNil{_fuzeType}) exitWith {};
 
 _fuzeMethods = [
   ["delay",itc_land_veh_weapons_fnc_fuzeDelay],
