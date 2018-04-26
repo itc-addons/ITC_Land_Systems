@@ -45,7 +45,7 @@ class CfgVehicles {
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
 		  class fcs {
-			tableList = "b_155";
+			tableList = "g_155";
 		  };
 		};		
 		class Turrets: Turrets {
