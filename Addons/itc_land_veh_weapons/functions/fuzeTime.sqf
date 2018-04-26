@@ -11,6 +11,6 @@ _triggered = time > _firedTime + _fuzeTime;
 if(_triggered || !alive _projectile) exitWith {
   deleteVehicle _projectile;
   [_pfhId] call CBA_fnc_removePerFrameHandler;
-  _subMunition = getText (configFile >> "CfgMagazines" >> _magazine >> "ITC_subMunition");
+  _subMunition = getText (configFile >> "CfgMagazines" >> _magazine >> "itc_land_submunition");
   _subMunition createVehicle _position;
 };

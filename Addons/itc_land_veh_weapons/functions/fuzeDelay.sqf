@@ -12,7 +12,7 @@ if (alive _projectile) then {
 
 if(!alive _projectile) exitWith {
   [_pfhId] call CBA_fnc_removePerFrameHandler;
-  _subMunition = getText (configFile >> "CfgMagazines" >> _magazine >> "ITC_subMunition");
+  _subMunition = getText (configFile >> "CfgMagazines" >> _magazine >> "itc_land_submunition");
   //_lastFrameLength = time - _lastFrameTime;
   //_lastSpeed = vectorMagnitude _velocity;
   //player sideChat format["last speed %1ms based on %2",_lastSpeed,_velocity];

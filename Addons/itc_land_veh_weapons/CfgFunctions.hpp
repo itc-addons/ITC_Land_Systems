@@ -1,8 +1,11 @@
 class CfgFunctions {
   class itc_land_veh_weapons {
     class functions {
-      class firedFuze {
-        file = "itc_land_veh_weapons\functions\firedFuze.sqf";
+      class fired {
+        file = "itc_land_veh_weapons\functions\fired.sqf";
+      };
+      class firedMof35 {
+        file = "itc_land_veh_weapons\functions\firedMof35.sqf";
       };
       class fuzeDelay {
         file = "itc_land_veh_weapons\functions\fuzeDelay.sqf";

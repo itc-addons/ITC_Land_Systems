@@ -57,6 +57,13 @@
 			maxRange = 2;
 			maxRangeProbab = 0.01;
 		};
+		class EventHandlers
+		{
+				class itc_land_veh_weapons
+				{
+						fired = "_this call itc_land_veh_weapons_fnc_fired;";
+				};
+		};
 	};
 
 	class itc_land_155mm_howitzer: itc_land_howitzer {
@@ -65,10 +72,7 @@
 		displayName = "H155 L/52";
 	};
 	class itc_land_152mm_howitzer: itc_land_howitzer {
-		scope = 1;		
+		scope = 1;
 		#include "CfgWeapons_howitzers_magazines152mm.hpp"
-		displayName = "H152 L/52";		
+		displayName = "H152 L/52";
 	};
-	
-	
-	
