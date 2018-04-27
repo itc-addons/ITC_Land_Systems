@@ -7,3 +7,9 @@ _event = configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "firedEvent";
 if (isText _event) then {
     _this call (missionNamespace getVariable [getText _event, {}]);
 };
+
+
+_dispersionEvent = configFile >> "CfgMagazines" >> _magazine >> "dispersionEvent";
+if (isText _dispersionEvent) then {
+    _this call (missionNamespace getVariable [getText _dispersionEvent, {}]);
+};

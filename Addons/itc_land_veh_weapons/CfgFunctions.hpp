@@ -16,6 +16,9 @@ class CfgFunctions {
       class fuzeProx {
         file = "itc_land_veh_weapons\functions\fuzeProx.sqf";
       };
+      class adjustMuzzleVelG15x {
+        file = "itc_land_veh_weapons\functions\adjustMuzzleVelG15x.sqf";
+      };
     };
   };
 };

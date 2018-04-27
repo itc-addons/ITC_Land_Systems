@@ -79,7 +79,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
     class itc_land_target_field3_text: ITC_ARTY_RscText
     {
         idc = 9022;
-        text = "UD"; //--- ToDo: Localize;
+        text = "LR"; //--- ToDo: Localize;
         x = 0.365937 * safezoneW + safezoneX;
         y = 0.423 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;
@@ -88,7 +88,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
     class itc_land_target_field4_text: ITC_ARTY_RscText
     {
         idc = 9023;
-        text = "LR"; //--- ToDo: Localize;
+        text = "UD"; //--- ToDo: Localize;
         x = 0.365937 * safezoneW + safezoneX;
         y = 0.445 * safezoneH + safezoneY;
         w = 0.0515625 * safezoneW;

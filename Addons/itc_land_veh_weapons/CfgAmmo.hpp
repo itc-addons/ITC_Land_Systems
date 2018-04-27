@@ -13,10 +13,13 @@ class CfgAmmo {
 		//flareSize = 500;
 		timeToLive = 90;
 		ace_rearm_caliber = 155;
-	};	
-	class Sh_155mm_AMOS;
-	class itc_land_155mm_helper: Sh_155mm_AMOS {
-		explosionTime = 0.0001;	
 	};
-	
+	class Sh_155mm_AMOS;
+	class itc_land_155mm: Sh_155mm_AMOS {
+		artilleryLock = 0;
+	};
+	class itc_land_155mm_helper: itc_land_155mm {
+		explosionTime = 0.0001;
+	};
+
 };
