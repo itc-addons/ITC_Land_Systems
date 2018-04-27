@@ -23,7 +23,7 @@ _this spawn {
       if(!_canIntercept && alive _target && _descending) then {
         deleteVehicle _target;
       } else {
-        _target setPos (_projectile modelToWorld [0,-5,0]);
+        _target setPos (_projectile modelToWorld [1,-5,1]);
         _target setVelocity (velocity _projectile);
       };
   }, 0, [_projectile, _target]] call CBA_fnc_addPerFrameHandler;
