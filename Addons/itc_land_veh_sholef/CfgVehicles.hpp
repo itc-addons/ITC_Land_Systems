@@ -53,7 +53,10 @@ class CfgVehicles {
 				turretInfoType = "ITC_Land_RscGunnerSightSPH";
 				weapons[] = {"itc_land_155mm_howitzer"};
 				magazines[] = {
-					mag_24("itc_land_g155hex")
+					mag_24("itc_land_g155hex"),
+					mag_10("itc_land_g155smo"),
+					mag_5("itc_land_g155ill"),
+					mag_5("itc_land_g155pgm")
 				};
 				lockWhenVehicleSpeed= 5;
 				maxHorizontalRotSpeed = "((360/20)/45)";				
