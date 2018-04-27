@@ -1,15 +1,15 @@
 [
   ["1","1","2","2","3","3","4","4","5","5"],
   [
-    "itc_land_ballistics\tables\g_152\g152_chg1_la.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg1_ha.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg2_la.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg2_ha.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg3_la.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg3_ha.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg4_la.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg4_ha.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg5_la.sqf",
-    "itc_land_ballistics\tables\g_152\g152_chg5_ha.sqf"
+    "itc_land_ballistics\tables\g_152\g152_ch1_la.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch1_ha.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch2_la.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch2_ha.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch3_la.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch3_ha.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch4_la.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch4_ha.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch5_la.sqf",
+    "itc_land_ballistics\tables\g_152\g152_ch5_ha.sqf"
   ]
 ]

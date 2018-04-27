@@ -47,7 +47,7 @@
 			reloadSound[] = {"A3\sounds_f\dummysound",1,1,20};
 			reloadTime = 8;
 			artilleryDispersion = 3.2;
-			artilleryCharge = 0.19;
+			artilleryCharge = 1;
 			aiRateOfFire = 1;
 			aiRateOfFireDistance = 10;
 			minRange = 0;
