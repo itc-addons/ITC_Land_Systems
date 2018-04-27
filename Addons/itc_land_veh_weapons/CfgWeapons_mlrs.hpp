@@ -10,4 +10,13 @@ class itc_land_230mm_mlrs : rockets_230mm_GAT {
     artilleryCharge = 1;
 		reloadTime = 0.2;
   };
+	class GunParticles
+	{
+		class FirstEffect
+		{
+			effectName = "itc_land_particles_rockets_firedBlast";
+			positionName = "Konec hlavne";
+			directionName = "Usti hlavne";
+		};
+	};
 };

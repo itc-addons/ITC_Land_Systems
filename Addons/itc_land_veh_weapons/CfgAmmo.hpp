@@ -13,10 +13,14 @@ class CfgAmmo {
 		//flareSize = 500;
 		timeToLive = 90;
 		ace_rearm_caliber = 155;
-	};	
+	};
 	class Sh_155mm_AMOS;
 	class itc_land_155mm_helper: Sh_155mm_AMOS {
-		explosionTime = 0.0001;	
+		explosionTime = 0.0001;
 	};
-	
+
+	class SubmunitionBase;
+	class R_230mm_HE : SubmunitionBase {
+		effectFly = "itc_land_particles_rockets_smokeTrail";
+	};
 };
