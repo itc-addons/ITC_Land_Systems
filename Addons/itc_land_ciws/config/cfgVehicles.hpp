@@ -1,3 +1,6 @@
+class SensorTemplateIR;
+class SensorTemplateDataLink;
+class SensorTemplateActiveRadar;
 class CfgVehicles {
   class B_UAV_01_F;
   class itc_land_shell_b : B_UAV_01_F {
@@ -50,6 +53,63 @@ class CfgVehicles {
         maxVerticalRotSpeed = 3;
       };
     };
+		class Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class IRSensorComponent: SensorTemplateIR
+					{
+						class AirTarget
+						{
+							minRange = 500;
+							maxRange = 4000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = 1;
+						};
+						class GroundTarget
+						{
+							minRange = 500;
+							maxRange = 3500;
+							objectDistanceLimitCoef = 1;
+							viewDistanceLimitCoef = 1;
+						};
+						typeRecognitionDistance = 3500;
+						maxTrackableSpeed = 600;
+						angleRangeHorizontal = 60;
+						angleRangeVertical = 40;
+						animDirection = "mainGun";
+						aimDown = -0.5;
+					};
+					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
+					{
+						class AirTarget
+						{
+							minRange = 20000;
+							maxRange = 20000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = -1;
+						};
+						class GroundTarget
+						{
+							minRange = 7000;
+							maxRange = 7000;
+							objectDistanceLimitCoef = -1;
+							viewDistanceLimitCoef = -1;
+						};
+						typeRecognitionDistance = 20000;
+						angleRangeHorizontal = 360;
+						angleRangeVertical = 180;
+						aimDown = -45;
+						groundNoiseDistanceCoef = 0.1;
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+					};
+				};
+			};
+		};
   };
   /*
 
