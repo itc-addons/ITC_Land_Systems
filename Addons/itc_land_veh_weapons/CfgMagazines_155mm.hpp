@@ -6,7 +6,7 @@
 		displayNameShort = "G155 HE";
 		itc_land_fuze = "mof35_mod0";
 		itc_land_submunition = "itc_land_155mm_helper";	
-		itc_land_charge_format = "itc_land_g155hex_chg%1";	
+		itc_land_charge_format = "itc_land_g155hex_chg%1"; 		
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;				
 	};
@@ -23,7 +23,7 @@
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 SMOKE";
 		itc_land_fuze = "mof35_mod1";
-		itc_land_charge_format = "itc_land_g155smo_chg%1";	
+		itc_land_charge_format = "itc_land_g155smo_chg%1";
 		itc_land_CountInAH = 1;	
 		itc_land_maxChargeIndex = 5;				
 	};
@@ -40,7 +40,7 @@
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 ICM";
 		itc_land_fuze = "mof35_mod1";
-		itc_land_charge_format = "itc_land_g155icm_chg%1";	
+		itc_land_charge_format = "itc_land_g155icm_chg%1";
 		itc_land_CountInAH = 1;	
 		itc_land_maxChargeIndex = 5;				
 	}; 
@@ -74,7 +74,7 @@
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 MAP";
 		itc_land_fuze = "mof35_mod1";
-		itc_land_charge_format = "itc_land_g155map_chg%1";	
+		itc_land_charge_format = "itc_land_g155map_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;				
 	}; 
@@ -92,7 +92,7 @@
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 PGM";
 		itc_land_fuze = "mof35_mod2";
-		itc_land_guidance = "gps_inertial";
+		itc_land_guidance[] = {"gps_inertial","itc_land_guidance_fnc_pgm15x"};;
 		itc_land_submunition = "itc_land_155mm_helper";	
 		itc_land_charge_format = "itc_land_g155pgm_chg%1";
 		itc_land_CountInAH = 1;		
@@ -111,7 +111,7 @@
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 PGM";
 		itc_land_fuze = "mof35_mod2";
-		itc_land_guidance = "laser_coded";
+		itc_land_guidance[] = {"laser_coded","itc_land_guidance_fnc_lgm15x"};
 		itc_land_submunition = "itc_land_155mm_helper";	
 		itc_land_charge_format = "itc_land_g155lgm_chg%1";
 		itc_land_CountInAH = 1;	
