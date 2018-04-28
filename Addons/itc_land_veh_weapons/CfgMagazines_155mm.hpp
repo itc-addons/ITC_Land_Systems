@@ -140,3 +140,24 @@
 	class itc_land_g155ill_chg3: itc_land_g155ill { initSpeed = 486; itc_land_CountInAH = 0;  };	
 	class itc_land_g155ill_chg4: itc_land_g155ill { initSpeed = 648; itc_land_CountInAH = 0;  };
 	class itc_land_g155ill_chg5: itc_land_g155ill { initSpeed = 810; itc_land_CountInAH = 0;  };
+
+	class itc_land_g155ext: itc_land_how_mag {
+		author = "Yax";
+		initSpeed = 162;
+		displayName = "G155 EXTRA";
+		ammo = "itc_land_155mm_inert";
+		itc_land_submunitionCount = 2;
+		itc_land_submunitionScript = "itc_land_veh_weapons_fnc_deployExtra";
+		itc_land_heightModifier = 60;
+		itc_land_timeModifier = -4;
+		muzzleImpulseFactor[] = {15, 30};
+		displayNameShort = "G155 EXTRA";
+		itc_land_fuze = "mof35_mod3";
+		itc_land_charge_format = "itc_land_g155ext_chg%1";
+		itc_land_CountInAH = 1;
+	};
+	class itc_land_g155ext_chg1: itc_land_g155ext { initSpeed = 162; itc_land_CountInAH = 0;  };
+	class itc_land_g155ext_chg2: itc_land_g155ext { initSpeed = 324; itc_land_CountInAH = 0;  };
+	class itc_land_g155ext_chg3: itc_land_g155ext { initSpeed = 486; itc_land_CountInAH = 0;  };
+	class itc_land_g155ext_chg4: itc_land_g155ext { initSpeed = 648; itc_land_CountInAH = 0;  };
+	class itc_land_g155ext_chg5: itc_land_g155ext { initSpeed = 810; itc_land_CountInAH = 0;  };

@@ -16,7 +16,11 @@ class CfgAmmo {
 	};
 	class Sh_155mm_AMOS;
 	class itc_land_155mm: Sh_155mm_AMOS {
-		artilleryLock = 0;
+		//artilleryLock = 0;
+	};
+	class itc_land_155mm_inert: itc_land_155mm {
+		indirectHitRange = 1;
+		indirectHit = 100;
 	};
 	class itc_land_155mm_helper: itc_land_155mm {
 		explosionTime = 0.0001;

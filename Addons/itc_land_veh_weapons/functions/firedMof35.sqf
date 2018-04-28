@@ -1,6 +1,6 @@
 /*
  * Author: Yax
- * Fired event for ITC Howitzers with fuzed shells
+ * Fired event for ITC Howitzers with Mof35 fuzed shells
  */
 params ["", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!local _gunner) exitWith {};
