@@ -7,6 +7,7 @@ ctrlShow [13502, true];
 SETTEXT(4303,bcs_bty_name);
 
 _tables = (configFile >> "itc_land_ballistics" >> "availableTables")  call BIS_fnc_getCfgData;
+bcs_availableTables = _tables;
 _gunNames = _tables apply {((configFile >> "CfgVehicles" >> _x # 0 >> "displayName")  call BIS_fnc_getCfgData)};
 _shellTypes = _tables apply {_x # 1};
 [4304,_gunNames,(bcs_bty_type # 0),_shellTypes] call itc_land_tablet_fnc_fillComboBox;

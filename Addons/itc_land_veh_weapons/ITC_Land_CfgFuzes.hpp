@@ -21,5 +21,9 @@ class ITC_Land_CfgFuzes {
 		modeDesc[] = {"Proximity","Point Detonate","Delay"};
     firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
 	};
-
+	class mof35_mod3: mof35_mod0 { //FOR CARGO SHELLS LIKE EXTRA
+		modes[] = {"time"};
+		modeDesc[] = {"Time"};
+    firedEvent = "itc_land_veh_weapons_fnc_firedMof35Mod3";
+	};
 };

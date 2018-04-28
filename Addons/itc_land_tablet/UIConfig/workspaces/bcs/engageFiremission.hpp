@@ -2,6 +2,24 @@ class page_bcs_firemission_engage:itc_land_workspace
 {
   idc = 13505;
   class Controls {
+    class itc_land_engage_ammoType_text: ITC_ARTY_RscText
+    {
+        idc = 7018;
+        text = "Ammo Type"; //--- ToDo: Localize;
+        x = 0.365937 * safezoneW + safezoneX;
+        y = 0.291 * safezoneH + safezoneY;
+        w = 0.0515625 * safezoneW;
+        h = 0.022 * safezoneH;
+    };
+    class itc_land_engage_ammoType_input: ITC_ARTY_RscComboBox
+    {
+        idc = 7100;
+        x = 0.427812 * safezoneW + safezoneX;
+        y = 0.291 * safezoneH + safezoneY;
+        w = 0.0825 * safezoneW;
+        h = 0.022 * safezoneH;
+        onLBSelChanged = "[""ammoType""] call itc_land_tablet_fnc_pageInteract";
+    };
     class itc_land_engagement_sheaf_text: ITC_ARTY_RscText
     {
         idc = 7019;
