@@ -6,7 +6,7 @@ params ["", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!local _gunner) exitWith {};
 
 _fuzeType = "time";
-_fuzeValue = itc_land_fuzeValue;
+_fuzeValue = itc_land_fuzeValues;
 
 [{
   params ["_pfhValues","_pfhId"];

@@ -4,9 +4,11 @@
  */
 params ["", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!local _gunner) exitWith {};
+_fuzeType = itc_land_fuzeMode;
+//_fuzeType = (vehicle _gunner) getVariable "fuzeType";
+_fuzeValue = itc_land_fuzeValues;
+//_fuzeValue = (vehicle _gunner) getVariable "fuzeSetting";*/
 
-_fuzeType = (vehicle _gunner) getVariable "fuzeType";
-_fuzeValue = (vehicle _gunner) getVariable "fuzeSetting";
 
 if(isNil{_fuzeType}) exitWith {};
 if(_fuzeType == "" || _fuzeType == "pd") exitWith {};
