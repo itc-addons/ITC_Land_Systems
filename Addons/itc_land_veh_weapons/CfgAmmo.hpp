@@ -25,5 +25,11 @@ class CfgAmmo {
 	class itc_land_155mm_helper: itc_land_155mm {
 		explosionTime = 0.0001;
 	};
+	class Cluster_155mm_AMOS;
+	class itc_land_155mm_dpicm_helper: Cluster_155mm_AMOS {
+		triggerTime = 0.05;
+		submunitionConeType[] = {"randomcenter",72};
 
+		submunitionAmmo[] = {"Mo_cluster_AP",0.33,"Mo_cluster_Bomb_01_F",0.66,"Mo_cluster_AP_UXO_deploy",0.07};
+	};
 };
