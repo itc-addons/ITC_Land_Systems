@@ -9,6 +9,6 @@ _shellTypes = bcs_availableTables # (bcs_bty_type # 0) # 2;
 _shellNames = _shellTypes apply {((configFile >> "CfgMagazines" >> _x >> "displayName")  call BIS_fnc_getCfgData)};
 [7100,_shellNames,_shellTypeIndex,_shellTypes] call itc_land_tablet_fnc_fillComboBox;
 
-[7101,["Parallel","Converaged","Linear","Open","Special"],_sheafTypeIndex] call itc_land_tablet_fnc_fillComboBox;
+[7101,["Parallel","Converged","Linear","Open","Special"],_sheafTypeIndex] call itc_land_tablet_fnc_fillComboBox;
 
-[7401,["On","Off"],_sheafTypeIndex] call itc_land_tablet_fnc_fillComboBox;
+[7401,["On","Off"],_quick] call itc_land_tablet_fnc_fillComboBox;

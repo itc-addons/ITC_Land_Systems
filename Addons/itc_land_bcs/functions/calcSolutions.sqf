@@ -16,11 +16,32 @@ _batteryPos = [_guns] call itc_land_bcs_fnc_getBatteryPosition;
 _batterySolution = [_shellType, _batteryPos, _batteryPos # 2, 0, _targetPos, _targetPos # 2] call itc_land_ballistics_fnc_calcShellTypeSolutions;
 
 _gunTargets = [];
-switch(_sheafType) do {
-  case 0: { //0: Parralel, 1: Converged, 2: Linear, 3: Open, 4: Special
+_gunTargetLine = ((_batteryPos getDir _targetPos)/360*6400);
+switch(_sheafType) do { //0: Parralel, 1: Converged, 2: Linear, 3: Open, 4: Special
+  case 0: { //Parralel
     {
       _x params ["_num", "_posStr", "_pos", "_elev", "_dir"];
       _gunTargets pushBack (_targetPos vectorAdd (_pos vectorDiff _batteryPos));
+    }forEach _guns;
+  };
+  case 1: { //converged
+    {
+      _gunTargets pushBack _targetPos;
+    }forEach _guns;
+  };
+  case 2: { //linear
+    {_gunTargets pushBack ([_targetPos, _gunTargetLine, 0, (40 * (_forEachIndex - 1)), 0] call itc_land_bcs_fnc_adjustGrid);}forEach _guns;
+  };
+  case 3: { //Open
+    {_gunTargets pushBack ([_targetPos, _gunTargetLine, 0, (60 * (_forEachIndex - 1)), 0] call itc_land_bcs_fnc_adjustGrid);}forEach _guns;
+  };
+  case 4: { //Open
+    _sheafDir = if(_sheafQuick == 1) then [{_sheafDir},{_gunTargetLine}];
+    _widthPerGun = _sheafSize / (count _guns);
+    _halfSheaf = _sheafSize / 2;
+    {
+      _offSet = ((_forEachIndex + 1) * _widthPerGun - (_widthPerGun / 2) - _halfSheaf);
+      _gunTargets pushBack ([_targetPos, _sheafDir, 0, _offSet, 0] call itc_land_bcs_fnc_adjustGrid);
     }forEach _guns;
   };
 };
