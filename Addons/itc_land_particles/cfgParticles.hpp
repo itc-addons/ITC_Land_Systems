@@ -1,8 +1,31 @@
 class CfgCloudlets {
-  #include "rockets\smokeTrail.hpp"
-  #include "rockets\rocketBlast.hpp"
+  //#include "rockets\smokeTrail.hpp"
+  //#include "rockets\rocketBlast.hpp"
 };
 
+class itc_land_particles_wpSmoke
+{
+	class Flare1
+	{
+		simulation = "light";
+		type = "Flare1";
+		position[] = {0,0,0};
+		intensity = 4;
+		interval = 0.2;
+		lifeTime = 60;
+	};
+	class SmokeBig
+	{
+		simulation = "particles";
+		type = "SmokeBig";
+		position[] = {0,0,0};
+		intensity = 4;
+		interval = 0.2;
+		lifeTime = 60;
+	};
+};
+
+/*
 class itc_land_particles_rockets_smokeTrail
 {
 	class Light1
@@ -88,3 +111,4 @@ class itc_land_particles_rockets_firedBlast
 		lifeTime = 0.5;
 	};
 };
+*/

@@ -23,4 +23,15 @@ class CfgAmmo {
 	class R_230mm_HE : SubmunitionBase {
 		effectFly = "itc_land_particles_rockets_smokeTrail";
 	};
+
+	class Smoke_120mm_AMOS_White;
+	class itc_land_155mm_smoke : Smoke_120mm_AMOS_White {
+		submunitionAmmo = "itc_land_155mm_smoke_helper";
+		submunitionConeType[] = {"poissondisc",30};
+	};
+
+	class SmokeShellArty;
+	class itc_land_155mm_smoke_helper : SmokeShellArty {
+		effectsSmoke = "itc_land_particles_wpSmoke";
+	};
 };
