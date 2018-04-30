@@ -45,6 +45,6 @@ if(_action == "save") then {
   _mission set [2, _targetPage];
   _mission set [0, UITEXT(6400)];
   SAVEMISSION(_mission);
-  _mission set [1, "solutionMission"];
-  (vehicle player) setVariable ["page", "solutionMission"];
+  _mission set [1, "engageMission"];
+  (vehicle player) setVariable ["page", "engageMission"];
 };

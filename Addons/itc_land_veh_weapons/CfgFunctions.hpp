@@ -4,8 +4,11 @@ class CfgFunctions {
       class fired {
         file = "itc_land_veh_weapons\functions\fired.sqf";
       };
-      class firedMof35 {
+      class firedMof35 { //FOR REGULAR SHELLS LIKE HE
         file = "itc_land_veh_weapons\functions\firedMof35.sqf";
+      };
+      class firedMof35Mod3 { //FOR CARGO SHELLS LIKE EXTRA
+        file = "itc_land_veh_weapons\functions\firedMof35Mod3.sqf";
       };
       class fuzeDelay {
         file = "itc_land_veh_weapons\functions\fuzeDelay.sqf";
@@ -15,6 +18,12 @@ class CfgFunctions {
       };
       class fuzeProx {
         file = "itc_land_veh_weapons\functions\fuzeProx.sqf";
+      };
+      class adjustMuzzleVelG15x {
+        file = "itc_land_veh_weapons\functions\adjustMuzzleVelG15x.sqf";
+      };
+      class deployExtra {
+        file = "itc_land_veh_weapons\functions\deployExtra.sqf";
       };
     };
   };

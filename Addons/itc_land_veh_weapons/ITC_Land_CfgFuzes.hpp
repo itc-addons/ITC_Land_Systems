@@ -7,8 +7,8 @@ class ITC_Land_CfgFuzes {
 	};
 	//Modular Fuse 35: Mod 0 All modes, subsequent numbers are more specific
 	class mof35_mod0 {
-		modes[] = {"prox","pd","time","delay"};
-		modeDesc[] = {"Proximity","Point Detonate","Time","Delay"};
+		modes[] = {"pd","prox","time","delay"};
+		modeDesc[] = {"Point Detonate","Proximity","Time","Delay"};
     firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
 	};
 	class mof35_mod1: mof35_mod0 {
@@ -17,9 +17,13 @@ class ITC_Land_CfgFuzes {
     firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
 	};
 	class mof35_mod2: mof35_mod0 {
-		modes[] = {"prox","pd","delay"};
-		modeDesc[] = {"Proximity","Point Detonate","Delay"};
+		modes[] = {"pd","prox","delay"};
+		modeDesc[] = {"Point Detonate","Proximity","Delay"};
     firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
 	};
-
+	class mof35_mod3: mof35_mod0 { //FOR CARGO SHELLS LIKE EXTRA
+		modes[] = {"time"};
+		modeDesc[] = {"Time"};
+    firedEvent = "itc_land_veh_weapons_fnc_firedMof35Mod3";
+	};
 };

@@ -23,7 +23,7 @@ _defaults = [
   ["bcs_mission_start", 1],
 
   ["bcs_bty_name", ""],
-  ["bcs_bty_type", [0,"b_155"]],
+  ["bcs_bty_type", [0,"g_155"]],
   ["bcs_bty_guns", []],
   ["bcs_locations", []],
   ["bcs_missions", []],

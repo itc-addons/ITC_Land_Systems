@@ -66,6 +66,7 @@ class page_spg_controls:itc_land_workspace
         h = 0.033 * safezoneH;
         sizeEx = 1.25 * GUI_GRID_H;
     };
+    /*
     class fcs_gun_title: ITC_ARTY_RscText
     {
         idc = 1013;
@@ -184,6 +185,7 @@ class page_spg_controls:itc_land_workspace
         w = 0.0360937 * safezoneW;
         h = 0.022 * safezoneH;
     };
+    */
     class fcs_next: ITC_ARTY_RscButton
     {
         idc = 1601;

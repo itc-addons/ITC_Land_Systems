@@ -45,7 +45,7 @@
 				SoundSetShot[] = {"Cannon155mm_Shot_SoundSet","Cannon155mm_Tail_SoundSet"};
 			};
 			reloadSound[] = {"A3\sounds_f\dummysound",1,1,20};
-			reloadTime = 8;
+			reloadTime = 0.01;
 			artilleryDispersion = 3.2;
 			artilleryCharge = 1;
 			aiRateOfFire = 1;

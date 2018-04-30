@@ -3,7 +3,7 @@ params ["_action"];
 MISSION;MISSIONPARAMS;
 bcs_solutions params ["_btySolutions", "_gunSolutions"];
 if(_action == "back") then {
-  (vehicle player) setVariable ["page", "newMission"];
+  (vehicle player) setVariable ["page", "engageMission"];
 };
 if(_action == "adjust") then {
   (vehicle player) setVariable ["page", "adjustMission"];
