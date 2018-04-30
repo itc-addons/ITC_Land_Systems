@@ -134,6 +134,8 @@
 		itc_land_charge_format = "itc_land_g152ill_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_submunition = "itc_land_155mm_illum";
+		itc_land_heightModifier = 200;
 	};
 	class itc_land_g152ill_chg1: itc_land_g152ill { initSpeed = 165.6; itc_land_CountInAH = 0;  };
 	class itc_land_g152ill_chg2: itc_land_g152ill { initSpeed = 331.2; itc_land_CountInAH = 0;  };

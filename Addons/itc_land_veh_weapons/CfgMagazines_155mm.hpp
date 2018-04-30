@@ -129,13 +129,15 @@
 		author = "Toadball";
 		initSpeed = 162;
 		displayName = "G155 ILLUM";
-		ammo = "itc_land_155mm_illum";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 ILLUM";
+		itc_land_submunition = "itc_land_155mm_illum";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g155ill_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_heightModifier = 200;
 	};
 	class itc_land_g155ill_chg1: itc_land_g155ill { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155ill_chg2: itc_land_g155ill { initSpeed = 324; itc_land_CountInAH = 0;  };
