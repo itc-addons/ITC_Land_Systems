@@ -14,11 +14,11 @@ if(!alive _projectile) exitWith {
   [_pfhId] call CBA_fnc_removePerFrameHandler;
   _subMunition = getText (configFile >> "CfgMagazines" >> _magazine >> "itc_land_submunition");
   //_lastFrameLength = time - _lastFrameTime;
-  //_lastSpeed = vectorMagnitude _velocity;
+  _lastSpeed = vectorMagnitude _velocity;
   //player sideChat format["last speed %1ms based on %2",_lastSpeed,_velocity];
   _lastFrameDist = _fuzeTime * _lastSpeed;
   _lastExplosionVector = (vectorNormalized _velocity) vectorMultiply _lastFrameDist;
-  player sideChat format ["delay fuze, distance %1 ", _lastFrameDist];
+  //player sideChat format ["delay fuze, distance %1 ", _lastFrameDist];
   _explosionPosition = _position vectorAdd _lastExplosionVector;
   //_subMunition createVehicle _explosionPosition;
 
