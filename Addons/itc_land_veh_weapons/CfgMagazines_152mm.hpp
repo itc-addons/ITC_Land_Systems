@@ -19,13 +19,15 @@
 	class itc_land_g152smo: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G152 SMOKE";
-		ammo = "Smoke_120mm_AMOS_White";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G152 SMOKE";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g152smo_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_submunition = "itc_land_155mm_smoke";
+		itc_land_timeModifier = -0.5;
 	};
 	class itc_land_g152smo_chg1: itc_land_g152smo { initSpeed = 165.6; itc_land_CountInAH = 0;   };
 	class itc_land_g152smo_chg2: itc_land_g152smo { initSpeed = 331.2; itc_land_CountInAH = 0;   };

@@ -33,4 +33,9 @@ class CfgAmmo {
 
 		submunitionAmmo[] = {"Mo_cluster_AP",0.33,"Mo_cluster_Bomb_01_F",0.66,"Mo_cluster_AP_UXO_deploy",0.07};
 	};
+	class Smoke_120mm_AMOS_White;
+	class itc_land_155mm_smoke : Smoke_120mm_AMOS_White {
+		triggerTime = 0.05;
+		submunitionConeType[] = {"poissondisc",15};
+	};
 };
