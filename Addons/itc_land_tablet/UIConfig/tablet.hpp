@@ -9,14 +9,20 @@ class itc_land_tablet {
       workspace_background,
       workspace_header_bar,
       sidebar_background,
+			screen_home_lines,
       screen_image,
+
+			page_home_list,
 
 			page_spg_controls,
 			page_spg_status,
 			page_bcs_settings,
 			page_bcs_setup,
 			page_bcs_locations,
-			page_cbr_map
+			page_bcs_firemission_new,
+			page_bcs_firemission_engage,
+			page_bcs_firemission_solution,
+			page_bcs_firemission_adjust
   };
   objects[] = { };
   controls[]=
@@ -81,6 +87,16 @@ class itc_land_tablet {
   {
       idc = 15107;
       text = "\itc_land_tablet\UI\screen.paa";
+			h = 0.86*SafeZoneW;
+			w = 0.64*SafeZoneW;
+			x = 0.5-((0.64*SafeZoneW)/2);
+			y = 0.5-((1.03*SafeZoneW)/2);
+			style = ST_PICTURE;
+  };
+  class screen_home_lines: ITC_ARTY_RscPicture
+  {
+      idc = 15208;
+      text = "\itc_land_tablet\UI\home-lines.paa";
 			h = 0.86*SafeZoneW;
 			w = 0.64*SafeZoneW;
 			x = 0.5-((0.64*SafeZoneW)/2);
@@ -169,7 +185,7 @@ class itc_land_tablet {
 		h = 0.154 * safezoneH;
 		colorBackground[] = {0,0,0,0.9};
 		colorActive[] = {0,0,0,0.9};
-
+		onLBSelChanged = "[""sideList""] call itc_land_tablet_fnc_appInteract";
 	};
 	class app1: ITC_ARTY_RscButton
 	{
@@ -224,12 +240,21 @@ class itc_land_tablet {
 		action = "[""app"", 3] call itc_land_tablet_fnc_interact";
 	};
 
+  #include "workspaces\home\appList.hpp"
+
   #include "workspaces\spg\fcs.hpp"
   #include "workspaces\spg\status.hpp"
 
   #include "workspaces\bcs\settings.hpp"
   #include "workspaces\bcs\setup.hpp"
   #include "workspaces\bcs\locStores.hpp"
+<<<<<<< HEAD
 
   #include "workspaces\cbr\map.hpp"
+=======
+  #include "workspaces\bcs\newFiremission.hpp"
+  #include "workspaces\bcs\engageFiremission.hpp"
+  #include "workspaces\bcs\solutionFiremission.hpp"
+  #include "workspaces\bcs\adjustFiremission.hpp"
+>>>>>>> 7c854ccd87416c1933206240b2c07f19b1f307ca
 };

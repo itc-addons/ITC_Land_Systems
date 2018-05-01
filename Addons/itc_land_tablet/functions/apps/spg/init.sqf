@@ -17,10 +17,11 @@ if(!_canOpen) exitWith {
   ""
 };
 
-_vehicleName = (configFile >> "CfgVehicles" >> typeOf (vehicle player) >> "displayName")  call BIS_fnc_getCfgData;
-[_display, IDC_header1, _vehicleName] call itc_land_tablet_fnc_setText;
-[_display, IDC_header2, "Vehicle Systems"] call itc_land_tablet_fnc_setText;
+[_display, IDC_header1, "Vehicle"] call itc_land_tablet_fnc_setText;
+[_display, IDC_header2, "SP Artillery"] call itc_land_tablet_fnc_setText;
 
+[_display, IDC_sidebar_button1, 0] call itc_land_tablet_fnc_setFade;
+[_display, IDC_sidebar_button2, 0] call itc_land_tablet_fnc_setFade;
 [_display, IDC_sidebar_button1, "CFCS"] call itc_land_tablet_fnc_setText;
 [_display, IDC_sidebar_button2, "Status"] call itc_land_tablet_fnc_setText;
 

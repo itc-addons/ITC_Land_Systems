@@ -76,22 +76,7 @@
 
 #define AIFMSGRN {172/255,255/255,153/255,1}
 
-class RscMapControl;
-class RscControlsGroup
-{
-	type = CT_CONTROLS_GROUP;
-	idc = -1;
-	style = ST_MULTI;
-        x = 0;     y = 0; w = 1; h = 1;
-	shadow=0;
-	class VScrollbar
-	{
-		width = 0.021;
-		autoScrollSpeed = -1;
-		autoScrollDelay = 5;
-		autoScrollRewind = 0;
-                shadow=0;
-	};
+class RscControlsGroup;
 /*
 	class ScrollBar
 	{
@@ -104,8 +89,6 @@ class RscControlsGroup
 		border = "#(argb,8,8,3)color(1,1,1,1)";
 	};
 	*/
-	class Controls{};// an empty class telling the engine, no custom, additional controls
-};
 
 class ITC_ARTY_RscText {
 	deletable = 0;
@@ -241,7 +224,7 @@ class itc_land_workspace:RscControlsGroup {
 	onLoad = "(_this # 0) ctrlShow false";
 	x = (0.344062+ POSXADJUST) * safezoneW + safezoneX;
 	y = 0.225 * safezoneH + safezoneY;
-	w = 0.422812 * safezoneW;
+	w = 0.622812 * safezoneW;
 	h = 0.506 * safezoneH;
 };
 class ITC_ARTY_ScrollBar {

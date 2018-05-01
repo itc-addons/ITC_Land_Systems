@@ -14,7 +14,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_referenceID_text: ITC_ARTY_RscTextBox {
     	idc = 5402;
 
-    	text = "1";
+    	text = "AB0001";
     	x = 0.4175 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0464063 * safezoneW;
@@ -34,7 +34,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_position_text: ITC_ARTY_RscTextBox {
     	idc = 5404;
 
-    	text = "1234512345";
+    	text = "";
     	x = 0.5 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0515625 * safezoneW;
@@ -54,7 +54,7 @@ class page_bcs_locations:itc_land_workspace
     class locstores_elevation_text: ITC_ARTY_RscTextBox {
     	idc = 5406;
 
-    	text = "0123";
+    	text = "";
     	x = 0.592812 * safezoneW + safezoneX;
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.0309375 * safezoneW;
@@ -92,6 +92,7 @@ class page_bcs_locations:itc_land_workspace
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
+      action = "[""addLocation""] call itc_land_tablet_fnc_pageInteract";
     };
     class locstores_remove_button: ITC_ARTY_RscButton {
     	idc = 5410;
@@ -103,6 +104,7 @@ class page_bcs_locations:itc_land_workspace
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
+      action = "[""removeLocation""] call itc_land_tablet_fnc_pageInteract";
     };
     class locstores_listbox: ITC_ARTY_RscListBox {
     	idc = 5411;
@@ -114,6 +116,7 @@ class page_bcs_locations:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
     };
+    /*
     class locstores_save_button: ITC_ARTY_RscButton {
     	idc = 5412;
 
@@ -136,5 +139,6 @@ class page_bcs_locations:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
     };
+    */
   };
 };

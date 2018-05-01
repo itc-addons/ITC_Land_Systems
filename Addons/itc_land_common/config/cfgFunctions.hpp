@@ -5,6 +5,9 @@ class CfgFunctions
       class getDeflection {
         file = "itc_land_common\functions\getDeflection.sqf";
       };
+      class isLaserCode {
+        file = "itc_land_common\functions\isLaserCode.sqf";
+      };	  
     };
   };
 };

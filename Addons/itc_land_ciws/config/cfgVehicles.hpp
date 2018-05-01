@@ -17,7 +17,7 @@ class CfgVehicles {
       radarTargetSize = 0.5;
       acceleration = 0;
       scope = 1;
-      armor = 1;
+      armor = 10;
   };
   class itc_land_shell_o : itc_land_shell_b {
       crew="O_UAV_AI";

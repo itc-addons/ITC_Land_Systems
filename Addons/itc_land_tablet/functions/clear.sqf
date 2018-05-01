@@ -11,3 +11,5 @@
 [_display, IDC_sidebar_button5, 1] call itc_land_tablet_fnc_setFade;
 
 [_display, IDC_fire_mission_list, 1] call itc_land_tablet_fnc_setFade;
+
+[_display, 15208, 1] call itc_land_tablet_fnc_setFade;

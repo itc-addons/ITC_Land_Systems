@@ -74,7 +74,7 @@ class page_bcs_setup:itc_land_workspace
     class btysetup_position_text: ITC_ARTY_RscTextBox {
     	idc = 4308;
 
-    	text = "1234512345";
+    	text = "";
     	x = 0.469062 * safezoneW + safezoneX;
     	y = 0.313 * safezoneH + safezoneY;
     	w = 0.0515625 * safezoneW;
@@ -95,7 +95,7 @@ class page_bcs_setup:itc_land_workspace
     class btysetup_elevation_text: ITC_ARTY_RscTextBox {
     	idc = 4310;
 
-    	text = "0123";
+    	text = "";
     	x = 0.567031 * safezoneW + safezoneX;
     	y = 0.313 * safezoneH + safezoneY;
     	w = 0.0309375 * safezoneW;
@@ -116,7 +116,7 @@ class page_bcs_setup:itc_land_workspace
     class btysetup_direction_text: ITC_ARTY_RscTextBox {
     	idc = 4312;
 
-    	text = "0123";
+    	text = "";
     	x = 0.644375 * safezoneW + safezoneX;
     	y = 0.313 * safezoneH + safezoneY;
     	w = 0.0309375 * safezoneW;
@@ -128,13 +128,14 @@ class page_bcs_setup:itc_land_workspace
     class btysetup_addnew_button: ITC_ARTY_RscButton {
     	idc = 4313;
 
-    	text = "ADD NEW";
+    	text = "ADD/UPDATE";
     	x = 0.5825 * safezoneW + safezoneX;
     	y = 0.533 * safezoneH + safezoneY;
     	w = 0.04125 * safezoneW;
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
+      action = "[""addGun""] call itc_land_tablet_fnc_pageInteract";
     };
     class btysetup_remove_button: ITC_ARTY_RscButton {
     	idc = 4314;
@@ -146,6 +147,7 @@ class page_bcs_setup:itc_land_workspace
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
+      action = "[""removeGun""] call itc_land_tablet_fnc_pageInteract";
     };
     class btysetup_gun_listbox: ITC_ARTY_RscListBox {
     	idc = 4315;
@@ -167,8 +169,10 @@ class page_bcs_setup:itc_land_workspace
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
+      action = "[""save""] call itc_land_tablet_fnc_pageInteract";
 
     };
+    /*
     class btysetup_discard_button: ITC_ARTY_RscButton {
     	idc = 4317;
 
@@ -180,5 +184,6 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
     };
+    */
   };
 };
