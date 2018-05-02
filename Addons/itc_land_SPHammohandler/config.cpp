@@ -10,3 +10,4 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "dialogConfig.hpp"
+#include "CfgXEH.hpp"

@@ -33,6 +33,7 @@
 				y = 0.577 * safezoneH + safezoneY;
 				w = 0.128906 * safezoneW;
 				h = 0.198 * safezoneH;
+				colorBackground[] = {0,0,0,1};
 				onLBSelChanged = "_this call itc_land_SPHammoHandler_fnc_onSelectAmmo";				
 			};			
 			class round_name: ITC_LAND_RscText {
