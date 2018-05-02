@@ -19,6 +19,8 @@ class CfgPatches {
 
 class Extended_FiredBIS_EventHandlers {
     class All {
-        eh_identifier_name = "_this call itc_land_ciws_fnc_fired";
+			class itc_land_ciws {
+        firedBIS = "_this call itc_land_ciws_fnc_fired";
+			};
     };
 };

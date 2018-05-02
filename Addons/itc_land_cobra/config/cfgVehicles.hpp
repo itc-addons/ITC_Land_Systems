@@ -1,9 +1,9 @@
 class CfgVehicles {
-  class Tank_F;
-  class LT_01_base_F : Tank_F {
+  class LT_01_base_F;
+  class LT_01_scout_base_F : LT_01_base_F {
     class EventHandlers;
   };
-  class LT_01_scout_base_F : LT_01_base_F {
+  class itc_land_COBRA01 : LT_01_scout_base_F {
 		author = "Yax";
     displayName = "AWC 305 Nyx COBRA";
     side = 2;

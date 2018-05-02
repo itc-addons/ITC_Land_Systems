@@ -20,6 +20,15 @@ class CfgFunctions {
       class scan {
         file = "itc_land_cobra\functions\scan.sqf";
       };
+      class processImpact {
+        file = "itc_land_cobra\functions\processImpact.sqf";
+      };
+      class processOrigin {
+        file = "itc_land_cobra\functions\processOrigin.sqf";
+      };
+      class processEngagement {
+        file = "itc_land_cobra\functions\processEngagement.sqf";
+      };
     };
   };
 };
