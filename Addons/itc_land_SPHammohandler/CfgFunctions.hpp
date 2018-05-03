@@ -27,7 +27,7 @@ class CfgFunctions {
 			};			
 			class firedEH {
 				file = "itc_land_SPHammohandler\functions\firedEH.sqf";
-			};					
+			};				
 		};
 	};
 };

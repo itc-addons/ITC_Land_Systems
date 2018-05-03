@@ -9,7 +9,7 @@
 	class ITC_ARTY_RscComboBox;
 	class ITC_LAND_RscComboBox: ITC_ARTY_RscComboBox {};
 	
-	class ITC_Land_SPHAmmoHandling {
+	class ITC_Land_SPHAmmoHandler {
 		idd = 86000;
 		
 		controlsBackground[] = {};

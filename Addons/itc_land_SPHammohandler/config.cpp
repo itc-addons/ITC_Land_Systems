@@ -9,5 +9,6 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"
 #include "dialogConfig.hpp"
 #include "CfgXEH.hpp"
