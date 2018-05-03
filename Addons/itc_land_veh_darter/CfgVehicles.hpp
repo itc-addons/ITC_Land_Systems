@@ -67,10 +67,10 @@ class CfgVehicles {
 	class UAV_01_base_F: Helicopter_Base_F	{
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {};
-            class Turrets: Turrets {
-				class MainTurret: MainTurret {};
-			};
-        };
+		};
+		class Turrets: Turrets {
+			class MainTurret: MainTurret {};
+		};
 	};
 
 	class ITC_Land_UAV_AR2i_base: UAV_01_base_F {

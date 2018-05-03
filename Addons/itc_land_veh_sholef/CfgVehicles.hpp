@@ -56,6 +56,7 @@ class CfgVehicles {
 					mag_24("itc_land_g155hex"),
 					mag_10("itc_land_g155smo"),
 					mag_5("itc_land_g155ill"),
+					mag_5("itc_land_g155icm"),
 					mag_5("itc_land_g155pgm")
 				};
 				lockWhenVehicleSpeed= 5;
