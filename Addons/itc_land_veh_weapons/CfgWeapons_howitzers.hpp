@@ -8,7 +8,8 @@
 		autoReload = 0;
 		modes[] = {"Single"};
 		reloadTime = 1;
-		magazineReloadTime = 1;		
+		magazineReloadTime = 1;	
+		magazines[] = {};
 		class Single: Single1 {
 			displayName = "";
 			artilleryCharge = 1;
