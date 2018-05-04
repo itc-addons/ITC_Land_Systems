@@ -19,14 +19,14 @@ class CfgVehicles {
 		class Turrets {
 			class MainTurret;
 		};
-		class AnimationSources;		
+		class AnimationSources;
 	};
 	class MBT_01_base_F: Tank_F {
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
-		class AnimationSources: AnimationSources {};		
-	};	
+		class AnimationSources: AnimationSources {};
+	};
 	class MBT_01_arty_base_F: MBT_01_base_F {
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
@@ -34,22 +34,23 @@ class CfgVehicles {
 		};
 	};
 	class B_MBT_01_arty_base_F: MBT_01_arty_base_F {
-		class AnimationSources: AnimationSources {};		
+		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret { };
-		};		
-	};	
-	
+		};
+	};
+
 	class itc_land_SPH01_base: B_MBT_01_arty_base_F {
-		artilleryScanner = 0;			
+		artilleryScanner = 0;
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
+		  mountedTablet = "itc_land_tablet_spg";
 		  class fcs {
 			tableList = "g_155";
 		  };
-		};		
+		};
 		class Turrets: Turrets {
-			class MainTurret: MainTurret {	
+			class MainTurret: MainTurret {
 				turretInfoType = "ITC_Land_RscGunnerSightSPH";
 				weapons[] = {"itc_land_155mm_howitzer"};
 				magazines[] = {
@@ -60,14 +61,14 @@ class CfgVehicles {
 					mag_5("itc_land_g155pgm")
 				};
 				lockWhenVehicleSpeed= 5;
-				maxHorizontalRotSpeed = "((360/20)/45)";				
+				maxHorizontalRotSpeed = "((360/20)/45)";
 			};
 		};
 		class AnimationSources: AnimationSources {};
-	
+
 	};
 	class itc_land_b_SPH_Sholef2: itc_land_SPH01_base {
-		author = "Toadball";		
+		author = "Toadball";
 		scope = 2;
 		displayName = "M4 mod. 0 Sholef 2";
 		mapSize = 11.83;
@@ -96,7 +97,7 @@ class CfgVehicles {
 				factions[] = {"BLU_T_F"};
 			};
 		};
-		availableForSupportTypes[] = {"Artillery"};	
+		availableForSupportTypes[] = {"Artillery"};
 	};
 	class itc_land_b_t_SPH_Sholef2: itc_land_b_SPH_Sholef2 {
 		author = "Toadball";
@@ -123,5 +124,5 @@ class CfgVehicles {
 			};
 		};
 		hiddenSelectionsTextures[] = {"A3\Armor_F_Exp\MBT_01\data\MBT_01_body_olive_CO.paa","A3\Armor_F_Exp\MBT_01\data\MBT_01_scorcher_olive_CO.paa","A3\Data_F_Exp\Vehicles\Turret_olive_CO.paa","A3\Armor_F\Data\camonet_NATO_Green_CO.paa"};
-	};	
+	};
 };

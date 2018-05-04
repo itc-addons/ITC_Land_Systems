@@ -26,6 +26,7 @@ class CfgVehicles {
 		artilleryScanner = 0;
 		class itc_land {
 			tabletInterfaces[] = {"spg"};
+		  mountedTablet = "itc_land_tablet_spg";
 			class fcs {
 				tableList = "b_230";
 			};

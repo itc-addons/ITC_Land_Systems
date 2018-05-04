@@ -26,6 +26,12 @@ class CfgFunctions
       class fillComboBox {
         file = "itc_land_tablet\functions\util\fillComboBox.sqf";
       };
+      class vehicleHasTablet {
+        file = "itc_land_tablet\functions\util\vehicleHasTablet.sqf";
+      };
+      class openVehicleTablet {
+        file = "itc_land_tablet\functions\openVehicleTablet.sqf";
+      };
     };
   };
 };
