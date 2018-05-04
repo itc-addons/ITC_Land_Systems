@@ -27,7 +27,7 @@
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
 		itc_land_submunition = "itc_land_155mm_smoke";
-		itc_land_timeModifier = -0.5;
+		itc_land_timeModifier = -1;
 	};
 	class itc_land_g155smo_chg1: itc_land_g155smo { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155smo_chg2: itc_land_g155smo { initSpeed = 324; itc_land_CountInAH = 0;  };
@@ -46,7 +46,7 @@
 		itc_land_charge_format = "itc_land_g155icm_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
-		itc_land_timeModifier = -0.5;
+		itc_land_timeModifier = -1;
 	};
 	class itc_land_g155icm_chg1: itc_land_g155icm { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155icm_chg2: itc_land_g155icm { initSpeed = 324; itc_land_CountInAH = 0;  };

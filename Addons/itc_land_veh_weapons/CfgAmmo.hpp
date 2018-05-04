@@ -29,13 +29,16 @@ class CfgAmmo {
 	class Cluster_155mm_AMOS;
 	class itc_land_155mm_dpicm_helper: Cluster_155mm_AMOS {
 		triggerTime = 0.05;
-		submunitionConeType[] = {"randomcenter",72};
-
+		triggerDistance = 0.1;
+		submunitionConeType[] = {"poissondisc",72};
 		submunitionAmmo[] = {"Mo_cluster_AP",0.33,"Mo_cluster_Bomb_01_F",0.66,"Mo_cluster_AP_UXO_deploy",0.07};
+		submunitionConeAngle = 4;
 	};
 	class Smoke_120mm_AMOS_White;
 	class itc_land_155mm_smoke : Smoke_120mm_AMOS_White {
 		triggerTime = 0.05;
+		triggerDistance = 0.1;
 		submunitionConeType[] = {"poissondisc",15};
+		submunitionConeAngle = 4;
 	};
 };
