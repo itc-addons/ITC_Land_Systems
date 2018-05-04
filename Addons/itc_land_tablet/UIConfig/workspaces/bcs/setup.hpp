@@ -128,7 +128,7 @@ class page_bcs_setup:itc_land_workspace
     class btysetup_addnew_button: ITC_ARTY_RscButton {
     	idc = 4313;
 
-    	text = "ADD/UPDATE";
+    	text = "SAVE GUN";
     	x = 0.5825 * safezoneW + safezoneX;
     	y = 0.533 * safezoneH + safezoneY;
     	w = 0.04125 * safezoneW;
