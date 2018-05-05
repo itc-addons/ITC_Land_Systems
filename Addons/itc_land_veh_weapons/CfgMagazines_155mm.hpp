@@ -167,3 +167,22 @@
 	class itc_land_g155ext_chg3: itc_land_g155ext { initSpeed = 486; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg4: itc_land_g155ext { initSpeed = 648; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg5: itc_land_g155ext { initSpeed = 810; itc_land_CountInAH = 0;  };
+
+	class itc_land_g155mca: itc_land_how_mag {
+		author = "Yax";
+		displayName = "G155 MCA";
+		ammo = "itc_land_155mm_inert";
+		itc_land_submunition = "itc_land_155mm_mca_helper";
+		muzzleImpulseFactor[] = {15, 30};
+		displayNameShort = "G155 MCA";
+		itc_land_fuze = "mof35_mod1";
+		itc_land_charge_format = "itc_land_g155mca_chg%1";
+		itc_land_CountInAH = 1;
+		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -1.5;
+	};
+	class itc_land_g155mca_chg1: itc_land_g155mca { initSpeed = 162; itc_land_CountInAH = 0;  };
+	class itc_land_g155mca_chg2: itc_land_g155mca { initSpeed = 324; itc_land_CountInAH = 0;  };
+	class itc_land_g155mca_chg3: itc_land_g155mca { initSpeed = 486; itc_land_CountInAH = 0;  };
+	class itc_land_g155mca_chg4: itc_land_g155mca { initSpeed = 648; itc_land_CountInAH = 0;  };
+	class itc_land_g155mca_chg5: itc_land_g155mca { initSpeed = 810; itc_land_CountInAH = 0;  };
