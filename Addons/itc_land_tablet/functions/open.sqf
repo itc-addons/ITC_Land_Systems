@@ -18,7 +18,7 @@ _page = if(isNil{_vehicle getVariable "page"}) then [{""},{"OPEN"}];
     [_this select 1] call CBA_fnc_removePerFrameHandler;
   };
 
-  //[_display] call itc_land_tablet_fnc_render;
+  [_display] call itc_land_tablet_fnc_render;
 
   if(_vehicle getVariable "app" != _app) then { //check if app switched
     [_display] call itc_land_tablet_fnc_clear; //clear app pages

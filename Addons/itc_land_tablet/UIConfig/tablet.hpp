@@ -11,6 +11,7 @@ class itc_land_tablet {
       sidebar_background,
 			screen_home_lines,
       screen_image,
+      screen_image_night,
 
 			page_home_list,
 
@@ -92,6 +93,11 @@ class itc_land_tablet {
 			x = 0.5-((0.64*SafeZoneW)/2);
 			y = 0.5-((1.03*SafeZoneW)/2);
 			style = ST_PICTURE;
+  };
+  class screen_image_night: screen_image
+  {
+      idc = 15117;
+      text = "\itc_land_tablet\UI\screen-night.paa";
   };
   class screen_home_lines: ITC_ARTY_RscPicture
   {
