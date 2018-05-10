@@ -112,7 +112,7 @@
 		displayName = "G152 LASER GUIDED";
 		ammo = "Sh_155mm_AMOS";
 		muzzleImpulseFactor[] = {15, 30};
-		displayNameShort = "G152 PGM";
+		displayNameShort = "G152 LGM";
 		itc_land_fuze = "mof35_mod2";
 		itc_land_guidance[] = {"laser_coded","itc_land_guidance_fnc_lgm15x"};
 		itc_land_submunition = "itc_land_155mm_helper";

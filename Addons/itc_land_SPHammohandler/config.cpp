@@ -10,5 +10,5 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
-#include "dialogConfig.hpp"
+#include "dialogConfig2.hpp"
 #include "CfgXEH.hpp"
