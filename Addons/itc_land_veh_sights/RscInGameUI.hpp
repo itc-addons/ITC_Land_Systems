@@ -34,8 +34,7 @@ class RscInGameUI {
 					w = "2.2 * 		(0.01875 * SafezoneH)";
 					h = "1 * 		(0.025 * SafezoneH)";
 				};*/
-				class CA_VisionMode: RscText
-				{
+				class CA_VisionMode: RscText {
 					idc = 179;
 					style = 1;
 					colorText[] = {0.706, 0.0745, 0.0196, 1};
@@ -191,48 +190,70 @@ class RscInGameUI {
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				/*class ITC_Land_AutoLoader_text: RscText {
+				class ITC_Land_AutoLoader: RscText {
+					style = 0;
+					sizeEx = "0.028*SafezoneH";
+					colorText[] = {0.95, 0.95, 0.95, 1};
+					shadow = 0;
+					font = "EtelkaMonospacePro";
+					text = "AUTOLOADER";
+					x = "10.5 * 		(0.01875 * SafezoneH)";
+					y = "32.6 * 		(0.025 * SafezoneH)";
+					w = "15 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};				
+				class ITC_Land_AutoLoaderStatus_text: RscText {
 					idc = 81022;
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
-					//colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "AUTOLOADER QUEUE";
+					text = "STATUS:";
 					x = "10.5 * 		(0.01875 * SafezoneH)";
-					y = "32.6 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					y = "33.4 * 		(0.025 * SafezoneH)";
+					w = "20 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-				class ITC_Land_CURAutoLoader_text: RscText {
+				class ITC_Land_CAutoLoaderAmmo_text: RscText {
 					idc = 81023;
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
-					//colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "CUR:";
+					text = "LOAD:";
 					x = "10.5 * 		(0.01875 * SafezoneH)";
-					y = "33.4 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					y = "34.2 * 		(0.025 * SafezoneH)";
+					w = "20 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};	
-				class ITC_Land_NEXTAutoLoader_text: RscText {
+				class ITC_Land_AutoLoaderFuze_text: RscText {
 					idc = 81024;
 					style = 0;
 					sizeEx = "0.028*SafezoneH";
 					colorText[] = {0.95, 0.95, 0.95, 1};
-					//colorText[] = {0.706, 0.0745, 0.0196, 1};
 					shadow = 0;
 					font = "EtelkaMonospacePro";
-					text = "NEXT:";
+					text = "FUZE:";
 					x = "10.5 * 		(0.01875 * SafezoneH)";
-					y = "34.2 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					y = "35 * 		(0.025 * SafezoneH)";
+					w = "20 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
-				};*/					
+				};					
+				class ITC_Land_AutoLoaderGuidance_text: RscText {
+					idc = 81025;
+					style = 0;
+					sizeEx = "0.028*SafezoneH";
+					colorText[] = {0.95, 0.95, 0.95, 1};
+					shadow = 0;
+					font = "EtelkaMonospacePro";
+					text = "GUIDANCE:";
+					x = "10.5 * 		(0.01875 * SafezoneH)";
+					y = "35.8 * 		(0.025 * SafezoneH)";
+					w = "20 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};							
 			};
 		};
 	};

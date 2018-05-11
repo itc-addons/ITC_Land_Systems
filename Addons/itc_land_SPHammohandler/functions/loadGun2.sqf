@@ -11,6 +11,7 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 		disableSerialization;
 		//disableUserInput true;
 		ctrlEnable [86010, false]; //disable load button
+		ctrlEnable [86009, false]; //disable apply settings button
 
 		itc_land_SPHammoHandler_status = "SAFING WEAPON";
 		sleep 3+random(2);
@@ -41,6 +42,7 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 
 			ctrlSetText [86010, "LOAD"]; //reset load button text
 			ctrlEnable [86010, true]; //re-enable load button
+			ctrlEnable [86009, true]; //re-enable apply settings button
 		};
 		//disableUserInput false;
 	};
@@ -52,7 +54,8 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 		private _vehicle = _this select 0;
 
 		ctrlEnable [86010, false]; //disable loading/unloading
-
+		ctrlEnable [86009, false]; //disable apply settings button
+		
 		itc_land_SPHammoHandler_status = "PULLING SHELL";
 		
 		//Get class of magazine to load
@@ -111,6 +114,7 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 			[86001,itc_land_selectedMagIndex] call itc_land_SPHammoHandler_fnc_onSelectAmmo;
 			ctrlSetText [86010, "UNLOAD"];
 			ctrlEnable [86010, true];
+			ctrlEnable [86009, true]; //re-enable apply settings button			
 
 			private _ctrl = ((findDisplay 32562) displayCtrl 86010);
 			ctrlSetFocus _ctrl;

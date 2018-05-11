@@ -80,7 +80,32 @@
 			};
 			(_display displayCtrl 81021) ctrlSetText _displayedMISquad;
 		    (_display displayCtrl 81019) ctrlSetText _displayedQuad;
-
+			
+			
+			//Autoloader and Gun Status Readout
+			//Gun Status
+			if (isNil "itc_land_SPHammoHandler_status") then {
+				if (currentMagazine vehicle ace_player isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
+					itc_land_SPHammoHandler_status = "READY TO FIRE";
+					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
+				} else {
+					itc_land_SPHammoHandler_status	= "WAITING";
+					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
+				};
+			};
+			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",itc_land_SPHammoHandler_status]);
+			
+			//Ammo to load
+			
+			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
+				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
+				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
+				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
+			} else {
+				(_display displayCtrl 81023) ctrlSetText "LOAD: -- N/A --";
+				(_display displayCtrl 81024) ctrlSetText "FUZE: -- N/A --";
+				(_display displayCtrl 81025) ctrlSetText "GUIDANCE: -- N/A --";				
+			};		
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
