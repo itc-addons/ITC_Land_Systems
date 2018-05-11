@@ -2,7 +2,7 @@ class CfgFunctions {
 	class itc_land_SPHammohandler {
 		class functions {
 			class onLoad {
-				file = "itc_land_SPHammohandler\functions\onLoad2.sqf";
+				file = "itc_land_SPHammohandler\functions\onLoad.sqf";
 			};
 			class fillAmmoList {
 				file = "itc_land_SPHammohandler\functions\fillAmmoList.sqf";
@@ -23,7 +23,7 @@ class CfgFunctions {
 				file = "itc_land_SPHammohandler\functions\applySettings.sqf";
 			};				
 			class loadGun {
-				file = "itc_land_SPHammohandler\functions\loadGun2.sqf";
+				file = "itc_land_SPHammohandler\functions\loadGun.sqf";
 			};				
 			class fireGun {
 				file = "itc_land_SPHammohandler\functions\fireGun.sqf";
