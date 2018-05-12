@@ -1,6 +1,6 @@
 class CfgPatches {
 	class itc_land_SPHammohandler {
-		requiredaddons[] = {"itc_land_veh_weapons"};
+		requiredaddons[] = {"itc_land_veh_weapons","itc_land_tablet"};
 		requiredversion = 1.8;
 		units[] = {};
 		weapons[] = {};
@@ -10,5 +10,5 @@ class CfgPatches {
 
 #include "CfgFunctions.hpp"
 #include "CfgVehicles.hpp"
-#include "dialogConfig2.hpp"
+#include "dialogConfig.hpp"
 #include "CfgXEH.hpp"
