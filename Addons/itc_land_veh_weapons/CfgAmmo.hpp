@@ -42,4 +42,14 @@ class CfgAmmo {
 		submunitionConeType[] = {"poissondisc",15};
 		submunitionConeAngle = 4;
 	};
+
+	class Mine_155mm_AMOS_range;
+	class itc_land_155mm_fascam_ap_helper : Mine_155mm_AMOS_range {
+		triggerTime = 0.05;
+	};
+
+	class AT_Mine_155mm_AMOS_range;
+	class itc_land_155mm_fascam_at_helper : AT_Mine_155mm_AMOS_range {
+		triggerTime = 0.05;
+	};
 };
