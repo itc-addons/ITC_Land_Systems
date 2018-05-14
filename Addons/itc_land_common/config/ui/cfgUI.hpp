@@ -28,9 +28,9 @@ class ITC_LAND_RscStructuredText: RscStructuredText {
 };
 class RscPicture;
 class ITC_LAND_RscPicture: RscPicture {
-	colorText[] = AIFMSGRN;
-	tooltipColorText[] = AIFMSGRN;
-	tooltipColorBox[] = AIFMSGRN;
+	//colorText[] = AIFMSGRN;
+	//tooltipColorText[] = AIFMSGRN;
+	//tooltipColorBox[] = AIFMSGRN;
 	style = 48;	
 };
 class RscControlsGroup;
