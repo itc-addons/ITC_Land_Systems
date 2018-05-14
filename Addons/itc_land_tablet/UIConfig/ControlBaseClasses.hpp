@@ -1,3 +1,5 @@
+//VESTIGIAL: To be removed following retesting - Toadball
+
 #define GUI_GRID_W	(0.025)
 #define GUI_GRID_H	(0.04)
 
@@ -77,18 +79,6 @@
 #define AIFMSGRN {172/255,255/255,153/255,1}
 
 class RscControlsGroup;
-/*
-	class ScrollBar
-	{
-    color[] = {1,1,1,0.6};
-		colorActive[] = {1,1,1,1};
-		colorDisabled[] = {1,1,1,0.3};
-		thumb = "#(argb,8,8,3)color(1,1,1,1)";
-		arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
-		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
-		border = "#(argb,8,8,3)color(1,1,1,1)";
-	};
-	*/
 
 class ITC_ARTY_RscText {
 	deletable = 0;

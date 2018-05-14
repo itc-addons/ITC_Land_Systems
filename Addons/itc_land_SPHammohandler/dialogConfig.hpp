@@ -1,22 +1,11 @@
-	//#define AIFMSGRN {172/255,255/255,153/255,1}
-	class ITC_ARTY_RscText;
-	class ITC_LAND_RscText: ITC_ARTY_RscText {};
-	class ITC_ARTY_RscTextBox;
-	class ITC_LAND_RscTextBox: ITC_ARTY_RscTextBox {};
-	class ITC_ARTY_RscListBox;
-	class ITC_LAND_RscListBox: ITC_ARTY_RscListBox {};
-	class ITC_ARTY_RscButton;
-	class ITC_LAND_RscButton: ITC_ARTY_RscButton {};
-	class ITC_ARTY_RscComboBox;
-	class ITC_LAND_RscComboBox: ITC_ARTY_RscComboBox {};
-	class RscFrame;	
-	#define AIFMSGRN {172/255,255/255,153/255,1}
+	#define AIFMSGRN {172/255,255/255,153/255,1}	
+	class ITC_LAND_RscText;
+	class ITC_LAND_RscButton;
+	class ITC_LAND_RscFrame;
+	class ITC_LAND_RscListBox;
+	class ITC_LAND_RscComboBox;
+	class ITC_Land_RscEdit;
 	
-	class ITC_LAND_RscFrame: RscFrame {
-		style = 0xA0;
-		colorBackground[] = {0,0,0,0};
-		colorText[] = AIFMSGRN;		
-	};	
 	class ITC_Land_SPHAmmoHandler {
 		idd = 86000;
 		
@@ -30,7 +19,7 @@
 				x = 0.422656 * safezoneW + safezoneX;
 				y = 0.5771 * safezoneH + safezoneY;
 				w = 0.283594 * safezoneW;
-				h = 0.198 * safezoneH;
+				h = 0.228 * safezoneH;
 				colorBackground[] = {0.125,0.125,0.125,1};
 				colorActive[] = {0.125,0.125,0.125,1};
 			};
@@ -44,7 +33,7 @@
 				colorBackground[] = {0.1,0.1,0.1,1};
 				colorActive[] = {0.1,0.1,0.1,1};
 			};	
-			class exitbutton: ITC_ARTY_RscButton {
+			class exitbutton: ITC_LAND_RscButton {
 				idc = 86016;
 				text = "X";
 				x = 0.690781 * safezoneW + safezoneX;
@@ -71,7 +60,7 @@
 				x = 0.29475 * safezoneW + safezoneX;
 				y = 0.578 * safezoneH + safezoneY;
 				w = 0.128906 * safezoneW;
-				h = 0.195 * safezoneH;
+				h = 0.225 * safezoneH;
 				colorBackground[] = {0,0,0,1};
 				colorSelectBackground[] = AIFMSGRN;
 				colorSelectBackground2[] = AIFMSGRN;				
@@ -81,7 +70,7 @@
 				x = 0.29475 * safezoneW + safezoneX;
 				y = 0.578 * safezoneH + safezoneY;
 				w = 0.129906 * safezoneW;
-				h = 0.195 * safezoneH;
+				h = 0.225 * safezoneH;
 			};			
 			class round_name: ITC_LAND_RscText {
 				idc = 86002;
@@ -147,7 +136,7 @@
 				w = 0.0257812 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
-			class fuzeTimeBox: ITC_LAND_RscTextBox {
+			class fuzeTimeBox: ITC_LAND_RscEdit {
 				idc = 86006;
 				text = "0"; 			
 				x = 0.45875 * safezoneW + safezoneX;
@@ -164,7 +153,7 @@
 				w = 0.0257812 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
-			class laserCodeBox: ITC_LAND_RscTextBox {
+			class laserCodeBox: ITC_LAND_RscEdit {
 				idc = 86008;
 				text = "1111"; 			
 				x = 0.45875 * safezoneW + safezoneX;
@@ -180,7 +169,7 @@
 				w = 0.020625 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
-			class gridTextBox: ITC_LAND_RscTextBox {
+			class gridTextBox: ITC_LAND_RscEdit {
 				idc = 86013;
 				x = 0.45875 * safezoneW + safezoneX;
 				y = 0.709 * safezoneH + safezoneY;
@@ -196,7 +185,7 @@
 				w = 0.020625 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
-			class altTextBox: ITC_LAND_RscTextBox {
+			class altTextBox: ITC_LAND_RscEdit {
 				idc = 86015;
 				x = 0.546406 * safezoneW + safezoneX;
 				y = 0.709 * safezoneH + safezoneY;
@@ -291,7 +280,7 @@
 				x = 0.29375 * safezoneW + safezoneX;
 				y = 0.577 * safezoneH + safezoneY;
 				w = 0.4125 * safezoneW;
-				h = 0.198 * safezoneH;
+				h = 0.228 * safezoneH;
 			};			
 		};
 		

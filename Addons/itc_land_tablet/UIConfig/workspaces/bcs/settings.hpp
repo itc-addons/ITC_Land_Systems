@@ -2,7 +2,7 @@ class page_bcs_settings:itc_land_workspace
 {
   idc = 13501;
   class Controls {
-    class bcs_settings_alerttosplash_label: ITC_ARTY_RscText
+    class bcs_settings_alerttosplash_label: ITC_LAND_RscText
     {
     	idc = 3201;
     	text = "Alert To Splash: ";
@@ -12,7 +12,7 @@ class page_bcs_settings:itc_land_workspace
     	h = 0.022 * safezoneH;
 
     };
-    class bcs_settings_voicewarning_label: ITC_ARTY_RscText
+    class bcs_settings_voicewarning_label: ITC_LAND_RscText
     {
     	idc = 3202;
     	text = "Voice Warning: ";
@@ -22,7 +22,7 @@ class page_bcs_settings:itc_land_workspace
     	h = 0.022 * safezoneH;
 
     };
-    class bcs_settings_firemission_code_label: ITC_ARTY_RscText
+    class bcs_settings_firemission_code_label: ITC_LAND_RscText
     {
     	idc = 3203;
     	text = "Firemission Code: ";
@@ -32,7 +32,7 @@ class page_bcs_settings:itc_land_workspace
     	h = 0.022 * safezoneH;
 
     };
-    class bcs_settings_firemission_start_label: ITC_ARTY_RscText
+    class bcs_settings_firemission_start_label: ITC_LAND_RscText
     {
     	idc = 3204;
     	text = "Firemission Start: ";
@@ -42,7 +42,7 @@ class page_bcs_settings:itc_land_workspace
     	h = 0.022 * safezoneH;
 
     };
-    class bcs_settings_alerttosplash_text: ITC_ARTY_RscTextBox
+    class bcs_settings_alerttosplash_text: ITC_LAND_RscEdit
     {
     	idc = 3205;
     	text = "10";
@@ -57,7 +57,7 @@ class page_bcs_settings:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class bcs_settings_firemission_code_text: ITC_ARTY_RscTextBox
+    class bcs_settings_firemission_code_text: ITC_LAND_RscEdit
     {
     	idc = 3206;
     	text = "FM";
@@ -69,7 +69,7 @@ class page_bcs_settings:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class bcs_settings_firemission_start_text: ITC_ARTY_RscTextBox
+    class bcs_settings_firemission_start_text: ITC_LAND_RscEdit
     {
     	idc = 3207;
     	text = "0001";
@@ -81,7 +81,7 @@ class page_bcs_settings:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class bcs_settings_voicewarning_combo: ITC_ARTY_RscComboBox
+    class bcs_settings_voicewarning_combo: ITC_LAND_RscComboBox
     {
     	idc = 3208;
     	text = "Off";
@@ -94,7 +94,7 @@ class page_bcs_settings:itc_land_workspace
     	colorActive[] = {0,0,0,1};
     };
 
-    class bcs_settings_save_button: ITC_ARTY_RscButton {
+    class bcs_settings_save_button: ITC_LAND_RscButton {
     	idc = 3209;
 
     	text = "Save";

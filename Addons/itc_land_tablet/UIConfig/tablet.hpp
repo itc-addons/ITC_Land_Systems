@@ -2,6 +2,7 @@
 #define POSYADJUST -0.065
 #define WSHADJUST 0.04
 #define WSWADJUST 0.125
+#include "\itc_land_common\config\ui\defines.hpp"
 
 class itc_land_tablet {
 	idd = 32562;
@@ -44,7 +45,7 @@ class itc_land_tablet {
     app3,
     app4
   };
-  class workspace_header_bar: ITC_ARTY_RscText {
+  class workspace_header_bar: ITC_LAND_RscText {
     idc = 15103;
     x = (0.396875 + POSXADJUST) * safezoneW + safezoneX;
     y = (0.247 + POSYADJUST) * safezoneH + safezoneY;
@@ -54,7 +55,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,1};
 
   };
-	class workspace_header: ITC_ARTY_RscText {
+	class workspace_header: ITC_LAND_RscText {
 		idc = 15104;
 		text = "Workspace Header";
 		x = (0.402031 + POSXADJUST) * safezoneW + safezoneX;
@@ -64,7 +65,7 @@ class itc_land_tablet {
 
 		sizeEx = 1.5 * GUI_GRID_H;
 	};
-  class header1: ITC_ARTY_RscText {
+  class header1: ITC_LAND_RscText {
     idc = 15106;
     text = "FDC SUITE";
     x = (0.31+ POSXADJUST) * safezoneW + safezoneX;
@@ -74,7 +75,7 @@ class itc_land_tablet {
 
     sizeEx = 1.75 * GUI_GRID_H;
   };
-  class header2: ITC_ARTY_RscText {
+  class header2: ITC_LAND_RscText {
     idc = 15105;
     text = "ILS - AIFMS";
     x = (0.31+ POSXADJUST) * safezoneW + safezoneX;
@@ -84,7 +85,7 @@ class itc_land_tablet {
 
     sizeEx = 1.25 * GUI_GRID_H;
   };
-  class screen_image: ITC_ARTY_RscPicture
+  class screen_image: ITC_LAND_RscPicture
   {
       idc = 15107;
       text = "\itc_land_tablet\UI\screen.paa";
@@ -99,7 +100,7 @@ class itc_land_tablet {
       idc = 15117;
       text = "\itc_land_tablet\UI\screen-night.paa";
   };
-  class screen_home_lines: ITC_ARTY_RscPicture
+  class screen_home_lines: ITC_LAND_RscPicture
   {
       idc = 15208;
       text = "\itc_land_tablet\UI\home-lines.paa";
@@ -109,7 +110,7 @@ class itc_land_tablet {
 			y = 0.5-((1.03*SafeZoneW)/2);
 			style = ST_PICTURE;
   };
-  class sidebar_background: ITC_ARTY_RscText {
+  class sidebar_background: ITC_LAND_RscText {
     idc = 15101;
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
     y = (0.247+ POSYADJUST) * safezoneH + safezoneY;
@@ -119,7 +120,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,1};
 
   };
-  class workspace_background: ITC_ARTY_RscText {
+  class workspace_background: ITC_LAND_RscText {
     idc = 15102;
     x = (0.396875+ POSXADJUST) * safezoneW + safezoneX;
     y = (0.247+ POSYADJUST) * safezoneH + safezoneY;
@@ -128,7 +129,7 @@ class itc_land_tablet {
     colorBackground[] = {0.125,0.125,0.125,1};
     colorActive[] = {0.125,0.125,0.125,1};
   };
-  class sidebar_button1: ITC_ARTY_RscButton {
+  class sidebar_button1: ITC_LAND_RscButton {
     idc = 15108;
     text = "Page 1";
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -139,7 +140,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side1""] call itc_land_tablet_fnc_interact";
   };
-  class sidebar_button2: ITC_ARTY_RscButton {
+  class sidebar_button2: ITC_LAND_RscButton {
     idc = 15109;
     text = "Page 2";
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -150,7 +151,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side2""] call itc_land_tablet_fnc_interact";
   };
-  class sidebar_button3: ITC_ARTY_RscButton {
+  class sidebar_button3: ITC_LAND_RscButton {
     idc = 15110;
     text = "Page 3";
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -161,7 +162,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side3""] call itc_land_tablet_fnc_interact";
   };
-  class sidebar_button4: ITC_ARTY_RscButton {
+  class sidebar_button4: ITC_LAND_RscButton {
     idc = 15111;
     text = "Page 4";
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -172,7 +173,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side4""] call itc_land_tablet_fnc_interact";
   };
-  class sidebar_button5: ITC_ARTY_RscButton {
+  class sidebar_button5: ITC_LAND_RscButton {
     idc = 15112;
     text = "Page 5";
 		x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -183,7 +184,7 @@ class itc_land_tablet {
     colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side5""] call itc_land_tablet_fnc_interact";
   };
-	class fire_mission_list: ITC_ARTY_RscListbox {
+	class fire_mission_list: ITC_LAND_RscListbox {
 		idc = 15114;
 		x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
 		y = (0.5+ POSYADJUST) * safezoneH + safezoneY;
@@ -193,7 +194,7 @@ class itc_land_tablet {
 		colorActive[] = {0,0,0,0.9};
 		onLBSelChanged = "[""sideList""] call itc_land_tablet_fnc_appInteract";
 	};
-	class app1: ITC_ARTY_RscButton
+	class app1: ITC_LAND_RscButton
 	{
 	  idc = 15600;
 	  x = 0.200937 * safezoneW + safezoneX;
@@ -206,7 +207,7 @@ class itc_land_tablet {
 		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 0] call itc_land_tablet_fnc_interact";
 	};
-	class app2: ITC_ARTY_RscButton
+	class app2: ITC_LAND_RscButton
 	{
     idc = 15601;
     x = 0.200937 * safezoneW + safezoneX;
@@ -219,7 +220,7 @@ class itc_land_tablet {
 		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 1] call itc_land_tablet_fnc_interact";
 	};
-	class app3: ITC_ARTY_RscButton
+	class app3: ITC_LAND_RscButton
 	{
     idc = 15602;
     x = 0.200937 * safezoneW + safezoneX;
@@ -232,7 +233,7 @@ class itc_land_tablet {
 		colorFocused[] = {-1,-1,-1,-1};
 		action = "[""app"", 2] call itc_land_tablet_fnc_interact";
 	};
-	class app4: ITC_ARTY_RscButton
+	class app4: ITC_LAND_RscButton
 	{
     idc = 15603;
     x = 0.200937 * safezoneW + safezoneX;

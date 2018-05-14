@@ -2,7 +2,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
 {
   idc = 13507;
   class Controls {
-    class itc_land_firemission_next: ITC_ARTY_RscButton
+    class itc_land_firemission_next: ITC_LAND_RscButton
     {
         idc = 9600;
         text = "Next"; //--- ToDo: Localize;
@@ -12,7 +12,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         h = 0.044 * safezoneH;
         action = "[""save""] call itc_land_tablet_fnc_pageInteract";
     };
-    class itc_land_firemission_back: ITC_ARTY_RscButton
+    class itc_land_firemission_back: ITC_LAND_RscButton
     {
         idc = 9604;
         text = "Back"; //--- ToDo: Localize;
@@ -22,7 +22,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         h = 0.044 * safezoneH;
         action = "[""back""] call itc_land_tablet_fnc_pageInteract";
     };
-    class itc_land_target_field1_text: ITC_ARTY_RscText
+    class itc_land_target_field1_text: ITC_LAND_RscText
     {
         idc = 9020;
         text = "OT"; //--- ToDo: Localize;
@@ -31,7 +31,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0515625 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field1_input: ITC_ARTY_RscTextBox
+    class itc_land_target_field1_input: ITC_LAND_RscEdit
     {
         idc = 9401;
         text = "0"; //--- ToDo: Localize;
@@ -40,7 +40,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0825 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field2_input: ITC_ARTY_RscTextBox
+    class itc_land_target_field2_input: ITC_LAND_RscEdit
     {
         idc = 9402;
         text = "0"; //--- ToDo: Localize;
@@ -49,7 +49,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0825 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field3_input: ITC_ARTY_RscTextBox
+    class itc_land_target_field3_input: ITC_LAND_RscEdit
     {
         idc = 9403;
         text = "0"; //--- ToDo: Localize;
@@ -58,7 +58,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0825 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field4_input: ITC_ARTY_RscTextBox
+    class itc_land_target_field4_input: ITC_LAND_RscEdit
     {
         idc = 9404;
         text = "0"; //--- ToDo: Localize;
@@ -67,7 +67,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0825 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field2_text: ITC_ARTY_RscText
+    class itc_land_target_field2_text: ITC_LAND_RscText
     {
         idc = 9021;
         text = "AD"; //--- ToDo: Localize;
@@ -76,7 +76,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0515625 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field3_text: ITC_ARTY_RscText
+    class itc_land_target_field3_text: ITC_LAND_RscText
     {
         idc = 9022;
         text = "LR"; //--- ToDo: Localize;
@@ -85,7 +85,7 @@ class page_bcs_firemission_adjust:itc_land_workspace
         w = 0.0515625 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class itc_land_target_field4_text: ITC_ARTY_RscText
+    class itc_land_target_field4_text: ITC_LAND_RscText
     {
         idc = 9023;
         text = "UD"; //--- ToDo: Localize;

@@ -2,7 +2,7 @@ class page_bcs_setup:itc_land_workspace
 {
   idc = 13502;
   class Controls {
-    class btysetup_bty_callsign_label: ITC_ARTY_RscText {
+    class btysetup_bty_callsign_label: ITC_LAND_RscText {
     	idc = 4301;
 
     	text = "Battery Callsign: ";
@@ -11,7 +11,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.061875 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_gun_type_label: ITC_ARTY_RscText {
+    class btysetup_gun_type_label: ITC_LAND_RscText {
     	idc = 4302;
 
     	text = "Gun Type: ";
@@ -20,7 +20,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.04125 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_bty_callsign_text: ITC_ARTY_RscTextBox {
+    class btysetup_bty_callsign_text: ITC_LAND_RscEdit {
     	idc = 4303;
 
     	text = "ARCHER";
@@ -32,7 +32,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class btysetup_gun_type_combo: ITC_ARTY_RscComboBox {
+    class btysetup_gun_type_combo: ITC_LAND_RscComboBox {
     	idc = 4304;
 
     	text = "Mk. 6 Mortar";
@@ -41,7 +41,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.118594 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_gun_number_label: ITC_ARTY_RscText {
+    class btysetup_gun_number_label: ITC_LAND_RscText {
     	idc = 4305;
 
     	text = "Gun #";
@@ -50,7 +50,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.0257812 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_gun_number_text: ITC_ARTY_RscTextBox {
+    class btysetup_gun_number_text: ITC_LAND_RscEdit {
     	idc = 4306;
 
     	text = "1";
@@ -62,7 +62,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class btysetup_position_label: ITC_ARTY_RscText {
+    class btysetup_position_label: ITC_LAND_RscText {
     	idc = 4307;
 
     	text = "Position";
@@ -71,7 +71,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.0360937 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_position_text: ITC_ARTY_RscTextBox {
+    class btysetup_position_text: ITC_LAND_RscEdit {
     	idc = 4308;
 
     	text = "";
@@ -83,7 +83,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class btysetup_elevation_label: ITC_ARTY_RscText {
+    class btysetup_elevation_label: ITC_LAND_RscText {
     	idc = 4309;
 
     	text = "Elevation";
@@ -92,7 +92,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.0360937 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_elevation_text: ITC_ARTY_RscTextBox {
+    class btysetup_elevation_text: ITC_LAND_RscEdit {
     	idc = 4310;
 
     	text = "";
@@ -104,7 +104,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class btysetup_direction_label: ITC_ARTY_RscText {
+    class btysetup_direction_label: ITC_LAND_RscText {
     	idc = 4311;
 
     	text = "Direction";
@@ -113,7 +113,7 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.0360937 * safezoneW;
     	h = 0.022 * safezoneH;
     };
-    class btysetup_direction_text: ITC_ARTY_RscTextBox {
+    class btysetup_direction_text: ITC_LAND_RscEdit {
     	idc = 4312;
 
     	text = "";
@@ -125,7 +125,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,1};
     	colorActive[] = {0,0,0,1};
     };
-    class btysetup_addnew_button: ITC_ARTY_RscButton {
+    class btysetup_addnew_button: ITC_LAND_RscButton {
     	idc = 4313;
 
     	text = "SAVE GUN";
@@ -137,7 +137,7 @@ class page_bcs_setup:itc_land_workspace
     	colorActive[] = {0,0,0,0.9};
       action = "[""addGun""] call itc_land_tablet_fnc_pageInteract";
     };
-    class btysetup_remove_button: ITC_ARTY_RscButton {
+    class btysetup_remove_button: ITC_LAND_RscButton {
     	idc = 4314;
 
     	text = "REMOVE";
@@ -149,7 +149,7 @@ class page_bcs_setup:itc_land_workspace
     	colorActive[] = {0,0,0,0.9};
       action = "[""removeGun""] call itc_land_tablet_fnc_pageInteract";
     };
-    class btysetup_gun_listbox: ITC_ARTY_RscListBox {
+    class btysetup_gun_listbox: ITC_LAND_RscListBox {
     	idc = 4315;
 
     	x = 0.365937 * safezoneW + safezoneX;
@@ -159,7 +159,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
     };
-    class btysetup_save_button: ITC_ARTY_RscButton {
+    class btysetup_save_button: ITC_LAND_RscButton {
     	idc = 4316;
 
     	text = "Save";
@@ -173,7 +173,7 @@ class page_bcs_setup:itc_land_workspace
 
     };
     /*
-    class btysetup_discard_button: ITC_ARTY_RscButton {
+    class btysetup_discard_button: ITC_LAND_RscButton {
     	idc = 4317;
 
     	text = "Discard";
