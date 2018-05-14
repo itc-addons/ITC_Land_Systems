@@ -14,6 +14,7 @@ class RscEdit;
 class ITC_LAND_RscEdit: RscEdit {
 	colorText[] = AIFMSGRN;
 	colorSelection[] = {0.1,0.1,0.1,0.85};
+	colorBackground[] =  {0,0,0,1};
 };
 class RscStructuredText;
 class ITC_LAND_RscStructuredText: RscStructuredText {
