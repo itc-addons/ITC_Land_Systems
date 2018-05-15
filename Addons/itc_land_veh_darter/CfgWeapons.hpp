@@ -18,6 +18,10 @@ class CfgWeapons {
 	class ITC_Land_O_AR2i_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2i Tayran 2 [CSAT] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "ITC_Land_O_UAV_AR2i";};
 	class ITC_Land_I_AR2i_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2i Darter 2 [AAF] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "ITC_Land_I_UAV_AR2i";};
 
+	class ITC_Land_B_AR2e_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2e Darter [NATO] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "ITC_Land_B_UAV_AR2e";};
+	class ITC_Land_O_AR2e_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2e Tayran [CSAT] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "ITC_Land_O_UAV_AR2e";};
+	class ITC_Land_I_AR2e_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2e Darter [AAF] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "ITC_Land_I_UAV_AR2e";};	
+	
 	class ITC_Land_B_UAV_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2 Darter [NATO] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "B_UAV_01_F";};
     class ITC_Land_O_UAV_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2 Tayran [CSAT]  (Packed)"; scope = 2; itc_land_darter_unPacksTo = "O_UAV_01_F";};
     class ITC_Land_I_UAV_Packed: ITC_Land_UAV_Packed_base {displayName = "AR-2 Darter [AAF] (Packed)"; scope = 2; itc_land_darter_unPacksTo = "I_UAV_01_F";};
