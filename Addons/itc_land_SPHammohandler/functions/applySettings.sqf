@@ -11,11 +11,10 @@ private _curMag = (currentMagazine _vehicle);
 
 	//Get fuze settings based on type
 	//Get fuze description from combobox
-
-	//set rendered string empty. Use switch to generate new rendered string.
+	private _fuze  = getText (configFile >> "CfgMagazines" >> itc_land_selectedMagClass >> "itc_land_fuze");
+	//set rendered string empty. Use switch to generate new rendered string and setValues.
 	private _fuzeText = "";
-	if (isNil "itc_land_fuzeDesc") then { itc_land_fuzeDesc = lbText [86004,itc_land_selectedFuzeIndex]; };
-	
+	if (isNil "itc_land_fuzeDesc") then { itc_land_fuzeDesc = lbText [86004,itc_land_selectedFuzeIndex]; };	
 	if (isNil "itc_land_fuzeValues") then { itc_land_fuzeValues = 0; };	
 	
 	switch (itc_land_fuzeMode) do {
@@ -23,7 +22,8 @@ private _curMag = (currentMagazine _vehicle);
 			_fuzeText = itc_land_fuzeDesc;
 		};
 		case "prox" : {
-			itc_land_fuzeValues = 15;
+			private _proxHOB = getNumber (configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "proxHOB");
+			itc_land_fuzeValues = _proxHOB;
 			_fuzeText = Format ["%1: %2m",itc_land_fuzeDesc,itc_land_fuzeValues];
 		};
 		case "time" : {
