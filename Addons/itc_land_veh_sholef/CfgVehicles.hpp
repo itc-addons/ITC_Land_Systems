@@ -61,7 +61,7 @@ class CfgVehicles {
 					mag_5("itc_land_g155pgm")
 				};
 				lockWhenVehicleSpeed= 5;
-				maxHorizontalRotSpeed = "((360/20)/45)";
+				maxHorizontalRotSpeed = "((360/30)/45)";
 			};
 		};
 		class AnimationSources: AnimationSources {};

@@ -11,17 +11,18 @@
 		//also remove PFH in this case.
 		if ( (cameraView != "GUNNER") || ( _vehRole != "GUNNER") ) then {
 			if (cameraView != "GUNNER") then {
-				(_display displayCtrl 81001) ctrlShow false;
+				(_display displayCtrl 82001) ctrlShow false;
 			};
 			if (_vehRole != "GUNNER") then {
-				(_display displayCtrl 81001) ctrlShow false;
+				(_display displayCtrl 82001) ctrlShow false;
 				[_pfID] call CBA_fnc_removePerFrameHandler;
 			};
+			//ace_player sideChat "itc_land_onLoad_RscAltGunnerSightSPH hiding display";
 		} else {
-
+			
 			//make sure control group is visible
-			(_display displayCtrl 81001) ctrlShow true;
-
+			(_display displayCtrl 82001) ctrlShow true;
+			//ace_player sideChat "itc_land_onLoad_RscAltGunnerSightSPH showing display";
 			//get vehicle
 			private _veh = vehicle ACE_player;
 
@@ -40,10 +41,10 @@
 				_displayedMISazi = [_MISazi, 4, 0] call CBA_fnc_formatNumber;
 			};	
 
-			private _outputAzi = format ["CA: &1 MA: %2",_displayedDir,_displayedMISazi];
+			private _outputAzi = format ["CA: %1 MA: %2",_displayedDir,_displayedMISazi];
 			//display azimuth values
-			(_display displayCtrl 81026) ctrlSetText _outputAzi;			
-		
+			(_display displayCtrl 82014) ctrlSetText _outputAzi;			
+			//ace_player sideChat format ["itc_land_onLoad_RscAltGunnerSightSPH %1",_outputAzi];
 			//Get current quadrant
 			private _weaponQuad = (_weaponDirVector call CBA_fnc_vect2Polar) select 2;
 
@@ -72,9 +73,9 @@
 				_displayedMISquad = [_MISquad, 4, 0] call CBA_fnc_formatNumber;
 			};
 
-			private _outputAzi = format ["CQ: &1 MQ: %2",_displayedDir,_displayedMISazi];
+			private _outputquad = format ["CQ: %1 MQ: %2",_displayedQuad,_displayedMISquad];
 			//display azimuth values
-			(_display displayCtrl 81027) ctrlSetText _outputAzi;			
+			(_display displayCtrl 82016) ctrlSetText _outputquad;			
 			
 			
 			//Autoloader and Gun Status Readout
@@ -88,21 +89,21 @@
 					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
 				};
 			};
-			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",itc_land_SPHammoHandler_status]);
+			(_display displayCtrl 82020) ctrlSetText (format ["STATUS: %1",itc_land_SPHammoHandler_status]);
 			
 			//Ammo to load
 			
 			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
-				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
-				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
-				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
+				(_display displayCtrl 82021) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
+				(_display displayCtrl 82022) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
+				(_display displayCtrl 82023) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
 			} else {
-				(_display displayCtrl 81023) ctrlSetText "LOAD: -- N/A --";
-				(_display displayCtrl 81024) ctrlSetText "FUZE: -- N/A --";
-				(_display displayCtrl 81025) ctrlSetText "GUIDANCE: -- N/A --";				
+				(_display displayCtrl 82021) ctrlSetText "LOAD: -- N/A --";
+				(_display displayCtrl 82022) ctrlSetText "FUZE: -- N/A --";
+				(_display displayCtrl 82023) ctrlSetText "GUIDANCE: -- N/A --";				
 			};		
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
-
+	//ace_player sideChat "itc_land_onLoad_RscAltGunnerSightSPH local event added";
 }] call CBA_fnc_addEventHandler;

@@ -24,7 +24,7 @@
 				colorActive[] = {0.125,0.125,0.125,1};
 			};
 			class headertext: ITC_LAND_RscText {
-				text = "AIFMS: AMMO HANDLER & AUTOLOADER";
+				text = "G15X: AMMO HANDLER & AUTOLOADER";
 				x = 0.29375 * safezoneW + safezoneX;
 				y = 0.555 * safezoneH + safezoneY;
 				w = 0.4125 * safezoneW;

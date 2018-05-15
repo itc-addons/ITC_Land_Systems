@@ -1,9 +1,9 @@
-["itc_land_onLoad_RscGunnerSightSPH", {
+["itc_land_onLoad_RscGunnerSightMLRS", {
 
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
-		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightSPH",displayNull];
+		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightMLRS",displayNull];
 		if (isNull _display) exitWith {};
 
 		private _vehRole = ACE_player call CBA_fnc_vehicleRole;
@@ -11,16 +11,16 @@
 		//also remove PFH in this case.
 		if ( (cameraView != "GUNNER") || ( _vehRole != "GUNNER") ) then {
 			if (cameraView != "GUNNER") then {
-				(_display displayCtrl 81001) ctrlShow false;
+				(_display displayCtrl 83001) ctrlShow false;
 			};
 			if (_vehRole != "GUNNER") then {
-				(_display displayCtrl 81001) ctrlShow false;
+				(_display displayCtrl 83001) ctrlShow false;
 				[_pfID] call CBA_fnc_removePerFrameHandler;
 			};
 		} else {
 
 			//make sure control group is visible
-			(_display displayCtrl 81001) ctrlShow true;
+			(_display displayCtrl 83001) ctrlShow true;
 
 			//get vehicle
 		   private _veh = vehicle ACE_player;
@@ -63,8 +63,8 @@
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];
 			};
 			//display azimuth values
-			(_display displayCtrl 81016) ctrlSetText _displayedMISazi;
-		    (_display displayCtrl 81014) ctrlSetText _displayedDir;
+			(_display displayCtrl 83016) ctrlSetText _displayedMISazi;
+		    (_display displayCtrl 83014) ctrlSetText _displayedDir;
 
 			//Get mission quadrant
 			private _displayedMISquad = "----";
@@ -78,46 +78,9 @@
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions", []];
 			//_vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0];
 			};
-			(_display displayCtrl 81021) ctrlSetText _displayedMISquad;
-		    (_display displayCtrl 81019) ctrlSetText _displayedQuad;
+			(_display displayCtrl 83021) ctrlSetText _displayedMISquad;
+		    (_display displayCtrl 83019) ctrlSetText _displayedQuad;
 			
-			
-			//Autoloader and Gun Status Readout
-			//Gun Status
-			if (isNil "itc_land_SPHammoHandler_status") then {
-				if (currentMagazine vehicle ace_player isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
-					itc_land_SPHammoHandler_status = "READY TO FIRE";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				} else {
-					itc_land_SPHammoHandler_status	= "WAITING";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				};
-			};
-			private _statusText = itc_land_SPHammoHandler_status;
-			if ((isNil "itc_land_roundCount") || (itc_land_roundCount < 1))then {
-				_statusText = itc_land_SPHammoHandler_status;
-				//player sideChat format ["STATUS: %1", _statusText];
-			} else {
-				if (itc_land_roundsFired == itc_land_roundCount) then {
-					_statusText = format ["%1 ( %2 / %3 ROUNDS COMPLETE )",itc_land_SPHammoHandler_status,itc_land_roundsFired,itc_land_roundCount];
-
-				} else {
-					_statusText = format ["%1 ( %2 / %3 )",itc_land_SPHammoHandler_status,(itc_land_roundsFired+1),itc_land_roundCount];
-				};
-				//player sideChat format ["STATUS: %1", _statusText];
-			};
-			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",_statusText]);
-			//Ammo to load
-			
-			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
-				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
-				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
-				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
-			} else {
-				(_display displayCtrl 81023) ctrlSetText "LOAD: -- N/A --";
-				(_display displayCtrl 81024) ctrlSetText "FUZE: -- N/A --";
-				(_display displayCtrl 81025) ctrlSetText "GUIDANCE: -- N/A --";				
-			};		
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
