@@ -94,9 +94,9 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 		_vehicle selectWeapon _weapon;
 		//reload _vehicle;
 
-		sleep 2+random(1);
+		sleep 3+random(2);
 		itc_land_SPHammoHandler_status = "INSERTING PRIMER";
-		sleep 1+random(2);
+		sleep 2+random(2);
 		itc_land_SPHammoHandler_status = "ATTACHING LANYARD";
 		sleep 1+random(1);
 		itc_land_SPHammoHandler_status = "READY TO FIRE";
@@ -114,7 +114,7 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 			[86001,itc_land_selectedMagIndex] call itc_land_SPHammoHandler_fnc_onSelectAmmo;
 			ctrlSetText [86010, "UNLOAD"];
 			ctrlEnable [86010, true];
-			ctrlEnable [86009, true]; //re-enable apply settings button			
+			ctrlEnable [86009, false];
 
 			private _ctrl = ((findDisplay 32562) displayCtrl 86010);
 			ctrlSetFocus _ctrl;

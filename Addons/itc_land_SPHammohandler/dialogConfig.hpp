@@ -160,6 +160,7 @@
 				y = 0.709 * safezoneH + safezoneY;
 				w = 0.0825 * safezoneW;
 				h = 0.022 * safezoneH;
+				colorBackground[] = {0,0,0,1};				
 			};
 			class gridText: ITC_LAND_RscText {
 				idc = 86012;
@@ -193,11 +194,30 @@
 				h = 0.022 * safezoneH;
 				colorBackground[] = {0,0,0,1};
 			};		
+			class countText: ITC_LAND_RscText {
+				idc = 86021;
+				text = "Count: ";
+				x = 0.427812 * safezoneW + safezoneX;
+				y = 0.742 * safezoneH + safezoneY;
+				w = 0.0257812 * safezoneW;
+				h = 0.022 * safezoneH;
+			};
+			class countTextBox: ITC_LAND_RscEdit {
+				idc = 86022;
+				text = "0";
+				x = 0.45875 * safezoneW + safezoneX;
+				y = 0.742 * safezoneH + safezoneY;
+				w = 0.0360937 * safezoneW;
+				h = 0.022 * safezoneH;
+				colorBackground[] = {0,0,0,1};
+			};	
+
+			//main buttons
 			class applyButton: ITC_LAND_RscButton {
 				idc = 86009;
 				text = "APPLY SETTINGS"; 
 				x = 0.469062 * safezoneW + safezoneX;
-				y = 0.742 * safezoneH + safezoneY;
+				y = 0.772 * safezoneH + safezoneY;
 				w = 0.113437 * safezoneW;
 				h = 0.022 * safezoneH;
 				action = "[] call itc_land_SPHammoHandler_fnc_applySettings";				
@@ -206,7 +226,7 @@
 				idc = 86010;
 				text = "LOAD"; 
 				x = 0.587656 * safezoneW + safezoneX;
-				y = 0.742 * safezoneH + safezoneY;
+				y = 0.772 * safezoneH + safezoneY;
 				w = 0.113437 * safezoneW;
 				h = 0.022 * safezoneH;
 				action = "[] call  itc_land_SPHammoHandler_fnc_loadGun";				
@@ -260,19 +280,33 @@
 				y = 0.69 * safezoneH + safezoneY;
 				w = 0.079 * safezoneW;
 				h = 0.022 * safezoneH;
-			};			
+			};
+			class AL_COUNT: ITC_LAND_RscText {
+				text = "COUNT: "; 
+				x = 0.587656 * safezoneW + safezoneX;
+				y = 0.709 * safezoneH + safezoneY;
+				w = 0.0360937 * safezoneW;
+				h = 0.022 * safezoneH;
+			};				
+			class AL_COUNTText: ITC_LAND_RscText {
+				idc = 86020;
+				x = 0.618594 * safezoneW + safezoneX;
+				y = 0.709 * safezoneH + safezoneY;
+				w = 0.079 * safezoneW;
+				h = 0.022 * safezoneH;
+			};					
 			//Status stuff
 			class status: ITC_LAND_RscText {
 				text = "STATUS: "; 
 				x = 0.587656 * safezoneW + safezoneX;
-				y = 0.709 * safezoneH + safezoneY;
+				y = 0.739 * safezoneH + safezoneY;
 				w = 0.0360937 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
 			class statusText: ITC_LAND_RscText {
 				idc = 86011;
 				x = 0.618594 * safezoneW + safezoneX;
-				y = 0.709 * safezoneH + safezoneY;
+				y = 0.739 * safezoneH + safezoneY;
 				w = 0.085 * safezoneW;
 				h = 0.022 * safezoneH;
 			};

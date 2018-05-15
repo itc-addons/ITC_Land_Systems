@@ -199,7 +199,7 @@ class RscInGameUI {
 					text = "STATUS:";
 					x = "10.5 * 		(0.01875 * SafezoneH)";
 					y = "33.4 * 		(0.025 * SafezoneH)";
-					w = "20 * 		(0.01875 * SafezoneH)";
+					w = "40 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
 				class ITC_Land_CAutoLoaderAmmo_text: RscText {

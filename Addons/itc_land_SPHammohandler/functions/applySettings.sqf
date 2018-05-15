@@ -78,8 +78,21 @@ private _curMag = (currentMagazine _vehicle);
 	};
 	ctrlSetText [86017, _guidanceText];
 
-
-
+	//round count
+	private _roundCount = parseNumber(ctrlText 86022);
+	//set limit of rounds to load:
+	itc_land_roundCount = _roundCount;
+	//rest count of fired rounds
+	itc_land_roundsFired = 0;
+	if (itc_land_roundCount >= 1) then {
+		ctrlSetText [86020, str itc_land_roundCount];	
+	
+	} else {
+		ctrlSetText [86020,"-- N/A --"];	
+	};
+	
+	
+	
 	//ctrlEnable [86009, false]; //disable loading/unloading
 	//ctrlSetText [86009, "UNLOAD"];
 	//ctrlEnable [86009, true];
@@ -91,7 +104,8 @@ private _curMag = (currentMagazine _vehicle);
 		[
 			_ammoText,
 			itc_land_selectedMagClass,
-			itc_land_currentChargeIndex
+			itc_land_currentChargeIndex,
+			itc_land_roundCount
 			
 		],
 		[

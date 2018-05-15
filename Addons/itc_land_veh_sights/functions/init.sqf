@@ -93,8 +93,20 @@
 					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
 				};
 			};
-			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",itc_land_SPHammoHandler_status]);
-			
+			private _statusText = itc_land_SPHammoHandler_status;
+			if ((isNil "itc_land_roundCount") || (itc_land_roundCount < 1))then {
+				_statusText = itc_land_SPHammoHandler_status;
+				//player sideChat format ["STATUS: %1", _statusText];
+			} else {
+				if (itc_land_roundsFired == itc_land_roundCount) then {
+					_statusText = format ["%1 ( %2 / %3 ROUNDS COMPLETE )",itc_land_SPHammoHandler_status,itc_land_roundsFired,itc_land_roundCount];
+
+				} else {
+					_statusText = format ["%1 ( %2 / %3 )",itc_land_SPHammoHandler_status,(itc_land_roundsFired+1),itc_land_roundCount];
+				};
+				//player sideChat format ["STATUS: %1", _statusText];
+			};
+			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",_statusText]);
 			//Ammo to load
 			
 			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
