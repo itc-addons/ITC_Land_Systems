@@ -1,4 +1,4 @@
 class CfgWeapons {
-	#include "CfgWeapons_howitzers"
-
+	#include "CfgWeapons_mlrs.hpp"
+	#include "CfgWeapons_howitzers.hpp"	
 };
