@@ -14,26 +14,33 @@
 #define mag_24(a) a, a, a, a, a, a, a, a, a, a, a, a,a, a, a, a, a, a, a, a, a, a, a, a
 
 class CfgVehicles {
-	class Tank;
+	class LandVehicle;
+	class Tank: LandVehicle {
+        class ACE_SelfActions;	
+	};
 	class Tank_F: Tank {
+        class ACE_SelfActions: ACE_SelfActions {};		
 		class Turrets {
 			class MainTurret;
 		};
 		class AnimationSources;
 	};
 	class MBT_01_base_F: Tank_F {
+        class ACE_SelfActions: ACE_SelfActions {};		
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
 		class AnimationSources: AnimationSources {};
 	};
 	class MBT_01_arty_base_F: MBT_01_base_F {
+        class ACE_SelfActions: ACE_SelfActions {};		
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret { };
 		};
 	};
 	class B_MBT_01_arty_base_F: MBT_01_arty_base_F {
+        class ACE_SelfActions: ACE_SelfActions {};				
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret { };
@@ -41,6 +48,13 @@ class CfgVehicles {
 	};
 
 	class itc_land_SPH01_base: B_MBT_01_arty_base_F {
+        class ACE_SelfActions: ACE_SelfActions {
+            class ITC_Land_SPHammohandler {
+                displayName = "Open Ammo Handling Interface";
+                condition = "( gunner _target ) == ACE_Player";
+                statement = "createDialog 'ITC_Land_SPHammohandler'";
+            };			
+		};				
 		artilleryScanner = 0;
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
@@ -70,6 +84,7 @@ class CfgVehicles {
 	class itc_land_b_SPH_Sholef2: itc_land_SPH01_base {
 		author = "Toadball";
 		scope = 2;
+		scopeCurator = 2;		
 		displayName = "M4 mod. 0 Sholef 2";
 		mapSize = 11.83;
 		class SimpleObject {

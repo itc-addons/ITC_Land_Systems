@@ -55,6 +55,7 @@ class CfgVehicles {
 		author = "Yax";
 		displayName = "M5 mod. 0 Seara 2";
 		scope = 2;
+		scopeCurator = 2;		
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_MBT_01_mlrs_F.jpg";
 		hiddenSelections[] = {"Camo1","Camo2","CamoNet"};
 		hiddenSelectionsTextures[] = {"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa","A3\armor_f_gamma\MBT_01\data\MBT_01_MLRS_co.paa","A3\Armor_F\Data\camonet_NATO_Desert_CO.paa"};
