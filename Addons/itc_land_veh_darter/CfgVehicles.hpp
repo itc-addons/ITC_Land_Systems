@@ -126,6 +126,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 1;
 		faction = "BLU_F";
 		crew = "B_UAV_AI";
@@ -166,6 +167,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 0;
 		faction = "OPF_F";
 		crew = "O_UAV_AI";
@@ -206,6 +208,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 2;
 		faction = "IND_F";
 		crew = "I_UAV_AI";
@@ -285,6 +288,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 1;
 		faction = "BLU_F";
 		crew = "B_UAV_AI";
@@ -328,6 +332,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\O_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 0;
 		faction = "OPF_F";
 		crew = "O_UAV_AI";
@@ -370,6 +375,7 @@ class CfgVehicles {
 		};
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\I_UAV_01_F.jpg";
 		scope = 2;
+		scopeCurator = 2;		
 		side = 2;
 		faction = "IND_F";
 		crew = "I_UAV_AI";
