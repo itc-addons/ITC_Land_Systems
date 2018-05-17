@@ -1,0 +1,15 @@
+[
+  ["single1","single1","single2","single2","single3","single3","single4","single4","single5","single5"],
+  [
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_0_LA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_0_HA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_1_LA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_1_HA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_2_LA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_2_HA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_3_LA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_3_HA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_4_LA.sqf",
+    "itc_land_ballistics\tables\b_155\mortar_155mm_AMOS_4_HA.sqf"
+  ]
+]
