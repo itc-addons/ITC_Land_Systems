@@ -15,18 +15,39 @@
 class NewTurret;
 
 class CfgVehicles {
-		class Truck_02_base_F;
+	class LandVehicle;
+	class Car: LandVehicle {
+		class ACE_SelfActions;	
+	};
+	class Car_F: Car {
+		class ACE_SelfActions: ACE_SelfActions {};	
+	};
+	class Truck_F: Car_F {
+		class ACE_SelfActions: ACE_SelfActions {};	
+	};
+	class Truck_02_base_F: Truck_F {
+		class ACE_SelfActions: ACE_SelfActions {};	
+	};
 	class Truck_02_MRL_base_F: Truck_02_base_F {
 		class Turrets {
 			class MainTurret: NewTurret {};
 		};
 		class AnimationSources;
+		class ACE_SelfActions: ACE_SelfActions {};			
 	};
 	class itc_land_MLRS02_base: Truck_02_MRL_base_F	{
 		artilleryScanner = 0;
+		class ACE_SelfActions : ACE_SelfActions {
+			class ITC_Land_MountedTablet {
+				displayName = "Open Mounted Tablet";
+				icon = "\itc_land_tablet\UI\arty-icon.paa";
+				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( gunner _target ) == ACE_Player)";
+				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
+			};
+		};
 		class itc_land {
 			tabletInterfaces[] = {"spg"};
-		  mountedTablet = "itc_land_tablet_spg";
+			mountedTablet = "itc_land_tablet_spg";
 			class fcs {
 				tableList = "b_230";
 			};
