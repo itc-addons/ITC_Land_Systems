@@ -17,23 +17,23 @@ class NewTurret;
 class CfgVehicles {
 	class LandVehicle;
 	class Car: LandVehicle {
-		class ACE_SelfActions;	
+		class ACE_SelfActions;
 	};
 	class Car_F: Car {
-		class ACE_SelfActions: ACE_SelfActions {};	
+		class ACE_SelfActions: ACE_SelfActions {};
 	};
 	class Truck_F: Car_F {
-		class ACE_SelfActions: ACE_SelfActions {};	
+		class ACE_SelfActions: ACE_SelfActions {};
 	};
 	class Truck_02_base_F: Truck_F {
-		class ACE_SelfActions: ACE_SelfActions {};	
+		class ACE_SelfActions: ACE_SelfActions {};
 	};
 	class Truck_02_MRL_base_F: Truck_02_base_F {
 		class Turrets {
 			class MainTurret: NewTurret {};
 		};
 		class AnimationSources;
-		class ACE_SelfActions: ACE_SelfActions {};			
+		class ACE_SelfActions: ACE_SelfActions {};
 	};
 	class itc_land_MLRS02_base: Truck_02_MRL_base_F	{
 		artilleryScanner = 0;
@@ -57,7 +57,7 @@ class CfgVehicles {
 				weapons[] = {"itc_land_230mm_mlrs"};
 				magazines[] = {"itc_land_m230hex_12rnd"};
 				maxHorizontalRotSpeed = "((360/30)/45)";
-				turretInfoType = "ITC_Land_RscGunnerSightMLRS";
+				turretInfoType = "ITC_Land_RscGunnerSightZamakMRLi";
 			};
 		};
 		class AnimationSources: AnimationSources {

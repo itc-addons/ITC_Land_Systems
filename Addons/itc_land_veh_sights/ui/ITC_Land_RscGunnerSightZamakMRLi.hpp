@@ -21,7 +21,7 @@
 					y = "19.46 * 		(0.025 * SafezoneH)";
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.1 * 		(0.025 * SafezoneH)";
-				};			
+				};
 				class CA_OpticsZoom: RscText {
 					idc = 180;
 					style = 1;
@@ -164,7 +164,7 @@
 					y = "30.8 * 		(0.025 * SafezoneH)";
 					w = "5.2 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
-				};							
+				};
 			};
 		};
 	};

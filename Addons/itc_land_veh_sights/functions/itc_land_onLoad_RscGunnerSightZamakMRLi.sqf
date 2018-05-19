@@ -1,9 +1,9 @@
-["itc_land_onLoad_RscGunnerSightZamaMRLi", {
+["itc_land_onLoad_RscGunnerSightZamakMRLi", {
 
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
-		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightMLRS",displayNull];
+		private _display = uiNamespace getVariable ["ITC_Land_RscGunnerSightZamakMRLi",displayNull];
 		if (isNull _display) exitWith {};
 
 		private _vehRole = ACE_player call CBA_fnc_vehicleRole;
@@ -80,7 +80,7 @@
 			};
 			(_display displayCtrl 83121) ctrlSetText _displayedMISquad;
 		    (_display displayCtrl 83119) ctrlSetText _displayedQuad;
-			
+
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
