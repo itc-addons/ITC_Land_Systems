@@ -67,6 +67,7 @@ class page_bcs_firemission_solution:itc_land_workspace
         h = 0.044 * safezoneH;
         action = "[""adjust""] call itc_land_tablet_fnc_pageInteract";
     };
+    /*
     class itc_land_solution_eom: ITC_LAND_RscButton
     {
         idc = 8602;
@@ -87,6 +88,7 @@ class page_bcs_firemission_solution:itc_land_workspace
         h = 0.044 * safezoneH;
       	colorText[] = {0,0,0,0.5};
     };
+    */
     class itc_land_solution_solup: ITC_LAND_RscButton
     {
         idc = 1600;
