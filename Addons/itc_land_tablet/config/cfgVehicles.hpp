@@ -19,7 +19,7 @@ class cfgVehicles {
       };
     };
   };
-
+/*
   class LandVehicle;
   class Tank : LandVehicle {
     class ACE_SelfActions;
@@ -34,4 +34,5 @@ class cfgVehicles {
       };
     };
   };
+ */
 };

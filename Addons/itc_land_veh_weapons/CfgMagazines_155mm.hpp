@@ -165,6 +165,7 @@
 		itc_land_fuze = "mof35_mod3";
 		itc_land_charge_format = "itc_land_g155ext_chg%1";
 		itc_land_CountInAH = 1;
+		itc_land_maxChargeIndex = 5;
 	};
 	class itc_land_g155ext_chg1: itc_land_g155ext { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg2: itc_land_g155ext { initSpeed = 324; itc_land_CountInAH = 0;  };

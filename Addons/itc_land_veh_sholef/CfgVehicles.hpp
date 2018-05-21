@@ -53,7 +53,13 @@ class CfgVehicles {
                 displayName = "Open Ammo Handling Interface";
                 condition = "( gunner _target ) == ACE_Player";
                 statement = "createDialog 'ITC_Land_SPHammohandler'";
-            };			
+            };	
+			class ITC_Land_CommanderTablet {
+				displayName = "Open Mounted Tablet";
+				icon = "\itc_land_tablet\UI\arty-icon.paa";
+				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( commander _target ) == ACE_Player)";
+				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
+			};			
 		};				
 		artilleryScanner = 0;
 		class itc_land {
