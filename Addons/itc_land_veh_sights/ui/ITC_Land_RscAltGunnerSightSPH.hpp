@@ -13,7 +13,7 @@
 					idc = 82010;
 					x = "0 * 		(0.01875 * SafezoneH)";
 					y = "17 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					w = "10.75 * 		(0.01875 * SafezoneH)";
 					h = "2.65 * 		(0.025 * SafezoneH)";
 					colorBackground[] = {0.1,0.1,0.1,0.75};
 					style = 0;
@@ -22,7 +22,7 @@
 					idc = 82011;
 					x = "0 * 		(0.01875 * SafezoneH)";
 					y = "17 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					w = "10.75 * 		(0.01875 * SafezoneH)";
 					h = "2.65 * 		(0.025 * SafezoneH)";
 					colorText[] = {0.67451,1,0.6,1};
 					//style = 0xA0;					
@@ -84,7 +84,7 @@
 					idc = 82017;					
 					x = "0 * 		(0.01875 * SafezoneH)";
 					y = "21 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					w = "10.75 * 		(0.01875 * SafezoneH)";
 					h = "4.5 * 		(0.025 * SafezoneH)";
 					colorBackground[] = {0.1,0.1,0.1,0.75};
 					style = 0;					
@@ -93,7 +93,7 @@
 					idc = 82018;						
 					x = "0 * 		(0.01875 * SafezoneH)";
 					y = "21 * 		(0.025 * SafezoneH)";
-					w = "10 * 		(0.01875 * SafezoneH)";
+					w = "10.75 * 		(0.01875 * SafezoneH)";
 					h = "4.5 * 		(0.025 * SafezoneH)";
 					colorText[] = {0.67451,1,0.6,1};
 					//style = 0xA0;					
