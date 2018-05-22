@@ -2,7 +2,7 @@ class CfgFunctions
 {
   class itc_land_datalink {
     class server {
-      class init {
+      class serverInit {
         postInit = 1;
         file = "itc_land_datalink\serverFunctions\init.sqf";
       };
@@ -14,8 +14,12 @@ class CfgFunctions
 
     };
     class functions {
-      class validateId {
-        file = "itc_land_datalink\functions\validateId.sqf";
+      class init {
+        postInit = 1;
+        file = "itc_land_datalink\functions\init.sqf";
+      };
+      class validateID {
+        file = "itc_land_datalink\functions\validateID.sqf";
       };
     };
   };
