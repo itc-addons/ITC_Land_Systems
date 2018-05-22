@@ -26,6 +26,9 @@ class CfgFunctions
       class connect {
         file = "itc_land_datalink\clientFunctions\connect.sqf";
       };
+      class disconnect {
+        file = "itc_land_datalink\clientFunctions\disconnect.sqf";
+      };
       class transmit {
         file = "itc_land_datalink\clientFunctions\transmit.sqf";
       };
