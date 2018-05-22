@@ -1,6 +1,6 @@
 /**
  * Transmit data over datalink
- * Params
+ * Params:
  * - Destination id
  * - origin ID
  * - header

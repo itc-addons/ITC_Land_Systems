@@ -3,7 +3,7 @@
  * params: ID string, player, requesting system string
  * returns: nothing, sends targetEvent to origin with [success, [strings]]
  */
-params ["_player","_id","_requestingSystem"];
+ params ["_player","_id","_requestingSystem"];
 
 //auto-assign ID if not set
 if(isNil{_id} || _id == "") then {
