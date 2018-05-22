@@ -17,7 +17,9 @@ class CfgFunctions
       };
     };
     class client {
-      
+      class connect {
+        file = "itc_land_datalink\clientFunctions\connect.sqf";
+      };
     };
     class functions {
       class init {
