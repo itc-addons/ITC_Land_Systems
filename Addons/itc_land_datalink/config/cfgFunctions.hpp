@@ -6,12 +6,18 @@ class CfgFunctions
         postInit = 1;
         file = "itc_land_datalink\serverFunctions\init.sqf";
       };
-      class findAvailableId {
-        file = "itc_land_datalink\serverFunctions\findAvailableId.sqf";
+      class findAvailableID {
+        file = "itc_land_datalink\serverFunctions\findAvailableID.sqf";
+      };
+      class onClientConnect {
+        file = "itc_land_datalink\serverFunctions\onClientConnect.sqf";
+      };
+      class onClientDisconnect {
+        file = "itc_land_datalink\serverFunctions\onClientDisconnect.sqf";
       };
     };
     class client {
-
+      
     };
     class functions {
       class init {
