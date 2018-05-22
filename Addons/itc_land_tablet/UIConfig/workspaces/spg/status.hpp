@@ -2,7 +2,7 @@ class page_spg_status:itc_land_workspace
 {
   idc = 13402;
   class Controls {
-    class status_dam_title: ITC_ARTY_RscText
+    class status_dam_title: ITC_LAND_RscText
     {
         idc = 2010;
         text = "Systems"; //--- ToDo: Localize;
@@ -12,7 +12,7 @@ class page_spg_status:itc_land_workspace
         h = 0.033 * safezoneH;
         sizeEx = 1.5 * GUI_GRID_H;
     };
-    class status_dam_list: ITC_ARTY_RscStructuredText
+    class status_dam_list: ITC_LAND_RscStructuredText
     {
         idc = 2100;
         x = 0.355625 * safezoneW + safezoneX;
@@ -20,7 +20,7 @@ class page_spg_status:itc_land_workspace
         w = 0.170156 * safezoneW;
         h = 0.374 * safezoneH;
     };
-    class status_info_title: ITC_ARTY_RscText
+    class status_info_title: ITC_LAND_RscText
     {
         idc = 2011;
         text = "Information"; //--- ToDo: Localize;
@@ -30,7 +30,7 @@ class page_spg_status:itc_land_workspace
         h = 0.033 * safezoneH;
         sizeEx = 1.5 * GUI_GRID_H;
     };
-    class status_info_fuel: ITC_ARTY_RscText
+    class status_info_fuel: ITC_LAND_RscText
     {
         idc = 2012;
         text = "Fuel level"; //--- ToDo: Localize;
@@ -39,7 +39,7 @@ class page_spg_status:itc_land_workspace
         w = 0.0464063 * safezoneW;
         h = 0.022 * safezoneH;
     };
-    class status_info_fuel_disp: ITC_ARTY_RscText
+    class status_info_fuel_disp: ITC_LAND_RscText
     {
         idc = 2013;
         text = "98%"; //--- ToDo: Localize;

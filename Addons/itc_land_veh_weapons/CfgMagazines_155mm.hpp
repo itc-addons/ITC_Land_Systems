@@ -27,7 +27,7 @@
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
 		itc_land_submunition = "itc_land_155mm_smoke";
-		itc_land_timeModifier = -0.5;
+		itc_land_timeModifier = -1;
 	};
 	class itc_land_g155smo_chg1: itc_land_g155smo { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155smo_chg2: itc_land_g155smo { initSpeed = 324; itc_land_CountInAH = 0;  };
@@ -46,7 +46,7 @@
 		itc_land_charge_format = "itc_land_g155icm_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
-		itc_land_timeModifier = -0.5;
+		itc_land_timeModifier = -1;
 	};
 	class itc_land_g155icm_chg1: itc_land_g155icm { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155icm_chg2: itc_land_g155icm { initSpeed = 324; itc_land_CountInAH = 0;  };
@@ -57,13 +57,15 @@
 	class itc_land_g155mat: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G155 MINE-AT";
-		ammo = "AT_Mine_155mm_AMOS_range";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 MAT";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g155mat_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -1.2;
+		itc_land_submunition = "itc_land_155mm_fascam_at_helper";
 	};
 	class itc_land_g155mat_chg1: itc_land_g155mat { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155mat_chg2: itc_land_g155mat { initSpeed = 324; itc_land_CountInAH = 0;  };
@@ -74,13 +76,15 @@
 	class itc_land_g155map: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G155 MINE-AP";
-		ammo = "Mine_155mm_AMOS_range";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 MAP";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g155map_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -1.2;
+		itc_land_submunition = "itc_land_155mm_fascam_ap_helper";
 	};
 	class itc_land_g155map_chg1: itc_land_g155map { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155map_chg2: itc_land_g155map { initSpeed = 324; itc_land_CountInAH = 0;  };
@@ -113,7 +117,7 @@
 		displayName = "G155 LASER GUIDED";
 		ammo = "Sh_155mm_AMOS";
 		muzzleImpulseFactor[] = {15, 30};
-		displayNameShort = "G155 PGM";
+		displayNameShort = "G155 LGM";
 		itc_land_fuze = "mof35_mod2";
 		itc_land_guidance[] = {"laser_coded","itc_land_guidance_fnc_lgm15x"};
 		itc_land_submunition = "itc_land_155mm_helper";
@@ -161,6 +165,7 @@
 		itc_land_fuze = "mof35_mod3";
 		itc_land_charge_format = "itc_land_g155ext_chg%1";
 		itc_land_CountInAH = 1;
+		itc_land_maxChargeIndex = 5;
 	};
 	class itc_land_g155ext_chg1: itc_land_g155ext { initSpeed = 162; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg2: itc_land_g155ext { initSpeed = 324; itc_land_CountInAH = 0;  };

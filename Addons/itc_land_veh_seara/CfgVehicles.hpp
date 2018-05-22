@@ -1,43 +1,58 @@
 class CfgVehicles {
-	class Tank;
+	class LandVehicle;
+	class Tank: LandVehicle {
+        class ACE_SelfActions;	
+	};
 	class Tank_F: Tank {
+        class ACE_SelfActions: ACE_SelfActions {};		
 		class Turrets {
 			class MainTurret;
 		};
 		class AnimationSources;
 	};
 	class MBT_01_base_F: Tank_F {
+        class ACE_SelfActions: ACE_SelfActions {};				
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
 		class AnimationSources: AnimationSources {};
 	};
 	class MBT_01_mlrs_base_F : MBT_01_base_F {
+        class ACE_SelfActions: ACE_SelfActions {};				
 		class Turrets : Turrets {
 			class MainTurret: MainTurret {};
 		};
 		class AnimationSources: AnimationSources {};
 	};
-	class B_MBT_01_mlrs_base_F: MBT_01_mlrs_base_F {
+	class B_MBT_01_mlrs_base_F: MBT_01_mlrs_base_F {		
 		class Turrets : Turrets {
 			class MainTurret: MainTurret {};
 		};
 		class AnimationSources: AnimationSources {};
-
+        class ACE_SelfActions: ACE_SelfActions {};		
 	};
 	class itc_land_MLRS01_base: B_MBT_01_mlrs_base_F {
 		artilleryScanner = 0;
+        class ACE_SelfActions: ACE_SelfActions {
+			class ITC_Land_CommanderTablet {
+				displayName = "Open Mounted Tablet";
+				icon = "\itc_land_tablet\UI\arty-icon.paa";
+				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( gunner _target ) == ACE_Player)";
+				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
+			};				
+		};				
 		class itc_land {
-			tabletInterfaces[] = {"spg"};
+		tabletInterfaces[] = {"spg"};
+		  mountedTablet = "itc_land_tablet_spg";
 			class fcs {
 				tableList = "b_230";
 			};
 		};
 		class Turrets : Turrets {
 			class MainTurret : MainTurret {
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";
+				turretInfoType = "ITC_Land_RscGunnerSightZamakMRLi";
 				lockWhenVehicleSpeed= 5;
-				maxHorizontalRotSpeed = "((360/20)/45)";
+				maxHorizontalRotSpeed = "((360/30)/45)";
 
 				weapons[] = {"itc_land_230mm_mlrs"};
 				magazines[] = {"itc_land_m230hex_12rnd"};
@@ -54,6 +69,7 @@ class CfgVehicles {
 		author = "Yax";
 		displayName = "M5 mod. 0 Seara 2";
 		scope = 2;
+		scopeCurator = 2;		
 		editorPreview = "\A3\EditorPreviews_F\Data\CfgVehicles\B_MBT_01_mlrs_F.jpg";
 		hiddenSelections[] = {"Camo1","Camo2","CamoNet"};
 		hiddenSelectionsTextures[] = {"A3\armor_f_gamma\MBT_01\Data\MBT_01_body_CO.paa","A3\armor_f_gamma\MBT_01\data\MBT_01_MLRS_co.paa","A3\Armor_F\Data\camonet_NATO_Desert_CO.paa"};

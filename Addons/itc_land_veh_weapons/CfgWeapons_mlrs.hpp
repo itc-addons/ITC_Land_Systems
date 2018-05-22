@@ -8,6 +8,6 @@ class itc_land_230mm_mlrs : rockets_230mm_GAT {
   class Mode_16 : Mode_16 {
     displayName = "MLRS";
     artilleryCharge = 1;
-		reloadTime = 0.2;
+	reloadTime = 0.2;
   };
 };

@@ -11,6 +11,9 @@ class CfgFunctions
       class interact {
         file = "itc_land_tablet\functions\interact.sqf";
       };
+      class render {
+        file = "itc_land_tablet\functions\render.sqf";
+      };
       class compileApp {
         file = "itc_land_tablet\functions\util\compileApp.sqf";
       };
@@ -25,6 +28,12 @@ class CfgFunctions
       };
       class fillComboBox {
         file = "itc_land_tablet\functions\util\fillComboBox.sqf";
+      };
+      class vehicleHasTablet {
+        file = "itc_land_tablet\functions\util\vehicleHasTablet.sqf";
+      };
+      class openVehicleTablet {
+        file = "itc_land_tablet\functions\openVehicleTablet.sqf";
       };
     };
   };

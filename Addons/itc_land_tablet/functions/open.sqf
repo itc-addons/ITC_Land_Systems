@@ -8,15 +8,17 @@ if(!(_vehicle isKindOf "Man")) then {
 };
 _vehicle setVariable ["apps", (configFile >> "CfgWeapons" >> _tabletClass >> "apps")  call BIS_fnc_getCfgData];
 //_vehicle setVariable ["app", (_vehicle getVariable "apps") # 0];
-_vehicle setVariable ["app", "home"];
-
+if(isNil{_vehicle getVariable "app"}) then {
+  _vehicle setVariable ["app", "home"];
+};
+_page = if(isNil{_vehicle getVariable "page"}) then [{""},{"OPEN"}];
 [{
   _this select 0 params ["_display","_vehicle", "_app", "_page"];
   if(!dialog || !alive player) then { //ensure player is alive and dialog is open
     [_this select 1] call CBA_fnc_removePerFrameHandler;
   };
 
-  //[_display] call itc_land_tablet_fnc_render;
+  [_display] call itc_land_tablet_fnc_render;
 
   if(_vehicle getVariable "app" != _app) then { //check if app switched
     [_display] call itc_land_tablet_fnc_clear; //clear app pages
@@ -26,7 +28,9 @@ _vehicle setVariable ["app", "home"];
     _app = _vehicle getVariable "app"; //switch the app variable
     [_app] call itc_land_tablet_fnc_compileApp;
     _newPage = [_display] call itc_land_tablet_fnc_appInit; //initialize the new app
-    _vehicle setVariable ["page", _newPage];
+    if(_page != "OPEN") then { //this makes sure the init page isn't loaded when you're re-opening an already running tablet
+      _vehicle setVariable ["page", _newPage];
+    };
   };
   [_display] call itc_land_tablet_fnc_appRender; //render the app
 
@@ -43,4 +47,4 @@ _vehicle setVariable ["app", "home"];
   };
   (_this select 0) set [2, _app];
   (_this select 0) set [3, _page];
-}, 0, [_display, _vehicle, "", ""]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_display, _vehicle, "", _page]] call CBA_fnc_addPerFrameHandler;

@@ -3,7 +3,7 @@
 		units[] = {	};
 		weapons[] = {};
 		requiredVersion = 0.10;
-		requiredAddons[] = {};
+		requiredAddons[] = {"ace_common","ace_mk6mortar"};
 		author = "ITC Addons Team";
 		authors[] = {"ToadBall","Yax"};
 	};

@@ -57,13 +57,15 @@
 	class itc_land_g152mat: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G152 MINE-AT";
-		ammo = "AT_Mine_155mm_AMOS_range";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G152 MAT";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g152mat_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -1.2;
+		itc_land_submunition = "itc_land_155mm_fascam_at_helper";
 	};
 	class itc_land_g152mat_chg1: itc_land_g152mat { initSpeed = 165.6; itc_land_CountInAH = 0;   };
 	class itc_land_g152mat_chg2: itc_land_g152mat { initSpeed = 331.2; itc_land_CountInAH = 0;   };
@@ -74,13 +76,15 @@
 	class itc_land_g152map: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G152 MINE-AP";
-		ammo = "Mine_155mm_AMOS_range";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G152 MAP";
 		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g152map_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -1.2;
+		itc_land_submunition = "itc_land_155mm_fascam_ap_helper";
 	};
 	class itc_land_g152map_chg1: itc_land_g152map { initSpeed = 165.6; itc_land_CountInAH = 0;   };
 	class itc_land_g152map_chg2: itc_land_g152map { initSpeed = 331.2; itc_land_CountInAH = 0;   };
@@ -112,7 +116,7 @@
 		displayName = "G152 LASER GUIDED";
 		ammo = "Sh_155mm_AMOS";
 		muzzleImpulseFactor[] = {15, 30};
-		displayNameShort = "G152 PGM";
+		displayNameShort = "G152 LGM";
 		itc_land_fuze = "mof35_mod2";
 		itc_land_guidance[] = {"laser_coded","itc_land_guidance_fnc_lgm15x"};
 		itc_land_submunition = "itc_land_155mm_helper";

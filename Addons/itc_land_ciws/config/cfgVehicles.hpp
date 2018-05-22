@@ -45,6 +45,8 @@ class CfgVehicles {
     faction = "BLU_F";
     crew = "B_UAV_AI";
     scope = 2;
+	scopeCurator = 2;		
+	
     class Turrets : Turrets {
       class MainTurret: MainTurret {
         weapons[] = {"itc_land_weapon_cram"};

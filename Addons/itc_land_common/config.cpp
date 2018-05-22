@@ -11,3 +11,4 @@ class CfgPatches {
 };
 
 #include "config\cfgFunctions.hpp"
+#include "config\ui\cfgUI.hpp"

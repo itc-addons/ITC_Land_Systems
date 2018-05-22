@@ -19,4 +19,20 @@ class cfgVehicles {
       };
     };
   };
+/*
+  class LandVehicle;
+  class Tank : LandVehicle {
+    class ACE_SelfActions;
+  };
+  class Tank_F : Tank {
+    class ACE_SelfActions : ACE_SelfActions {
+      class ITC_Land_MountedTablet {
+        displayName = "Open Mounted Tablet";
+        icon = "\itc_land_tablet\UI\arty-icon.paa";
+        condition = "[_target] call itc_land_tablet_fnc_vehicleHasTablet";
+        statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet"
+      };
+    };
+  };
+ */
 };
