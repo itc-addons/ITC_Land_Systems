@@ -15,6 +15,12 @@ class CfgFunctions
       class onClientDisconnect {
         file = "itc_land_datalink\serverFunctions\onClientDisconnect.sqf";
       };
+      class onClientTX {
+        file = "itc_land_datalink\serverFunctions\onClientTX.sqf";
+      };
+      class findIDTargets {
+        file = "itc_land_datalink\serverFunctions\findIDTargets.sqf";
+      };
     };
     class client {
       class connect {
@@ -28,6 +34,9 @@ class CfgFunctions
       };
       class validateID {
         file = "itc_land_datalink\functions\validateID.sqf";
+      };
+      class onObjectClientRX {
+        file = "itc_land_datalink\functions\onObjectClientRX.sqf";
       };
     };
   };
