@@ -255,13 +255,8 @@ class itc_land_tablet {
   #include "workspaces\bcs\settings.hpp"
   #include "workspaces\bcs\setup.hpp"
   #include "workspaces\bcs\locStores.hpp"
-<<<<<<< HEAD
-
-  #include "workspaces\cbr\map.hpp"
-=======
   #include "workspaces\bcs\newFiremission.hpp"
   #include "workspaces\bcs\engageFiremission.hpp"
   #include "workspaces\bcs\solutionFiremission.hpp"
   #include "workspaces\bcs\adjustFiremission.hpp"
->>>>>>> 7c854ccd87416c1933206240b2c07f19b1f307ca
 };
