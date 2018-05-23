@@ -1,4 +1,4 @@
-params ["_tabletClass"];
+params ["_tabletClass",["_tabletOwner",player]];
 createDialog "itc_land_tablet";
 
 _vehicle = vehicle player;
