@@ -3,6 +3,9 @@ params ["_cbr"];
 
 itc_land_cobras pushBack _cbr;
 
+private _linkID = _cbr getVariable ["init_datalink_id",""];
+[_cbr,_linkID,"object_register",true] call itc_land_datalink_fnc_connect;
+
 _cbr setVariable ["shells", []];
 _cbr setVariable ["origins", []];
 _cbr setVariable ["firingPositions", []];
@@ -20,7 +23,3 @@ _cbr setVariable ["activeShells", []];
     [_cbr] call itc_land_cobra_fnc_scan;
   };
 }, 1, [_cbr]] call CBA_fnc_addPerFrameHandler;
-
-_cbr setVariable ["datalinkMethods",["itc_land_datalink_fnc_receiveIDRegistry"]];
-private _linkID = _cbr getVariable ["init_datalink_id",""];
-[_cbr,"CF01","object_register"] call itc_land_datalink_fnc_connect;

@@ -35,6 +35,15 @@ class CfgFunctions
       class transmit {
         file = "itc_land_datalink\clientFunctions\transmit.sqf";
       };
+      class onClientRX {
+        file = "itc_land_datalink\clientFunctions\onClientRX.sqf";
+      };
+      class registerEvent {
+        file = "itc_land_datalink\clientFunctions\registerEvent.sqf";
+      };
+      class unregisterEvent {
+        file = "itc_land_datalink\clientFunctions\unregisterEvent.sqf";
+      };
     };
     class functions {
       class init {
@@ -43,9 +52,6 @@ class CfgFunctions
       };
       class validateID {
         file = "itc_land_datalink\functions\validateID.sqf";
-      };
-      class onObjectClientRX {
-        file = "itc_land_datalink\functions\onObjectClientRX.sqf";
       };
     };
   };

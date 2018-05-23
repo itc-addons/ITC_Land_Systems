@@ -56,7 +56,6 @@ class CfgVehicles {
         expression = "_this setVariable ['init_datalink_ext_id',_value];"
         control = "Edit";
         defaultValue = "CF01";
-        validate = "variable";
         unique = 1;
       };
   		class ITC_Land_Datalink_ID
@@ -67,7 +66,6 @@ class CfgVehicles {
         expression = "_this setVariable ['init_datalink_id',_value];"
         control = "Edit";
         defaultValue = "CF01";
-        validate = "variable";
         unique = 1;
       };
     };

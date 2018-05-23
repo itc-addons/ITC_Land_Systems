@@ -22,20 +22,12 @@ if(!_isAvailableID) then {
 };
 
 //if valid and available then add it
+private _returnData = [_player];
 if (_isAvailableID && _isValidID) then {
   [itc_land_datalink_nodes, _id, _player] call CBA_fnc_hashSet;
-  private _successMessage = format ["Connection success with ID %1", _id];
-  private _returnData = [_id,"0000",_requestingSystem,"response",[true,_id]];
-  if(isPlayer _player) then {
-    [_requestingSystem, _returnData, _player] call CBA_fnc_targetEvent;
-  } else {
-    [_player, _returnData] remoteExec ["itc_land_datalink_fnc_onObjectClientRX", _player, false];
-  };
+  _returnData pushBack [_id,"0000",_requestingSystem,"response",[true,_id]];
 } else { //return errors
-  private _returnData = ["","0000",_requestingSystem,"response",[false,_errors]];
-  if(isPlayer _player) then {
-    [_requestingSystem, _returnData, _player] call CBA_fnc_targetEvent;
-  } else {
-    [_player, _returnData] remoteExec ["itc_land_datalink_fnc_onObjectClientRX", _player, false];
-  };
+  _returnData pushBack ["","0000",_requestingSystem,"response",[false,_errors]];
 };
+
+_returnData remoteExec ["itc_land_datalink_fnc_onClientRX", _player, false];
