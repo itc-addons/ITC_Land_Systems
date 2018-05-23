@@ -7,6 +7,7 @@
 
 //auto-assign ID if not set
 if(isNil{_id} || _id == "") then {
+  player sideChat format["ID %1", _id];
   _id = ["01"] call itc_land_datalink_fnc_findAvailableID;
 };
 
@@ -24,7 +25,17 @@ if(!_isAvailableID) then {
 if (_isAvailableID && _isValidID) then {
   [itc_land_datalink_nodes, _id, _player] call CBA_fnc_hashSet;
   private _successMessage = format ["Connection success with ID %1", _id];
-  [_requestingSystem,[true,[""]],_player] call CBA_fnc_targetEvent;
+  private _returnData = [_id,"0000",_requestingSystem,"response",[true,_id]];
+  if(isPlayer _player) then {
+    [_requestingSystem, _returnData, _player] call CBA_fnc_targetEvent;
+  } else {
+    [_player, _returnData] remoteExec ["itc_land_datalink_fnc_onObjectClientRX", _player, false];
+  };
 } else { //return errors
-  [_requestingSystem,[false,_errors],_player] call CBA_fnc_targetEvent;
+  private _returnData = ["","0000",_requestingSystem,"response",[false,_errors]];
+  if(isPlayer _player) then {
+    [_requestingSystem, _returnData, _player] call CBA_fnc_targetEvent;
+  } else {
+    [_player, _returnData] remoteExec ["itc_land_datalink_fnc_onObjectClientRX", _player, false];
+  };
 };

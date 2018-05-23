@@ -29,6 +29,12 @@ class CfgFunctions {
       class processEngagement {
         file = "itc_land_cobra\functions\processEngagement.sqf";
       };
+      class sirenInit {
+        file = "itc_land_cobra\functions\sirenInit.sqf";
+      };
+      class sirenTrigger {
+        file = "itc_land_cobra\functions\sirenTrigger.sqf";
+      };
     };
   };
 };

@@ -3,7 +3,7 @@ class CfgFunctions
   class itc_land_datalink {
     class server {
       class serverInit {
-        postInit = 1;
+        preInit = 1;
         file = "itc_land_datalink\serverFunctions\init.sqf";
       };
       class findAvailableID {
@@ -21,6 +21,9 @@ class CfgFunctions
       class findIDTargets {
         file = "itc_land_datalink\serverFunctions\findIDTargets.sqf";
       };
+      class receiveIDRegistry {
+        file = "itc_land_datalink\serverFunctions\receiveIDRegistry.sqf";
+      };
     };
     class client {
       class connect {
@@ -35,7 +38,7 @@ class CfgFunctions
     };
     class functions {
       class init {
-        postInit = 1;
+        preInit = 1;
         file = "itc_land_datalink\functions\init.sqf";
       };
       class validateID {

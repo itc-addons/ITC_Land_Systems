@@ -5,6 +5,6 @@
  * - (string)ID, default none, will auto-assign
  * - Object, default player
  */
-params["_system",["_id",""],["_object",player]];
+params[["_object",player],["_id",""],"_system"];
 
 ["clientConnect",[_object, _id, _system]] call CBA_fnc_serverEvent;

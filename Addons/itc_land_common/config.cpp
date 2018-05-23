@@ -11,4 +11,5 @@ class CfgPatches {
 };
 
 #include "config\cfgFunctions.hpp"
+#include "config\cfgEden.hpp"
 #include "config\ui\cfgUI.hpp"
