@@ -75,7 +75,7 @@ class CfgVehicles {
 					mag_5("itc_land_g152icm"),
 					mag_5("itc_land_g152lgm")
 				};
-				lockWhenVehicleSpeed= 5;
+				lockWhenVehicleSpeed= 1;
 				maxHorizontalRotSpeed = "((360/30)/45)";
 			};
 		};
