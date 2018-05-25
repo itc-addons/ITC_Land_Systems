@@ -4,6 +4,6 @@ class CfgWeapons {
     displayName = "SPG Vehicle Management Tablet";
     descriptionShort = "SPG Vehicle Management Tablet";
     picture = "\itc_land_tablet\UI\arty-icon.paa";
-    apps[] = {"spg", "bcs","cbr"};
+    apps[] = {"spg", "bcs"};
   };
 };
