@@ -16,6 +16,7 @@ _apps = _vehicle getVariable "apps";
 	
 	[_display, 91000 + _x, _displayedName] call itc_land_tablet_fnc_setText;
     [_display, 91010 + _x, _displayedifaces] call itc_land_tablet_fnc_setText;
+	
   } else {
     [_display, 91000 + _x, ""] call itc_land_tablet_fnc_setText;
     [_display, 91010 + _x, ""] call itc_land_tablet_fnc_setText;
