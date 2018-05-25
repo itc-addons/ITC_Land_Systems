@@ -8,5 +8,9 @@ class itc_land {
       displayName = "Battery Control System";
       interfaces = "-";
     };
+    class cbr {
+      displayName = "Counter Battery Radar";
+      interfaces = "Datalink";
+    };
   };
 };

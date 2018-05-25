@@ -1,2 +1,2 @@
 
-call cbr_map_app_render;
+_this call cbr_map_app_render;

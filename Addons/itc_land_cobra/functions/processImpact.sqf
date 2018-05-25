@@ -6,6 +6,4 @@ _impacts pushBack [_position, _impactTime];
 
 _cbr setVariable ["activeShells",_impacts];
 
-if(_cbr distance _position < 500) then {
-  ["0000",_cbr getVariable "datalink_id","cobra","shellDetected",_impact] call itc_land_datalink_fnc_transmit;
-};
+["0000",_cbr getVariable "datalink_id","cobra","shellDetected",_impact] call itc_land_datalink_fnc_transmit;

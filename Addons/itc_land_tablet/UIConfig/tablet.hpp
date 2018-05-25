@@ -3,6 +3,7 @@
 #define WSHADJUST 0.04
 #define WSWADJUST 0.125
 #include "\itc_land_common\config\ui\defines.hpp"
+class RscMapControl;
 
 class itc_land_tablet {
 	idd = 32562;
@@ -10,7 +11,7 @@ class itc_land_tablet {
 		workspace_background,
 		workspace_header_bar,
 		sidebar_background,
-		homepage_background,		
+		homepage_background,
 		homepage_image,
 		screen_image,
 		screen_image_night,
@@ -25,7 +26,10 @@ class itc_land_tablet {
 		page_bcs_firemission_new,
 		page_bcs_firemission_engage,
 		page_bcs_firemission_solution,
-		page_bcs_firemission_adjust
+		page_bcs_firemission_adjust,
+
+		page_cbr_map,
+		page_cbr_settings
 	};
   objects[] = { };
   controls[]= {
@@ -85,7 +89,7 @@ class itc_land_tablet {
 
     sizeEx = 1.25 * GUI_GRID_H;
   };
-  
+
   #include "workspaces\home\appList.hpp"
 
   #include "workspaces\spg\fcs.hpp"
@@ -98,7 +102,10 @@ class itc_land_tablet {
   #include "workspaces\bcs\engageFiremission.hpp"
   #include "workspaces\bcs\solutionFiremission.hpp"
   #include "workspaces\bcs\adjustFiremission.hpp"
-  
+
+  #include "workspaces\cbr\map.hpp"
+  #include "workspaces\cbr\settings.hpp"
+
   class screen_image: ITC_LAND_RscPicture {
 		idc = 15107;
 		text = "\itc_land_tablet\UI\screen.paa";
@@ -120,7 +127,7 @@ class itc_land_tablet {
     h = 0.55 * safezoneH;
     colorBackground[] = {0.1,0.1,0.1,1};
     colorActive[] = {0.1,0.1,0.1,1};
-  };    
+  };
   class homepage_image: ITC_LAND_RscPicture {
 	idc = 15011;
 	text = "\itc_land_tablet\UI\logo.paa";

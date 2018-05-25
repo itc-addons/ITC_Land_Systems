@@ -35,6 +35,9 @@ class CfgFunctions {
       class sirenTrigger {
         file = "itc_land_cobra\functions\sirenTrigger.sqf";
       };
+      class getCobraData {
+        file = "itc_land_cobra\functions\getCobraData.sqf";
+      };
     };
   };
 };
