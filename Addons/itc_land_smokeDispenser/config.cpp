@@ -12,3 +12,5 @@ class CfgPatches {
 
 #include "config\cfgMagazines.hpp"
 #include "config\cfgAmmo.hpp"
+#include "config\particles.hpp"
+#include "config\CfgCloudlets.hpp"

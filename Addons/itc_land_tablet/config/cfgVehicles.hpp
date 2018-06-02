@@ -16,6 +16,7 @@ class cfgVehicles {
     class ACE_SelfActions {
       class ACE_Equipment {
         action_tablet_open(itc_land_tablet_spg, "SPG Tablet")
+        action_tablet_open(itc_land_tablet_fdc, "FDC Tablet")
       };
     };
   };

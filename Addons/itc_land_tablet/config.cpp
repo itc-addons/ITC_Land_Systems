@@ -5,7 +5,7 @@ class CfgPatches {
 		requiredaddons[] = {"A3_Weapons_F","itc_land_common","itc_land_bcs","ace_interaction","ace_interact_menu","ace_common"};
 		requiredversion = 1.8;
 		units[] = {};
-		weapons[] = {"itc_land_tablet_spg"};
+		weapons[] = {"itc_land_tablet_spg","itc_land_tablet_fdc"};
 		magazines[] = {};
 	};
 };

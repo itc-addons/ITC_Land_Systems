@@ -6,4 +6,10 @@ class CfgWeapons {
     picture = "\itc_land_tablet\UI\arty-icon.paa";
     apps[] = {"spg", "bcs"};
   };
+  class itc_land_tablet_fdc : itc_land_tablet_spg {
+    displayName = "Fire Direction Tablet";
+    descriptionShort = "Fire Direction Tablet";
+    picture = "\itc_land_tablet\UI\arty-icon.paa";
+    apps[] = {"bcs", "fdc"};
+  };
 };
