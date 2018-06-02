@@ -165,8 +165,8 @@ class itc_land_tablet {
     y = (0.313+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side1""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button2: ITC_LAND_RscButton {
@@ -176,8 +176,8 @@ class itc_land_tablet {
     y = (0.335+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side2""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button3: ITC_LAND_RscButton {
@@ -187,8 +187,8 @@ class itc_land_tablet {
     y = (0.357+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side3""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button4: ITC_LAND_RscButton {
@@ -198,8 +198,8 @@ class itc_land_tablet {
     y = (0.379+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 	action = "[""side4""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button5: ITC_LAND_RscButton {
@@ -209,8 +209,8 @@ class itc_land_tablet {
 		y = (0.445+ POSYADJUST) * safezoneH + safezoneY;
 		w = 0.0928125 * safezoneW;
 		h = 0.044 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side5""] call itc_land_tablet_fnc_interact";
   };
 	class fire_mission_list: ITC_LAND_RscListbox {
@@ -219,8 +219,8 @@ class itc_land_tablet {
 		y = (0.5+ POSYADJUST) * safezoneH + safezoneY;
 		w = 0.0928125 * safezoneW;
 		h = 0.154 * safezoneH;
-		colorBackground[] = {0,0,0,0.9};
-		colorActive[] = {0,0,0,0.9};
+		//colorBackground[] = {0,0,0,0.9};
+		//colorActive[] = {0,0,0,0.9};
 		onLBSelChanged = "[""sideList""] call itc_land_tablet_fnc_appInteract";
 	};
 	class app1: ITC_LAND_RscButton

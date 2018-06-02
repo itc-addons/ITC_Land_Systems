@@ -66,30 +66,30 @@ class ITC_LAND_RscListBox: RscListBox {
 		autoScrollEnabled = 1;
 	};
 };
+class RscXListBox;
+class ITC_LAND_RscXListBox: RscXListBox {
+	colorSelect[] = {0, 0, 0, 1};
+	colorSelect2[] = {0, 0, 0, 1};	
+	tooltipColorText[] = AIFMSGRN;
+	tooltipColorBox[] = AIFMSGRN;
+	tooltipColorShade[] = {0, 0, 0, 0.65};	
+};
 class RscCombo;
 class ITC_LAND_RscComboBox: RscCombo {
 	colorText[] = AIFMSGRN;
 	colorSelectBackground[] = AIFMSGRN;
-	colorScrollbar[] = AIFMSGRN;
-	colorPictureSelected[] = AIFMSGRN;
 	colorTextRight[] = AIFMSGRN;
-	colorSelectRight[] = {0,0,0,1};
-	colorSelect2Right[] = {0,0,0,1};
-	tooltipColorText[] = AIFMSGRN;
-	tooltipColorBox[] = AIFMSGRN;
-	arrowEmpty = "itc_land_common\data\arrow_combo_ca.paa";
-	arrowFull = "itc_land_common\data\arrow_combo_active_ca.paa";
+	colorSelect[] = {0,0,0,1};
 	colorActive[] = AIFMSGRN;
+	arrowEmpty = "itc_land_common\data\arrow_combo_ca.paa";
+	arrowFull = "itc_land_common\data\arrow_combo_active_ca.paa";	
 };
 
 class RscButton;
 class ITC_LAND_RscButton: RscButton {
 	colorText[] = AIFMSGRN;
 	colorDisabled[] = {1,1,1,0.25};
-	colorBackground[] = {0,0,0,0.5};
-	colorBackgroundDisabled[] = {0,0,0,0.5};
-	colorBackgroundActive[] = {0.2,0.2,0.2,1};
-	colorBorder[] = AIFMSGRN;
+	colorFocused[] = {0,0,0,0.5};
 };
 
 
