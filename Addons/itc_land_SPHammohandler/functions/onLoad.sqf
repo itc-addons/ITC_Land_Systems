@@ -5,16 +5,37 @@ itc_land_SPHammoHandler_open = true;
 
 [] call itc_land_SPHammoHandler_fnc_fillAmmoList;
 
-// is gun loaded
-if (currentMagazine vehicle ace_player isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
-	ctrlSetText [86010, "UNLOAD"];
-	
-	itc_land_SPHammoHandler_status = "READY TO FIRE";
-	//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-} else {
-	itc_land_SPHammoHandler_status	= "WAITING";
-	//ctrlSetText [86011, itc_land_SPHammoHandler_status];
+// Check gun status
+if (isNil "itc_land_SPHammoHandler_mode") then {itc_land_SPHammoHandler_mode = "WAITING"};
+if (isNil "itc_land_SPHammoHandler_status") then {itc_land_SPHammoHandler_status = "WAITING"};
+switch (itc_land_SPHammoHandler_mode) do {
+	case "LOADING" : {
+		ctrlSetText [86010, "LOAD"];
+		ctrlEnable [86010, false]; //disable loading/unloading
+		ctrlEnable [86009, false]; //disable apply settings button	
+	};
+	case "UNLOADING" : {
+		ctrlSetText [86010, "UNLOAD"];
+		ctrlEnable [86010, false]; //disable loading/unloading
+		ctrlEnable [86009, false]; //disable apply settings button	
+	};
+	case "WAITING" : {
+		if (itc_land_SPHammoHandler_status == "WAITING") then {
+			ctrlSetText [86010, "LOAD"];
+			if (isNil "itc_land_sphloadersettings") then { 
+				ctrlEnable [86010, false]; ctrlEnable [86009, true];  //disable loading until AL settings applied
+			} else {
+				ctrlEnable [86010, true]; ctrlEnable [86009, true];  //loading has not started but settings have been applied, enable both buttons	
+			};
+		} else {				
+			if (itc_land_SPHammoHandler_status == "READY TO FIRE") then {
+				ctrlSetText [86010, "UNLOAD"];
+				ctrlEnable [86010, true]; ctrlEnable [86009, false];
+			};
+		};
+	};
 };
+
 	//Hide Guidance fields
 	//LGM
 	ctrlShow [86007, false];
@@ -52,13 +73,11 @@ if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings >
 	};
 	ctrlSetText[86018, ((itc_land_sphloadersettings # 1) # 0)];	
 	ctrlSetText[86017, ((itc_land_sphloadersettings # 2) # 0)];	
-	ctrlEnable [86010,true];	
 } else {
 	ctrlSetText [86019, "-- N/A --"];
 	ctrlSetText [86020, "-- N/A --"];	
 	ctrlSetText [86018, "-- N/A --"];
 	ctrlSetText [86017, "-- N/A --"];
-	ctrlEnable [86010,false];
 };
 
 

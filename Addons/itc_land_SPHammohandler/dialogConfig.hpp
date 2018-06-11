@@ -180,7 +180,7 @@
 			};		
 			class altText: ITC_LAND_RscText {
 				idc = 86014;
-				text = "Alt: ";
+				text = "Elev: ";
 				x = 0.525781 * safezoneW + safezoneX;
 				y = 0.709 * safezoneH + safezoneY;
 				w = 0.020625 * safezoneW;
