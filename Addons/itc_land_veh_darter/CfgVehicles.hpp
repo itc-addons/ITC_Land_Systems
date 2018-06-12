@@ -145,7 +145,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -186,7 +186,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -227,7 +227,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -310,7 +310,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -354,7 +354,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -397,7 +397,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -419,7 +419,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -432,7 +432,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
@@ -454,7 +454,7 @@ class CfgVehicles {
 			class ACE_MainActions: ACE_MainActions {
 				class ITC_Land_PackDarter {
 					displayName = "Repack UAV";
-					condition = "(( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
+					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
 					statement = "[_target,_player] call itc_land_veh_darter_fnc_PackUAV";
 				};
 
