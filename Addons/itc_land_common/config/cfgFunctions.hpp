@@ -7,6 +7,12 @@ class CfgFunctions
       };
       class isLaserCode {
         file = "itc_land_common\functions\isLaserCode.sqf";
+      };
+      class ctrlSetText {
+        file = "itc_land_common\functions\ctrlSetText.sqf";
+      };	  
+      class ctrlSetFade {
+        file = "itc_land_common\functions\ctrlSetFade.sqf";
       };	  
     };
   };
