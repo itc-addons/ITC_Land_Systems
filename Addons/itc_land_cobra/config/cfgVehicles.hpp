@@ -1,3 +1,4 @@
+class CBA_Extended_EventHandlers_base;
 class CfgVehicles {
   class LT_01_base_F;
   class LT_01_scout_base_F : LT_01_base_F {
@@ -18,6 +19,7 @@ class CfgVehicles {
       {
           init = "_this call itc_land_cobra_fnc_vehicleInit;";
       };
+      class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
     };
     class Attributes : Attributes {
   		class ITC_Land_Datalink_ID
