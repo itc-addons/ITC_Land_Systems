@@ -27,6 +27,7 @@ class page_cbr_settings:itc_land_workspace
     	y = 0.247 * safezoneH + safezoneY;
     	w = 0.04125 * safezoneW;
     	h = 0.022 * safezoneH;
+      action = "[""cobraConnect""] call itc_land_tablet_fnc_pageInteract";
     };
   };
 };

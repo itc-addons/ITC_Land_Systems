@@ -52,4 +52,17 @@ class CfgAmmo {
 	class itc_land_155mm_fascam_at_helper : AT_Mine_155mm_AMOS_range {
 		triggerTime = 0.05;
 	};
+
+	class R_230mm_HE;
+	class itc_land_230mm_he : R_230mm_HE {
+		hit = 1200;
+		indirectHit = 800;
+		indirectHitRange = 30;
+		simulation = "shotShell";
+	};
+
+	class itc_land_230mm_helper : itc_land_155mm_helper {
+		indirectHit = 800;
+		indirectHitRange = 30;
+	};
 };
