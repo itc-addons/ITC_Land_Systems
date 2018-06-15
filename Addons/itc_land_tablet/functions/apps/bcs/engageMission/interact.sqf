@@ -7,7 +7,7 @@ if(_action == "back") then {
 };
 
 if(_action == "save") then {
-  _magType = (bcs_availableTables # (bcs_bty_type # 0) # 2) # (lbCurSel 7100);
+  _magType = bcs_shellTypes # (bcs_bty_type # 0) # (lbCurSel 7100);
   _engagePage = [lbCurSel 7101, lbCurSel 7401, UINUMBER(7402), UINUMBER(7403), lbCurSel 7100, _magType];
   _mission set [3, _engagePage];
   SAVEMISSION(_mission);

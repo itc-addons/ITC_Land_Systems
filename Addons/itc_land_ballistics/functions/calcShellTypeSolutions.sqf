@@ -5,7 +5,8 @@ _elevDiff = _targetEl - _gunElev;
 
 _df = [_gunDir, _gunPos getDir _targetPos] call itc_land_common_fnc_getDeflection;
 _relDirMils = (_gunPos getDir _targetPos) / 360 * 6400;
-_tableList = []  call compile preProcessFile format["itc_land_ballistics\tables\%1\list.sqf", _shellType];
+_tableListFile = getText (configFile >> "CfgMagazines" >> _shellType >> "itc_land_btabListFile");
+_tableList = []  call compile preProcessFile format[_tableListFile, _shellType];
 //_tableList = [vehicle player] call itc_land_fcs_fnc_get_vehicle_tables;
 _tableList params ["_charges", "_tables"];
 

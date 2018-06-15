@@ -7,7 +7,7 @@ ctrlShow [13506, true];
 [_display, IDC_workspace_header, format["%1 Solutions", _ident]] call itc_land_tablet_fnc_setText;
 
 if(_calculate) then {
-  bcs_solutions = [bcs_bty_guns,bcs_bty_type # 1,_tgtPos,_engagePage]  call itc_land_bcs_fnc_calcSolutions;
+  bcs_solutions = [bcs_bty_guns,_magazineType,_tgtPos,_engagePage]  call itc_land_bcs_fnc_calcSolutions;
 };
 
 bcs_solutions params ["_btySolutions", "_gunSolutions"];
@@ -18,7 +18,7 @@ if(count _btySolutions == 0) exitWith {
   SETTEXT(8019,"");//angle
   SETTEXT(8020,"");//distance
   if(count bcs_bty_guns > 0) then {
-    _btyPos = [bcs_bty_guns] call itc_land_bcs_fnc_getBatterySolution;
+    _btyPos = [bcs_bty_guns] call itc_land_bcs_fnc_getBatteryPosition;
     SETTEXT(8020, str round (_btyPos distance _tgtPos));//distance
   };
 };
