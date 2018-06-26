@@ -8,12 +8,12 @@
 		autoReload = 0;
 		modes[] = {"Single"};
 		reloadTime = 1;
-		magazineReloadTime = 6;	
+		magazineReloadTime = 5;	
 		magazines[] = {};
 		class Single: Single1 {
 			displayName = "";
 			artilleryCharge = 1;
-			reloadTime = 6;			
+			reloadTime = 5;			
 		};
 		class EventHandlers
 		{
