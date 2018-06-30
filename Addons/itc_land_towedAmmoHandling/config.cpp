@@ -9,3 +9,7 @@ class CfgPatches {
 		magazines[] = {};
 	};
 };
+
+#include "config\cfgVehicles.hpp"
+#include "config\cfgMagazines.hpp"
+#include "config\cfgFunctions.hpp"
