@@ -2,3 +2,4 @@
 #include "itc_land_onLoad_RscAltGunnerSightSPH.sqf"
 #include "itc_land_onLoad_RscGunnerSightMLRS.sqf"
 #include "itc_land_onLoad_RscGunnerSightZamakMRLi.sqf"
+#include "itc_land_onLoad_RscIGS_SPH.sqf"
