@@ -10,4 +10,11 @@ class CfgWeapons {
     maxRange = 2000;
     magazines[] = {"itc_land_20mm_phalanx_mag"};
   };
+
+  class MissileLauncher;
+  class weapon_rim116Launcher : MissileLauncher {
+    maxRange = 9000;
+    maxRangeProbab = 1;
+    weaponLockDelay = 0;
+  };
 };
