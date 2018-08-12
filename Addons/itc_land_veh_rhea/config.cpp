@@ -9,4 +9,7 @@
 	};
 };
 
-#include "CfgVehicles.hpp"
+#include "config\cfgVehicles.hpp"
+#include "config\cfgWeapons.hpp"
+#include "config\cfgMagazines.hpp"
+#include "config\cfgAmmo.hpp"
