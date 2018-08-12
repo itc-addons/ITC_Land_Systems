@@ -1,4 +1,5 @@
 class SensorTemplateDataLink;
+class SensorTemplateActiveRadar;
 class CfgVehicles {
   class StaticWeapon;
   class StaticMGWeapon : StaticWeapon {
@@ -23,6 +24,7 @@ class CfgVehicles {
     scopeCurator = 2;
     class Turrets : Turrets {
       class MainTurret: MainTurret {
+        /*
         minelev = 90;
         initElev = 90;
         maxelev = 90;
@@ -30,12 +32,15 @@ class CfgVehicles {
         minturn = 0;
         initTurn = 0;
         maxturn = 0;
+        */
+        weapons[] = {"itc_land_weapon_s750"};
+        magazines[] = {"itc_land_magazine_4rnd_s750"};
       };
     };
 		class AnimationSources : AnimationSources {
       class Missiles_revolving {
         source = "revolving";
-        weapon = "weapon_s750Launcher";
+        weapon = "itc_land_weapon_s750";
       };
     };
   };
