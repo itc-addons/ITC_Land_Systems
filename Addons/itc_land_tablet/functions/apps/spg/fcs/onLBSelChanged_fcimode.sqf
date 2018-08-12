@@ -2,8 +2,8 @@ params ["_control","_index"];
 
 //Generate global
 itc_land_fcimode = [_index,lbText [1501,_index]];
-itc_land_fcimode_manualidcarray = [1800,1801,1802,1803,1804,1805,1603];
-itc_land_fcimode_lfcsidcarray = [1012,1010,1400,1011,1401,1012,1402,1100,1101,1601,1602,1600];
+itc_land_fcimode_manualidcarray = [1800,1801,1802,1803,1804,1805,1805];
+itc_land_fcimode_lfcsidcarray = [1012,1010,1400,1011,1401,1012,1013,1402,1100,1101,1601,1602,1600];
 
 switch (itc_land_fcimode # 0) do {
 	case 0: {

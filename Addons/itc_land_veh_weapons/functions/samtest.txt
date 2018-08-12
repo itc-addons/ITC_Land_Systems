@@ -1,0 +1,20 @@
+tgtArr = detector targets [true, 16000];
+diag_log format ["RADAR KNOWN TARGETS: %1",tgtArr];
+if (count tgtArr > 0) then {
+tgtknowledgeArr = tgtArr apply {detector targetKnowledge _x};
+diag_log format ["RADAR TARGET KNOWLEDGE: %1",tgtknowledgeArr];
+tgtSideArr = tgtArr apply {side _x};
+diag_log format ["RADAR TGT SIDE RETURN: %1",tgtSideArr];
+} else {diag_log "JOHN RADAR KNOWS NOTHING"};
+
+
+SAMtgtArr = detector targets [true, 16000];
+diag_log format ["SAM KNOWN TARGETS: %1",SAMtgtArr];
+if (count SAMtgtArr > 0) then {
+tgtknowledgeArr = SAMtgtArr apply {detector targetKnowledge _x};
+diag_log format ["SAM TARGET KNOWLEDGE: %1",tgtknowledgeArr];
+tgtSideArr = SAMtgtArr apply {side _x};
+diag_log format ["SAM TGT SIDE RETURN: %1",tgtSideArr];
+} else {diag_log "JOHN SAM KNOWS NOTHING"};
+
+if (count tgtArr > 0 ) then {{shooter reveal [_x,1.5]} forEach tgtArr};

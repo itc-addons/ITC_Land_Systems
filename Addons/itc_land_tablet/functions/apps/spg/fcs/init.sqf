@@ -41,6 +41,7 @@ if(count _solutions > 0) then {
 };
 (_display displayCtrl 1100) ctrlCommit 0;	
 
+lbClear 1501;
 (_display displayCtrl 1501) lbAdd "MANUAL TARGETING";
 (_display displayCtrl 1501) lbAdd "L-FCS TARGETING";
 if (isNil "itc_land_fcimode") then {
@@ -51,5 +52,10 @@ if (isNil "itc_land_fcimode") then {
 	[_display,itc_land_fcimode # 0] call itc_land_tablet_fnc_fcimode_onlblselchanged;				
 };
 
-//(_display displayCtrl 1500) lbAdd "G: 0101   CH: 2    AZ: 800    DF: 3982    QD: 368    TOF:23.31";
+//Hide fuze and guidance specific fields
+{ ctrlShow [_x, false]; } forEach [1907,1908,1909,1910,1911,1912,1913,1914];
+//Set selected ammo type
+private _selectedMagIndex = _vehicle getVariable ["fci_selectedMagIndex",0];
+lbSetCurSel [1902, _selectedMagIndex];
+[1902,_selectedMagIndex] call itc_land_tablet_fnc_fci_onSelectAmmo;
 

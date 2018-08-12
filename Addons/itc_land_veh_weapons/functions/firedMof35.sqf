@@ -8,7 +8,7 @@ _fuzeType = itc_land_fuzeMode;
 //_fuzeType = (vehicle _gunner) getVariable "fuzeType";
 _fuzeValue = itc_land_fuzeValues;
 //_fuzeValue = (vehicle _gunner) getVariable "fuzeSetting";*/
-player sideChat str [_fuzeType, _fuzeValue];
+//player sideChat str [_fuzeType, _fuzeValue];
 
 if(isNil{_fuzeType}) exitWith {};
 if(_fuzeType == "" || _fuzeType == "pd") exitWith {};

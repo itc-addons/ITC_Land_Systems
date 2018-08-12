@@ -36,14 +36,22 @@ class CfgVehicles {
         class ACE_SelfActions: ACE_SelfActions {};		
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
-				class MainTurret: MainTurret { };
+				class MainTurret: MainTurret {
+					class OpticsIn: Optics_Gunner_MBT_01 {
+						class Wide: Wide {};
+					};
+				};
 		};
 	};
 	class B_MBT_01_arty_base_F: MBT_01_arty_base_F {
         class ACE_SelfActions: ACE_SelfActions {};				
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
-				class MainTurret: MainTurret { };
+				class MainTurret: MainTurret {
+					class OpticsIn: OpticsIn {
+						class Wide: Wide {};
+					};
+				};
 		};
 	};
 
@@ -71,7 +79,7 @@ class CfgVehicles {
 		};
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";
+				turretInfoType = "ITC_Land_RscIGS_SPH";
 				weapons[] = {"itc_land_155mm_howitzer"};
 				magazines[] = {
 					mag_24("itc_land_g155hex"),
@@ -82,6 +90,16 @@ class CfgVehicles {
 				};
 				lockWhenVehicleSpeed= 1;
 				maxHorizontalRotSpeed = "((360/30)/45)";
+				//class OpticsIn: ITC_Land_Optics_IGS {};
+				class OpticsIn: OpticsIn {
+					class Wide: Wide {
+						gunnerOpticsModel = "\A3\Weapons_F\reticle\optics_gunner_mbt_01_w_f.p3d";
+						initFov = 0.174;
+						minFov = 0.174;
+						maxFov = 0.174;
+						visionMode[] = {"Normal","NVG"};
+					};
+				};
 			};
 		};
 		class AnimationSources: AnimationSources {};

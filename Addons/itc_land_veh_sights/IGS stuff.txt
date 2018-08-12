@@ -1,0 +1,40 @@
+Horizontals
+((uiNameSpace getVariable "ITC_Land_RscIGS_SPH") displayCtrl 1801) ctrlSetPosition [((20.4+(4.55)) *   (0.01875 * SafezoneH)),(14 *(0.025 * SafezoneH))];  
+((uiNameSpace getVariable "ITC_Land_RscIGS_SPH") displayCtrl 1801) ctrlCommit 5; 
+
+Verticals
+((uiNameSpace getVariable "ITC_Land_RscIGS_SPH") displayCtrl 1802) ctrlSetPosition [(20.4 * (0.01875 * SafezoneH)),(((14) * (0.025 * SafezoneH)))];  
+((uiNameSpace getVariable "ITC_Land_RscIGS_SPH") displayCtrl 1802) ctrlCommit 5; 
+
+
+
+(24.9 - 4.525 = (20.375) - 4.525 = 15.85) (/5 = 0.905)
+
+Left Max: 15.85
+Mid: 20.4
+Right Max: 24.95
+
+Range: 9.1
+Left Range: 15.85 - 20.4 = 4.55
+Right Range: 24.95-20.4 = 4.55
+
+#define adjustX(ARG) ((20.4 + (ARG)) * (0.01875 * SafezoneH))
+#define adjustY(ARG) ((14.0 + (ARG)) * (0.025 * SafezoneH))
+
+_aziDif = (curAzi - misAzi);
+
+
+if ((_aziDif <= 100) && (_aziDif >= -100)) then { 
+	[_display, 1801, 0] call itc_land_tablet_fnc_setFade;
+	fartsX = ( _aziDif / 100) * 4.55;
+	(_display displayCtrl 1801) ctrlSetPosition [adjustX(ARG),adjustY(ARG)];   
+	(_display displayCtrl 1801) ctrlCommit 0;   
+} else {
+	[_display, 1801, 1] call itc_land_tablet_fnc_setFade;
+};
+
+if ((_qdDif <= 100) && (_qdDif >= -100)) then {
+	_adjustValY = (_qdDif / 100) * 4.55;	
+} else {
+
+};

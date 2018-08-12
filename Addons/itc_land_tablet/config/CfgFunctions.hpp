@@ -36,7 +36,19 @@ class CfgFunctions {
 			};
 			class fcimode_onlblselchanged {
 				file = "itc_land_tablet\functions\apps\spg\fcs\onLBSelChanged_fcimode.sqf";
-			};			
+			};	
+			class fci_fillAmmoList {
+				file = "itc_land_tablet\functions\apps\spg\fcs\fillAmmoList.sqf";
+			};	
+			class fci_onSelectAmmo {
+				file = "itc_land_tablet\functions\apps\spg\fcs\onLBSelChanged_ammoList.sqf";
+			};
+			class fci_fillFuzeList {
+				file = "itc_land_tablet\functions\apps\spg\fcs\fillFuzeList.sqf";
+			};
+			class fci_onSelectFuze {
+				file = "itc_land_tablet\functions\apps\spg\fcs\onLBSelChanged_fuzeList.sqf";
+			};				
 		};
 	};
 };

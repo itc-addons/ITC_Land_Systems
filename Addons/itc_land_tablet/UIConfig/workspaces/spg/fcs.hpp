@@ -5,7 +5,7 @@ class page_spg_controls:itc_land_workspace {
 		class fcs_mode_title: ITC_LAND_RscText {
 			idc = 1500;
 			text = "FCI MODE:";
-			x = 0.37625 * safezoneW + safezoneX;
+			x = 0.363125 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.15 * safezoneW;
 			h = 0.033 * safezoneH;
@@ -15,15 +15,15 @@ class page_spg_controls:itc_land_workspace {
 			idc = 1501;
 			h = 0.024 * safezoneH;
 			w = 0.1125 * safezoneW;
-			x = 0.435 * safezoneW + safezoneX;
+			x = 0.422 * safezoneW + safezoneX;
 			y = 0.24 * safezoneH + safezoneY;	
 			onLBSelChanged = "_this call itc_land_tablet_fnc_fcimode_onlblselchanged";				
 		};
 		//Manual Mode Controls
-		//#include "fcs_manualmode.hpp"
+		#include "fcs_manualmode.hpp"
 		//Local FCS Controls
 		#include "fcs_localFCSmode.hpp"
-
+		
 /*		//Datalink Direction Controls
 		class fcs_gun_title: ITC_LAND_RscText {
 			idc = 1013;
@@ -99,5 +99,8 @@ class page_spg_controls:itc_land_workspace {
 			action = "[""prev""] call itc_land_tablet_fnc_pageInteract";
 		};
 */
+	
+		//Ammohandler Inputs
+		#include "fcs_ahsettings.hpp"
 	};
 };
