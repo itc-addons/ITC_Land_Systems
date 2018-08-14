@@ -3,7 +3,7 @@ class cfgAmmo {
   class ammo_Missile_s750 : ammo_Missile_mim145 {
     class Components;
   };
-  class itc_ammo_s750 : ammo_Missile_s750 {
+  class itc_land_s750 : ammo_Missile_s750 {
     missileKeepLockedCone = 360;
     missileLockCone = 360;
     missileLockMaxDistance = 32000;
@@ -50,7 +50,7 @@ class cfgAmmo {
       };
     };
   };
-  class itc_ammo_s750_helper : ammo_Missile_s750 {
+  class itc_land_s750_helper : ammo_Missile_s750 {
     timeToLive = 0;
 		explosionTime = 0.0001;
   };
