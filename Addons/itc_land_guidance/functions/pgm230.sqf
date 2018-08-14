@@ -1,5 +1,5 @@
-params ["", "", "", "", "_ammo", "", "_projectile", "_gunner"];
-_targetPos = itc_land_guidance_targetPos;
+params ["_unit", "", "", "", "_ammo", "", "_projectile", "_gunner"];
+_targetPos = _unit getVariable ["itc_land_targetPos", itc_land_guidance_targetPos];
 if(isNil{_targetPos}) exitWith {};
 [{
   (_this select 0) params ["_projectile", "_lastFrameTime", "_targetCoordinates","_launchPos"];

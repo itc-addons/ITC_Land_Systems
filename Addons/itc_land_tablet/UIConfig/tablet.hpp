@@ -28,6 +28,8 @@ class itc_land_tablet {
 		page_bcs_firemission_solution,
 		page_bcs_firemission_adjust,
 
+		page_msl_config,
+
 		page_cbr_map,
 		page_cbr_settings
 	};
@@ -102,6 +104,8 @@ class itc_land_tablet {
   #include "workspaces\bcs\engageFiremission.hpp"
   #include "workspaces\bcs\solutionFiremission.hpp"
   #include "workspaces\bcs\adjustFiremission.hpp"
+
+  #include "workspaces\missile\missileConfig.hpp"
 
   #include "workspaces\cbr\map.hpp"
   #include "workspaces\cbr\settings.hpp"
