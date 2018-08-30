@@ -49,14 +49,14 @@ class CfgVehicles {
         initTurn = 0;
         maxturn = 0;
         */
-        weapons[] = {"weapon_mim145Launcher"};
-        magazines[] = {"magazine_Missile_mim145_x4"};
+        weapons[] = {"itc_land_mim145_launcher"};
+        magazines[] = {"itc_land_mim145_x4"};
       };
     };
 	class AnimationSources : AnimationSources {
       class Missiles_revolving {
         source = "revolving";
-        weapon = "weapon_mim145Launcher";
+        weapon = "itc_land_mim145_launcher";
       };
     };
   };

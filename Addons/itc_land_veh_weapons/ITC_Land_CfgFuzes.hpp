@@ -36,7 +36,7 @@ class ITC_Land_CfgFuzes {
 	class sam35_mod0 { //FOR SAMS WITH PROX FUZING
 		modes[] = {"prox"};
 		modeDesc[] = {"Proximity"};
-		//firedEvent = "itc_land_veh_weapons_fnc_firedSAM35";
+		firedEvent = "itc_land_veh_weapons_fnc_firedSAM35";
 		proxFOV = 60;
 		proxRAN = 30;
 	};	
