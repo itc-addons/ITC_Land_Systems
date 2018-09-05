@@ -249,25 +249,25 @@ class CfgVehicles {
 						initAngleY = 0;
 						minAngleY = -100;
 						maxAngleY = 100;
-						initFov = 0.75;
-						minFov = 0.75;
-						maxFov = 0.75;
+						initFov = 0.5;
+						minFov = 0.5;
+						maxFov = 0.5;
 						directionStabilized = 1;
 						visionMode[] = {"Normal","NVG"};
 						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";											
 					};
 					class Mid: Wide {
 						opticsDisplayName = "M";
-						initFov = 0.375;
-						minFov = 0.375;
-						maxFov = 0.375;
+						initFov = 0.25;
+						minFov = 0.25;
+						maxFov = 0.25;
 						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";						
 					};						
 					class Narrow: Wide {
 						opticsDisplayName = "N";
-						initFov = 0.1875;
-						minFov = 0.1875;
-						maxFov = 0.1875;
+						initFov = 0.125;
+						minFov = 0.0625;
+						maxFov = 0.0625;
 						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";						
 					};					
 				};

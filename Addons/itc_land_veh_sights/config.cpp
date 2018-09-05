@@ -8,5 +8,19 @@
 		authors[] = {"ToadBall","Yax"};
 	};
 };
+class RCWSOptics;
+class ITC_Land_Optics_IGS {
+	class Wide: RCWSOptics {
+		initFov = "(36 / 120)";
+		minFov = "(36 / 120)";
+		maxFov = "(36 / 120)";
+		visionMode[] = {"Normal","NVG"};
+		thermalMode[] = {};
+		gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_w_F.p3d";
+		gunnerOpticsEffect[] = {};
+	};
+};
+
+
 #include "CfgFunctions.hpp"
 #include "RscInGameUI.hpp"
