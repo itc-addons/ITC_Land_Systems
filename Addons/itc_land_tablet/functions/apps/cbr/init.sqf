@@ -4,16 +4,17 @@ params ["_display"];
 [_display, IDC_header1, "COBRA"] call itc_land_tablet_fnc_setText;
 [_display, IDC_header2, "Radar Suite"] call itc_land_tablet_fnc_setText;
 
-[_display, IDC_sidebar_button1, 0] call itc_land_tablet_fnc_setFade;
+//[_display, IDC_sidebar_button1, 0] call itc_land_tablet_fnc_setFade;
 [_display, IDC_sidebar_button2, 0] call itc_land_tablet_fnc_setFade;
 [_display, IDC_sidebar_button3, 0] call itc_land_tablet_fnc_setFade;
-[_display, IDC_sidebar_button1, "COBRA Settings"] call itc_land_tablet_fnc_setText;
+//[_display, IDC_sidebar_button1, "COBRA Settings"] call itc_land_tablet_fnc_setText;
 [_display, IDC_sidebar_button2, "Map view"] call itc_land_tablet_fnc_setText;
 [_display, IDC_sidebar_button3, "Data view"] call itc_land_tablet_fnc_setText;
 
-[_display, IDC_sidebar_button5, 0] call itc_land_tablet_fnc_setFade;
-[_display, IDC_sidebar_button5, "Refresh data"] call itc_land_tablet_fnc_setText;
+//[_display, IDC_sidebar_button5, 0] call itc_land_tablet_fnc_setFade;
+//[_display, IDC_sidebar_button5, "Refresh data"] call itc_land_tablet_fnc_setText;
 
+/*
 if(!(missionNameSpace getVariable ["itc_land_cobra_app_hasInitialized",false])) then {
   [player, "cobra", "returnData", {
     params ["_target","_transmission"];
@@ -36,5 +37,5 @@ if(!(missionNameSpace getVariable ["itc_land_cobra_app_hasInitialized",false])) 
 };
 
 itc_land_cobra_app_hasInitialized = true;
-
-"settings"
+*/
+"map"

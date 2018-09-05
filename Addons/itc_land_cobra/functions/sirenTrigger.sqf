@@ -1,26 +1,19 @@
-params ["_target","_transmission"];
-_transmission params ["_destination","_origin","_header","_type","_data"];
-
-private _recvID = _target getVariable ["init_datalink_ext_id",""];
-if(_origin == _recvID && _header == "cobra") then {
-  if(_type == "shellDetected") then {
-    _data params ["_position","_tof"];
-    private _sirenTriggerDist = _target getVariable ["sirenTriggerDist", 500];
-    if(_target distance _position < _sirenTriggerDist) then {
-      private _sirenActive = _target getVariable ["sirenActive", false];
-      private _sirenEndTime = _target getVariable ["sirenEndTime", time];
-      if(_data > _sirenEndTime) then {
-        _target setVariable ["sirenEndTime", (time + _tof)];
+params ["_siren","_position","_impactTime"];
+private _sirenTriggerDist = _siren getVariable ["sirenTriggerDist", 500];
+if(_siren distance _position < _sirenTriggerDist) then {
+  private _sirenActive = _siren getVariable ["sirenActive", false];
+  private _sirenEndTime = _siren getVariable ["sirenEndTime", time];
+  if(_impactTime > _sirenEndTime) then {
+    _siren setVariable ["sirenEndTime", _impactTime];
+  };
+  if(!_sirenActive) then {
+    _siren setVariable ["sirenActive", true];
+    [_siren] spawn {
+      while{time < (_this # 0) getVariable "sirenEndTime"} do {
+        (_this # 0) say3D ["alarmCar",200,1];
+        sleep 2;
       };
-      if(!_sirenActive) then {
-        _target setVariable ["sirenActive", true];
-        [_target] spawn {
-          while{time < (_this # 0) getVariable "sirenEndTime"} do {
-            (_this # 0) say3D ["alarmCar",150,0.8];
-            sleep 2;
-          };
-        };
-      };
+      (_this # 0) setVariable ["sirenActive", false];
     };
   };
 };

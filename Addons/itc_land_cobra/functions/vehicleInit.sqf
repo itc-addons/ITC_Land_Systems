@@ -1,21 +1,21 @@
-if (!isServer) exitWith {};
+//if (!isServer) exitWith {};
 params ["_cbr"];
 
 itc_land_cobras pushBack _cbr;
 
-private _linkID = _cbr getVariable ["init_datalink_id",""];
-[_cbr,"","object_register",true] call itc_land_datalink_fnc_connect;
+//private _linkID = _cbr getVariable ["init_datalink_id",""];
+//[_cbr,"","object_register",true] call itc_land_datalink_fnc_connect;
 
-[_cbr, "cobra", "getData", {_this call itc_land_cobra_fnc_getCobraData;}] call itc_land_datalink_fnc_registerEvent;
+//[_cbr, "cobra", "getData", {_this call itc_land_cobra_fnc_getCobraData;}] call itc_land_datalink_fnc_registerEvent;
 
-_cbr setVariable ["shells", []];
-_cbr setVariable ["origins", []];
-_cbr setVariable ["firingPositions", []];
-_cbr setVariable ["engagements", []];
-_cbr setVariable ["start", 1000];
-_cbr setVariable ["engagementTime", 30];
+missionNameSpace setVariable ["itc_land_cobra_shells", []];
+missionNameSpace setVariable ["itc_land_cobra_origins", []];
+missionNameSpace setVariable ["itc_land_cobra_firingPositions", []];
+missionNameSpace setVariable ["itc_land_cobra_engagements", []];
+missionNameSpace setVariable ["itc_land_cobra_start", 1000];
+missionNameSpace setVariable ["itc_land_cobra_engagementTime", 30];
 
-_cbr setVariable ["activeShells", []];
+missionNameSpace setVariable ["itc_land_cobra_activeShells", []];
 [{
   (_this select 0) params ["_cbr"];
   if(!alive _cbr) exitWith {
