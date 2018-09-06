@@ -17,7 +17,15 @@ if ((!(isNil {_vehicle getVariable "itc_land_tablet_fcs_tgtgrid"}))&&(!(isNil {_
 	ctrlSetText [1400,""];
 	ctrlSetText [1401,""];
 };
-
+  private _magazineTypes = (((
+    "(getText (_x >> ""weaponClass"")) == ((weapons vehicle player)#0)"
+    configClasses
+    (configFile >> "itc_land_ballistics" >> "batteryTypes")
+  ) # 0) >> "ammunition") call BIS_fnc_getCfgData;
+  private _magazineNames = _magazineTypes apply {
+    getText (configFile >> "CfgMagazines" >> _x >> "displayName");
+  };
+  [1402,_magazineNames,0,_magazineTypes] call itc_land_tablet_fnc_fillComboBox;
 
 _solutions = (_vehicle getVariable "itc_land_tablet_fcs_solutions");
 if(count _solutions > 0) then {
@@ -25,8 +33,8 @@ if(count _solutions > 0) then {
   _solution = _solutions # _solutionIndex;
   _solutionString = "";
   _solution params ["_charge", "_az", "_df", "_qd", "_tof", "_impVel", "_impAng", "_maxOrd", "_dist"];
-  
-  _solutionString = _solutionString + format ["SLN: %1 / %2<br/>", _solutionIndex+1,(count _solutions)];  
+
+  _solutionString = _solutionString + format ["SLN: %1 / %2<br/>", _solutionIndex+1,(count _solutions)];
   _solutionString = _solutionString + format ["CHARGE: %1<br/>", _charge];
   _solutionString = _solutionString + format ["AZIMUTH: %1<br/>",round _az];
   _solutionString = _solutionString + format ["DEFLECTION: %1<br/>",_df];
@@ -39,17 +47,20 @@ if(count _solutions > 0) then {
 } else {
   (_display displayCtrl 1100) ctrlSetStructuredText parseText "NO SLN";
 };
-(_display displayCtrl 1100) ctrlCommit 0;	
+(_display displayCtrl 1100) ctrlCommit 0;
 
-(_display displayCtrl 1501) lbAdd "MANUAL TARGETING";
+//(_display displayCtrl 1501) lbAdd "MANUAL TARGETING";
+lbClear (_display displayCtrl 1501);
 (_display displayCtrl 1501) lbAdd "L-FCS TARGETING";
+(_display displayCtrl 1501) lbSetCurSel 0;
+[_display,1] call itc_land_tablet_fnc_fcimode_onlblselchanged;
+/*
 if (isNil "itc_land_fcimode") then {
 	lbSetCurSel [1501,0];
-	[_display,0] call itc_land_tablet_fnc_fcimode_onlblselchanged;	
+	[_display,0] call itc_land_tablet_fnc_fcimode_onlblselchanged;
 } else {
 	lbSetCurSel [1501,itc_land_fcimode # 0];
-	[_display,itc_land_fcimode # 0] call itc_land_tablet_fnc_fcimode_onlblselchanged;				
+	[_display,itc_land_fcimode # 0] call itc_land_tablet_fnc_fcimode_onlblselchanged;
 };
-
+*/
 //(_display displayCtrl 1500) lbAdd "G: 0101   CH: 2    AZ: 800    DF: 3982    QD: 368    TOF:23.31";
-
