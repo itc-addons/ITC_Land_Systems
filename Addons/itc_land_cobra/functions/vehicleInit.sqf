@@ -17,14 +17,16 @@ missionNameSpace setVariable ["itc_land_cobra_engagementTime", 30];
 
 missionNameSpace setVariable ["itc_land_cobra_activeShells", []];
 [{
-  (_this select 0) params ["_cbr"];
+  (_this select 0) params ["_cbr","_lastScanned"];
+  if(cba_missionTime == _lastScanned) exitWith {};
+  (_this select 0) set [1, cba_missionTime];
   if(!alive _cbr) exitWith {
     [_this select 1] call CBA_fnc_removePerFrameHandler;
   };
   if(vectorMagnitude (velocity _cbr) < 1) then {
     [_cbr] call itc_land_cobra_fnc_scan;
   };
-}, 1, [_cbr]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_cbr,cba_missionTime]] call CBA_fnc_addPerFrameHandler;
 
 
 /*
