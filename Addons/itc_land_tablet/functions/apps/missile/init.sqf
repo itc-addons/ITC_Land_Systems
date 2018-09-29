@@ -8,7 +8,7 @@ if(_canOpen) then { //check if it has the right interfaces
   _canOpen = "spg" in _interfaces;
 };
 
-[_display, IDC_header1, "MSL CONF"] call itc_land_tablet_fnc_setText;
+[_display, IDC_header1, "AIFMS"] call itc_land_tablet_fnc_setText;
 
 if(!_canOpen) exitWith {
   [_display] call itc_land_tablet_fnc_appClear;
@@ -19,6 +19,6 @@ if(!_canOpen) exitWith {
   ""
 };
 
-[_display, IDC_header2, "Missile Target"] call itc_land_tablet_fnc_setText;
+[_display, IDC_header2, "MLRS"] call itc_land_tablet_fnc_setText;
 
 "msl"

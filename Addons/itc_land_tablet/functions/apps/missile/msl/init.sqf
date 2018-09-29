@@ -1,7 +1,7 @@
 params ["_display"];
 #include "..\..\..\BCS_idc_defines.hpp"
 ctrlShow [13701, true];
-[_display, IDC_workspace_header, "Missile Targeting"] call itc_land_tablet_fnc_setText;
+[_display, IDC_workspace_header, "Fire Command Interface"] call itc_land_tablet_fnc_setText;
 
 _targetPos = _vehicle getVariable ["itc_land_targetPos", nil];
 if(!isNil{_targetPos}) then {
