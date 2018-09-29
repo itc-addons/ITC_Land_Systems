@@ -7,12 +7,11 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 	[_vehicle,_curMag] spawn {
 		private _vehicle = _this select 0;
 		private _curMag = _this select 1;
-
+		itc_land_SPHammoHandler_mode = "UNLOADING";
 		disableSerialization;
 		//disableUserInput true;
 		ctrlEnable [86010, false]; //disable load button
 		ctrlEnable [86009, false]; //disable apply settings button
-
 		itc_land_SPHammoHandler_status = "SAFING WEAPON";
 		sleep 3+random(2);
 		itc_land_SPHammoHandler_status = "REMOVING CHARGE";
@@ -42,8 +41,9 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 
 			ctrlSetText [86010, "LOAD"]; //reset load button text
 			ctrlEnable [86010, true]; //re-enable load button
-			ctrlEnable [86009, true]; //re-enable apply settings button
+			ctrlEnable [86009, true]; //re-enable apply settings button				
 		};
+		itc_land_SPHammoHandler_mode = "WAITING";			
 		//disableUserInput false;
 	};
 
@@ -52,7 +52,7 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 		disableSerialization;
 		//disableUserInput true;
 		private _vehicle = _this select 0;
-
+		itc_land_SPHammoHandler_mode = "LOADING";
 		ctrlEnable [86010, false]; //disable loading/unloading
 		ctrlEnable [86009, false]; //disable apply settings button
 		
@@ -79,10 +79,10 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 
 		itc_land_SPHammoHandler_status = "RAMMING SHELL";
 
-		sleep 3+random(1);
+		sleep 2+random(1);
 		itc_land_SPHammoHandler_status = "INSERTING CHARGE";
 
-		sleep 3+random(1);
+		sleep 2+random(1);
 		itc_land_SPHammoHandler_status = "CLOSING BREECH";
 
 		
@@ -94,9 +94,9 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 		_vehicle selectWeapon _weapon;
 		//reload _vehicle;
 
-		sleep 3+random(2);
+		sleep 2+random(1);
 		itc_land_SPHammoHandler_status = "INSERTING PRIMER";
-		sleep 2+random(2);
+		sleep 2+random(1);
 		itc_land_SPHammoHandler_status = "ATTACHING LANYARD";
 		sleep 1+random(1);
 		itc_land_SPHammoHandler_status = "READY TO FIRE";
@@ -115,9 +115,9 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 			ctrlSetText [86010, "UNLOAD"];
 			ctrlEnable [86010, true];
 			ctrlEnable [86009, false];
-
 			private _ctrl = ((findDisplay 32562) displayCtrl 86010);
 			ctrlSetFocus _ctrl;
+			itc_land_SPHammoHandler_mode = "WAITING";					
 		};			
 	};
 };

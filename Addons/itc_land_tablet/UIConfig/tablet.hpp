@@ -3,35 +3,42 @@
 #define WSHADJUST 0.04
 #define WSWADJUST 0.125
 #include "\itc_land_common\config\ui\defines.hpp"
+class RscMapControl;
 
 class itc_land_tablet {
 	idd = 32562;
-  controlsBackground[] = {
-      workspace_background,
-      workspace_header_bar,
-      sidebar_background,
-			screen_home_lines,
-      screen_image,
-      screen_image_night,
+	controlsBackground[] = {
+		workspace_background,
+		workspace_header_bar,
+		sidebar_background,
+		homepage_background,
+		homepage_image,
+		screen_image,
+		screen_image_night,
 
-			page_home_list,
+		page_home_list,
 
-			page_spg_controls,
-			page_spg_status,
-			page_bcs_settings,
-			page_bcs_setup,
-			page_bcs_locations,
-			page_bcs_firemission_new,
-			page_bcs_firemission_engage,
-			page_bcs_firemission_solution,
-			page_bcs_firemission_adjust
-  };
+		page_spg_controls,
+		page_spg_status,
+		page_bcs_settings,
+		page_bcs_setup,
+		page_bcs_locations,
+		page_bcs_firemission_new,
+		page_bcs_firemission_engage,
+		page_bcs_firemission_solution,
+		page_bcs_firemission_adjust,
+
+		page_msl_config,
+
+		page_cbr_map,
+		page_cbr_settings,
+		page_cbr_data
+	};
   objects[] = { };
-  controls[]=
-  {
+  controls[]= {
     header1,
     header2,
-		workspace_header,
+	workspace_header,
 
     sidebar_button1,
     sidebar_button2,
@@ -85,31 +92,59 @@ class itc_land_tablet {
 
     sizeEx = 1.25 * GUI_GRID_H;
   };
-  class screen_image: ITC_LAND_RscPicture
-  {
-      idc = 15107;
-      text = "\itc_land_tablet\UI\screen.paa";
-			h = 0.86*SafeZoneW;
-			w = 0.64*SafeZoneW;
-			x = 0.5-((0.64*SafeZoneW)/2);
-			y = 0.5-((1.03*SafeZoneW)/2);
-			style = ST_PICTURE;
+
+  #include "workspaces\home\appList.hpp"
+
+  #include "workspaces\spg\fcs.hpp"
+  #include "workspaces\spg\status.hpp"
+
+  #include "workspaces\bcs\settings.hpp"
+  #include "workspaces\bcs\setup.hpp"
+  #include "workspaces\bcs\locStores.hpp"
+  #include "workspaces\bcs\newFiremission.hpp"
+  #include "workspaces\bcs\engageFiremission.hpp"
+  #include "workspaces\bcs\solutionFiremission.hpp"
+  #include "workspaces\bcs\adjustFiremission.hpp"
+
+  #include "workspaces\missile\missileConfig.hpp"
+
+  #include "workspaces\cbr\map.hpp"
+  #include "workspaces\cbr\settings.hpp"
+  #include "workspaces\cbr\data.hpp"
+
+  class screen_image: ITC_LAND_RscPicture {
+		idc = 15107;
+		text = "\itc_land_tablet\UI\screen.paa";
+		h = 0.86*SafeZoneW;
+		w = 0.64*SafeZoneW;
+		x = 0.5-((0.64*SafeZoneW)/2);
+		y = 0.5-((1.03*SafeZoneW)/2);
+		style = ST_PICTURE;
   };
-  class screen_image_night: screen_image
-  {
+  class screen_image_night: screen_image {
       idc = 15117;
       text = "\itc_land_tablet\UI\screen-night.paa";
   };
-  class screen_home_lines: ITC_LAND_RscPicture
-  {
-      idc = 15208;
-      text = "\itc_land_tablet\UI\home-lines.paa";
-			h = 0.86*SafeZoneW;
-			w = 0.64*SafeZoneW;
-			x = 0.5-((0.64*SafeZoneW)/2);
-			y = 0.5-((1.03*SafeZoneW)/2);
-			style = ST_PICTURE;
+  class homepage_background: ITC_LAND_RscText {
+    idc = 15010;
+    x = 0.2425 * safezoneW + safezoneX;
+    y = (0.247+ POSYADJUST) * safezoneH + safezoneY;
+    w = 0.51 * safezoneW;
+    h = 0.55 * safezoneH;
+    colorBackground[] = {0.1,0.1,0.1,1};
+    colorActive[] = {0.1,0.1,0.1,1};
   };
+  class homepage_image: ITC_LAND_RscPicture {
+	idc = 15011;
+	text = "\itc_land_tablet\UI\logo.paa";
+    x = 0.2425 * safezoneW + safezoneX;
+    y = (0.3+ POSYADJUST) * safezoneH + safezoneY;
+	w = 0.52 * safezoneW;
+	h = 0.26 * safezoneH;
+	//colorBackground[] = {0.1,0.1,0.1,1};
+	style = ST_PICTURE;
+  };
+
   class sidebar_background: ITC_LAND_RscText {
     idc = 15101;
     x = (0.304062+ POSXADJUST) * safezoneW + safezoneX;
@@ -136,8 +171,8 @@ class itc_land_tablet {
     y = (0.313+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side1""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button2: ITC_LAND_RscButton {
@@ -147,8 +182,8 @@ class itc_land_tablet {
     y = (0.335+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side2""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button3: ITC_LAND_RscButton {
@@ -158,8 +193,8 @@ class itc_land_tablet {
     y = (0.357+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side3""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button4: ITC_LAND_RscButton {
@@ -169,9 +204,9 @@ class itc_land_tablet {
     y = (0.379+ POSYADJUST) * safezoneH + safezoneY;
     w = 0.0928125 * safezoneW;
     h = 0.022 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
-		action = "[""side4""] call itc_land_tablet_fnc_interact";
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
+	action = "[""side4""] call itc_land_tablet_fnc_interact";
   };
   class sidebar_button5: ITC_LAND_RscButton {
     idc = 15112;
@@ -180,8 +215,8 @@ class itc_land_tablet {
 		y = (0.445+ POSYADJUST) * safezoneH + safezoneY;
 		w = 0.0928125 * safezoneW;
 		h = 0.044 * safezoneH;
-    colorBackground[] = {0,0,0,0.9};
-    colorActive[] = {0.1,0.1,0.1,0.9};
+    //colorBackground[] = {0,0,0,0.9};
+    //colorActive[] = {0.1,0.1,0.1,0.9};
 		action = "[""side5""] call itc_land_tablet_fnc_interact";
   };
 	class fire_mission_list: ITC_LAND_RscListbox {
@@ -190,8 +225,8 @@ class itc_land_tablet {
 		y = (0.5+ POSYADJUST) * safezoneH + safezoneY;
 		w = 0.0928125 * safezoneW;
 		h = 0.154 * safezoneH;
-		colorBackground[] = {0,0,0,0.9};
-		colorActive[] = {0,0,0,0.9};
+		//colorBackground[] = {0,0,0,0.9};
+		//colorActive[] = {0,0,0,0.9};
 		onLBSelChanged = "[""sideList""] call itc_land_tablet_fnc_appInteract";
 	};
 	class app1: ITC_LAND_RscButton
@@ -247,16 +282,5 @@ class itc_land_tablet {
 		action = "[""app"", 3] call itc_land_tablet_fnc_interact";
 	};
 
-  #include "workspaces\home\appList.hpp"
 
-  #include "workspaces\spg\fcs.hpp"
-  #include "workspaces\spg\status.hpp"
-
-  #include "workspaces\bcs\settings.hpp"
-  #include "workspaces\bcs\setup.hpp"
-  #include "workspaces\bcs\locStores.hpp"
-  #include "workspaces\bcs\newFiremission.hpp"
-  #include "workspaces\bcs\engageFiremission.hpp"
-  #include "workspaces\bcs\solutionFiremission.hpp"
-  #include "workspaces\bcs\adjustFiremission.hpp"
 };

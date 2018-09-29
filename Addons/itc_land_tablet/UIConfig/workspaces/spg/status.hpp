@@ -1,6 +1,5 @@
-class page_spg_status:itc_land_workspace
-{
-  idc = 13402;
+class page_spg_status:itc_land_workspace {
+  idc = 13420;
   class Controls {
     class status_dam_title: ITC_LAND_RscText
     {

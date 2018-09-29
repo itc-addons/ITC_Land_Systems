@@ -9,13 +9,14 @@ _gun removeMagazine _magazine;
 private _gunMags = magazines _gun;
 
 itc_land_SPHammoHandler_status = "WAITING";
+itc_land_SPHammoHandler_mode = "WAITING";
 itc_land_roundsFired = itc_land_roundsFired + 1;
 
 if (itc_land_SPHammoHandler_open) then {
 
 	ctrlSetText [86010, "LOAD"];
-	//ctrlEnable [86009, true];
-	//ctrlEnable [86010, false];	
+	ctrlEnable [86009, true];
+	ctrlEnable [86010, true];	
 
 };
 private _ammoToLoad = ((itc_land_sphloadersettings # 0) # 1);

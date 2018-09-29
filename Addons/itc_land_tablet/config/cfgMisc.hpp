@@ -8,5 +8,13 @@ class itc_land {
       displayName = "Battery Control System";
       interfaces = "-";
     };
+    class cbr {
+      displayName = "Counter Battery Radar";
+      interfaces = "Datalink";
+    };
+    class missile {
+      displayName = "Guided Missile Configuration";
+      interfaces = "ITC Self Propelled Gun";
+    };
   };
 };

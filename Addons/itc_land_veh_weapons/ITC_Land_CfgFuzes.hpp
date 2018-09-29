@@ -10,7 +10,7 @@ class ITC_Land_CfgFuzes {
 		modes[] = {"pd","prox","time","delay"};
 		modeDesc[] = {"Point Detonate","Proximity","Time","Delay"};
 		firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
-		proxHOB = 10;		
+		proxHOB = 10;
 	};
 	class mof35_mod1: mof35_mod0 {
 		modes[] = {"time"};
@@ -27,4 +27,17 @@ class ITC_Land_CfgFuzes {
 		modeDesc[] = {"Time"};
 		firedEvent = "itc_land_veh_weapons_fnc_firedMof35Mod3";
 	};
+	class mof35_mod4 : mof35_mod0 { //FOR MLRS HE
+		modes[] = {"pd","prox"};
+		modeDesc[] = {"Point Detonate","Proximity","Time","Delay"};
+		firedEvent = "itc_land_veh_weapons_fnc_firedMof35";
+		proxHOB = 5;
+	};
+	class sam35_mod0 { //FOR SAMS WITH PROX FUZING
+		modes[] = {"prox"};
+		modeDesc[] = {"Proximity"};
+		firedEvent = "itc_land_veh_weapons_fnc_firedSAM35";
+		proxFOV = 60;
+		proxRAN = 30;
+	};	
 };
