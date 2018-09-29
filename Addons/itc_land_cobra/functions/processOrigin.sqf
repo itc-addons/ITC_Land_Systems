@@ -1,6 +1,6 @@
 params ["_cbr", "_origin"];
-_origins = _cbr getVariable "origins";
-_firingPositions = _cbr getVariable "firingPositions";
+_origins = missionNameSpace getVariable "itc_land_cobra_origins";
+_firingPositions = missionNameSpace getVariable "itc_land_cobra_firingPositions";
 _origins pushBack _origin;
 _existingPosition = nil;
 {
@@ -21,5 +21,5 @@ if(isNil{_existingPosition}) then {
     _firingPositions pushBack [1, [_origin], time];
 };
 
-_cbr setVariable ["firingPositions",_firingPositions];
-_cbr setVariable ["origins",_origins];
+missionNameSpace setVariable ["itc_land_cobra_firingPositions",_firingPositions];
+missionNameSpace setVariable ["itc_land_cobra_origins",_origins];

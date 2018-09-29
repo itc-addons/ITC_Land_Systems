@@ -130,6 +130,7 @@ class CfgVehicles {
   };
   class itc_land_cram_praetorian2_o : itc_land_cram_praetorian2 {
     crew="O_UAV_AI";
+    faction = "OPF_F";
     side = 0;
   };
   class SAM_System_01_base_F;

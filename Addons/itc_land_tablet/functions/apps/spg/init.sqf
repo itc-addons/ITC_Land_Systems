@@ -22,9 +22,9 @@ if(!_canOpen) exitWith {
 
 [_display, IDC_sidebar_button1, 0] call itc_land_tablet_fnc_setFade;
 [_display, IDC_sidebar_button2, 0] call itc_land_tablet_fnc_setFade;
-[_display, IDC_sidebar_button3, 0] call itc_land_tablet_fnc_setFade;
+//[_display, IDC_sidebar_button3, 0] call itc_land_tablet_fnc_setFade;
 [_display, IDC_sidebar_button1, "FCI"] call itc_land_tablet_fnc_setText;
 [_display, IDC_sidebar_button2, "INS / DATA"] call itc_land_tablet_fnc_setText;
-[_display, IDC_sidebar_button3, "Status"] call itc_land_tablet_fnc_setText;
+//[_display, IDC_sidebar_button3, "Status"] call itc_land_tablet_fnc_setText;
 
 "fcs"

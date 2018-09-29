@@ -31,7 +31,8 @@ class itc_land_tablet {
 		page_msl_config,
 
 		page_cbr_map,
-		page_cbr_settings
+		page_cbr_settings,
+		page_cbr_data
 	};
   objects[] = { };
   controls[]= {
@@ -109,6 +110,7 @@ class itc_land_tablet {
 
   #include "workspaces\cbr\map.hpp"
   #include "workspaces\cbr\settings.hpp"
+  #include "workspaces\cbr\data.hpp"
 
   class screen_image: ITC_LAND_RscPicture {
 		idc = 15107;
