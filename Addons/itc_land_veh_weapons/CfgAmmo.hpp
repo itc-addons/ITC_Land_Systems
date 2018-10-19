@@ -72,18 +72,18 @@ class CfgAmmo {
 	class itc_land_230mm_icm_helper: R_230mm_Cluster {
 		triggerTime = 0.05;
 		triggerDistance = 0.1;
-		submunitionConeType[] = {"poissondisc",95};
+		submunitionConeType[] = {"poissondisc",120};
 		submunitionAmmo[] = {"Mo_cluster_AP",0.33,"Mo_cluster_Bomb_01_F",0.66,"Mo_cluster_AP_UXO_deploy",0.07};
 		submunitionConeAngle = 5;
 	};	
 
 	class itc_land_230mm_fascam_ap_helper : Mine_155mm_AMOS_range {
 		triggerTime = 0.05;
-		submunitionConeType[] = {"randomcenter",40};
+		submunitionConeType[] = {"randomcenter",50};
 	};
 
 	class itc_land_230mm_fascam_at_helper : AT_Mine_155mm_AMOS_range {
 		triggerTime = 0.05;
-		submunitionConeType[] = {"randomcenter",40};
+		submunitionConeType[] = {"randomcenter",50};
 	};	
 };
