@@ -15,7 +15,7 @@ class itc_land_ballistics {
     class M230 {
       displayName = "M230 227mm MLRS";
       type = "rocket";
-      ammunition[] = {"itc_land_m230hex_12rnd","itc_land_m230pgm_12rnd"};
+      ammunition[] = {"itc_land_m230hex_12rnd","itc_land_m230pgm_12rnd","itc_land_m230pgm_6rnd","itc_land_m230icm_12rnd","itc_land_m230icm_6rnd","itc_land_m230mat_12rnd","itc_land_m230map_12rnd"};
       weaponClass = "itc_land_230mm_mlrs";
     };
     class Mk6 {
