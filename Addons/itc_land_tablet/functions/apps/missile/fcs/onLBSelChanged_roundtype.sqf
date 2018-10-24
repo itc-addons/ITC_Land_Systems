@@ -14,11 +14,11 @@ private _fuzeDescArray = getArray (configFile >> "ITC_Land_CfgFuzes" >> _fuze >>
 if ( !(isNil "itc_land_selectedFuzeIndex") && {itc_land_selectedFuzeIndex <= (lbSize 1904)}) then {
 	//Recall last selection in ComboBox
 	[1904, _fuzeDescArray, itc_land_selectedFuzeIndex, _fuzeModeArray] call itc_land_tablet_fnc_fillComboBox;
-	//[1904, lbCurSel 1904] call itc_land_tablet_fnc_mlrsfci_onlblselchanged_fuzemode;	
+	[1904, lbCurSel 1904] call itc_land_tablet_fnc_mlrsfci_onlblselchanged_fuzemode;	
 } else {
 	//select first item in ComboBox
 	[1904, _fuzeDescArray, 0, _fuzeModeArray] call itc_land_tablet_fnc_fillComboBox;
-	//[1904, lbCurSel 1904] call itc_land_tablet_fnc_mlrsfci_onlblselchanged_fuzemode;		
+	[1904, 0] call itc_land_tablet_fnc_mlrsfci_onlblselchanged_fuzemode;		
 };
 
 //Guided munition elements 
@@ -35,8 +35,16 @@ if ( isArray (_selectedMagConfig >> "itc_land_guidance") ) then {
 			//Show PGM elements
 			ctrlShow [1908, true];
 			ctrlShow [1909, true];
+			private _tgtGrid = "0000000000";
+			if (!(isNil "itc_land_guidance_targetGrid")) then {	_tgtGrid = itc_land_guidance_targetGrid; };
+			ctrlSetText [1909,format["%1", _tgtGrid]];	
+			
 			ctrlShow [1910, true];
 			ctrlShow [1911, true];		
+			private _tgtAlt = 0;
+			if (!(isNil "itc_land_guidance_targetAlt")) then {	_tgtAlt = itc_land_guidance_targetAlt; };
+			ctrlSetText [1911,format["%1", _tgtAlt]];			
+			
 		};
 		default { 
 			//Hide Guidance fields
