@@ -1,7 +1,7 @@
 	class itc_land_g155hex: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G155 HE";
-		ammo = "Sh_155mm_AMOS";
+		ammo = "itc_land_155mm";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 HE";
 		itc_land_fuze = "mof35_mod0";

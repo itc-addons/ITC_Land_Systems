@@ -19,6 +19,10 @@ class CfgAmmo {
 	class Sh_155mm_AMOS;
 	class itc_land_155mm: Sh_155mm_AMOS {
 		//artilleryLock = 0;
+		airFriction = -0.0000395;
+        whistleOnFire = 1;		
+        whistleDist = 250;
+        suppressionRadiusHit = 100;		
 	};
 	class itc_land_155mm_inert: itc_land_155mm {
 		indirectHitRange = 1;
