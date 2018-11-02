@@ -19,10 +19,17 @@ class CfgAmmo {
 	class Sh_155mm_AMOS;
 	class itc_land_155mm: Sh_155mm_AMOS {
 		//artilleryLock = 0;
-		airFriction = -0.0000395;
+		//airFriction = -0.0000395;
+        //sideAirFriction = 1;		
         whistleOnFire = 1;		
-        whistleDist = 250;
-        suppressionRadiusHit = 100;		
+        whistleDist = 500;
+        suppressionRadiusHit = 100;	
+        ace_frag_enabled = 1;
+        ace_frag_classes[] = {ACE_frag_large, ACE_frag_large, ACE_frag_large_HD, ACE_frag_large, ACE_frag_medium_HD, ACE_frag_medium_HD, ACE_frag_medium, ACE_frag_huge, ACE_frag_huge_HD, ACE_frag_huge};
+        ace_frag_metal = 36000;
+        ace_frag_charge = 10800;
+        ace_frag_gurney_c = 2440;
+        ace_frag_gurney_k = 1/2;		
 	};
 	class itc_land_155mm_inert: itc_land_155mm {
 		indirectHitRange = 1;
