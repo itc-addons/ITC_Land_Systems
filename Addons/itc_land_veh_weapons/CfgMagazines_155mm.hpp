@@ -28,7 +28,7 @@
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
 		itc_land_submunition = "itc_land_155mm_smoke";
-		itc_land_timeModifier = -1;
+		itc_land_timeModifier = -1.5;
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_155\list.sqf";
 	};
 	class itc_land_g155smo_chg1: itc_land_g155smo { initSpeed = 100; itc_land_CountInAH = 0;  };
@@ -48,7 +48,7 @@
 		itc_land_charge_format = "itc_land_g155icm_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
-		itc_land_timeModifier = -2.5;
+		itc_land_timeModifier = -2;
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_155\list.sqf";
 	};
 	class itc_land_g155icm_chg1: itc_land_g155icm { initSpeed = 100; itc_land_CountInAH = 0;  };
@@ -87,7 +87,7 @@
 		itc_land_charge_format = "itc_land_g155map_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
-		itc_land_timeModifier = -1.2;
+		itc_land_timeModifier = -1.5;
 		itc_land_submunition = "itc_land_155mm_fascam_ap_helper";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_155\list.sqf";
 	};
@@ -166,8 +166,8 @@
 		ammo = "itc_land_155mm_inert";
 		itc_land_submunitionCount = 2;
 		itc_land_submunitionScript = "itc_land_veh_weapons_fnc_deployExtra";
-		itc_land_heightModifier = 60;
-		itc_land_timeModifier = -4;
+		itc_land_heightModifier = 75;
+		itc_land_timeModifier = -3;
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 EXTRA";
 		itc_land_fuze = "mof35_mod3";
