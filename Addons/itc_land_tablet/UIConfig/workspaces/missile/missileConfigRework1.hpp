@@ -122,7 +122,7 @@ class page_msl_config:itc_land_workspace {
 	  y = 0.549 * safezoneH + safezoneY;
 	  w = 0.0515625 * safezoneW;
 	  h = 0.033 * safezoneH;
-	  action = "";
+	  action = "[""calc""] call itc_land_tablet_fnc_pageInteract";
 	};	
 	/*
 	class msl_target_el: ITC_LAND_RscText {

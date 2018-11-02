@@ -40,14 +40,14 @@ class CfgVehicles {
 		class ACE_SelfActions : ACE_SelfActions {
 			class ITC_Land_MountedTablet {
 				displayName = "Open Mounted Tablet";
-				icon = "\itc_land_tablet\UI\arty-icon.paa";
+				icon = "\itc_land_tablet\UI\tableticon256.paa";
 				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( gunner _target ) == ACE_Player)";
 				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
 			};
 		};
 		class itc_land {
 			tabletInterfaces[] = {"spg"};
-			mountedTablet = "itc_land_tablet_spg";
+			mountedTablet = "itc_land_tablet_mlrs";
 			class fcs {
 				tableList = "b_230";
 			};
@@ -55,7 +55,7 @@ class CfgVehicles {
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
 				weapons[] = {"itc_land_230mm_mlrs"};
-				magazines[] = {"itc_land_m230hex_12rnd"};
+				magazines[] = {"itc_land_m230hex_12rnd","itc_land_m230pgm_12rnd"};
 				maxHorizontalRotSpeed = "((360/30)/45)";
 				turretInfoType = "ITC_Land_RscGunnerSightZamakMRLi";
 			};
