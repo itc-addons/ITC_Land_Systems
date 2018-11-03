@@ -13,6 +13,7 @@ class cfgWeapons {
     midRangeProbab = 1;
     maxRange = 20000;
     maxRangeProbab = 1;
+    reloadTime=5;
     class EventHandlers
     {
         class itc_land_veh_weapons
