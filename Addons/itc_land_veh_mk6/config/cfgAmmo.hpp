@@ -5,7 +5,7 @@ class cfgAmmo {
     effectFlare = "CounterMeasureFlare";
     aimAboveTarget[] = {50, 80, 140, 200, 260, 320, 380};
     aimAboveDefault = 4;
-    lightColor[] = {0.95, 0.95, 1, 0.5};
+    lightColor[] = {0.95, 0.95, 0.4, 0.5};
     smokeColor[] = {1, 1, 1, 0.5};
     brightness = 50;
     //intensity = 180000;
