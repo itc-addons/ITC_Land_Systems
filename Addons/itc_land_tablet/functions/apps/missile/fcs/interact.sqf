@@ -70,6 +70,13 @@ switch(_action) do {
 				//player sidechat str _targetPos;	
 				itc_land_guidance_targetPos = _targetPos;
 				
+				_solutions = _vehicle getVariable "itc_land_tablet_fcs_solutions";
+				if (count _solutions > 0) then { 
+					_solutionsGPS = _solutions apply {
+						_x set [3,800]; 
+					};
+					_vehicle setVariable ["itc_land_tablet_fcs_solutions", _solutionsGPS, true];					
+				};
 			};
 
 			default { 	};
