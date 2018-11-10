@@ -16,7 +16,16 @@ switch(_action) do {
     _gunPos = getPosASL _vehicle;
 
 	_solutions = [_shellType, _gunPos, _gunPos # 2, getDir _vehicle, _targetPos, _elField] call itc_land_ballistics_fnc_calcShellTypeSolutions;	
+
+	itc_land_guidance = getArray (configFile >> "CfgMagazines" >> lbData [2402, lbCurSel 2402] >> "itc_land_guidance");
 	
+	if (count itc_land_guidance > 0) then {
+		if (count _solutions > 0) then { 
+			_solutions apply {
+				_x set [3,800]; 
+			};			
+		};
+	};
     _vehicle setVariable ["itc_land_tablet_fcs_solutions", _solutions, true];
     _vehicle setVariable ["itc_land_tablet_fcs_solutions_index", 0, true];
   };
@@ -69,14 +78,6 @@ switch(_action) do {
 				_targetPos set [2,itc_land_guidance_targetAlt];
 				//player sidechat str _targetPos;	
 				itc_land_guidance_targetPos = _targetPos;
-				
-				_solutions = _vehicle getVariable "itc_land_tablet_fcs_solutions";
-				if (count _solutions > 0) then { 
-					_solutionsGPS = _solutions apply {
-						_x set [3,800]; 
-					};
-					_vehicle setVariable ["itc_land_tablet_fcs_solutions", _solutionsGPS, true];					
-				};
 			};
 
 			default { 	};
@@ -88,6 +89,7 @@ switch(_action) do {
 
 if (_action in ["calc","prev","next"]) then {
 	_solutions = (_vehicle getVariable "itc_land_tablet_fcs_solutions");
+	
 	if(count _solutions > 0) then {
 	  _solutionIndex = (_vehicle getVariable "itc_land_tablet_fcs_solutions_index");
 	  _solution = _solutions # _solutionIndex;
@@ -97,6 +99,7 @@ if (_action in ["calc","prev","next"]) then {
 	  _solutionString = _solutionString + format ["SLN: %1 / %2<br/>", _solutionIndex+1,(count _solutions)];
 	  _solutionString = _solutionString + format ["AZIMUTH: %1<br/>",round _az];
 	  _solutionString = _solutionString + format ["DEFLECTION: %1<br/>",_df];
+	  
 	  _solutionString = _solutionString + format ["QUADRANT: %1<br/>",round _qd];
 	  _solutionString = _solutionString + format ["TOF: %1<br/>",round _tof];
 	  _solutionString = _solutionString + format ["MAXIMUM ORDINATE: %1<br/>",round _maxOrd];
