@@ -51,7 +51,7 @@ class CfgVehicles {
             };
 			class ITC_Land_CommanderTablet {
 				displayName = "Open Mounted Tablet";
-				icon = "\itc_land_tablet\UI\arty-icon.paa";
+				icon = "\itc_land_tablet\UI\tableticon256.paa";
 				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( commander _target ) == ACE_Player)";
 				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
 			};				
