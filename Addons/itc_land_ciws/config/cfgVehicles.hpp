@@ -18,6 +18,7 @@ class CfgVehicles {
       acceleration = 0;
       scope = 1;
       armor = 10;
+      isUAV = 0;
   };
   class itc_land_shell_o : itc_land_shell_b {
       crew="O_UAV_AI";
@@ -130,12 +131,13 @@ class CfgVehicles {
   };
   class itc_land_cram_praetorian2_o : itc_land_cram_praetorian2 {
     crew="O_UAV_AI";
+    faction = "OPF_F";
     side = 0;
   };
   class SAM_System_01_base_F;
   class itc_land_ciws_centurion2 : SAM_System_01_base_F {
 		author = "Yax ";
-    displayName = "Centurion 2 Mod 0";
+    displayName = "Mk49 Spartan 2 Mod 0";
     side = 1;
     faction = "BLU_F";
     crew = "B_UAV_AI";

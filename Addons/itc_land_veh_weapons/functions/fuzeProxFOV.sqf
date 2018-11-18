@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 //player sideChat "LAUNCH";
 private _args = _this # 0;
 private _launcher = _args # 0;
@@ -51,4 +54,8 @@ if (!isNull _proj) then {
 
 } else {
 	[_this select 1] call CBA_fnc_removePerFrameHandler; //removes prox fuse PFH
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> master

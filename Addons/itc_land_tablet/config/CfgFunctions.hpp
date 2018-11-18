@@ -37,6 +37,7 @@ class CfgFunctions {
 			class fcimode_onlblselchanged {
 				file = "itc_land_tablet\functions\apps\spg\fcs\onLBSelChanged_fcimode.sqf";
 			};	
+<<<<<<< HEAD
 			class fci_fillAmmoList {
 				file = "itc_land_tablet\functions\apps\spg\fcs\fillAmmoList.sqf";
 			};	
@@ -49,6 +50,14 @@ class CfgFunctions {
 			class fci_onSelectFuze {
 				file = "itc_land_tablet\functions\apps\spg\fcs\onLBSelChanged_fuzeList.sqf";
 			};				
+=======
+			class mlrsfci_onlblselchanged_roundType	{
+				file = "itc_land_tablet\functions\apps\missile\fcs\onLBSelChanged_roundtype.sqf";			
+			};			
+			class mlrsfci_onlblselchanged_fuzemode	{
+				file = "itc_land_tablet\functions\apps\missile\fcs\onLBSelChanged_fuzemode.sqf";			
+			};						
+>>>>>>> master
 		};
 	};
 };

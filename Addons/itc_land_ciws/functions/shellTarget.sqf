@@ -13,6 +13,7 @@ _this spawn {
   createVehicleCrew _target;
   driver _target disableAI "ALL";
   gunner _target disableAI "ALL";
+  _target deleteVehicleCrew (gunner _target);
   [{
       (_this select 0) params ["_projectile", "_target"];
       _canIntercept = (getPosATL _projectile # 2 > 30);
