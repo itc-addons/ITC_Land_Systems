@@ -229,7 +229,7 @@
 					w = "20 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-
+/*
 				class ITC_Land_Orders: RscText {
 					style = 0;
 					idc = 1600;
@@ -378,7 +378,8 @@
 					y = "(8.2) * 		(0.025 * SafezoneH)";
 					w = "12.5 * 		(0.01875 * SafezoneH)";
 					h = "12 * 		(0.025 * SafezoneH)";						
-				};					
+				};	
+*/				
 			};
 		};
 	};

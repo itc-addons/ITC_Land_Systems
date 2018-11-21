@@ -57,6 +57,26 @@
 	class itc_land_g155icm_chg4: itc_land_g155icm { initSpeed = 400; itc_land_CountInAH = 0;  };
 	class itc_land_g155icm_chg5: itc_land_g155icm { initSpeed = 500; itc_land_CountInAH = 0;  };
 
+	class itc_land_g155apf: itc_land_how_mag {
+		author = "Toadball";
+		displayName = "G155 ICM";
+		ammo = "itc_land_155mm_inert";
+		itc_land_submunition = "itc_land_155mm_apf_helper";
+		muzzleImpulseFactor[] = {15, 30};
+		displayNameShort = "G155 APF";
+		itc_land_fuze = "mof35_mod1";
+		itc_land_charge_format = "itc_land_g155apf_chg%1";
+		itc_land_CountInAH = 1;
+		itc_land_maxChargeIndex = 5;
+		itc_land_timeModifier = -2;
+		itc_land_btabListFile = "itc_land_ballistics\tables\g_155\list.sqf";
+	};
+	class itc_land_g155apf_chg1: itc_land_g155apf { initSpeed = 100; itc_land_CountInAH = 0;  };
+	class itc_land_g155apf_chg2: itc_land_g155apf { initSpeed = 200; itc_land_CountInAH = 0;  };
+	class itc_land_g155apf_chg3: itc_land_g155apf { initSpeed = 300; itc_land_CountInAH = 0;  };
+	class itc_land_g155apf_chg4: itc_land_g155apf { initSpeed = 400; itc_land_CountInAH = 0;  };
+	class itc_land_g155apf_chg5: itc_land_g155apf { initSpeed = 500; itc_land_CountInAH = 0;  };	
+	
 	class itc_land_g155mat: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G155 MINE-AT";

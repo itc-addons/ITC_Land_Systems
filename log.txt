@@ -1,0 +1,39 @@
+pbos to build for 1.2:
+
+itc_land_ballistics
+itc_land_bcs
+itc_land_ciws
+itc_land_cobra
+itc_land_common
+itc_land_datalink
+itc_land_guidance
+itc_land_sphammohandler
+itc_land_tablet
+itc_land_veh_darter
+itc_land_veh_defender
+itc_land_veh_mk6
+itc_land_veh_rhea
+itc_land_veh_seara
+itc_land_veh_sholef
+itc_land_veh_sights
+itc_land_veh_sochor
+itc_land_veh_weapons
+itc_land_veh_zamakMLR
+itc_land_veh_vls
+
+1.2 Changes:
+Added: MLRS App to tablets on MLRS, includes remote guidance and fuze setter
+Added: New MLRS munitions with ITC features:
+	-M230 HEX - Unguided high explosive munition
+	-M230 ICM - Dual purpose anti tank / anti personnel cluster munition
+	-M230 PGM - GPS guided high explosive munition
+	-M230 MAT - Anti tank mine dispersal munition
+	-M230 MAP - Anti personnel mine dispersal munition	
+Added: Improved illumination properties for ACE 82mm Illum shells
+Added: End of mission & record target functionality to BCS
+Fixed: Muzzle velocities for 155mm & 152mm howitzer munitions reduced to provide realistic range capabilities
+Fixed: Time fuze function was not spawning submunition/helper entities with correct alignment resulting in unpredictable behaviour of various shell types
+Fixed: Mk6 82mm BTABs and battery definitions updated to v1.1 standard.
+Fixed: Various tweaks to config components of CIWS feature.
+Tweaked: Various config values used by BCS to provide TOF for various munitions that require optimal burst heights.
+
