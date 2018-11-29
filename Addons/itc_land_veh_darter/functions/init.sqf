@@ -65,7 +65,9 @@
 		   (_display displayCtrl 75017) ctrlSetText _tgtASLdisplayed; 
 		   (_display displayCtrl 75011) ctrlSetText _uavASLDisplayed;   
 			//Draw Situational Awareness Compass
-			//[] call itc_land_veh_darter_fnc_drawCompass;
+			//[_tgtposWorld] call itc_land_veh_darter_fnc_drawCompass;
+			(_display displayCtrl 75020) ctrlSetAngle [(_weaponDir) * -1, 0.5, 0.5];
+			
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 

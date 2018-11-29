@@ -7,12 +7,19 @@
 	*/
 	
 	private _fov = call CBA_fnc_getFov select 0; 
-	private _center = positionCameraToWorld [0,0,3.5];  
+	private _center = _this select 0;
+	//private _center = positionCameraToWorld [0,0,3.5];
+
+	private _offSet1 = 0.5;
+	private _offSet2 = 1;
+	private _offSet3 = 1.5;
+	private _offSetD = 2;
+	
 	// Draw North Line 
 	drawIcon3D [ 
 		"", 
 		[1,1,1,1], 
-		_center vectorAdd [0,(1*_fov),0], 
+		_center vectorAdd [0,(_offSetD*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -24,7 +31,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,1], 
-		_center vectorAdd [0,(0.75*_fov),0], 
+		_center vectorAdd [0,(_offSet3*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -36,7 +43,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,1], 
-		_center vectorAdd [0,(0.5*_fov),0], 
+		_center vectorAdd [0,(_offSet2*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -48,7 +55,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,1], 
-		_center vectorAdd [0,(0.25*_fov),0], 
+		_center vectorAdd [0,(_offSet1*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -61,7 +68,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [0,-(1*_fov),0], 
+		_center vectorAdd [0,-(_offSetD*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -73,7 +80,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [0,-(0.75*_fov),0], 
+		_center vectorAdd [0,-(_offSet3*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -85,7 +92,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [0,-(0.5*_fov),0], 
+		_center vectorAdd [0,-(_offSet2*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -97,7 +104,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [0,-(0.25*_fov),0], 
+		_center vectorAdd [0,-(_offSet1*_fov),0], 
 		0, 
 		0, 
 		0, 
@@ -110,7 +117,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [(1*_fov),0,0], 
+		_center vectorAdd [(_offSetD*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -122,7 +129,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [(0.75*_fov),0,0], 
+		_center vectorAdd [(_offSet3*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -134,7 +141,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [(0.5*_fov),0,0], 
+		_center vectorAdd [(_offSet2*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -146,7 +153,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [(0.25*_fov),0,0], 
+		_center vectorAdd [(_offSet1*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -159,7 +166,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [-(1*_fov),0,0], 
+		_center vectorAdd [-(_offSetD*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -171,7 +178,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [-(0.75*_fov),0,0], 
+		_center vectorAdd [-(_offSet3*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -183,7 +190,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [-(0.5*_fov),0,0], 
+		_center vectorAdd [-(_offSet2*_fov),0,0], 
 		0, 
 		0, 
 		0, 
@@ -195,7 +202,7 @@
 	drawIcon3D [ 
 		"", 
 		[1,1,1,0.5], 
-		_center vectorAdd [-(0.25*_fov),0,0], 
+		_center vectorAdd [-(_offSet1*_fov),0,0], 
 		0, 
 		0, 
 		0, 

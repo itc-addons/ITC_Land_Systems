@@ -54,24 +54,24 @@ class RscInGameUI {
 					w = "3 * 		(0.01875 * SafezoneH)";
 					h = "1.2 * 		(0.025 * SafezoneH)";
 				};
-					class CA_VisionMode: RangeText {
-						idc = 179;
-						style = 0;
-						text = "VIS";
-						x = "22.2 * 		(0.01875 * SafezoneH)";
-						y = "26.8 * 		(0.025 * SafezoneH)";
-						w = "4 * 		(0.01875 * SafezoneH)";
-						h = "1.2 * 		(0.025 * SafezoneH)";
-					};
-					class CA_FlirMode: RangeText {
-						idc = 153;
-						style = 0;
-						text = "BHOT";
-						x = "23.4 * 		(0.01875 * SafezoneH)";
-						y = "26.8 * 		(0.025 * SafezoneH)";
-						w = "4.5 * 		(0.01875 * SafezoneH)";
-						h = "1.2 * 		(0.025 * SafezoneH)";
-					};
+				class CA_VisionMode: RangeText {
+					idc = 179;
+					style = 0;
+					text = "VIS";
+					x = "22.2 * 		(0.01875 * SafezoneH)";
+					y = "26.8 * 		(0.025 * SafezoneH)";
+					w = "4 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};
+				class CA_FlirMode: RangeText {
+					idc = 153;
+					style = 0;
+					text = "BHOT";
+					x = "23.4 * 		(0.01875 * SafezoneH)";
+					y = "26.8 * 		(0.025 * SafezoneH)";
+					w = "4.5 * 		(0.01875 * SafezoneH)";
+					h = "1.2 * 		(0.025 * SafezoneH)";
+				};
 				class TextSpd: RangeText
 				{
 					idc = 1009;
@@ -235,6 +235,22 @@ class RscInGameUI {
 					w = "3.5 * 		(0.01875 * SafezoneH)";
 					h = "1.5 * 		(0.025 * SafezoneH)";
 				};
+				class ITC_Land_AR2i_NArr_txt: RscPicture { 
+				  idc = 75019;
+				  text = "itc_land_veh_darter\data\n_txt.paa";
+					x = 0.659844 * safezoneW;
+					y = 0.159 * safezoneH;
+					w = 0.075;
+					h = 0.1;
+				};
+				class ITC_Land_AR2i_NArr_img: RscPicture {
+				  idc = 75020;
+				  text = "itc_land_veh_darter\data\n_arr.paa";
+					x = 0.659844 * safezoneW;
+					y = 0.159 * safezoneH;
+					w = 0.075;
+					h = 0.1;
+				};				
 			};
 		};
 	};
