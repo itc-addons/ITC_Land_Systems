@@ -70,4 +70,13 @@ class CfgVehicles {
 			};
 		};
   };
+  class itc_land_b_vls2_slam : B_Ship_MRLS_01_base_F {
+		author = "Yax ";
+    displayName = "MN230 VLS (Cruise Missile)";
+    side = 1;
+    faction = "BLU_F";
+    crew = "B_UAV_AI";
+    scope = 2;
+    scopeCurator = 2;
+  };
 };

@@ -39,7 +39,6 @@ class CfgVehicles {
     scopeCurator = 2;
     class Turrets : Turrets {
       class MainTurret: MainTurret {
-        /*
         minelev = 90;
         initElev = 90;
         maxelev = 90;
@@ -47,7 +46,6 @@ class CfgVehicles {
         minturn = 0;
         initTurn = 0;
         maxturn = 0;
-        */
         weapons[] = {"itc_land_s750_launcher"};
         magazines[] = {"itc_land_s750_x4"};
       };
