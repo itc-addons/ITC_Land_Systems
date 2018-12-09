@@ -2,9 +2,9 @@ _this spawn {
   sleep 1;
   params ["", "", "", "", "_ammo", "", "_projectile", "_gunner"];
   private _classTarget = getText (configFile >> "cfgAmmo" >> _ammo >> "itc_land_ciws_target");
-  private _class = if(_classTarget != "") then [{_classTarget},{"itc_land_shell"}];
-  _class = if((side _gunner) == west) then [{_class + "_b"},{_class + "_o"}];
-  _class = if((side _gunner) == resistance) then [{_class + "_i"},{_class}];
+  private _initialClass = if(_classTarget != "") then [{_classTarget},{"itc_land_shell"}];
+  _class = if((side _gunner) == west) then [{_initialClass + "_b"},{_initialClass + "_o"}];
+  _class = if((side _gunner) == resistance) then [{_initialClass + "_i"},{_class}];
   _target = _class createVehicle [0,0,1000];
   _target setPos (_projectile modelToWorld [0,-5,0]);
   _target setVelocity (velocity _projectile);
