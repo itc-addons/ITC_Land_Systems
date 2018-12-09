@@ -50,7 +50,7 @@ private _curMag = (currentMagazine _vehicle);
 				private _targetPos = [itc_land_guidance_targetGrid,true] call CBA_fnc_mapGridToPos;
 				//player sidechat str _targetPos;
 				itc_land_guidance_targetAlt = parseNumber(ctrlText 86015);
-				_targetPos set [2,itc_land_guidance_targetAlt];
+				_targetPos set [2,(itc_land_guidance_targetAlt  - ace_common_mapAltitude)];
 				//player sidechat str _targetPos;	
 				itc_land_guidance_targetPos = _targetPos;
 				_guidanceText = format["%1 -- %2",itc_land_guidance_targetGrid,itc_land_guidance_targetAlt];

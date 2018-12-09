@@ -38,6 +38,7 @@
 			 
 		   //Get TGT grid  
 		   private _tgtposWorld = (screenToWorld [0.5,0.5]); 
+		   private _tgtposASL = AGLToASL _tgtposWorld;
 		   private _tgtposMGRS = [_tgtposWorld] call ace_common_fnc_getMapGridFromPos; 
 		   private _tgtposDisplayed = format ["%1 %2",_tgtposMGRS # 0,_tgtposMGRS # 1]; 
 			
@@ -47,12 +48,13 @@
 		   //display grids 
 		   (_display displayCtrl 75015) ctrlSetText _tgtposDisplayed; 
 		   (_display displayCtrl 75018) ctrlSetText _uavposDisplayed;   
+		   	   
+		   private _uavASL = round ((getPosASL _uav) select 2) + ace_common_mapAltitude;   
+		   private _uavASLdisplayed = [_uavASL, "meters4", true] call ace_mk6mortar_fnc_dev_formatNumber; 
 		   
-		   private _uavASL = getPosASL _uav; 
-		   private _uavASLdisplayed = [_uavASL select 2, "meters4", true] call ace_mk6mortar_fnc_dev_formatNumber; 
 		   
-		   private _tgtASL = getTerrainHeightASL (_tgtposWorld);
-		  
+		   private _tgtASL = round (_tgtposASL select 2) + ace_common_mapAltitude;
+		   			
 		  //make sure _tgtASL is not returning depth of water: getTrrainHeightASL will return negative values for terrain underwater
 		  private _tgtASLdisplayed = 0;
 		   if (_tgtASL < 0) then {
