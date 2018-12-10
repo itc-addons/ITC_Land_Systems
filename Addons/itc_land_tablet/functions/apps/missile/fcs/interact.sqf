@@ -8,14 +8,15 @@ switch(_action) do {
     _gridField = ctrlText 2400;
 	_vehicle setVariable ["itc_land_tablet_fcs_tgtgrid", _gridField, true];
     _elField = parseNumber (ctrlText 2401);
+	_elTgt =  _elField - ace_common_mapAltitude;
+	
 	_vehicle setVariable ["itc_land_tablet_fcs_tgtelev", _elField, true];
-    _vehicle = vehicle player;
-    //_shellType = [_vehicle] call itc_land_ballistics_fnc_getVehicleShellType;
+
     private _shellType = lbData[2402, (lbCurSel 2402)];
     _targetPos = [_gridField, false] call ace_common_fnc_getMapPosFromGrid;
     _gunPos = getPosASL _vehicle;
 
-	_solutions = [_shellType, _gunPos, _gunPos # 2, getDir _vehicle, _targetPos, _elField] call itc_land_ballistics_fnc_calcShellTypeSolutions;	
+	_solutions = [_shellType, _gunPos, _gunPos # 2, getDir _vehicle, _targetPos, _elTgt] call itc_land_ballistics_fnc_calcShellTypeSolutions;	
 
 	itc_land_guidance = getArray (configFile >> "CfgMagazines" >> lbData [2402, lbCurSel 2402] >> "itc_land_guidance");
 	
@@ -75,7 +76,7 @@ switch(_action) do {
 				private _targetPos = [itc_land_guidance_targetGrid,true] call CBA_fnc_mapGridToPos;
 				//player sidechat str _targetPos;
 				itc_land_guidance_targetAlt = parseNumber(ctrlText 1911);
-				_targetPos set [2,itc_land_guidance_targetAlt];
+				_targetPos set [2,(itc_land_guidance_targetAlt - ace_common_mapAltitude)];
 				//player sidechat str _targetPos;	
 				itc_land_guidance_targetPos = _targetPos;
 			};
