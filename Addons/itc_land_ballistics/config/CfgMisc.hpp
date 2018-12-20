@@ -15,13 +15,13 @@ class itc_land_ballistics {
     class M230 {
       displayName = "M230 227mm MLRS";
       type = "rocket";
-      ammunition[] = {"itc_land_m230hex_12rnd","itc_land_m230pgm_12rnd","itc_land_m230pgm_6rnd","itc_land_m230icm_12rnd","itc_land_m230icm_6rnd","itc_land_m230mat_12rnd","itc_land_m230map_12rnd"};
+      ammunition[] = {"itc_land_m230hex_12rnd","itc_land_m230pgm_12rnd","itc_land_m230pgm_6rnd","itc_land_m230icm_12rnd","itc_land_m230icm_6rnd","itc_land_m230gicm_12rnd","itc_land_m230gicm_6rnd","itc_land_m230mat_12rnd","itc_land_m230map_12rnd"};
       weaponClass = "itc_land_230mm_mlrs";
     };
     class Mk6 {
       displayName = "Mk6 82mm Mortar";
       type = "cannon";
-      ammunition[] = {"ACE_1Rnd_82mm_Mo_HE","ACE_1Rnd_82mm_Mo_Smoke","ACE_1Rnd_82mm_Mo_Illum"};
+      ammunition[] = {"ACE_1Rnd_82mm_Mo_HE","ACE_1Rnd_82mm_Mo_Smoke","ACE_1Rnd_82mm_Mo_Illum","8Rnd_82mm_Mo_shells","8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_Smoke_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"};
       weaponClass = "mortar_82mm";
     };
   };
