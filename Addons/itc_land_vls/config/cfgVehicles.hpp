@@ -11,6 +11,9 @@ class CfgVehicles {
     class Turrets : Turrets {
       class MainTurret: MainTurret {};
     };
+	class AnimationSources {
+		class Missiles_revolving;
+	};	
   };
   class itc_land_b_vls2 : B_Ship_MRLS_01_base_F {
 		author = "Yax ";
@@ -22,17 +25,13 @@ class CfgVehicles {
     scopeCurator = 2;
     class Turrets : Turrets {
       class MainTurret: MainTurret {
-        weapons[] = {"itc_land_weapon_m230_essm"};
-        //weapons[] = {"weapon_rim162Launcher"};
-        //magazines[] = {"magazine_Missile_rim162_x8"};
-        magazines[] = {"itc_land_magazine_18rnd_essm"};
+        weapons[] = {"itc_land_mn230essm_launcher"};
+        magazines[] = {"itc_land_mn230essm_x18"};
       };
     };
-		class AnimationSources {
-      class Missiles_revolving {
-        animPeriod = 0.001;
-        source = "ammo";
-        weapon = "itc_land_weapon_m230_essm";
+	class AnimationSources: AnimationSources {
+      class Missiles_revolving: Missiles_revolving {
+         weapon = "itc_land_mn230essm_launcher";
       };
     };
 		class Components
@@ -71,12 +70,23 @@ class CfgVehicles {
 		};
   };
   class itc_land_b_vls2_slam : B_Ship_MRLS_01_base_F {
-		author = "Yax ";
+	author = "Yax ";
     displayName = "MN230 VLS (Cruise Missile)";
+    class Turrets : Turrets {
+      class MainTurret: MainTurret {	
+		weapons[] = {"itc_land_mn230slam_launcher"};
+		magazines[] = {"itc_land_mn230slam_x18"};	
+	  };
+	};
     side = 1;
     faction = "BLU_F";
     crew = "B_UAV_AI";
     scope = 2;
     scopeCurator = 2;
+	class AnimationSources: AnimationSources {
+      class Missiles_revolving: Missiles_revolving {
+         weapon = "itc_land_mn230slam_launcher";
+      };
+    };	
   };
 };
