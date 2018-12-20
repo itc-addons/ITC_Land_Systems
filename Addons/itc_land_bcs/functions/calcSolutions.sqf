@@ -4,7 +4,7 @@
  * Returns: solutions in format [battery, [gun1, gun2, etc]]
  */
 params ["_guns", "_shellType", "_targetPos", "_engagement"];
-_engagement params ["_shellTypeIndex","_sheafType", "_sheafQuick", "_sheafDir", "_sheafSize","_magazine"];
+_engagement params ["_sheafType", "_sheafQuick", "_sheafDir", "_sheafSize","_shellTypeIndex","_magazine"];
 
 _magazineHeightModifier = configFile >> "CfgMagazines" >> _magazine >> "itc_land_heightModifier";
 _magazineHeightModifier = if(isText _magazineHeightModifier) then [{getText _magazineHeightModifier}, {0}];
