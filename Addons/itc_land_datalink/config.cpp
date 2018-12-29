@@ -1,8 +1,8 @@
 class CfgPatches {
-	class itc_land_ballistics {
+	class itc_land_datalink {
 		author = "ITC Addons Team";
 		authors[] = {"ToadBall","Yax","VKing"};
-		requiredaddons[] = {"A3_Weapons_F","ace_common","ace_mk6mortar"};
+		requiredaddons[] = {"cba_common"};
 		requiredversion = 1.8;
 		units[] = {};
 		weapons[] = {};
