@@ -36,14 +36,14 @@ class CfgVehicles {
         class ACE_SelfActions: ACE_SelfActions {};		
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
-				class MainTurret: MainTurret { };
+				class MainTurret: MainTurret {};
 		};
 	};
 	class B_MBT_01_arty_base_F: MBT_01_arty_base_F {
         class ACE_SelfActions: ACE_SelfActions {};				
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
-				class MainTurret: MainTurret { };
+				class MainTurret: MainTurret {};
 		};
 	};
 
@@ -65,13 +65,10 @@ class CfgVehicles {
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
 		  mountedTablet = "itc_land_tablet_spg";
-		  class fcs {
-			tableList = "g_155";
-		  };
 		};
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";
+				turretInfoType = "ITC_Land_RscIGS_SPH";
 				weapons[] = {"itc_land_155mm_howitzer"};
 				magazines[] = {
 					mag_24("itc_land_g155hex"),
@@ -82,6 +79,9 @@ class CfgVehicles {
 				};
 				lockWhenVehicleSpeed= 1;
 				maxHorizontalRotSpeed = "((360/30)/45)";
+				class OpticsIn: ITC_Land_Optics_IGS {
+					class Wide: Wide {};
+				};
 			};
 		};
 		class AnimationSources: AnimationSources {};
