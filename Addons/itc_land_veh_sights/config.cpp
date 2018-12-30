@@ -9,11 +9,17 @@
 	};
 };
 class RCWSOptics;
-class ITC_Land_Optics_IGS {
-	class Wide: RCWSOptics {
-		initFov = "(36 / 120)";
-		minFov = "(36 / 120)";
-		maxFov = "(36 / 120)";
+class Optics_Armored {
+	class Wide: RCWSOptics {};
+};
+class Optics_Gunner_MBT_01: Optics_Armored {
+	class Wide: Wide {};
+};
+class ITC_Land_Optics_IGS: Optics_Gunner_MBT_01 {
+	class Wide: Wide {
+		initFov = 0.174;
+		minFov = 0.174;
+		maxFov = 0.174;
 		visionMode[] = {"Normal","NVG"};
 		thermalMode[] = {};
 		gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Gunner_MBT_01_w_F.p3d";

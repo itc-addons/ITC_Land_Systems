@@ -127,7 +127,7 @@
 			} else {
 				{ [_display,_x,1] call itc_land_common_fnc_ctrlSetFade } forEach [1700,1701,1702,1703,1704];
 			};
-			if (isNil "itc_land_IGS_showOrders") then {itc_land_IGS_showOrders = true};
+			if (isNil "itc_land_IGS_showOrders") then {itc_land_IGS_showOrders = false};
 			if (itc_land_IGS_showOrders) then {
 				//make sure elements are shown
 				if (!(ctrlVisible 1600)) then {
