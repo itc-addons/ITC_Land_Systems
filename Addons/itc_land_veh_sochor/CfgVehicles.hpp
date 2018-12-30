@@ -39,7 +39,7 @@ class CfgVehicles {
 	class O_MBT_02_arty_base_F: MBT_02_arty_base_F {
         class ACE_SelfActions: ACE_SelfActions {};		
 		class Turrets: Turrets {
-				class MainTurret: MainTurret { };
+				class MainTurret: MainTurret {};
 		};
 	};
 	class itc_land_SPH02_base: O_MBT_02_arty_base_F {
@@ -66,7 +66,7 @@ class CfgVehicles {
 		};
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
-				turretInfoType = "ITC_Land_RscGunnerSightSPH";
+				turretInfoType = "ITC_Land_RscIGS_SPH";
 				weapons[] = {"itc_land_152mm_howitzer"};
 				magazines[] = {
 					mag_24("itc_land_g152hex"),
@@ -77,6 +77,9 @@ class CfgVehicles {
 				};
 				lockWhenVehicleSpeed= 1;
 				maxHorizontalRotSpeed = "((360/30)/45)";
+				class OpticsIn: ITC_Land_Optics_IGS {
+					class Wide: Wide {};
+				};				
 			};
 		};
 	};

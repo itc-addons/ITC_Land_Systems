@@ -8,5 +8,14 @@
 		authors[] = {"ToadBall","Yax"};
 	};
 };
-
+class RCWSOptics;
+class Optics_Armored {
+	class Wide: RCWSOptics {};
+};
+class Optics_Gunner_MBT_01: Optics_Armored {
+	class Wide: Wide {};
+};
+class ITC_Land_Optics_IGS: Optics_Gunner_MBT_01 {
+	class Wide: Wide {};
+};
 #include "CfgVehicles.hpp"
