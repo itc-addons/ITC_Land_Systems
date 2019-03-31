@@ -1,13 +1,13 @@
 class itc_land_ballistics {
   class batteryTypes {
     class G155 {
-      displayName = "G155 155mmm Howitzer";
+      displayName = "G155 155mm Howitzer";
       type = "cannon";
       ammunition[] = {"itc_land_g155hex","itc_land_g155smo","itc_land_g155icm","itc_land_g155mat","itc_land_g155map","itc_land_g155pgm","itc_land_g155lgm","itc_land_g155ill","itc_land_g155ext"};
       weaponClass = "itc_land_155mm_howitzer";
     };
     class G152 {
-      displayName = "G152 152mmm Howitzer";
+      displayName = "G152 152mm Howitzer";
       type = "cannon";
       ammunition[] = {"itc_land_g152hex","itc_land_g152smo","itc_land_g152icm","itc_land_g152mat","itc_land_g152map","itc_land_g152pgm","itc_land_g152lgm","itc_land_g152ill"};
       weaponClass = "itc_land_152mm_howitzer";
