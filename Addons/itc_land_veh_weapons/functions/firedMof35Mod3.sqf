@@ -2,11 +2,11 @@
  * Author: Yax
  * Fired event for ITC Howitzers with Mof35Mod3 fuzed shells
  */
-params ["", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
+params ["_vehicle", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!local _gunner) exitWith {};
 
 _fuzeType = "time";
-_fuzeValue = itc_land_fuzeValues;
+_fuzeValue = _vehicle getVariable ["itc_land_fuzeValues",0];
 
 [{
   params ["_pfhValues","_pfhId"];

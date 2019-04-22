@@ -2,13 +2,11 @@
  * Author: Yax
  * Fired event for ITC Howitzers with Mof35 fuzed shells
  */
-params ["", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
+params ["_vehicle", "", "", "", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!local _gunner) exitWith {};
-_fuzeType = itc_land_fuzeMode;
-//_fuzeType = (vehicle _gunner) getVariable "fuzeType";
-_fuzeValue = itc_land_fuzeValues;
-//_fuzeValue = (vehicle _gunner) getVariable "fuzeSetting";*/
-//player sideChat str [_fuzeType, _fuzeValue];
+_fuzeType = _vehicle getVariable ["itc_land_selectedFuzeMode","pd"];
+_fuzeValue = _vehicle getVariable ["itc_land_fuzeValues",0];
+
 
 if(isNil{_fuzeType}) exitWith {};
 if(_fuzeType == "" || _fuzeType == "pd") exitWith {};

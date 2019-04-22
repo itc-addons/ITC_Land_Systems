@@ -20,9 +20,13 @@ if(isNil{_targetPos}) exitWith {};
   private _vectorModelSpace = _projectile vectorWorldToModel _vectToTargetDiff;
   private _angleX = asin (_vectorModelSpace # 0);
   private _angleY = asin (_vectorModelSpace # 2);
-  _turnRate = 4 * _frameTime;
-  _projectile setDir (getDir _projectile) + (_turnRate * _angleX);
+  diag_log Format ["Vertical Angle: %1 Degrees",_angleY];
+  _turnRate = 12 * _frameTime;
+  _projectile setDir (getDir _projectile) + (_angleX min _turnRate  max -_turnRate );
+  if(((-_angleY) > 45) then {
+    [_projectile, _pitch + (_angleY  min _turnRate  max -_turnRate), 0] call BIS_fnc_setPitchBank;
+  };  
   if(_distance2D < (_distance2DTotal / 2)) then {
-  [_projectile, _pitch + (_turnRate * _angleY), 0] call BIS_fnc_setPitchBank;
+    [_projectile, _pitch + (_angleY  min _turnRate  max -_turnRate), 0] call BIS_fnc_setPitchBank;
   };
 }, 0, [_projectile, time, _targetPos, getPosASL _projectile]] call CBA_fnc_addPerFrameHandler;

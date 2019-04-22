@@ -1,6 +1,7 @@
-params ["", "", "", "", "_ammo", "", "_projectile", "_gunner"];
-_laserCode = itc_land_guidance_laserCode;
-if(isNil{_laserCode}) then {_laserCode = 1111;};
+params ["_vehicle", "", "", "", "_ammo", "", "_projectile", "_gunner"];
+
+_laserCode = _vehicle getVariable ["itc_land_guidance_laserCode",1111];
+
 [{
     (_this select 0) params ["_projectile", "_ammo", "_position", "_laserCode"];
     if (!alive _projectile) exitWith {
