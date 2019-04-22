@@ -2,8 +2,11 @@ class CfgFunctions {
 	class itc_land_SPHammohandler {
 		class functions {
 			class onLoad {
-				file = "itc_land_SPHammohandler\functions\onLoad.sqf";
+				file = "itc_land_SPHammohandler\functions\onLoadPFH.sqf";
 			};
+			class updateStatus {
+				file = "itc_land_SPHammohandler\functions\updateStatus.sqf";
+			};			
 			class fillAmmoList {
 				file = "itc_land_SPHammohandler\functions\fillAmmoList.sqf";
 			};

@@ -1,72 +1,86 @@
 private _vehicle = vehicle ace_player;
 private _curMag = (currentMagazine _vehicle);
 
-[_vehicle,_curMag] spawn {
-	disableSerialization;
+_vehicle setVariable ["itc_land_ammoHandler_status",[1,0],true];
 
-	private _ammoType = getText (itc_land_selectedMagConfig >> "displayNameShort");
-	private _charge = str itc_land_currentChargeIndex;
+[_vehicle,_curMag] spawn {
+	params["_vehicle","_curMag"];
+	
+	disableSerialization;
+	
+	private _curMagInfo = _vehicle getVariable "itc_land_currentMagInfo";
+	private _selectedMagClass = _curMagInfo # 1;
+	private _selectedMagConfig = _curMagInfo # 2;
+	
+	private _ammoType = getText (_selectedMagConfig >> "displayNameShort");
+	private _charge = str (_vehicle getVariable ["itc_land_currentChargeIndex",1]);
 	private _ammoText = format ["%1 CHG: %2", _ammoType,_charge];
 	ctrlSetText[86019,_ammoText];
 
 	//Get fuze settings based on type
 	//Get fuze description from combobox
-	private _fuze  = getText (configFile >> "CfgMagazines" >> itc_land_selectedMagClass >> "itc_land_fuze");
+	private _fuze  = getText (configFile >> "CfgMagazines" >> _selectedMagClass >> "itc_land_fuze");
 	//set rendered string empty. Use switch to generate new rendered string and setValues.
 	private _fuzeText = "";
-	if (isNil "itc_land_fuzeDesc") then { itc_land_fuzeDesc = lbText [86004,itc_land_selectedFuzeIndex]; };	
-	if (isNil "itc_land_fuzeValues") then { itc_land_fuzeValues = 0; };	
 	
-	switch (itc_land_fuzeMode) do {
+	private _selectedFuzeIndex = _vehicle getVariable ["itc_land_selectedFuzeIndex",0];
+	private _fuzeDesc = _vehicle getVariable ["itc_land_selectedFuzeDesc",(lbText [86004,_selectedFuzeIndex])];
+	private _fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0];
+	private _fuzeMode = _vehicle getVariable ["itc_land_selectedFuzeMode","pd"];
+	
+	switch (_fuzeMode) do {
 		case "pd" : {
-			_fuzeText = itc_land_fuzeDesc;
+			_fuzeText = _fuzeDesc;
 		};
 		case "prox" : {
 			private _proxHOB = getNumber (configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "proxHOB");
-			itc_land_fuzeValues = _proxHOB;
-			_fuzeText = Format ["%1: %2m",itc_land_fuzeDesc,itc_land_fuzeValues];
+			_vehicle setVariable ["itc_land_fuzeValues",_proxHOB,true];
+			_fuzeText = Format ["%1: %2m",_fuzeDesc,_proxHOB];
 		};
 		case "time" : {
-			itc_land_fuzeTime = parseNumber(ctrlText 86006); 
-			itc_land_fuzeValues = itc_land_fuzeTime;
-			_fuzeText = Format ["%1: %2s",itc_land_fuzeDesc,itc_land_fuzeValues];		
+			private _fuzeTime = parseNumber(ctrlText 86006); 
+			_vehicle setVariable ["itc_land_fuzeTime", _fuzeTime, true]; //this is used for UI stuff
+			_vehicle setVariable ["itc_land_fuzeValues", _fuzeTime, true]; //this is for fuze stuff
+			_fuzeText = Format ["%1: %2s",_fuzeDesc,_fuzeTime];		
 		};
 		case "delay" : {
-			itc_land_fuzeValues = 0.005;
-			_fuzeText = itc_land_fuzeDesc;	
+			_vehicle setVariable ["itc_land_fuzeValues",0.005, true];
+			_fuzeText = _fuzeDesc;	
 		};
 	};
+	_fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0]; 
 	//Render string to output field.
 	ctrlSetText [86018, _fuzeText];
 
 	//Get guidance inputs
-	itc_land_guidance = getArray (itc_land_selectedMagConfig >> "itc_land_guidance");
+	//itc_land_guidance = getArray (_selectedMagConfig >> "itc_land_guidance");
+	private _guidance = getArray (_selectedMagConfig >> "itc_land_guidance");
+	
 	private _guidanceText = "-- N/A --";
-	if (count itc_land_guidance > 0) then {
-		switch (itc_land_guidance # 0) do {
+	if (count _guidance > 0) then {
+		switch (_guidance # 0) do {
 			case "gps_inertial" : {
-				itc_land_guidance_targetGrid = ctrlText 86013;
-				//player sidechat itc_land_guidance_targetGrid;
-				private _targetPos = [itc_land_guidance_targetGrid,true] call CBA_fnc_mapGridToPos;
-				//player sidechat str _targetPos;
-				itc_land_guidance_targetAlt = parseNumber(ctrlText 86015);
-				_targetPos set [2,(itc_land_guidance_targetAlt  - ace_common_mapAltitude)];
-				//player sidechat str _targetPos;	
-				itc_land_guidance_targetPos = _targetPos;
-				_guidanceText = format["%1 -- %2",itc_land_guidance_targetGrid,itc_land_guidance_targetAlt];
+				private _targetGrid = ctrlText 86013;
+				_vehicle setVariable ["itc_land_guidance_targetGrid", _targetGrid, true];
+
+				private _targetPos = [_targetGrid,true] call CBA_fnc_mapGridToPos;
+				
+				private _targetAlt = parseNumber(ctrlText 86015);
+				_vehicle setVariable ["itc_land_guidance_targetAlt", _targetAlt, true];
+				_targetPos set [2,(_targetAlt  - ace_common_mapAltitude)];
+
+				_vehicle setVariable ["itc_land_guidance_targetPos", _targetPos, true];
+				_guidanceText = format["%1 -- %2",_targetGrid,_targetAlt];
 				
 			};
 			case "laser_coded" : {
 				private _laserCode = parseNumber(ctrlText 86008);
-				if ( [_laserCode] call itc_land_common_fnc_isLaserCode ) then {
-					itc_land_guidance_laserCode = _laserCode;
-					//player sidechat str itc_land_guidance_laserCode;
-				} else {
+				if ( !([_laserCode] call itc_land_common_fnc_isLaserCode) ) then {
+					_laserCode = 1111; 
 					ctrlSetText [86008,"1111"];
-					itc_land_guidance_laserCode = 1111;
-					//player sidechat str itc_land_guidance_laserCode;
 				};
-				_guidanceText = format["CODE: %1",itc_land_guidance_laserCode];
+				_vehicle setVariable ["itc_land_guidance_laserCode", _laserCode, true];
+				_guidanceText = format["CODE: %1",_laserCode];
 			};
 			default { 	
 				//Set guidance output as none.
@@ -81,17 +95,14 @@ private _curMag = (currentMagazine _vehicle);
 	//round count
 	private _roundCount = parseNumber(ctrlText 86022);
 	//set limit of rounds to load:
-	itc_land_roundCount = _roundCount;
-	//rest count of fired rounds
-	itc_land_roundsFired = 0;
-	if (itc_land_roundCount >= 1) then {
-		ctrlSetText [86020, str itc_land_roundCount];	
-	
+	_vehicle setVariable ["itc_land_roundCount", _roundCount, true];
+	//reset count of fired rounds
+	_vehicle setVariable ["itc_land_roundsFired", 0, true];
+	if (_roundCount >= 1) then {
+		ctrlSetText [86020, str _roundCount];	
 	} else {
 		ctrlSetText [86020,"-- N/A --"];	
 	};
-	
-	
 	
 	//ctrlEnable [86009, false]; //disable loading/unloading
 	//ctrlSetText [86009, "UNLOAD"];
@@ -100,22 +111,22 @@ private _curMag = (currentMagazine _vehicle);
 
 	_ctrl = ((findDisplay 86000) displayCtrl 86010);
 	ctrlSetFocus _ctrl;
-	itc_land_sphloadersettings = [
+	private _settings = [
 		[
 			_ammoText,
-			itc_land_selectedMagClass,
-			itc_land_currentChargeIndex,
-			itc_land_roundCount
-			
+			_selectedMagClass,
+			_vehicle getVariable ["itc_land_currentChargeIndex",1],
+			_roundCount
 		],
 		[
 			_fuzeText,
-			itc_land_fuzeMode,
-			itc_land_fuzeValues
+			_fuzeMode,
+			_fuzeValues
 		],
 		[
 			_guidanceText,
-			itc_land_guidance # 0
+			_guidance # 0
 		]
 	];
+	_vehicle setVariable ["itc_land_sphloadersettings", _settings, true];
 };

@@ -1,8 +1,11 @@
+private _vehicle = vehicle ace_player;
+private _selectedMagConfig = (_vehicle getVariable "itc_land_currentMagInfo") # 2;
+
 //Clear then re-fill the fuze combobox
 lbClear 86004;
 
 //Look up fuze on magazine and modes
-private _fuze = getText (itc_land_selectedMagConfig >> "itc_land_fuze");
+private _fuze = getText (_selectedMagConfig >> "itc_land_fuze");
 private _fuzeModeArray = getArray (configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "modes"); 
 private _fuzeDescArray = getArray (configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "modeDesc");
 

@@ -7,117 +7,76 @@ if (_curMag isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
 	[_vehicle,_curMag] spawn {
 		private _vehicle = _this select 0;
 		private _curMag = _this select 1;
-		itc_land_SPHammoHandler_mode = "UNLOADING";
+		private _loadedMagClass = _vehicle getVariable "itc_land_loadedMagClass";
+		
 		disableSerialization;
-		//disableUserInput true;
-		ctrlEnable [86010, false]; //disable load button
-		ctrlEnable [86009, false]; //disable apply settings button
-		itc_land_SPHammoHandler_status = "SAFING WEAPON";
+		
+		_vehicle setVariable ["itc_land_ammoHandler_status",[4,0,"SAFING WEAPON"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
 		sleep 3+random(2);
-		itc_land_SPHammoHandler_status = "REMOVING CHARGE";
+		_vehicle setVariable ["itc_land_ammoHandler_status",[4,1,"REMOVING CHARGE"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
 		sleep 2+random(1);
-		itc_land_SPHammoHandler_status = "REMOVING ROUND";
+		_vehicle setVariable ["itc_land_ammoHandler_status",[4,2,"REMOVING ROUND"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
 
 		_vehicle removeMagazine _curMag; //remove loaded magazine
 
 		sleep 5+random(3);
 
-		_vehicle addMagazine itc_land_loadedMagClass;
-
-		itc_land_SPHammoHandler_status = "STOWING ROUND";
+		_vehicle addMagazine _loadedMagClass;		
+		_vehicle setVariable ["itc_land_ammoHandler_status",[4,3,"STOWING ROUND"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
 
 		sleep 2+random(2);
-
-		itc_land_SPHammoHandler_status = "WAITING";
-		if (itc_land_SPHammoHandler_open) then {
-			[] call itc_land_SPHammoHandler_fnc_fillAmmoList;
-			if ( !(isNil "itc_land_selectedMagIndex") && {itc_land_selectedMagIndex <= (lbSize 86001)}) then {
-				lbSetCurSel [86001, itc_land_selectedMagIndex];
-			} else {
-				lbSetCurSel [86001, 0];
-			};
-			[86001,itc_land_selectedMagIndex] call itc_land_SPHammoHandler_fnc_onSelectAmmo;
-
-
-			ctrlSetText [86010, "LOAD"]; //reset load button text
-			ctrlEnable [86010, true]; //re-enable load button
-			ctrlEnable [86009, true]; //re-enable apply settings button				
-		};
-		itc_land_SPHammoHandler_mode = "WAITING";			
-		//disableUserInput false;
+		
+		_vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+		
 	};
 
 } else {
 	[_vehicle] spawn {
 		disableSerialization;
-		//disableUserInput true;
+
 		private _vehicle = _this select 0;
-		itc_land_SPHammoHandler_mode = "LOADING";
-		ctrlEnable [86010, false]; //disable loading/unloading
-		ctrlEnable [86009, false]; //disable apply settings button
-		
-		itc_land_SPHammoHandler_status = "PULLING SHELL";
+		private _currentMagInfo = _vehicle getVariable "itc_land_currentMagInfo";
+		_currentMagInfo params ["_selectedMagIndex","_selectedMagClass","_selectedMagConfig"];
 		
 		//Get class of magazine to load
-		private _magFormat = getText (itc_land_selectedMagConfig >> "itc_land_charge_format");
-		private _magClass = Format [ _magFormat , itc_land_currentChargeIndex ];
-		itc_land_loadedMagClass = itc_land_selectedMagClass;
+		private _magFormat = getText (_selectedMagConfig >> "itc_land_charge_format");
+		private _magClass = Format [ _magFormat , (_vehicle getVariable ["itc_land_currentChargeIndex",1]) ];
+		_vehicle setVariable ["itc_land_loadedMagClass",_selectedMagClass,true];
 		
-		_vehicle removeMagazine itc_land_loadedMagClass;
-
+		_vehicle removeMagazine (_vehicle getVariable "itc_land_loadedMagClass");
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,0,"PULLING SHELL"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
 		sleep 2+random(1);
-		if (itc_land_SPHammoHandler_open) then {
-			[] call itc_land_SPHammoHandler_fnc_fillAmmoList;
-			if ( !(isNil "itc_land_selectedMagIndex") && {itc_land_selectedMagIndex <= (lbSize 86001)}) then {
-				lbSetCurSel [86001, itc_land_selectedMagIndex];
-			} else {
-				lbSetCurSel [86001, 0];
-			};
-
-			[86001,itc_land_selectedMagIndex] call itc_land_SPHammoHandler_fnc_onSelectAmmo;
-		};
-
-		itc_land_SPHammoHandler_status = "RAMMING SHELL";
-
-		sleep 2+random(1);
-		itc_land_SPHammoHandler_status = "INSERTING CHARGE";
-
-		sleep 2+random(1);
-		itc_land_SPHammoHandler_status = "CLOSING BREECH";
-
 		
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,1,"RAMMING SHELL"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
+		sleep 2+random(1);
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,2,"INSERTING CHARGE"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
+		sleep 2+random(1);
+	
 		_weapon = (weapons _vehicle) select 0;
 
 		_vehicle removeWeapon _weapon;
 		_vehicle addMagazine _magClass;
 		_vehicle addWeapon _weapon;
 		_vehicle selectWeapon _weapon;
-		//reload _vehicle;
 
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,3,"CLOSING BREECH"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+		
 		sleep 2+random(1);
-		itc_land_SPHammoHandler_status = "INSERTING PRIMER";
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,4,"INSERTING PRIMER"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
+		
 		sleep 2+random(1);
-		itc_land_SPHammoHandler_status = "ATTACHING LANYARD";
+		_vehicle setVariable ["itc_land_ammoHandler_status",[2,5,"ATTACHING LANYARD"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+
+		
 		sleep 1+random(1);
-		itc_land_SPHammoHandler_status = "READY TO FIRE";
+		_vehicle setVariable ["itc_land_ammoHandler_status",[3,0,"READY TO FIRE"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
 
-		//disableUserInput false;
 
-		if (itc_land_SPHammoHandler_open) then {
-			[] call itc_land_SPHammoHandler_fnc_fillAmmoList;
-			if ( !(isNil "itc_land_selectedMagIndex") && {itc_land_selectedMagIndex <= (lbSize 86001)}) then {
-				lbSetCurSel [86001, itc_land_selectedMagIndex];
-			} else {
-				lbSetCurSel [86001, 0];
-			};
-
-			[86001,itc_land_selectedMagIndex] call itc_land_SPHammoHandler_fnc_onSelectAmmo;
-			ctrlSetText [86010, "UNLOAD"];
-			ctrlEnable [86010, true];
-			ctrlEnable [86009, false];
-			private _ctrl = ((findDisplay 32562) displayCtrl 86010);
-			ctrlSetFocus _ctrl;
-			itc_land_SPHammoHandler_mode = "WAITING";					
-		};			
-	};
+	};			
 };
+
