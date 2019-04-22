@@ -1,4 +1,5 @@
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 private _curMag = (currentMagazine _vehicle);
 
 _vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true]; 

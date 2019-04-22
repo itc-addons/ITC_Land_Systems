@@ -3,7 +3,9 @@ waitUntil {
 };
 itc_land_SPHammoHandler_open = true;
 
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
+
 private _status = _vehicle getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];
 _vehicle setVariable ["itc_land_ammoHandler_status",_status,true];		
 [] call itc_land_SPHammoHandler_fnc_updateStatus;

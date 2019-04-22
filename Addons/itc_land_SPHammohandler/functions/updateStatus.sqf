@@ -10,7 +10,8 @@ if((!alive ace_player) || (!itc_land_SPHammoHandler_open)) then {
 	[_pfID] call CBA_fnc_removePerFrameHandler;
 };*/
 
-private _vehicle = vehicle ace_player;		
+//private _vehicle = vehicle ace_player;		
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 private _status = _vehicle getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];		
 private _lastStatus = _vehicle getVariable ["itc_land_ammoHandler_lastStatus",[0,0,"WAITING"]];
 //Only run code required to update if status has changed.

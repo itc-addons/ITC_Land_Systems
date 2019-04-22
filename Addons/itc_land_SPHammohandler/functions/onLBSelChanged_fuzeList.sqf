@@ -1,7 +1,8 @@
 params ["_control","_index"];
 
 //Generate globals
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 private _selectedFuzeIndex = _index;
 _vehicle setVariable ["itc_land_selectedFuzeIndex",_selectedFuzeIndex,true];
 

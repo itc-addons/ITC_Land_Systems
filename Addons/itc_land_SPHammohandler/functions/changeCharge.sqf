@@ -1,5 +1,6 @@
 params ["_increment"];
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 //if charge has not been set for whatever reason then set to charge one and increment from there
 private _curChargeIndex = _vehicle getVariable ["itc_land_currentChargeIndex",1];

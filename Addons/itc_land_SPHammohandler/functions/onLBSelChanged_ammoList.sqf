@@ -1,6 +1,7 @@
 params ["_control","_index"];
 
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 //Generate globals
 private _selectedMagIndex = _index;

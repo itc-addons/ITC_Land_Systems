@@ -1,4 +1,5 @@
-private _vehicle = vehicle ace_player;
+//private _vehicle = vehicle ace_player;
+private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 private _selectedMagConfig = (_vehicle getVariable "itc_land_currentMagInfo") # 2;
 
 //Clear then re-fill the fuze combobox
