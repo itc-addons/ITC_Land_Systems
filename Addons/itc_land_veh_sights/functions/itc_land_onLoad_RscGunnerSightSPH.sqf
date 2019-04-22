@@ -84,35 +84,31 @@
 			
 			//Autoloader and Gun Status Readout
 			//Gun Status
-			if (isNil "itc_land_SPHammoHandler_status") then {
-				if (currentMagazine vehicle ace_player isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
-					itc_land_SPHammoHandler_status = "READY TO FIRE";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				} else {
-					itc_land_SPHammoHandler_status	= "WAITING";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				};
-			};
-			private _statusText = itc_land_SPHammoHandler_status;
-			if ((isNil "itc_land_roundCount") || (itc_land_roundCount < 1))then {
-				_statusText = itc_land_SPHammoHandler_status;
+			private _status = _veh getVariable ["itc_land_SPHammoHandler_status",[0,0,"WAITING"]];
+			private _roundCount = _veh getVariable ["itc_land_roundCount",0];
+			private _roundsFired = _veh getVariable ["itc_land_roundsFired",0];
+			private _statusText = _status # 2;
+			if ( _roundCount < 1 )then {
+				_statusText = _status # 2;
 				//player sideChat format ["STATUS: %1", _statusText];
 			} else {
-				if (itc_land_roundsFired == itc_land_roundCount) then {
-					_statusText = format ["%1 ( %2 / %3 ROUNDS COMPLETE )",itc_land_SPHammoHandler_status,itc_land_roundsFired,itc_land_roundCount];
+				if (_roundsFired == _roundCount) then {
+					_statusText = format ["%1 ( %2 / %3 ROUNDS COMPLETE )",_status # 2,_roundsFired,_roundCount];
 
 				} else {
-					_statusText = format ["%1 ( %2 / %3 )",itc_land_SPHammoHandler_status,(itc_land_roundsFired+1),itc_land_roundCount];
+					_statusText = format ["%1 ( %2 / %3 )",_status # 2,(_roundsFired+1),_roundCount];
 				};
 				//player sideChat format ["STATUS: %1", _statusText];
 			};
 			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",_statusText]);
 			//Ammo to load
 			
-			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
-				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
-				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
-				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
+			private _settings = _veh getVariable ["itc_land_sphloadersettings",[]];
+			
+			if (count _settings > 0}) then {
+				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((_settings # 0) # 0)]);
+				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((_settings # 1) # 0)]);
+				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);				
 			} else {
 				(_display displayCtrl 81023) ctrlSetText "LOAD: -- N/A --";
 				(_display displayCtrl 81024) ctrlSetText "FUZE: -- N/A --";

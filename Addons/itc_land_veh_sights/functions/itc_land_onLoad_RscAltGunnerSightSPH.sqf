@@ -80,23 +80,15 @@
 			
 			//Autoloader and Gun Status Readout
 			//Gun Status
-			if (isNil "itc_land_SPHammoHandler_status") then {
-				if (currentMagazine vehicle ace_player isKindOf ["itc_land_how_mag", configFile >> "CfgMagazines"]) then {
-					itc_land_SPHammoHandler_status = "READY TO FIRE";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				} else {
-					itc_land_SPHammoHandler_status	= "WAITING";
-					//ctrlSetText [86011, itc_land_SPHammoHandler_status];
-				};
-			};
-			(_display displayCtrl 82020) ctrlSetText (format ["STATUS: %1",itc_land_SPHammoHandler_status]);
+			private _status = _veh getVariable ["itc_land_SPHammoHandler_status",[0,0,"WAITING"]];				
+			(_display displayCtrl 82020) ctrlSetText (format ["STATUS: %1",_status # 2]);
 			
 			//Ammo to load
-			
-			if (!(isNil "itc_land_sphloadersettings") && {count itc_land_sphloadersettings > 0}) then {
-				(_display displayCtrl 82021) ctrlSetText (format ["LOAD: %1",((itc_land_sphloadersettings # 0) # 0)]);
-				(_display displayCtrl 82022) ctrlSetText (format ["FUZE: %1", toUpper ((itc_land_sphloadersettings # 1) # 0)]);
-				(_display displayCtrl 82023) ctrlSetText (format ["GUIDANCE: %1", toUpper ((itc_land_sphloadersettings # 2) # 0)]);				
+			private _settings = _veh getVariable ["itc_land_sphloadersettings",[]];	
+			if (count _settings > 0) then {
+				(_display displayCtrl 82021) ctrlSetText (format ["LOAD: %1",((_settings # 0) # 0)]);
+				(_display displayCtrl 82022) ctrlSetText (format ["FUZE: %1", toUpper ((_settings # 1) # 0)]);
+				(_display displayCtrl 82023) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);				
 			} else {
 				(_display displayCtrl 82021) ctrlSetText "LOAD: -- N/A --";
 				(_display displayCtrl 82022) ctrlSetText "FUZE: -- N/A --";
