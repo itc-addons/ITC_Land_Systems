@@ -84,10 +84,10 @@
 			
 			//Autoloader and Gun Status Readout
 			//Gun Status
-			private _status = _veh getVariable ["itc_land_SPHammoHandler_status",[0,0,"WAITING"]];
+			private _status = _veh getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];
 			private _roundCount = _veh getVariable ["itc_land_roundCount",0];
 			private _roundsFired = _veh getVariable ["itc_land_roundsFired",0];
-			private _statusText = _status # 2;
+			private _statusText = "";
 			if ( _roundCount < 1 )then {
 				_statusText = _status # 2;
 				//player sideChat format ["STATUS: %1", _statusText];
@@ -105,7 +105,7 @@
 			
 			private _settings = _veh getVariable ["itc_land_sphloadersettings",[]];
 			
-			if (count _settings > 0}) then {
+			if (count _settings > 0) then {
 				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((_settings # 0) # 0)]);
 				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((_settings # 1) # 0)]);
 				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);				

@@ -34,7 +34,7 @@ ctrlSetText [86022,str _roundCount];
 ctrlShow [86007, false];
 ctrlShow [86008, false];
 private _laserCode = _vehicle getVariable ["itc_land_guidance_laserCode","1111"];
-ctrlSetText [86008, str _laserCode]; } else {ctrlSetText [86008, "1111"];};	
+ctrlSetText [86008, str _laserCode];
 
 //PGM
 ctrlShow [86012, false];
@@ -43,7 +43,7 @@ private _targetGrid = _vehicle getVariable ["itc_land_guidance_targetGrid","0000
 ctrlSetText [86013, _targetGrid];
 ctrlShow [86014, false];
 ctrlShow [86015, false];
-private _targetAlt = _vehicle getVariable ["itc_land_guidance_targetAlt",0]
+private _targetAlt = _vehicle getVariable ["itc_land_guidance_targetAlt",0];
 ctrlSetText [86015, str _targetAlt];
 
 //Autoloader Labels

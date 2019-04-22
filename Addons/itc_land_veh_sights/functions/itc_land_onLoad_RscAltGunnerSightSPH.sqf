@@ -80,7 +80,7 @@
 			
 			//Autoloader and Gun Status Readout
 			//Gun Status
-			private _status = _veh getVariable ["itc_land_SPHammoHandler_status",[0,0,"WAITING"]];				
+			private _status = _veh getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];				
 			(_display displayCtrl 82020) ctrlSetText (format ["STATUS: %1",_status # 2]);
 			
 			//Ammo to load
