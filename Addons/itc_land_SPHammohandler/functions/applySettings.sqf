@@ -1,7 +1,8 @@
 private _vehicle = vehicle ace_player;
 private _curMag = (currentMagazine _vehicle);
 
-_vehicle setVariable ["itc_land_ammoHandler_status",[1,0],true];
+_vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true]; 
+[] call itc_land_SPHammoHandler_fnc_updateStatus;
 
 [_vehicle,_curMag] spawn {
 	params["_vehicle","_curMag"];
