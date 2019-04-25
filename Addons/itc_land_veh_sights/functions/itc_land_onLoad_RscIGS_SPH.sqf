@@ -6,7 +6,14 @@
 		private _display = uiNamespace getVariable ["ITC_Land_RscIGS_SPH",displayNull];
 		if (isNull _display) exitWith {};
 
-		private _vehRole = ACE_player call CBA_fnc_vehicleRole;
+		//get vehicle
+	    private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+		private _vehRole = "";
+		if (_veh in allUnitsUAV) then {
+		 _vehRole = (UAVControl _veh) # 1;
+		} else {
+		 _vehRole = ACE_player call CBA_fnc_vehicleRole;
+		};
 		//hide control group if the camera is anything but GUNNER or the player is no longer controlling the turret
 		//also remove PFH in this case.
 		if ( (cameraView != "GUNNER") || ( _vehRole != "GUNNER") ) then {
@@ -21,9 +28,6 @@
 
 			//make sure control group is visible
 			(_display displayCtrl 81001) ctrlShow true;
-
-			//get vehicle
-		   private _veh = vehicle ACE_player;
 
 		   //Get current azimuth
 		   private _weaponDirVector = _veh weaponDirection currentWeapon _veh; //Vector (array)
