@@ -12,6 +12,12 @@ class itc_land_ballistics {
       ammunition[] = {"itc_land_g152hex","itc_land_g152smo","itc_land_g152icm","itc_land_g152mat","itc_land_g152map","itc_land_g152pgm","itc_land_g152lgm","itc_land_g152ill"};
       weaponClass = "itc_land_152mm_howitzer";
     };
+    class NG127 {
+      displayName = "NG127 127mm Naval Gun";
+      type = "cannon";
+      ammunition[] = {"itc_land_g127hex","itc_land_g127smo","itc_land_g127pgm","itc_land_g127lgm","itc_land_g127ill"};
+      weaponClass = "itc_land_127mm_navalgunsystem";
+    };	
     class M230 {
       displayName = "M230 227mm MLRS";
       type = "rocket";
