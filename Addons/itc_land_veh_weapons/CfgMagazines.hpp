@@ -10,5 +10,6 @@ class CfgMagazines {
     };
 	#include "CfgMagazines_155mm.hpp"
 	#include "CfgMagazines_152mm.hpp"
+	#include "CfgMagazines_127mm.hpp"	
 	#include "CfgMagazines_230mm.hpp"
 };

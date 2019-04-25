@@ -3,8 +3,6 @@
 	class itc_land_howitzer_base: mortar_155mm_AMOS {
 		scope = 0;
 		displayName = "Howitzer 155 mm";
-		//reloadTime = 0.01;
-		//magazineReloadTime = 0.01;
 		autoReload = 0;
 		modes[] = {"Single"};
 		reloadTime = 1;
@@ -34,3 +32,8 @@
 		#include "CfgWeapons_howitzers_magazines152mm.hpp"
 		displayName = "H152 L/52";
 	};
+	class itc_land_127mm_navalgunsystem: itc_land_howitzer_base {
+		scope = 1;
+		#include "CfgWeapons_howitzers_magazines127mm.hpp"
+		displayName = "NG127 L/54";
+	};	
