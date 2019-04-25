@@ -1,5 +1,5 @@
 params ["_action"];
-_vehicle = (vehicle player);
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 _display = findDisplay 32562;
 
 switch(_action) do {
