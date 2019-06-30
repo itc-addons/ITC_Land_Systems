@@ -1,7 +1,7 @@
 params ["_tabletClass",["_tabletOwner",player]];
 createDialog "itc_land_tablet";
 
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 _display = findDisplay 32562;
 if(!(_vehicle isKindOf "Man")) then {
   //_tabletClass = (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "itc_land" >> "tablet")  call BIS_fnc_getCfgData;

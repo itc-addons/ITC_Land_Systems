@@ -1,7 +1,7 @@
 params ["_display"];
 #include "..\..\..\BCS_idc_defines.hpp"
 ctrlShow [13504, true];
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 _mission = [];
 if(_vehicle getVariable "bcs_mission_index" == -1) then {

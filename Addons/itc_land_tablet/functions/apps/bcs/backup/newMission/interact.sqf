@@ -1,5 +1,5 @@
 params ["_action"];
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 _display = findDisplay 32562;
 if(_action == "targetType") then {
   _type = lbText [6100, lbCurSel 6100];

@@ -4,7 +4,7 @@ ctrlShow [13301, true];
 [_display, 15010, 0] call itc_land_tablet_fnc_setFade;
 [_display, 15011, 0] call itc_land_tablet_fnc_setFade;
 
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 _apps = _vehicle getVariable "apps";
 {
   if(_x < count _apps) then {

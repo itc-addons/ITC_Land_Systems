@@ -3,7 +3,7 @@ ctrlShow [13502, true];
 
 [_display, IDC_workspace_header, "Battery Setup"] call itc_land_tablet_fnc_setText;
 
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 [_display, 4303, _vehicle getVariable "bcs_bty_name"] call itc_land_tablet_fnc_setText;
 //[_display, 4304,] call itc_land_tablet_fnc_setText;
 

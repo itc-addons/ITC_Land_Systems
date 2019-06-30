@@ -1,5 +1,5 @@
 /*params ["_display"];
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 //weaponState [_vehicle, [0]] params ["_weapon", "_muzzle", "_firemode", "_magazine", "_ammoCount"];
 
 _solutions = (_vehicle getVariable "itc_land_tablet_fcs_solutions");

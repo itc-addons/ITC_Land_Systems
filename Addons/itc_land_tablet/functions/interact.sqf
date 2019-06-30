@@ -1,5 +1,5 @@
 params ["_action", "_value"];
-_vehicle = (vehicle player);
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 if(_action == "app" && !isNil{_value}) exitWith {
   if(count (_vehicle getVariable "apps") > _value) then {

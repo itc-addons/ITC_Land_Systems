@@ -1,5 +1,5 @@
 params ["_action", "_listBox", "_target", "_value"];
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 _display = findDisplay 32562;
 if(_action == "sheafType") then {
   _type = lbText [7101, lbCurSel 7101];

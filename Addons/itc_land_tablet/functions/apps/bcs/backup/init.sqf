@@ -1,5 +1,5 @@
 #include "..\..\BCS_idc_defines.hpp"
-_vehicle = vehicle player;
+_vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 [_display, IDC_header1, "AIFMS"] call itc_land_tablet_fnc_setText;
 [_display, IDC_header2, "FDC Suite"] call itc_land_tablet_fnc_setText;
