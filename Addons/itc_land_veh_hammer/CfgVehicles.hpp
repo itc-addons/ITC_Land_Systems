@@ -25,26 +25,36 @@ class CfgVehicles {
 		};
 	};
 	class StaticMGWeapon: StaticWeapon {
-        class ACE_SelfActions: ACE_SelfActions {};	
+        class ACE_SelfActions: ACE_SelfActions {};
         class Turrets: Turrets {
             class MainTurret: MainTurret {};
-        };		
+        };
 	};
 	class B_Ship_Gun_01_base_F: StaticMGWeapon {
         class ACE_SelfActions: ACE_SelfActions {};
         class Turrets: Turrets {
             class MainTurret: MainTurret {};
 		};
-	};	
+	};
 	class itc_land_NGS01_base: B_Ship_Gun_01_base_F {
 		class ACE_SelfActions: ACE_SelfActions {
+			class ITC_Land_CommanderTablet {
+				displayName = "Open Mounted Tablet";
+				icon = "\itc_land_tablet\UI\tableticon256.paa";
+                condition = "( _target ) == ([] call itc_land_common_fnc_getCurVehicle)";
+				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
+			};
             class ITC_Land_SPHammohandler {
                 displayName = "Open Ammo Handling Interface";
                 condition = "( _target ) == ([] call itc_land_common_fnc_getCurVehicle)";
                 statement = "createDialog 'ITC_Land_SPHammohandler'";
-            };	
-		};	
+            };
+		};
 		artilleryScanner = 0;
+		class itc_land {
+		  tabletInterfaces[] = {"spg"};
+		  mountedTablet = "itc_land_tablet_spg";
+		};
         class Turrets: Turrets {
             class MainTurret: MainTurret {
 				turretInfoType = "ITC_Land_RscIGS_SPH";
@@ -58,9 +68,9 @@ class CfgVehicles {
 				};
 				class OpticsIn: ITC_Land_Optics_IGS {
 					class Wide: Wide {};
-				};				
+				};
 			};
-		};	
+		};
 	};
 	class itc_land_NGS01_hammer2: itc_land_NGS01_base {
 		scope = 2;
@@ -70,6 +80,10 @@ class CfgVehicles {
 		side = 1;
 		faction = "BLU_F";
 		crew = "B_UAV_AI";
-		typicalCargo[] = {"B_UAV_AI"};		
-	};	
+		typicalCargo[] = {"B_UAV_AI"};
+		class itc_land {
+		  tabletInterfaces[] = {"spg"};
+		  mountedTablet = "itc_land_tablet_spg";
+		};				
+	};
 };
