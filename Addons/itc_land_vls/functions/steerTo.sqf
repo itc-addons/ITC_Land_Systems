@@ -13,7 +13,7 @@ private _diveRate = 50 * _frameTime;
 private _desiredBank = (4 * _angleX) min _maxBank max -_maxBank;
 
 private _pullUp = (
-  ((getPos _projectile) # 2 < 100) ||
+  ((getPos _projectile) # 2 < 200) ||
   ([_this,_bank,_bankRate,_pitch,_diveRate] call itc_land_vls_fnc_AGCAS)
 );
 

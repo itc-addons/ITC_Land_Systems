@@ -1,4 +1,6 @@
 (_this select 0) params ["_projectile", "_ammo", "_position", "_targetCoordinates", "_stage", "_time", "_angle", "_lastFrameTime","_azimuth","_steerPoint"];
+if (_lastFrameTime == time) exitWith {};
+
 if (!alive _projectile) exitWith {
     [_this select 1] call CBA_fnc_removePerFrameHandler;
 };

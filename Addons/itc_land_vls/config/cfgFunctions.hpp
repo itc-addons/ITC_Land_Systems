@@ -25,6 +25,30 @@ class cfgFunctions {
       class AGCAS {
         file = "itc_land_vls\functions\AGCAS.sqf";
       };
+      class onLoad {
+        file = "itc_land_vls\functions\ui\onLoad.sqf";
+      };
+      class onChar {
+        file = "itc_land_vls\functions\ui\onChar.sqf";
+      };
+      class onSelectAngle {
+        file = "itc_land_vls\functions\ui\onSelectAngle.sqf";
+      };
+      class onSelectTarget {
+        file = "itc_land_vls\functions\ui\onSelectTarget.sqf";
+    };
+      class saveTGT {
+        file = "itc_land_vls\functions\ui\saveTGT.sqf";
+      };
+      class removeTGT {
+        file = "itc_land_vls\functions\ui\removeTGT.sqf";
+      };
+      class adHocLaunch {
+        file = "itc_land_vls\functions\ui\adHocLaunch.sqf";
+      };
+      class selectedLaunch {
+        file = "itc_land_vls\functions\ui\selectedLaunch.sqf";
+      };
     };
   };
 };

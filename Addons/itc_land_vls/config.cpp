@@ -14,3 +14,4 @@ class CfgPatches {
 #include "config\cfgWeapons.hpp"
 #include "config\cfgMagazines.hpp"
 #include "config\cfgAmmo.hpp"
+#include "config\cfgDisplay.hpp"
