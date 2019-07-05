@@ -1,19 +1,20 @@
 //private _vehicle = vehicle ace_player;
 private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
-private _status = _vehicle getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];
+private _status = (_vehicle getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]]) # 0;
+
 private _sphloadersettings = _vehicle getVariable ["itc_land_sphloadersettings", []];
 private _roundCount = ((_sphloadersettings # 0) # 3);
 private _roundsFired = _vehicle getVariable ["itc_land_roundsFired",0];
 
 private _curMag = (currentMagazine _vehicle);
 
-if (_roundCount == _roundsFired) then { _vehicle setVariable ["itc_land_roundsFired",0,true]; };
+if (_roundCount == _roundsFired) then { _vehicle setVariable ["itc_land_roundsFired",0,true] };
 
 //check gun status. if 3 (loaded and ready to fire), then unload, if 1 (empty and ready to load) then load, otherwise do nothing.
 
-switch ( _status # 0 ) do {
-	case 3 : {
-		//Remove loaded magazine.
+switch ( _status ) do {
+	case 3: {
+		systemChat "Remove loaded magazine.";
 		[_vehicle,_curMag] spawn {
 			private _vehicle = _this select 0;
 			private _curMag = _this select 1;
@@ -39,8 +40,10 @@ switch ( _status # 0 ) do {
 			sleep 2+random(2);
 
 			_vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true]; [] call itc_land_SPHammoHandler_fnc_updateStatus;
+		};
 	};
-	case 1 : {
+	case 1: {
+		systemChat "Load the magazine";
 		[_vehicle] spawn {
 			disableSerialization;
 
@@ -87,5 +90,7 @@ switch ( _status # 0 ) do {
 
 		};
 	};
-	default {};
+	default {
+		systemChat "Shit aint working toad";
+	};
 };
