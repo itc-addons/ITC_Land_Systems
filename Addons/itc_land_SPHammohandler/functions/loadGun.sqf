@@ -14,7 +14,7 @@ if (_roundCount == _roundsFired) then { _vehicle setVariable ["itc_land_roundsFi
 
 switch ( _status ) do {
 	case 3: {
-		systemChat "Remove loaded magazine.";
+		//systemChat "Remove loaded magazine.";
 		[_vehicle,_curMag] spawn {
 			private _vehicle = _this select 0;
 			private _curMag = _this select 1;
@@ -43,7 +43,7 @@ switch ( _status ) do {
 		};
 	};
 	case 1: {
-		systemChat "Load the magazine";
+		//systemChat "Load the magazine";
 		[_vehicle] spawn {
 			disableSerialization;
 
@@ -91,6 +91,6 @@ switch ( _status ) do {
 		};
 	};
 	default {
-		systemChat "Shit aint working toad";
+		//systemChat "Shit aint working toad";
 	};
 };
