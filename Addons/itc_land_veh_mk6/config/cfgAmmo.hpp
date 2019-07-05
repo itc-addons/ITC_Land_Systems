@@ -14,4 +14,7 @@ class cfgAmmo {
     ace_rearm_caliber = 155;
     //explosionTime = 1;
   };
+  class itc_82mm_flare_scripted: itc_82mm_flare { //SCRIPTED ILLUM FOR IN MISSION SPAWNING (TOAD)
+	triggerTime = 0.001;
+  };
 };
