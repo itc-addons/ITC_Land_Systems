@@ -51,7 +51,7 @@ class page_bcs_setup:itc_land_workspace
     	h = 0.022 * safezoneH;
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
-      action = "[""save""] call itc_land_tablet_fnc_pageInteract";
+     action = "[""save""] call itc_land_tablet_fnc_pageInteract";
 
     };
     class btysetup_gun_number_label: ITC_LAND_RscText {
