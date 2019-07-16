@@ -41,6 +41,19 @@ class page_bcs_setup:itc_land_workspace
     	w = 0.118594 * safezoneW;
     	h = 0.022 * safezoneH;
     };
+    class btysetup_save_button: ITC_LAND_RscButton {
+    	idc = 4316;
+
+    	text = "SAVE BTY TYPE";
+    	x = 0.566719 * safezoneW + safezoneX;
+    	y = 0.269 * safezoneH + safezoneY;
+    	w = 0.081875 * safezoneW;
+    	h = 0.022 * safezoneH;
+    	colorBackground[] = {0,0,0,0.9};
+    	colorActive[] = {0,0,0,0.9};
+      action = "[""save""] call itc_land_tablet_fnc_pageInteract";
+
+    };
     class btysetup_gun_number_label: ITC_LAND_RscText {
     	idc = 4305;
 
@@ -159,19 +172,7 @@ class page_bcs_setup:itc_land_workspace
     	colorBackground[] = {0,0,0,0.9};
     	colorActive[] = {0,0,0,0.9};
     };
-    class btysetup_save_button: ITC_LAND_RscButton {
-    	idc = 4316;
 
-    	text = "Save";
-    	x = 0.659844 * safezoneW + safezoneX;
-    	y = 0.685 * safezoneH + safezoneY;
-    	w = 0.061875 * safezoneW;
-    	h = 0.022 * safezoneH;
-    	colorBackground[] = {0,0,0,0.9};
-    	colorActive[] = {0,0,0,0.9};
-      action = "[""save""] call itc_land_tablet_fnc_pageInteract";
-
-    };
     /*
     class btysetup_discard_button: ITC_LAND_RscButton {
     	idc = 4317;
