@@ -23,4 +23,4 @@ if (!(_simulation in ["shotRocket", "shotMissile"])) exitWith {};
       };
     } forEach _intersects;
   };
-}, 0.1, [_projectile]] call CBA_fnc_addPerFrameHandler;
+}, 0.05, [_projectile]] call CBA_fnc_addPerFrameHandler;
