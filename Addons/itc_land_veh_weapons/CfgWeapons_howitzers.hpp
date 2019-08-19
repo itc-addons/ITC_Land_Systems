@@ -6,12 +6,12 @@
 		autoReload = 0;
 		modes[] = {"Single"};
 		reloadTime = 1;
-		magazineReloadTime = 5;	
+		magazineReloadTime = 5;
 		magazines[] = {};
 		class Single: Single1 {
 			displayName = "";
 			artilleryCharge = 1;
-			reloadTime = 5;			
+			reloadTime = 5;
 		};
 		class EventHandlers
 		{
@@ -36,4 +36,9 @@
 		scope = 1;
 		#include "CfgWeapons_howitzers_magazines127mm.hpp"
 		displayName = "NG127 L/54";
-	};	
+		class Single: Single1 {
+			displayName = "";
+			artilleryCharge = 1;
+			reloadTime = 3;			
+		};
+	};

@@ -1,6 +1,6 @@
  class CfgPatches {
 	class itc_land_veh_hammer	{
-		units[] = {	"itc_land_NGS01_hammer2"};
+		units[] = {	"itc_land_NGS01_hammer2","itc_land_NGS01_hammer2_mod1"};
 		weapons[] = {};
 		requiredVersion = 1.8;
 		requiredAddons[] = {"A3_Weapons_F","itc_land_veh_sights","itc_land_veh_weapons","itc_land_sphammohandler"};

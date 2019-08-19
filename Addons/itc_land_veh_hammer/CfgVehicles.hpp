@@ -54,6 +54,7 @@ class CfgVehicles {
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
 		  mountedTablet = "itc_land_tablet_spg";
+  		  loaderType = 1; // semi automatic
 		};
         class Turrets: Turrets {
             class MainTurret: MainTurret {
@@ -81,9 +82,21 @@ class CfgVehicles {
 		faction = "BLU_F";
 		crew = "B_UAV_AI";
 		typicalCargo[] = {"B_UAV_AI"};
-		class itc_land {
-		  tabletInterfaces[] = {"spg"};
-		  mountedTablet = "itc_land_tablet_spg";
-		};				
+		class itc_land: itc_land {
+
+		};
+	};
+	class itc_land_NGS01_hammer2_mod1: itc_land_NGS01_base {
+		scope = 2;
+		author = "Toadball";
+		displayName = "Mk45 mod. 1 Hammer 2";
+		scopeCurator = 2;
+		side = 1;
+		faction = "BLU_F";
+		crew = "B_UAV_AI";
+		typicalCargo[] = {"B_UAV_AI"};
+		class itc_land: itc_land {
+ 		  loaderType = 2; // fully automatic			
+		};
 	};
 };

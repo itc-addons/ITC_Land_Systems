@@ -20,16 +20,16 @@ class CfgAmmo {
 	class itc_land_155mm: Sh_155mm_AMOS {
 		//artilleryLock = 0;
 		//airFriction = -0.0000395;
-        //sideAirFriction = 1;		
-        whistleOnFire = 1;		
-        whistleDist = 500;
-        suppressionRadiusHit = 100;	
+        //sideAirFriction = 1;
+        //whistleOnFire = 1;
+        //whistleDist = 500;
+        suppressionRadiusHit = 100;
         ace_frag_enabled = 1;
         ace_frag_classes[] = {ACE_frag_large, ACE_frag_large, ACE_frag_large_HD, ACE_frag_large, ACE_frag_medium_HD, ACE_frag_medium_HD, ACE_frag_medium, ACE_frag_huge, ACE_frag_huge_HD, ACE_frag_huge};
         ace_frag_metal = 36000;
         ace_frag_charge = 10800;
         ace_frag_gurney_c = 2440;
-        ace_frag_gurney_k = 1/2;		
+        ace_frag_gurney_k = 1/2;
 	};
 	class itc_land_155mm_inert: itc_land_155mm {
 		indirectHitRange = 1;
@@ -37,7 +37,7 @@ class CfgAmmo {
 		explosionEffects = "";
 		ace_frag_enabled = 0;
 		explosive = 0;
-        CraterEffects = "NoCrater";		
+        CraterEffects = "NoCrater";
 	};
 	class itc_land_155mm_helper: itc_land_155mm {
 		explosionTime = 0.0001;
@@ -58,19 +58,27 @@ class CfgAmmo {
 		submunitionAmmo[] = {"ITC_APF_Submunition",0.33};
 		submunitionConeAngle = 7;
 		submunitionInitSpeed = 880;
-	};		
+	};
     class B_127x99_Ball;
     class ITC_APF_Submunition : B_127x99_Ball {
         caliber = 3.5;
         initSpeed = 880;
-    };	
+    };
 	*/
 	class Smoke_120mm_AMOS_White;
-	class itc_land_155mm_smoke : Smoke_120mm_AMOS_White {
+	class itc_land_155mm_smoke : itc_land_155mm {
+		ace_frag_enabled = 0;
 		triggerTime = 0.05;
 		triggerDistance = 0.1;
-		submunitionConeType[] = {"poissondisc",15};
-		submunitionConeAngle = 4;
+		hit = 60;
+		indirectHit = 50;
+		indirectHitRange = 30;
+		explosive = 0.8;
+		ExplosionEffects = "ITC_Land_BurstingWP";
+		CraterEffects = "GrenadeCrater";
+		//submunitionConeType[] = {"poissondisc",15};
+		//submunitionConeAngle = 4;
+        //submunitionAmmo = "SmokeLauncherAmmo";
 	};
 
 	class Mine_155mm_AMOS_range;
@@ -100,8 +108,8 @@ class CfgAmmo {
 		explosionEffects = "";
 		ace_frag_enabled = 0;
 		explosive = 0;
-        CraterEffects = "NoCrater";		
-	};	
+        CraterEffects = "NoCrater";
+	};
 	class R_230mm_Cluster;
 	class itc_land_230mm_icm_helper: R_230mm_Cluster {
 		triggerTime = 0.05;
@@ -109,7 +117,7 @@ class CfgAmmo {
 		submunitionConeType[] = {"poissondisc",240};
 		submunitionAmmo[] = {"Mo_cluster_AP",0.33,"Mo_cluster_Bomb_01_F",0.66,"Mo_cluster_AP_UXO_deploy",0.07};
 		submunitionConeAngle = 5;
-	};	
+	};
 
 	class itc_land_230mm_fascam_ap_helper : Mine_155mm_AMOS_range {
 		triggerTime = 0.05;
@@ -119,5 +127,5 @@ class CfgAmmo {
 	class itc_land_230mm_fascam_at_helper : AT_Mine_155mm_AMOS_range {
 		triggerTime = 0.05;
 		submunitionConeType[] = {"randomcenter",50};
-	};	
+	};
 };
