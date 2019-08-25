@@ -1,10 +1,7 @@
 
-private _gun = _this select 0;
-private _weapon = _this select 1;
-private _magazine = _this select 5;
-private _shell = _this select 6;
+params ["_gun", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_shell", "_gunner"];
 
-if (!(local _gun)) exitWith {};
+if (!(local _gunner)) exitWith {};
 
 _gun removeMagazine _magazine;
 private _gunMags = magazines _gun;
