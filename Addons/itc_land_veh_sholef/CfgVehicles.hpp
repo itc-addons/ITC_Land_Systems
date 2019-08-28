@@ -16,31 +16,31 @@
 class CfgVehicles {
 	class LandVehicle;
 	class Tank: LandVehicle {
-        class ACE_SelfActions;	
+        class ACE_SelfActions;
 	};
 	class Tank_F: Tank {
-        class ACE_SelfActions: ACE_SelfActions {};		
+        class ACE_SelfActions: ACE_SelfActions {};
 		class Turrets {
 			class MainTurret;
 		};
 		class AnimationSources;
 	};
 	class MBT_01_base_F: Tank_F {
-        class ACE_SelfActions: ACE_SelfActions {};		
+        class ACE_SelfActions: ACE_SelfActions {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
 		class AnimationSources: AnimationSources {};
 	};
 	class MBT_01_arty_base_F: MBT_01_base_F {
-        class ACE_SelfActions: ACE_SelfActions {};		
+        class ACE_SelfActions: ACE_SelfActions {};
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
 		};
 	};
 	class B_MBT_01_arty_base_F: MBT_01_arty_base_F {
-        class ACE_SelfActions: ACE_SelfActions {};				
+        class ACE_SelfActions: ACE_SelfActions {};
 		class AnimationSources: AnimationSources {};
 		class Turrets: Turrets {
 				class MainTurret: MainTurret {};
@@ -53,21 +53,24 @@ class CfgVehicles {
                 displayName = "Open Ammo Handling Interface";
                 condition = "( gunner _target ) == ACE_Player";
                 statement = "createDialog 'ITC_Land_SPHammohandler'";
-            };	
+            };
 			class ITC_Land_CommanderTablet {
 				displayName = "Open Mounted Tablet";
 				icon = "\itc_land_tablet\UI\tableticon256.paa";
 				condition = "([_target] call itc_land_tablet_fnc_vehicleHasTablet) && (( commander _target ) == ACE_Player)";
 				statement = "[_target] call itc_land_tablet_fnc_openVehicleTablet";
-			};			
-		};				
+			};
+		};
 		artilleryScanner = 0;
 		class itc_land {
 		  tabletInterfaces[] = {"spg"};
 		  mountedTablet = "itc_land_tablet_spg";
+  		  loaderType = 1; // semi automatic
 		};
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
+				//animationSourceBody = "turret_source";
+				//animationSourceGun = "gun_source";
 				turretInfoType = "ITC_Land_RscIGS_SPH";
 				weapons[] = {"itc_land_155mm_howitzer"};
 				magazines[] = {
@@ -84,13 +87,30 @@ class CfgVehicles {
 				};
 			};
 		};
-		class AnimationSources: AnimationSources {};
+		/*
+		class AnimationSources: AnimationSources {
+			class mainGun {
+				source = "user";
+				animPeriod = 0.00806;
+	            initPhase = 60;
+	            minValue = -53;
+	            maxValue = 1333;
+			};
+			class mainTurret: mainGun {
+				animPeriod = 0.00512;
+	            initPhase = 0;
+				minValue = -6400;
+	            maxValue = 6400;
+			};
+
+		};
+		*/
 
 	};
 	class itc_land_b_SPH_Sholef2: itc_land_SPH01_base {
 		author = "Toadball";
 		scope = 2;
-		scopeCurator = 2;		
+		scopeCurator = 2;
 		displayName = "M4 mod. 0 Sholef 2";
 		mapSize = 11.83;
 		class SimpleObject {
