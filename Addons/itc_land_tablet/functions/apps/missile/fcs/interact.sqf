@@ -1,5 +1,6 @@
 params ["_action"];
 _vehicle = [] call itc_land_common_fnc_getCurVehicle;
+_curMag = (currentMagazine _vehicle);
 _display = findDisplay 32562;
 
 switch(_action) do {
@@ -40,45 +41,53 @@ switch(_action) do {
     _vehicle setVariable ["itc_land_tablet_fcs_solutions_index", (_solutionIndex + 1) min ((count _solutions) - 1), true];
   };
   case "setFG" : {
-	private _curMag = (currentMagazine _vehicle);
 	[_vehicle,_curMag] spawn {
+        params ["_vehicle","_curMag"];
 		disableSerialization;
 		private _fuze  = getText (configFile >> "CfgMagazines" >> lbData [2402, lbCurSel 2402] >> "itc_land_fuze");
-		if (isNil "itc_land_fuzeDesc") then { itc_land_fuzeDesc = lbText [1904,itc_land_selectedFuzeIndex]; };
-		if (isNil "itc_land_fuzeValues") then { itc_land_fuzeValues = 0; };
+
+       //private _fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0];
+		//if (isNil "itc_land_fuzeDesc") then { itc_land_fuzeDesc = lbText [1904,itc_land_selectedFuzeIndex]; };
+        private _fuzeDesc = _vehicle getVariable ["itc_land_selectedFuzeDesc",(lbText [1904,lbCurSel 1904])];
+        private _fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0];
+
 		switch (lbData [1904, lbCurSel 1904 ]) do {
 			case "pd" : {
-				_fuzeText = itc_land_fuzeDesc;
+				_fuzeText = _fuzeDesc;
 			};
 			case "prox" : {
 				private _proxHOB = getNumber (configFile >> "ITC_Land_CfgFuzes" >> _fuze >> "proxHOB");
-				itc_land_fuzeValues = _proxHOB;
-				_fuzeText = Format ["%1: %2m",itc_land_fuzeDesc,itc_land_fuzeValues];
+				//itc_land_fuzeValues = _proxHOB;
+                _vehicle setVariable ["itc_land_fuzeValues",_proxHOB,true];
+				_fuzeText = Format ["%1: %2m",_fuzeDesc,_proxHOB];
 			};
 			case "time" : {
-				itc_land_mlrsfci_fuzeTime = parseNumber(ctrlText 1906);
-				itc_land_fuzeValues = itc_land_mlrsfci_fuzeTime;
-				_fuzeText = Format ["%1: %2s",itc_land_fuzeDesc,itc_land_fuzeValues];
+				private _fuzeTime = parseNumber(ctrlText 1906);
+                _vehicle setVariable ["itc_land_fuzeValues",_fuzeTime,true];
+                _vehicle setVariable ["itc_land_mlrsfci_fuzeTime",_fuzeTime,true];
+				_fuzeText = Format ["%1: %2s",_fuzeDesc,_fuzeTime];
 			};
 			case "delay" : {
-				itc_land_fuzeValues = 0.005;
-				_fuzeText = itc_land_fuzeDesc;
+                _vehicle setVariable ["itc_land_fuzeValues",0.005,true];
+				_fuzeText = _fuzeDesc;
 			};
 		};
 	};
-	itc_land_guidance = getArray (configFile >> "CfgMagazines" >> lbData [2402, lbCurSel 2402] >> "itc_land_guidance");
 
-	if (count itc_land_guidance > 0) then {
-		switch (itc_land_guidance # 0) do {
+	private _guidance = getArray (configFile >> "CfgMagazines" >> lbData [2402, lbCurSel 2402] >> "itc_land_guidance");
+
+	if (count _guidance > 0) then {
+		switch (_guidance # 0) do {
 			case "gps_inertial" : {
-				itc_land_guidance_targetGrid = ctrlText 1909;
+				_targetGrid = ctrlText 1909;
 				//player sidechat itc_land_guidance_targetGrid;
-				private _targetPos = [itc_land_guidance_targetGrid,true] call CBA_fnc_mapGridToPos;
+				_targetPos = [_targetGrid,true] call CBA_fnc_mapGridToPos;
 				//player sidechat str _targetPos;
-				itc_land_guidance_targetAlt = parseNumber(ctrlText 1911);
-				_targetPos set [2,(itc_land_guidance_targetAlt - ace_common_mapAltitude)];
+				_targetAlt = parseNumber(ctrlText 1911);
+				_targetPos set [2,(_targetAlt - ace_common_mapAltitude)];
 				//player sidechat str _targetPos;
-				itc_land_guidance_targetPos = _targetPos;
+
+				_vehicle setVariable ["itc_land_guidance_targetPos",_targetPos,true];
 			};
 
 			default { 	};
