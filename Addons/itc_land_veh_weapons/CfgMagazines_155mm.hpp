@@ -20,10 +20,11 @@
 	class itc_land_g155smo: itc_land_how_mag {
 		author = "Toadball";
 		displayName = "G155 SMOKE";
-		ammo = "itc_land_155mm_inert";
+		//ammo = "itc_land_155mm_inert";
+		ammo = "itc_land_155mm_smoke";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 SMOKE";
-		itc_land_fuze = "mof35_mod1";
+		itc_land_fuze = "mof35_mod4";
 		itc_land_charge_format = "itc_land_g155smo_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
@@ -166,8 +167,8 @@
 		ammo = "itc_land_155mm_inert";
 		itc_land_submunitionCount = 2;
 		itc_land_submunitionScript = "itc_land_veh_weapons_fnc_deployExtra";
-		itc_land_heightModifier = 75;
-		itc_land_timeModifier = -3;
+		itc_land_heightModifier = 50;
+		itc_land_timeModifier = -5;
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 EXTRA";
 		itc_land_fuze = "mof35_mod3";
