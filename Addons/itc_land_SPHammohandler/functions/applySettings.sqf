@@ -2,18 +2,18 @@
 private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 private _curMag = (currentMagazine _vehicle);
 
-_vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true]; 
+_vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true];
 [] call itc_land_SPHammoHandler_fnc_updateStatus;
 
 [_vehicle,_curMag] spawn {
 	params["_vehicle","_curMag"];
-	
+
 	disableSerialization;
-	
+
 	private _curMagInfo = _vehicle getVariable "itc_land_currentMagInfo";
 	private _selectedMagClass = _curMagInfo # 1;
 	private _selectedMagConfig = _curMagInfo # 2;
-	
+
 	private _ammoType = getText (_selectedMagConfig >> "displayNameShort");
 	private _charge = str (_vehicle getVariable ["itc_land_currentChargeIndex",1]);
 	private _ammoText = format ["%1 CHG: %2", _ammoType,_charge];
@@ -24,12 +24,12 @@ _vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true];
 	private _fuze  = getText (configFile >> "CfgMagazines" >> _selectedMagClass >> "itc_land_fuze");
 	//set rendered string empty. Use switch to generate new rendered string and setValues.
 	private _fuzeText = "";
-	
+
 	private _selectedFuzeIndex = _vehicle getVariable ["itc_land_selectedFuzeIndex",0];
 	private _fuzeDesc = _vehicle getVariable ["itc_land_selectedFuzeDesc",(lbText [86004,_selectedFuzeIndex])];
 	private _fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0];
 	private _fuzeMode = _vehicle getVariable ["itc_land_selectedFuzeMode","pd"];
-	
+
 	switch (_fuzeMode) do {
 		case "pd" : {
 			_fuzeText = _fuzeDesc;
@@ -40,24 +40,24 @@ _vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true];
 			_fuzeText = Format ["%1: %2m",_fuzeDesc,_proxHOB];
 		};
 		case "time" : {
-			private _fuzeTime = parseNumber(ctrlText 86006); 
+			private _fuzeTime = parseNumber(ctrlText 86006);
 			_vehicle setVariable ["itc_land_fuzeTime", _fuzeTime, true]; //this is used for UI stuff
 			_vehicle setVariable ["itc_land_fuzeValues", _fuzeTime, true]; //this is for fuze stuff
-			_fuzeText = Format ["%1: %2s",_fuzeDesc,_fuzeTime];		
+			_fuzeText = Format ["%1: %2s",_fuzeDesc,_fuzeTime];
 		};
 		case "delay" : {
 			_vehicle setVariable ["itc_land_fuzeValues",0.005, true];
-			_fuzeText = _fuzeDesc;	
+			_fuzeText = _fuzeDesc;
 		};
 	};
-	_fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0]; 
+	_fuzeValues = _vehicle getVariable ["itc_land_fuzeValues",0];
 	//Render string to output field.
 	ctrlSetText [86018, _fuzeText];
 
 	//Get guidance inputs
 	//itc_land_guidance = getArray (_selectedMagConfig >> "itc_land_guidance");
 	private _guidance = getArray (_selectedMagConfig >> "itc_land_guidance");
-	
+
 	private _guidanceText = "-- N/A --";
 	if (count _guidance > 0) then {
 		switch (_guidance # 0) do {
@@ -66,30 +66,44 @@ _vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true];
 				_vehicle setVariable ["itc_land_guidance_targetGrid", _targetGrid, true];
 
 				private _targetPos = [_targetGrid,true] call CBA_fnc_mapGridToPos;
-				
+
 				private _targetAlt = parseNumber(ctrlText 86015);
 				_vehicle setVariable ["itc_land_guidance_targetAlt", _targetAlt, true];
 				_targetPos set [2,(_targetAlt  - ace_common_mapAltitude)];
 
 				_vehicle setVariable ["itc_land_guidance_targetPos", _targetPos, true];
 				_guidanceText = format["%1 -- %2",_targetGrid,_targetAlt];
-				
+
 			};
 			case "laser_coded" : {
 				private _laserCode = parseNumber(ctrlText 86008);
 				if ( !([_laserCode] call itc_land_common_fnc_isLaserCode) ) then {
-					_laserCode = 1111; 
+					_laserCode = 1111;
 					ctrlSetText [86008,"1111"];
 				};
 				_vehicle setVariable ["itc_land_guidance_laserCode", _laserCode, true];
 				_guidanceText = format["CODE: %1",_laserCode];
 			};
-			default { 	
+			case "laser_coded_2" : {
+				private _laserCode = parseNumber(ctrlText 86008);
+				if ( !([_laserCode] call itc_land_common_fnc_isLaserCode) ) then {
+					_laserCode = 1111;
+					ctrlSetText [86008,"1111"];
+				};
+				private _laserCode2 = parseNumber(ctrlText 86024);
+				if ( !([_laserCode2] call itc_land_common_fnc_isLaserCode) ) then {
+					_laserCode2 = 1111;
+					ctrlSetText [86024,"1111"];
+				};
+				_vehicle setVariable ["itc_land_guidance_laserCode_2", _laserCode2, true];
+				_guidanceText = format["CODES: %1/%2", _laserCode, _laserCode2];
+			};
+			default {
 				//Set guidance output as none.
 				_guidanceText = "-- N/A --";
 
 			};
-			
+
 		};
 	};
 	ctrlSetText [86017, _guidanceText];
@@ -101,11 +115,11 @@ _vehicle setVariable ["itc_land_ammoHandler_status",[1,0,"WAITING"],true];
 	//reset count of fired rounds
 	_vehicle setVariable ["itc_land_roundsFired", 0, true];
 	if (_roundCount >= 1) then {
-		ctrlSetText [86020, str _roundCount];	
+		ctrlSetText [86020, str _roundCount];
 	} else {
-		ctrlSetText [86020,"-- N/A --"];	
+		ctrlSetText [86020,"-- N/A --"];
 	};
-	
+
 	//ctrlEnable [86009, false]; //disable loading/unloading
 	//ctrlSetText [86009, "UNLOAD"];
 	//ctrlEnable [86009, true];

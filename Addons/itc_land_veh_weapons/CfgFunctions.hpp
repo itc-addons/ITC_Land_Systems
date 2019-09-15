@@ -12,7 +12,7 @@ class CfgFunctions {
       };
       class firedSAM35 { //FOR THINGS WOT ARE SHOT AT AIRCRAFT
         file = "itc_land_veh_weapons\functions\firedSAM35.sqf";
-      };	  
+      };
       class fuzeDelay {
         file = "itc_land_veh_weapons\functions\fuzeDelay.sqf";
       };
@@ -27,6 +27,9 @@ class CfgFunctions {
       };
       class deployExtra {
         file = "itc_land_veh_weapons\functions\deployExtra.sqf";
+      };
+      class deployFalat {
+        file = "itc_land_veh_weapons\functions\deployFalat.sqf";
       };
     };
   };

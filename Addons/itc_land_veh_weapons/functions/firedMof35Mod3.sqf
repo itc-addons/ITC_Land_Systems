@@ -7,10 +7,18 @@ if (!local _gunner) exitWith {};
 
 _fuzeType = "time";
 _fuzeValue = _vehicle getVariable ["itc_land_fuzeValues",0];
+private _guidanceInfo = [
+  [
+    _vehicle getVariable ["itc_land_guidance_laserCode",1111],
+    _vehicle getVariable ["itc_land_guidance_laserCode_2",1112]
+  ],
+  _vehicle getVariable ["itc_land_guidance_targetGrid","00000000"],
+  _vehicle getVariable ["itc_land_guidance_targetAlt",0]
+];
 
 [{
   params ["_pfhValues","_pfhId"];
-  _pfhValues params ["_projectile", "_magazine", "_position", "_fuzeType","_fuzeTime", "_firedTime",""];
+  _pfhValues params ["_projectile", "_magazine", "_position", "_fuzeType","_fuzeTime", "_firedTime","", "_guidanceInfo"];
 
   if (alive _projectile) then {
     _position = getPosATL _projectile;
@@ -25,7 +33,7 @@ _fuzeValue = _vehicle getVariable ["itc_land_fuzeValues",0];
     (_projectile call BIS_fnc_getPitchBank) params ["_pitch", "_bank"];
     if (isText _subMunitionScript) then {
       for "_i" from 1 to _subMunitionCount step 1 do {
-        [_i, getPosASL _projectile, velocity _projectile, _pitch, _bank] call (missionNamespace getVariable [getText _subMunitionScript, {}]);
+        [_i, getPosASL _projectile, velocity _projectile, _pitch, _bank, _guidanceInfo] call (missionNamespace getVariable [getText _subMunitionScript, {}]);
       };
     };
 
@@ -36,4 +44,4 @@ _fuzeValue = _vehicle getVariable ["itc_land_fuzeValues",0];
   if(!alive _projectile) exitWith {
     [_pfhId] call CBA_fnc_removePerFrameHandler;
   };
-}, 0, [_projectile, _magazine, getPosATL _projectile, _fuzeType, _fuzeValue, time,[0,0,0]]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_projectile, _magazine, getPosATL _projectile, _fuzeType, _fuzeValue, time,[0,0,0], _guidanceInfo]] call CBA_fnc_addPerFrameHandler;

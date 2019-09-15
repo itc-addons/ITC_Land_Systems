@@ -7,15 +7,15 @@ itc_land_SPHammoHandler_open = true;
 private _vehicle = [] call itc_land_common_fnc_getCurVehicle;
 
 private _status = _vehicle getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];
-_vehicle setVariable ["itc_land_ammoHandler_status",_status,true];		
+_vehicle setVariable ["itc_land_ammoHandler_status",_status,true];
 [] call itc_land_SPHammoHandler_fnc_updateStatus;
 
 [] call itc_land_SPHammoHandler_fnc_fillAmmoList;
 
 private _currentMagInfo = _vehicle getVariable ["itc_land_currentMagInfo",[0,""]];
-private _selectedMagIndex = (_currentMagInfo # 0); 	
+private _selectedMagIndex = (_currentMagInfo # 0);
 private _selectedFuzeIndex = _vehicle getVariable ["itc_land_selectedFuzeIndex",0];
-	
+
 if ( _selectedMagIndex <= (lbSize 86001)) then {
 	lbSetCurSel [86001, _selectedMagIndex];
 } else {
@@ -35,8 +35,10 @@ ctrlSetText [86022,str _roundCount];
 //LGM
 ctrlShow [86007, false];
 ctrlShow [86008, false];
-private _laserCode = _vehicle getVariable ["itc_land_guidance_laserCode","1111"];
+private _laserCode = _vehicle getVariable ["itc_land_guidance_laserCode",1111];
+private _laserCode2 = _vehicle getVariable ["itc_land_guidance_laserCode_2",1112];
 ctrlSetText [86008, str _laserCode];
+ctrlSetText [86024, str _laserCode2];
 
 //PGM
 ctrlShow [86012, false];
@@ -53,16 +55,15 @@ private _sphloadersettings = _vehicle getVariable ["itc_land_sphloadersettings",
 if (count _sphloadersettings > 0) then {
 	ctrlSetText[86019, ((_sphloadersettings # 0) # 0)];
 	if (((_sphloadersettings # 0) # 3) >= 1 ) then {
-		ctrlSetText[86020, str ((_sphloadersettings # 0) # 3)];	
+		ctrlSetText[86020, str ((_sphloadersettings # 0) # 3)];
 	} else {
-		ctrlSetText [86020, "-- N/A --"];	
+		ctrlSetText [86020, "-- N/A --"];
 	};
-	ctrlSetText[86018, ((_sphloadersettings # 1) # 0)];	
-	ctrlSetText[86017, ((_sphloadersettings # 2) # 0)];	
+	ctrlSetText[86018, ((_sphloadersettings # 1) # 0)];
+	ctrlSetText[86017, ((_sphloadersettings # 2) # 0)];
 } else {
 	ctrlSetText [86019, "-- N/A --"];
-	ctrlSetText [86020, "-- N/A --"];	
+	ctrlSetText [86020, "-- N/A --"];
 	ctrlSetText [86018, "-- N/A --"];
 	ctrlSetText [86017, "-- N/A --"];
 };
-

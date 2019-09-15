@@ -29,48 +29,68 @@ if ( _selectedFuzeIndex <= (lbSize 86004)) then {
 	lbSetCurSel [86004, 0];
 };
 
-//Guided munition elements 
+//Guided munition elements
 if ( isArray (_selectedMagConfig >> "itc_land_guidance") ) then {
 	private _isSmart = (getArray (_selectedMagConfig >> "itc_land_guidance")) select 0;
 	switch _isSmart do {
 		case "laser_coded" : {
 			//Show LGM elements
 			ctrlShow [86007, true];
-			ctrlShow [86008, true];		
+			ctrlShow [86008, true];
+			ctrlShow [86023, false];
+			ctrlShow [86024, false];
 			//hide PGM elements
 			ctrlShow [86012, false];
 			ctrlShow [86013, false];
 			ctrlShow [86014, false];
-			ctrlShow [86015, false];		
+			ctrlShow [86015, false];
 		};
+			case "laser_coded_2" : {
+				//Show LGM elements
+				ctrlShow [86007, true];
+				ctrlShow [86008, true];
+				ctrlShow [86023, true];
+				ctrlShow [86024, true];
+				//hide PGM elements
+				ctrlShow [86012, false];
+				ctrlShow [86013, false];
+				ctrlShow [86014, false];
+				ctrlShow [86015, false];
+			};
 		case "gps_inertial" : {
 			//Hide LGM elements
 			ctrlShow [86007, false];
-			ctrlShow [86008, false];		
+			ctrlShow [86008, false];
+			ctrlShow [86023, false];
+			ctrlShow [86024, false];
 			//Show PGM elements
 			ctrlShow [86012, true];
 			ctrlShow [86013, true];
 			ctrlShow [86014, true];
-			ctrlShow [86015, true];		
+			ctrlShow [86015, true];
 		};
-		default { 
+		default {
 			//Hide Guidance fields
 			//LGM
 			ctrlShow [86007, false];
 			ctrlShow [86008, false];
+			ctrlShow [86023, false];
+			ctrlShow [86024, false];
 
 			//PGM
 			ctrlShow [86012, false];
 			ctrlShow [86013, false];
 			ctrlShow [86014, false];
-			ctrlShow [86015, false];		
+			ctrlShow [86015, false];
 		};
-	};	
+	};
 } else {
 	//Hide Guidance fields
 	ctrlShow [86007, false];
 	ctrlShow [86008, false];
-		
+	ctrlShow [86023, false];
+	ctrlShow [86024, false];
+
 	ctrlShow [86012, false];
 	ctrlShow [86013, false];
 	ctrlShow [86014, false];

@@ -182,3 +182,27 @@
 	class itc_land_g155ext_chg3: itc_land_g155ext { initSpeed = 300; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg4: itc_land_g155ext { initSpeed = 400; itc_land_CountInAH = 0;  };
 	class itc_land_g155ext_chg5: itc_land_g155ext { initSpeed = 500; itc_land_CountInAH = 0;  };
+
+	class itc_land_g155falat: itc_land_how_mag {
+		author = "Yax";
+		initSpeed = 162;
+		displayName = "G155 FALAT";
+		ammo = "itc_land_155mm_inert";
+		itc_land_submunitionCount = 2;
+		itc_land_submunitionScript = "itc_land_veh_weapons_fnc_deployFalat";
+		itc_land_guidance[] = {"laser_coded_2"};
+		itc_land_heightModifier = 50;
+		itc_land_timeModifier = -5;
+		muzzleImpulseFactor[] = {15, 30};
+		displayNameShort = "G155 FALAT";
+		itc_land_fuze = "mof35_mod3";
+		itc_land_charge_format = "itc_land_g155falat_chg%1";
+		itc_land_CountInAH = 1;
+		itc_land_maxChargeIndex = 5;
+		itc_land_btabListFile = "itc_land_ballistics\tables\g_155\list.sqf";
+	};
+	class itc_land_g155falat_chg1: itc_land_g155falat { initSpeed = 100; itc_land_CountInAH = 0;  };
+	class itc_land_g155falat_chg2: itc_land_g155falat { initSpeed = 200; itc_land_CountInAH = 0;  };
+	class itc_land_g155falat_chg3: itc_land_g155falat { initSpeed = 300; itc_land_CountInAH = 0;  };
+	class itc_land_g155falat_chg4: itc_land_g155falat { initSpeed = 400; itc_land_CountInAH = 0;  };
+	class itc_land_g155falat_chg5: itc_land_g155falat { initSpeed = 500; itc_land_CountInAH = 0;  };

@@ -149,7 +149,7 @@
 				idc = 86007;
 				text = "Code:  ";
 				x = 0.427812 * safezoneW + safezoneX;
-				y = 0.709 * safezoneH + safezoneY;
+				y = 0.70 * safezoneH + safezoneY;
 				w = 0.0257812 * safezoneW;
 				h = 0.022 * safezoneH;
 			};
@@ -157,7 +157,24 @@
 				idc = 86008;
 				text = "1111";
 				x = 0.45875 * safezoneW + safezoneX;
-				y = 0.709 * safezoneH + safezoneY;
+				y = 0.70 * safezoneH + safezoneY;
+				w = 0.0825 * safezoneW;
+				h = 0.022 * safezoneH;
+				colorBackground[] = {0,0,0,1};
+			};
+			class laserCode2: ITC_LAND_RscText {
+				idc = 86023;
+				text = "Code:  ";
+				x = 0.427812 * safezoneW + safezoneX;
+				y = 0.720 * safezoneH + safezoneY;
+				w = 0.0257812 * safezoneW;
+				h = 0.022 * safezoneH;
+			};
+			class laserCodeBox2: ITC_LAND_RscEdit {
+				idc = 86024;
+				text = "1112";
+				x = 0.45875 * safezoneW + safezoneX;
+				y = 0.720 * safezoneH + safezoneY;
 				w = 0.0825 * safezoneW;
 				h = 0.022 * safezoneH;
 				colorBackground[] = {0,0,0,1};
@@ -229,7 +246,7 @@
 				y = 0.772 * safezoneH + safezoneY;
 				w = 0.113437 * safezoneW;
 				h = 0.022 * safezoneH;
-				action = "[] call itc_land_SPHammoHandler_fnc_loadGun";				
+				action = "[] call itc_land_SPHammoHandler_fnc_loadGun";
 			};
 			//Autoloader Settings displays
 			class AL_Header: ITC_LAND_RscText {

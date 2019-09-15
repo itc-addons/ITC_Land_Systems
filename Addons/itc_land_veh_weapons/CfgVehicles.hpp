@@ -36,4 +36,7 @@ class CfgVehicles {
       };
     };
   };
+  class ITC_155Falat: ITC_155Extra {
+    displayName = "155Falat";
+  };
 };

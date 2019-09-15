@@ -53,5 +53,11 @@ magazines[] = {
 	"itc_land_g155ext_chg2",
 	"itc_land_g155ext_chg3",
 	"itc_land_g155ext_chg4",
-	"itc_land_g155ext_chg5"
+	"itc_land_g155ext_chg5",
+
+	"itc_land_g155falat_chg1",
+	"itc_land_g155falat_chg2",
+	"itc_land_g155falat_chg3",
+	"itc_land_g155falat_chg4",
+	"itc_land_g155falat_chg5"
 };
