@@ -2,7 +2,7 @@ class cfgWeapons {
   class weapon_rim162Launcher;
   class itc_land_mn230essm_launcher : weapon_rim162Launcher {
     weaponLockDelay = 0.1;
-    magazines[] = {"itc_land_magazine_18rnd_essm"};
+    magazines[] = {"itc_land_mn230essm_x18"};
     fireSpreadAngle = 3;
     enableAttack = 1;
     initSpeed = 0;
@@ -27,6 +27,6 @@ class cfgWeapons {
         class itc_land_veh_weapons {
             fired = "_this call itc_land_vls_fnc_fired;";
         };
-    };	  
+    };
   };
 };
