@@ -1,5 +1,6 @@
 ["itc_land_onLoad_RscIGS_SPH", {
-
+    private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+	_veh setVariable ["ITC_Land_SightEvent","itc_land_onLoad_RscIGS_SPH",true];
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
@@ -115,11 +116,11 @@
 				if (count _settings > 0) then {
 					(_display displayCtrl 1702) ctrlSetText (format ["LOAD: %1",((_settings # 0) # 0)]);
 					(_display displayCtrl 1703) ctrlSetText (format ["FUZE: %1", toUpper ((_settings # 1) # 0)]);
-					(_display displayCtrl 1704) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);				
+					(_display displayCtrl 1704) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);
 				} else {
 					(_display displayCtrl 1702) ctrlSetText "LOAD: -- N/A --";
 					(_display displayCtrl 1703) ctrlSetText "FUZE: -- N/A --";
-					(_display displayCtrl 1704) ctrlSetText "GUIDANCE: -- N/A --";				
+					(_display displayCtrl 1704) ctrlSetText "GUIDANCE: -- N/A --";
 				};
 			} else {
 				{ [_display,_x,1] call itc_land_common_fnc_ctrlSetFade } forEach [1700,1701,1702,1703,1704];
@@ -129,43 +130,43 @@
 				//make sure elements are shown
 				if (!(ctrlVisible 1600)) then {
 					{ [_display,_x,0] call itc_land_common_fnc_ctrlSetFade } forEach [1600,1601,1602,1603,1604,1605];
-				};			
+				};
 				//TO BE FILLED IN
 				//FOR NOW EMPTY!
 					(_display displayCtrl 1600) ctrlSetText "FCI ORDERS";
 					(_display displayCtrl 1601) ctrlSetText "COUNT: -- N/A --";
 					(_display displayCtrl 1602) ctrlSetText "LOAD: -- N/A --";
 					(_display displayCtrl 1603) ctrlSetText "FUZE: -- N/A --";
-					(_display displayCtrl 1604) ctrlSetText "GUIDANCE: -- N/A --";	
-					(_display displayCtrl 1605) ctrlSetText "AZ/QD: -- N/A --";	
+					(_display displayCtrl 1604) ctrlSetText "GUIDANCE: -- N/A --";
+					(_display displayCtrl 1605) ctrlSetText "AZ/QD: -- N/A --";
 			} else {
 				{ [_display,_x,1] call itc_land_common_fnc_ctrlSetFade } forEach [1600,1601,1602,1603,1604,1605];
 			};
-			if (isNil "itc_land_IGS_showAlignmentGuides") then {itc_land_IGS_showAlignmentGuides = false};			
+			if (isNil "itc_land_IGS_showAlignmentGuides") then {itc_land_IGS_showAlignmentGuides = false};
 			if (itc_land_IGS_showAlignmentGuides) then {
 				//make sure elements are shown
 				if (!(ctrlVisible 1800)) then {
 					{ [_display,_x,0] call itc_land_common_fnc_ctrlSetFade } forEach [1800,1801,1802];
-				};			
+				};
 				//TO BE FILLED IN
 				#define adjustX(ARG) ((20.4 + (ARG)) * (0.01875 * SafezoneH))
 				#define adjustY(ARG) ((14.0 + (ARG)) * (0.025 * SafezoneH))
-				
+
 				private _aziDif = (_weaponDir - _MISazi);
 
-				if ((_aziDif <= 100) && (_aziDif >= -100)) then { 
+				if ((_aziDif <= 100) && (_aziDif >= -100)) then {
 					[_display, 1801, 0] call itc_land_tablet_fnc_setFade;
 					private _adjustX = ( _aziDif / 100) * 4.55;
-					(_display displayCtrl 1801) ctrlSetPosition [adjustX(_adjustX),adjustY(0)];   
-					(_display displayCtrl 1801) ctrlCommit 0;   
+					(_display displayCtrl 1801) ctrlSetPosition [adjustX(_adjustX),adjustY(0)];
+					(_display displayCtrl 1801) ctrlCommit 0;
 				} else {
 					[_display, 1801, 1] call itc_land_tablet_fnc_setFade;
 				};
-				
+
 			} else {
 				{ [_display,_x,1] call itc_land_common_fnc_ctrlSetFade } forEach [1800,1801,1802,1803,1804,1805,1806];
-			};			
-		
+			};
+
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 

@@ -1,5 +1,6 @@
 ["itc_land_onLoad_RscGunnerSightBasic", {
-
+	private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+	_veh setVariable ["ITC_Land_SightEvent","itc_land_onLoad_RscGunnerSightBasic",true];
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
@@ -19,7 +20,7 @@
 			};
 			//ace_player sideChat "itc_land_onLoad_RscGunnerSightBasic hiding display";
 		} else {
-			
+
 			//make sure control group is visible
 			(_display displayCtrl 82001) ctrlShow true;
 			//ace_player sideChat "itc_land_onLoad_RscGunnerSightBasic showing display";
@@ -29,11 +30,11 @@
 			//Get current azimuth
 			private _weaponDirVector = _veh weaponDirection currentWeapon _veh; //Vector (array)
 			private _weaponDir = (_weaponDirVector call CBA_fnc_vect2Polar) select 1;
-			private _displayedDir = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string				
+			private _displayedDir = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string
 
 			private _outputAzi = format ["CUR AZ: %1",_displayedDir];
 			//display azimuth values
-			(_display displayCtrl 82014) ctrlSetText _outputAzi;			
+			(_display displayCtrl 82014) ctrlSetText _outputAzi;
 			//ace_player sideChat format ["itc_land_onLoad_RscGunnerSightBasic %1",_outputAzi];
 			//Get current quadrant
 			private _weaponQuad = (_weaponDirVector call CBA_fnc_vect2Polar) select 2;
@@ -52,10 +53,10 @@
 					 if(_weaponDir <= 0) then {_weaponDir = _weaponDir + 360};
 			};
 			private _displayedQuad = [_weaponQuad, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber;
-		 
+
 			private _outputquad = format ["CUR QD: %1",_displayedQuad];
 			//display azimuth values
-			(_display displayCtrl 82016) ctrlSetText _outputquad;					
+			(_display displayCtrl 82016) ctrlSetText _outputquad;
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
