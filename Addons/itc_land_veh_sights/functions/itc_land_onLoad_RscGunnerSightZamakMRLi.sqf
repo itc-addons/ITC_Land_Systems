@@ -1,5 +1,6 @@
 ["itc_land_onLoad_RscGunnerSightZamakMRLi", {
-
+	private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+	_veh setVariable ["ITC_Land_SightEvent","itc_land_onLoad_RscGunnerSightZamakMRLi",true];
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;

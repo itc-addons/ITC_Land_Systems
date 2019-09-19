@@ -1,5 +1,6 @@
 ["itc_land_onLoad_RscGunnerSightSPH", {
-
+	private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+	_veh setVariable ["ITC_Land_SightEvent","itc_land_onLoad_RscGunnerSightSPH",true];
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
@@ -80,8 +81,8 @@
 			};
 			(_display displayCtrl 81021) ctrlSetText _displayedMISquad;
 		    (_display displayCtrl 81019) ctrlSetText _displayedQuad;
-			
-			
+
+
 			//Autoloader and Gun Status Readout
 			//Gun Status
 			private _status = _veh getVariable ["itc_land_ammoHandler_status",[0,0,"WAITING"]];
@@ -102,18 +103,18 @@
 			};
 			(_display displayCtrl 81022) ctrlSetText (format ["STATUS: %1",_statusText]);
 			//Ammo to load
-			
+
 			private _settings = _veh getVariable ["itc_land_sphloadersettings",[]];
-			
+
 			if (count _settings > 0) then {
 				(_display displayCtrl 81023) ctrlSetText (format ["LOAD: %1",((_settings # 0) # 0)]);
 				(_display displayCtrl 81024) ctrlSetText (format ["FUZE: %1", toUpper ((_settings # 1) # 0)]);
-				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);				
+				(_display displayCtrl 81025) ctrlSetText (format ["GUIDANCE: %1", toUpper ((_settings # 2) # 0)]);
 			} else {
 				(_display displayCtrl 81023) ctrlSetText "LOAD: -- N/A --";
 				(_display displayCtrl 81024) ctrlSetText "FUZE: -- N/A --";
-				(_display displayCtrl 81025) ctrlSetText "GUIDANCE: -- N/A --";				
-			};		
+				(_display displayCtrl 81025) ctrlSetText "GUIDANCE: -- N/A --";
+			};
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 

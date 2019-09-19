@@ -1,5 +1,6 @@
 ["itc_land_onLoad_RscGunnerSightMLRS", {
-
+	private _veh =  [] call itc_land_common_fnc_getCurVehicle;
+	_veh setVariable ["ITC_Land_SightEvent","itc_land_onLoad_RscGunnerSightMLRS",true];
 	[{
 		params ["_args","_pfID"];
 		disableSerialization;
@@ -80,7 +81,7 @@
 			};
 			(_display displayCtrl 83021) ctrlSetText _displayedMISquad;
 		    (_display displayCtrl 83019) ctrlSetText _displayedQuad;
-			
+
 		};
 	}, 0, []] call CBA_fnc_addPerFrameHandler;
 
