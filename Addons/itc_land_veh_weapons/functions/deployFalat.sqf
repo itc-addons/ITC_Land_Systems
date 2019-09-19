@@ -30,7 +30,7 @@ _extra setVelocity _randomizedVelocity;
     if(!isNil{_spot select 0}) then {
       _heat = createVehicle ["R_MRAAWS_HEAT_F", getPos _projectile, [], 0, "FLY"];
       [_heat, -90, 0] call BIS_fnc_setPitchBank;
-      _vectorToTank = (getPos _projectile) vectorFromTo (_spot select 0);
+      _vectorToTank = (getPosASL _projectile) vectorFromTo (_spot select 0);
       _heat setVelocity (_vectorToTank vectorMultiply 5000);
 
       deleteVehicle _projectile;
