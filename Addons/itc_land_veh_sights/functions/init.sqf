@@ -4,6 +4,7 @@
 #include "itc_land_onLoad_RscGunnerSightMLRS.sqf"
 #include "itc_land_onLoad_RscGunnerSightZamakMRLi.sqf"
 #include "itc_land_onLoad_RscIGS_SPH.sqf"
+#include "itc_land_onLoad_RscOptics_UAV_gunner.sqf"
 
 ["vehicle", {
     params ["_player", "_newVehicle"];
