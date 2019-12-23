@@ -1,15 +1,4 @@
 class CfgVehicles {
-  /*class All;
-  class AllVehicles: All {
-    class NewTurret;
-  };
-
-  class Air: AllVehicles {
-    class NewTurret: NewTurret {};
-  };
-  class Plane: Air {
-    class NewTurret: NewTurret {};
-  };*/
   class UAV;
   class UAV_02_base_F: UAV {
     class Turrets {
