@@ -24,7 +24,7 @@
 		ammo = "itc_land_155mm_smoke";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 SMOKE";
-		itc_land_fuze = "mof35_mod4";
+		itc_land_fuze = "mof35_mod1";
 		itc_land_charge_format = "itc_land_g155smo_chg%1";
 		itc_land_CountInAH = 1;
 		itc_land_maxChargeIndex = 5;
