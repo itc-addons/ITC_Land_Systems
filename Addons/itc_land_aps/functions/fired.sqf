@@ -1,5 +1,7 @@
 params ["_unit", "_weapon", "", "", "_ammo", "", "_projectile", "_gunner"];
 
+if (!local _unit) exitWith {};
+
 private _simulation = getText (configFile >> "cfgAmmo" >> _ammo >> "simulation");
 
 if (!(_simulation in ["shotRocket", "shotMissile"])) exitWith {};
