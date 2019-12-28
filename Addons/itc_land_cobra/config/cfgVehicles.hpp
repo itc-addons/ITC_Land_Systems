@@ -14,10 +14,8 @@ class CfgVehicles {
     crew = "B_UAV_AI";
     faction = "BLU_F";
 		class Components {};
-    class EventHandlers : EventHandlers
-    {
-      class itc_land_cobra_eventHandlers
-      {
+    class EventHandlers : EventHandlers {
+      class itc_land_cobra_eventHandlers {
           init = "_this call itc_land_cobra_fnc_vehicleInit;";
       };
       class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
@@ -38,10 +36,8 @@ class CfgVehicles {
     crew = "O_UAV_AI";
     faction = "OPF_F";
 		class Components {};
-    class EventHandlers : EventHandlers
-    {
-      class itc_land_cobra_eventHandlers
-      {
+    class EventHandlers : EventHandlers {
+      class itc_land_cobra_eventHandlers {
           init = "_this call itc_land_cobra_fnc_vehicleInit;";
       };
       class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
@@ -54,14 +50,18 @@ class CfgVehicles {
   };
   class ITC_Land_Loudspeakers : Land_Loudspeakers_F {
     displayName = "COBRA Siren";
-    class EventHandlers : EventHandlers
-    {
-      class itc_land_cobra_eventHandlers
-      {
+    class ITC_Land_COBRA_SirenParams {
+      soundClass = "alarmCar";
+      soundDistance = 200;
+      soundDuration = 2;
+    };
+    /*
+    Commented out as is old concept content that may be referred back to in later versions
+    class EventHandlers : EventHandlers {
+      class itc_land_cobra_eventHandlers {
           init = "_this call itc_land_cobra_fnc_sirenInit;";
       };
     };
-    /*
     class Attributes : Attributes {
   		class ITC_Land_Datalink_Ext_ID
   		{
@@ -84,5 +84,13 @@ class CfgVehicles {
         unique = 1;
       };
     };*/
+  };
+  class ITC_Land_Loudspeakers2 : ITC_Land_Loudspeakers {
+    displayName = "COBRA Siren 2";
+    class ITC_Land_COBRA_SirenParams: ITC_Land_COBRA_SirenParams {
+      soundClass = "vtolAlarm";
+      soundDistance = 400;
+      soundDuration = 2;
+    };
   };
 };
