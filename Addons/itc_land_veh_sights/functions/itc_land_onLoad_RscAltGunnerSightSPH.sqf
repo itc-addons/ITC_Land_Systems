@@ -30,7 +30,7 @@
 			//Get current azimuth
 			private _weaponDirVector = _veh weaponDirection currentWeapon _veh; //Vector (array)
 			private _weaponDir = (_weaponDirVector call CBA_fnc_vect2Polar) select 1;
-			private _displayedDir = [_weaponDir, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber; //Take weapon direction in degrees, convert to mils and format as 4 figure string
+  			private _displayedDir = [_weaponDir, 0, 4] call itc_land_common_fnc_formatasmils; //Take weapon direction in degrees, convert to mils and format as 4 figure string
 
 			//Get mission azimuth
 			private _displayedMISazi = "----";
@@ -62,7 +62,7 @@
 					 _weaponQuad = ((180 / PI) * (_veh animationPhase "mainGun")) - _elevationDiff;
 					 if(_weaponDir <= 0) then {_weaponDir = _weaponDir + 360};
 			};
-			private _displayedQuad = [_weaponQuad, "mil4", true] call ace_mk6mortar_fnc_dev_formatNumber;
+			private _displayedQuad = [_weaponQuad, 0, 4] call itc_land_common_fnc_formatasmils;
 
 			//Get mission quadrant
 			private _displayedMISquad = "----";

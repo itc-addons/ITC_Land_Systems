@@ -7,16 +7,22 @@ class CfgFunctions
       };
       class getCurVehicle {
         file = "itc_land_common\functions\getCurVehicle.sqf";
-      };	  
+      };
       class isLaserCode {
         file = "itc_land_common\functions\isLaserCode.sqf";
       };
       class ctrlSetText {
         file = "itc_land_common\functions\ctrlSetText.sqf";
-      };	  
+      };
       class ctrlSetFade {
         file = "itc_land_common\functions\ctrlSetFade.sqf";
-      };	  
+      };
+      class FormatAsMils {
+				file = "itc_land_common\functions\FormatAsMils.sqf";
+			};
+      class FormatAsMeters {
+				file = "itc_land_common\functions\FormatAsMeters.sqf";
+			};
     };
   };
 };
