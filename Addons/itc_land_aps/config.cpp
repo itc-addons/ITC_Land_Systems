@@ -1,5 +1,5 @@
 class CfgPatches {
-	class itc_land_bcs {
+	class itc_land_APS {
 		author = "ITC Addons Team";
 		authors[] = {"Yax"};
 		requiredaddons[] = {};
