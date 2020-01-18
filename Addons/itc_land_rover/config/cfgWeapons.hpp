@@ -4,6 +4,6 @@ class CfgWeapons {
     displayName = "Rover LAD Tablet";
     descriptionShort = "Rover LAD Tablet";
     picture = "\itc_land_tablet\UI\tableticon256.paa";
-    scope = 1;
+    scope = 2;
   };
 };

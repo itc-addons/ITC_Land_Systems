@@ -16,7 +16,7 @@ class cfgVehicles {
       class ACE_Equipment {
         class ITC_Land_Rover_Open {
           displayName = "Open Rover LAD";
-          condition = """itc_land_tablet_rover"" in (weapons player)";
+          condition = "'itc_land_tablet_rover' in (items player)";
           statement = "createDialog ""itc_land_rover_tablet"";";
           priority = 2.6;
           showDisabled = 1;

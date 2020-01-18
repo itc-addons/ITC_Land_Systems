@@ -6,6 +6,7 @@ class CfgFunctions {
 				file = itc_land_rover\functions\##NAME##.sqf; \
 			};
 			FUNC(getLaserTurret)
+      FUNC(getAircraft)
 			FUNC(createFeed)
 			FUNC(killFeed)
 			FUNC(ui_init)
