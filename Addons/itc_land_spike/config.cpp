@@ -9,7 +9,11 @@ class CfgPatches {
 		magazines[] = {};
 	};
 };
+class NewTurret;
 
 #include "config\baseControls.hpp"
-#include "config\cfgAmmo.hpp"
+#include "config\CfgAmmo.hpp"
+#include "config\CfgMagazines.hpp"
+#include "config\CfgWeapons.hpp"
+#include "config\CfgVehicles.hpp"
 #include "config\ITC_Land_SpikeSeeker.hpp"

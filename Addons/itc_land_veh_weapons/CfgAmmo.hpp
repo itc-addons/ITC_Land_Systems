@@ -66,19 +66,13 @@ class CfgAmmo {
     };
 	*/
 	class Smoke_120mm_AMOS_White;
-	class itc_land_155mm_smoke : itc_land_155mm {
+	class itc_land_155mm_smoke : Smoke_120mm_AMOS_White {
 		ace_frag_enabled = 0;
 		triggerTime = 0.05;
 		triggerDistance = 0.1;
-		hit = 60;
-		indirectHit = 50;
-		indirectHitRange = 30;
-		explosive = 0.8;
-		ExplosionEffects = "ITC_Land_BurstingWP";
-		CraterEffects = "GrenadeCrater";
-		//submunitionConeType[] = {"poissondisc",15};
-		//submunitionConeAngle = 4;
-        //submunitionAmmo = "SmokeLauncherAmmo";
+		submunitionConeType[] = {"poissondisc",15};
+		submunitionConeAngle = 4;
+    //submunitionAmmo = "SmokeLauncherAmmo";
 	};
 
 	class Mine_155mm_AMOS_range;
