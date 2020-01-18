@@ -285,6 +285,10 @@ class itc_land_rover_tablet {
     {
     	idc = 1201;
     	text = "\itc_land_rover\data\screen-night2.paa";
+    	x = 0.0978125 * safezoneW + safezoneX;
+    	y = -0.1 * safezoneH + safezoneY;
+    	w = 0.814687 * safezoneW;
+    	h = 1.2 * safezoneH;
     };
     class RscCombo_2100: RscCombo
     {
