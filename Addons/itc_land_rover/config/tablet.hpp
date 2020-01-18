@@ -235,7 +235,7 @@ class itc_land_rover_tablet {
     class RscPicture_1202: RscPicture
     {
     	idc = 1202;
-    	text = "crosshair.paa";
+    	text = "\itc_land_rover\data\crosshair.paa";
     	x = safeZoneX + (safeZoneW / 2) - (safeZoneH / 6);
     	y = safeZoneY + (safeZoneH / 2) - (safeZoneH / 6);
     	w = safeZoneH / 3;
@@ -274,7 +274,7 @@ class itc_land_rover_tablet {
     class RscPicture_1200: RscPicture
     {
     	idc = 1200;
-    	text = "\itc_land_tablet\UI\screen.paa";
+    	text = "\itc_land_rover\data\screen.paa";
     	x = 0.0978125 * safezoneW + safezoneX;
     	y = -0.303 * safezoneH + safezoneY;
     	w = 0.814687 * safezoneW;
@@ -283,7 +283,7 @@ class itc_land_rover_tablet {
     class RscPicture_1201: RscPicture
     {
     	idc = 1201;
-    	text = "\itc_land_tablet\UI\screen-night.paa";
+    	text = "\itc_land_rover\data\screen-night.paa";
     	x = 0.0978125 * safezoneW + safezoneX;
     	y = -0.303 * safezoneH + safezoneY;
     	w = 0.814687 * safezoneW;
