@@ -176,13 +176,13 @@ class itc_land_rover_tablet {
           shadow = 0;
           font = "EtelkaMonospacePro";
           //text = "\A3\ui_f\data\igui\rscingameui\rscoptics\laser_designator_iconLaserOn.paa";
-          text = "\itc_land_veh_sights\ui\data\iconLaserOn_w.paa";
+          text = "\itc_land_rover\data\iconLaserOn_w.paa";
           x = 0.55 * safeZoneW;
           y = ROW_1 * safeZoneH;
         };
         class ITC_Land_UAVi_NArr_txt: RscPicture {
           idc = 75019;
-          text = "\itc_land_veh_sights\ui\data\n_txt.paa";
+          text = "\itc_land_rover\data\n_txt.paa";
           x = 0.65 * safezoneW;
           y = 0.2 * safezoneH;
           w = 0.075;
@@ -190,7 +190,7 @@ class itc_land_rover_tablet {
         };
         class ITC_Land_UAVi_NArr_img: RscPicture {
           idc = 75020;
-          text = "\itc_land_veh_sights\ui\data\n_arr.paa";
+          text = "\itc_land_rover\data\n_arr.paa";
           x = 0.65 * safezoneW;
           y = 0.2 * safezoneH;
           w = 0.075;
