@@ -11,12 +11,12 @@ class itc_land_rover_tablet {
       w = "safeZoneW";
       h = "safezoneH";
       class controls {
-        #define COL_1 0.25
+        #define COL_1 0.22
         #define COL_1_VAL (COL_1 + 0.07)
         #define COL_2 0.42
         #define COL_2_VAL (COL_2 + 0.09)
-        #define ROW_1 0.3
-        #define ROW_2 0.6
+        #define ROW_1 0.25
+        #define ROW_2 0.75
         #define ROW_H 0.030
         class RangeText: RscText {
           style = 0;
@@ -222,15 +222,15 @@ class itc_land_rover_tablet {
     	x = 0.108125 * safezoneW + safezoneX;
     	y = -0.00599999 * safezoneH + safezoneY;
     	w = 0.778594 * safezoneW;
-    	h = 0.055 * safezoneH;
+    	h = 0.075 * safezoneH;
     };
     class IGUIBack_2204: Background_base
     {
     	idc = 2204;
     	x = 0.113281 * safezoneW + safezoneX;
-    	y = 0.962 * safezoneH + safezoneY;
+    	y = 0.902 * safezoneH + safezoneY;
     	w = 0.778594 * safezoneW;
-    	h = 0.055 * safezoneH;
+    	h = 0.1 * safezoneH;
     };
     class RscPicture_1202: RscPicture
     {
@@ -248,14 +248,15 @@ class itc_land_rover_tablet {
     	x = 0.175156 * safezoneW + safezoneX;
     	y = 0.104 * safezoneH + safezoneY;
     	w = 0.66 * safezoneW;
-    	h = 0.649 * safezoneH;
+    	h = 0.80 * safezoneH;
       colorBackground[] = RGBA255(51,58,117,1);
     };
+    #define TOP_BAR_Y 0.160
     class Top_Bar: IGUIBack
     {
     	idc = 2200;
     	x = 0.195781 * safezoneW + safezoneX;
-    	y = 0.115 * safezoneH + safezoneY;
+    	y = (TOP_BAR_Y - 0.011) * safezoneH + safezoneY;
     	w = 0.634219 * safezoneW;
     	h = 0.043 * safezoneH;
       colorBackground[] = RGBA255(170,170,170,1);
@@ -265,7 +266,7 @@ class itc_land_rover_tablet {
     	idc = 1000;
     	text = "Transmitter:"; //--- ToDo: Localize;
     	x = 0.21125 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.0515625 * safezoneW;
     	h = 0.022 * safezoneH;
       shadow = 0;
@@ -276,27 +277,22 @@ class itc_land_rover_tablet {
     	idc = 1200;
     	text = "\itc_land_rover\data\screen2.paa";
     	x = 0.0978125 * safezoneW + safezoneX;
-    	y = -0.303 * safezoneH + safezoneY;
+    	y = -0.1 * safezoneH + safezoneY;
     	w = 0.814687 * safezoneW;
-    	h = 1.298 * safezoneH;
+    	h = 1.2 * safezoneH;
     };
-    class RscPicture_1201: RscPicture
+    class RscPicture_1201: RscPicture_1200
     {
     	idc = 1201;
     	text = "\itc_land_rover\data\screen-night2.paa";
-    	x = 0.0978125 * safezoneW + safezoneX;
-    	y = -0.303 * safezoneH + safezoneY;
-    	w = 0.814687 * safezoneW;
-    	h = 1.298 * safezoneH;
     };
     class RscCombo_2100: RscCombo
     {
     	idc = 2100;
     	x = 0.262812 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.113437 * safezoneW;
     	h = 0.022 * safezoneH;
-      onMouseButtonClick="call itc_land_rover_fnc_ui_populateListBox";
       onLBSelChanged="call itc_land_rover_fnc_ui_update";
     };
     /*
@@ -305,7 +301,7 @@ class itc_land_rover_tablet {
     	idc = 1600;
     	text = "-"; //--- ToDo: Localize;
     	x = 0.489687 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.0103125 * safezoneW;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""fovup""] call itc_land_rover_fnc_ui_vismode;";
@@ -315,7 +311,7 @@ class itc_land_rover_tablet {
     	idc = 1601;
     	text = "+"; //--- ToDo: Localize;
     	x = 0.520625 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.0103125 * safezoneW;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""fovdn""] call itc_land_rover_fnc_ui_vismode;";
@@ -326,25 +322,26 @@ class itc_land_rover_tablet {
     	idc = 1006;
     	text = "ZOOM"; //--- ToDo: Localize;
     	x = 0.38 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.025625 * safezoneW;
     	h = 0.022 * safezoneH;
     };
     class fovSlider: RscXSliderH {
     	idc = 1600;
     	x = 0.42 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
     	w = 0.12625 * safezoneW;
     	h = 0.022 * safezoneH;
       onSliderPosChanged="[""fov""] call itc_land_rover_fnc_ui_vismode;";
     };
+    #define VISMODE_BTN_W (0.028*safeZoneW)
     class RscText_999: RscButton
     {
     	idc = 999;
     	text = "DTV"; //--- ToDo: Localize;
-    	x = 0.552187 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
-    	w = 0.020625 * safezoneW;
+    	x = 0.557 * safezoneW + safezoneX;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
+    	w = VISMODE_BTN_W;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""dtv""] call itc_land_rover_fnc_ui_vismode;";
     };
@@ -352,9 +349,9 @@ class itc_land_rover_tablet {
     {
     	idc = 1001;
     	text = "NVG"; //--- ToDo: Localize;
-    	x = 0.572187 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
-    	w = 0.020625 * safezoneW;
+    	x = 0.557 * safezoneW + safezoneX + VISMODE_BTN_W;
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
+    	w = VISMODE_BTN_W;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""nvg""] call itc_land_rover_fnc_ui_vismode;";
     };
@@ -362,9 +359,9 @@ class itc_land_rover_tablet {
     {
     	idc = 1002;
     	text = "WHOT"; //--- ToDo: Localize;
-    	x = 0.597969 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
-    	w = 0.0309375 * safezoneW;
+    	x = 0.557 * safezoneW + safezoneX + (VISMODE_BTN_W*2);
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
+    	w = VISMODE_BTN_W;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""whot""] call itc_land_rover_fnc_ui_vismode;";
     };
@@ -372,9 +369,9 @@ class itc_land_rover_tablet {
     {
     	idc = 1003;
     	text = "BHOT"; //--- ToDo: Localize;
-    	x = 0.634062 * safezoneW + safezoneX;
-    	y = 0.126 * safezoneH + safezoneY;
-    	w = 0.0309375 * safezoneW;
+    	x = 0.557 * safezoneW + safezoneX + (VISMODE_BTN_W*3);
+    	y = TOP_BAR_Y * safezoneH + safezoneY;
+    	w = VISMODE_BTN_W;
     	h = 0.022 * safezoneH;
       onMouseButtonClick="[""bhot""] call itc_land_rover_fnc_ui_vismode;";
     };
