@@ -27,21 +27,24 @@ class CfgVehicles {
 
   class LandVehicle;
   class StaticWeapon: LandVehicle {
+    class ACE_Actions {
+      class ACE_MainActions;
+    };
     class Turrets {
       class MainTurret: NewTurret {};
     };
   };
   class Static_Designator_01_base_F: StaticWeapon {
-    class ACE_Actions {
-      class ACE_MainActions {};
+    class ACE_Actions: ACE_Actions {
+      class ACE_MainActions: ACE_MainActions {};
     };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
   };
   class B_Static_Designator_01_F: Static_Designator_01_base_F {
-    class ACE_Actions {
-      class ACE_MainActions {};
+    class ACE_Actions: ACE_Actions {
+      class ACE_MainActions: ACE_MainActions {};
     };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
@@ -51,8 +54,8 @@ class CfgVehicles {
     author = "Toadball";
     displayname = "Remote GLTD [NATO]";
     itc_land_PacksTo = "ITC_Land_B_RemoteGLTD_Packed";
-    class ACE_Actions {
-      class ACE_MainActions {
+    class ACE_Actions: ACE_Actions {
+      class ACE_MainActions: ACE_MainActions {
         class ITC_Land_PackGLTD {
 					displayName = "Repack GLTD";
 					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
@@ -76,8 +79,8 @@ class CfgVehicles {
 
 
   class B_W_Static_Designator_01_F: Static_Designator_01_base_F {
-    class ACE_Actions {
-      class ACE_MainActions {};
+    class ACE_Actions: ACE_Actions {
+      class ACE_MainActions: ACE_MainActions {};
     };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
@@ -87,8 +90,8 @@ class CfgVehicles {
     author = "Toadball";
     displayname = "Remote GLTD [NATO]";
     itc_land_PacksTo = "ITC_Land_BW_RemoteGLTD_Packed";
-    class ACE_Actions {
-      class ACE_MainActions {
+    class ACE_Actions: ACE_Actions {
+      class ACE_MainActions: ACE_MainActions {
         class ITC_Land_PackGLTD {
 					displayName = "Repack GLTD";
 					condition = "((alive _target) && ( ACE_Player distance _target ) < 3) && ( count (( UAVControl _target) select 1 ) < 1 )";
