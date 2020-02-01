@@ -26,6 +26,7 @@ class RscInGameUI {
     class CA_IGUI_elements_group;
   };
   #include "ui\ITC_Land_RscOptics_strider_commander.hpp"
+  #include "ui\ITC_Land_RscOptics_GLTD_gunner.hpp"
 
   class RscOptics_UAV_gunner: RscUnitInfo {
 		class CA_IGUI_elements_group;
