@@ -3,6 +3,8 @@
 		displayName = "G127 HE";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 HE";
+    ammo = "itc_land_127mm";
+    itc_land_submunition = "itc_land_127mm_helper";
 		itc_land_charge_format = "itc_land_g127hex_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
@@ -17,7 +19,8 @@
 		displayName = "G127 SMOKE";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 SMOKE";
-		itc_land_charge_format = "itc_land_g127smo_chg%1";		
+    ammo = "itc_land_127mm_smoke";
+		itc_land_charge_format = "itc_land_g127smo_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
 	class itc_land_g127smo_chg1: itc_land_g127smo { initSpeed = 100; itc_land_CountInAH = 0;  };
@@ -31,7 +34,8 @@
 		displayName = "G127 GPS GUIDED";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 PGM";
-		itc_land_charge_format = "itc_land_g127pgm_chg%1";		
+    ammo = "itc_land_127mm";
+		itc_land_charge_format = "itc_land_g127pgm_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
 	class itc_land_g127pgm_chg1: itc_land_g127pgm { initSpeed = 100; itc_land_CountInAH = 0;  };
@@ -45,6 +49,7 @@
 		displayName = "G127 LASER GUIDED";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 LGM";
+    ammo = "itc_land_127mm";
 		itc_land_charge_format = "itc_land_g127lgm_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
@@ -59,6 +64,7 @@
 		displayName = "G127 ILLUM";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 ILLUM";
+    ammo = "itc_land_127mm_illum";
 		itc_land_charge_format = "itc_land_g127ill_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};

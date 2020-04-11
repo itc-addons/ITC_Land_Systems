@@ -32,6 +32,26 @@
 		#include "CfgWeapons_howitzers_magazines152mm.hpp"
 		displayName = "H152 L/52";
 	};
+  class itc_land_105mm_howitzer: itc_land_howitzer_base {
+		scope = 1;
+		#include "CfgWeapons_howitzers_magazines105mm.hpp"
+		displayName = "H105 L/30";
+		class Single: Single1 {
+			displayName = "";
+			artilleryCharge = 1;
+			reloadTime = 3;
+		};
+	};
+  class itc_land_122mm_howitzer: itc_land_howitzer_base {
+		scope = 1;
+		#include "CfgWeapons_howitzers_magazines122mm.hpp"
+		displayName = "H122 L/38";
+		class Single: Single1 {
+			displayName = "";
+			artilleryCharge = 1;
+			reloadTime = 3;
+		};
+	};
 	class itc_land_127mm_navalgunsystem: itc_land_howitzer_base {
 		scope = 1;
 		#include "CfgWeapons_howitzers_magazines127mm.hpp"
@@ -39,6 +59,6 @@
 		class Single: Single1 {
 			displayName = "";
 			artilleryCharge = 1;
-			reloadTime = 3;			
+			reloadTime = 3;
 		};
 	};
