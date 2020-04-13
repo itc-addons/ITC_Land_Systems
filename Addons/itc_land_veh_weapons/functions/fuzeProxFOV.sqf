@@ -24,26 +24,28 @@ if (!isNull _proj) then {
 		_tgt = (_nearTargets) select 0; //get closest air object in sensor range
 
 		//diag_log format ["Timer 1: %1",diag_ticktime];
-		
+
 		//check object is in sensor's FOV, if it is, projectile go boom
 		_vectorDirMissile = vectorDir _proj;
 		_vectorToTarget = (getposASL _proj) vectorFromTo (getposASL _tgt);
 		_targetAngle = acos (_vectorDirMissile vectorCos _vectorToTarget);
-		
+
 		//diag_log format ["Timer 2: %1",diag_ticktime];
-		
+
 		//hintsilent format ["Target angle: %3", _vectorDirMissile, _vectorToTarget, _targetAngle];
 		//diag_log format ["Target angle: %3", _vectorDirMissile, _vectorToTarget, _targetAngle];
-	  
+
 		//diag_log format ["Timer 3: %1",diag_ticktime];
 
 		if (_targetAngle > 60 && _targetAngle < 120) then {
-			_projPos = getPos _proj;
+      triggerAmmo _proj;
+			/*_projPos = getPos _proj;
 			deleteVehicle _proj;
 			if (isServer) then {
 				_spawnedproj = _proxHelper createVehicle _projPos;
 				//drop ["\a3\data_f\Cl_basic","","Billboard",0.25,60,position _proj,[0,0,0],1,1.275,1.0,0.0,[2],[[1,0,0,1]],[0],0.0,2.0,"","",""];
 			};
+      */
 			//diag_log format ["Detonation: %1",diag_ticktime];
 		};
 	};
