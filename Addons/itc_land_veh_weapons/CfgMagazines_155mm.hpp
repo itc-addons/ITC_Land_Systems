@@ -21,7 +21,7 @@
 		author = "Toadball";
 		displayName = "G155 SMOKE";
 		//ammo = "itc_land_155mm_inert";
-		ammo = "itc_land_155mm_smoke";
+		ammo = "itc_land_155mm_inert";
 		muzzleImpulseFactor[] = {15, 30};
 		displayNameShort = "G155 SMOKE";
 		itc_land_fuze = "mof35_mod1";

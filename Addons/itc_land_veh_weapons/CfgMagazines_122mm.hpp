@@ -17,7 +17,8 @@
 		author = "Toadball";
 		displayName = "g122 SMOKE";
 		displayNameShort = "g122 SMOKE";
-    ammo = "itc_land_122mm_smoke";
+    itc_land_submunition = "itc_land_122mm_smoke";
+    ammo = "itc_land_122mm_inert";
 		itc_land_charge_format = "itc_land_g122smo_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_122\list.sqf";
 	};
@@ -45,7 +46,8 @@
 		author = "Toadball";
 		displayName = "G122 ILLUM";
 		displayNameShort = "G122 ILLUM";
-    ammo = "itc_land_122mm_illum";
+    itc_land_submunition = "itc_land_122mm_illum";
+    ammo = "itc_land_122mm_inert";
 		itc_land_charge_format = "itc_land_g122ill_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_122\list.sqf";
 	};

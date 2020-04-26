@@ -159,22 +159,22 @@ class CfgAmmo {
     ace_rearm_caliber = 127;
 	};
   class itc_land_127mm_inert: itc_land_155mm_inert {
-    ace_rearm_caliber = 105;
+    ace_rearm_caliber = 127;
   };
   class itc_land_127mm_helper: itc_land_105mm {
 		explosionTime = 0.0001;
 	};
   class itc_land_127mm_smoke : itc_land_155mm_smoke {
 		submunitionConeType[] = {"poissondisc",10};
-    ace_rearm_caliber = 105;
+    ace_rearm_caliber = 127;
 	};
   class itc_land_127mm_illum: itc_land_155mm_illum {
 		brightness = 200;
-		ace_rearm_caliber = 105;
+		ace_rearm_caliber = 127;
 	};
   class itc_land_127mm_dpicm_helper: itc_land_155mm_dpicm_helper {
 		submunitionConeType[] = {"poissondisc",42};
-    ace_rearm_caliber = 105;
+    ace_rearm_caliber = 127;
 	};
 
   //MLRS

@@ -19,7 +19,8 @@
 		displayName = "G127 SMOKE";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 SMOKE";
-    ammo = "itc_land_127mm_smoke";
+    ammo = "itc_land_127mm_inert";
+    itc_land_submunition = "itc_land_127mm_smoke";
 		itc_land_charge_format = "itc_land_g127smo_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
@@ -64,7 +65,8 @@
 		displayName = "G127 ILLUM";
 		muzzleImpulseFactor[] = {1e-006,1e-006};
 		displayNameShort = "G127 ILLUM";
-    ammo = "itc_land_127mm_illum";
+    ammo = "itc_land_127mm_inert";
+    itc_land_submunition = "itc_land_127mm_illum";
 		itc_land_charge_format = "itc_land_g127ill_chg%1";
 		itc_land_btabListFile = "itc_land_ballistics\tables\g_127\list.sqf";
 	};
