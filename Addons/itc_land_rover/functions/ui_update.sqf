@@ -1,4 +1,9 @@
-private _plane = call itc_land_rover_fnc_ui_curPlane;
+params ["_control","_index"];
+
+missionNameSpace setVariable ["itc_land_rover_ui_curSelIndex",_index];
+missionNameSpace setVariable ["itc_land_rover_ui_curAircraft",itc_land_rover_ui_aircraftList # _index];
+private _plane = missionNameSpace getVariable ["itc_land_rover_ui_curAircraft",objNull];
+
 private _feed = [_plane] call itc_land_rover_fnc_createFeed;
 
 private _turret = [_plane] call itc_land_rover_fnc_getLaserTurret;

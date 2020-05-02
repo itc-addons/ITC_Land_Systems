@@ -18,5 +18,8 @@ switch (_btn) do {
   };
   case "fov": {
     itc_land_rover_ui_camFov = 0.02 + ((10 - (sliderPosition 1600)) / 10) * 0.33;
+    itc_land_rover_ui_sliderFov = (sliderPosition 1600);
   };
 };
+
+if (!(_btn == "fov")) then { itc_land_rover_ui_visMode = _btn };
