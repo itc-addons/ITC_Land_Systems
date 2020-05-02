@@ -21,7 +21,7 @@ class CfgVehicles {
 	class Turrets {
 	 class MainTurret;
 	};
-  }
+  };
   class SAM_System_03_base_F : StaticMGWeapon {
     class Turrets : Turrets {
       class MainTurret: MainTurret {};

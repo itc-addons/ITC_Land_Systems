@@ -11,4 +11,4 @@ class itc_land_ciws {
     "ammo_Missile_CruiseBase",
     "ammo_Bomb_SDB"
   };
-}
+};

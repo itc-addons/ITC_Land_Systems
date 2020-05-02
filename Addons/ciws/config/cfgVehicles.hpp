@@ -48,7 +48,7 @@ class CfgVehicles {
 		class Turrets {
 	     class MainTurret;
 		};
-  }
+  };
   class AAA_System_01_base_F : StaticMGWeapon {
     class Turrets : Turrets {
       class MainTurret: MainTurret {};

@@ -2,7 +2,7 @@
 #define POSYADJUST -0.065
 #define WSHADJUST 0.04
 #define WSWADJUST 0.125
-#include "\itc_land_common\config\ui\defines.hpp"
+#include "\common\config\ui\defines.hpp"
 class RscMapControl;
 
 class itc_land_tablet {

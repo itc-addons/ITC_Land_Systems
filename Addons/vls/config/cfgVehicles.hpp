@@ -10,7 +10,7 @@ class CfgVehicles {
 	     class MainTurret;
 		};
     class ACE_SelfActions: ACE_SelfActions {};
-  }
+  };
   class B_Ship_MRLS_01_base_F : StaticMGWeapon {
     class Turrets : Turrets {
       class MainTurret: MainTurret {};
