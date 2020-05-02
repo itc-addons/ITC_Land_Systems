@@ -18,25 +18,28 @@ class itc_land_rover_tablet {
         #define ROW_1 0.25
         #define ROW_2 0.75
         #define ROW_H 0.030
+
         class RangeText: RscText {
           style = 0;
           sizeEx = "0.02*SafezoneH";
           shadow = 0;
           font = "EtelkaMonospacePro";
           idc = 1000;
-          text = "RANGE:";
+          //text = "RANGE:";
+          text = "";
           x = COL_2 * safeZoneW;
           y = ROW_1 * safeZoneH + (ROW_H*2);
         	w = 0.221719 * safezoneW;
         	h = 0.022 * safezoneH;
         };
+        /*
         class CA_Distance: RangeText {
           idc = 19438;
           text = "2456";
           x = COL_2 * safeZoneW + 0.1;
           y = ROW_1 * safeZoneH + (ROW_H*2);
         };
-        /*
+
         class ModeText: RangeText {
           idc = 1002;
           text = "MODE:";
@@ -150,32 +153,18 @@ class itc_land_rover_tablet {
         class ValueTime: RangeText {
           idc = 19357;
           text = "20:28:35";
+          w = 1.6 * safezoneW;
           x = COL_1_VAL * safeZoneW;
           y = ROW_2 * safeZoneH + (ROW_H*1);
         };
-        /*
-        class TextMag: RangeText {
-          idc = 1011;
-          text = "CAM MAG:";
-          x = 0.35 * safeZoneW;
-          y = 0.35 * safeZoneH;
-        };
-        class CA_OpticsZoom: RangeText {
-          idc = 180;
-          text = "28x";
-          x = 0.35 * safeZoneW;
-          y = 0.35 * safeZoneH;
-        };
-        */
+
         class CA_Laser: RscText {
           idc = 158;
           style = "0x30 + 0x800";
           sizeEx = "0.038*SafezoneH";
-          //colorText[] = {0.706, 0.0745, 0.0196, 1};
           colorText[] = {1, 1, 1, 1};
           shadow = 0;
           font = "EtelkaMonospacePro";
-          //text = "\A3\ui_f\data\igui\rscingameui\rscoptics\laser_designator_iconLaserOn.paa";
           text = "\itc_land_rover\data\iconLaserOn_w.paa";
           x = 0.55 * safeZoneW;
           y = ROW_1 * safeZoneH;

@@ -35,9 +35,17 @@ private _tgtASLdisplayed = 0;
   _tgtASLdisplayed = [_tgtASL, 0, 4] call itc_land_common_fnc_formatasmeters;
 };
 
+private _uavAGL =  round ((getPos _plane) # 2);
+private _uavAGLDisplayed = [_uavAGL, 0, 4] call itc_land_common_fnc_formatasmeters;
+private _uavSpeed = speed _plane;
+private _uavSpeedDisplayed = [_uavSpeed, 0, 4] call itc_land_common_fnc_formatasmeters;
+
+ctrlSetText [188, _uavSpeedDisplayed];
+
  //display ALTS
  ctrlSetText [75017, _tgtASLdisplayed];
  ctrlSetText [75011, _uavASLDisplayed];
+ ctrlSetText [189, _uavAGLDisplayed];
 //Draw Situational Awareness Compass
 //[_tgtposWorld] call itc_land_veh_darter_fnc_drawCompass;
 (uiNamespace getVariable "itc_land_rover_ui_nArrow") ctrlSetAngle [(_viewDir) * -1, 0.5, 0.5];
