@@ -8,7 +8,7 @@ if (cameraView != "GUNNER" && isNil "itc_land_spike_camera") exitWith {
   [] call itc_land_spike_fnc_sightClosed;
 };
 
-"colorCorrections" ppEffectAdjust [0.3, 1.2, 0.3, [1, 1, 1, 0], [1, 1, 1, 0], [0.75, 0.25, 0, 1.0]];
+"colorCorrections" ppEffectAdjust [0.9, 0.4, 0, [0.9, 0.4, 0, 0], [1, 1, 1, 0], [1, 1, 1, 0]];;
 "colorCorrections" ppEffectCommit 0;
 "colorCorrections" ppEffectEnable true;
 
