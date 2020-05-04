@@ -1,6 +1,6 @@
 class CfgAmmo {
 	class M_Titan_AT;
-	class PSZ_M_Spike_AT: M_Titan_AT {
+	class itc_land_spikeLR: M_Titan_AT {
     irLock = 1;
     laserLock = 0;
     airLock = 0;

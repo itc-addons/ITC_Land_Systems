@@ -5,8 +5,8 @@ class CfgPatches {
 		requiredaddons[] = {"A3_Weapons_F"};
 		requiredversion = 1.9;
 		units[] = {};
-		weapons[] = {};
-		magazines[] = {};
+		weapons[] = {"itc_land_spikeLR"};
+		magazines[] = {"itc_land_spikeLR_1rnd"};
 	};
 };
 class NewTurret;

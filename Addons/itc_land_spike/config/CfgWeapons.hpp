@@ -1,12 +1,17 @@
 class CfgWeapons {
 
-  class missiles_titan;
-  class itc_land_spikeLR_atgm: missiles_titan {
-    magazines[] = {"itc_land_spikeLR_2rnd","itc_land_spikeLR_1rnd"};
-  };
+  //class missiles_titan;
+  //class itc_land_spikeLR_atgm: missiles_titan {
+  //  magazines[] = {"itc_land_spikeLR_2rnd","itc_land_spikeLR_1rnd"};
+  //};
 
-	class launch_I_Titan_short_F;
-	class PSZ_Spike_LR: launch_I_Titan_short_F {
+	//class launch_I_Titan_short_F;
+	//class PSZ_Spike_LR: launch_I_Titan_short_F {
+  class launch_B_Titan_F;
+  class itc_land_spikeLR: launch_B_Titan_F {
+    displayName = "Spike LR";
+    displayNameShort = "Spike LR";
+    magazines[] = {"itc_land_spikeLR_1rnd"};
     class EventHandlers
     {
         class itc_land_spike

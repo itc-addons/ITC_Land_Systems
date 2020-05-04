@@ -3,8 +3,6 @@
  */
 
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-if !(_ammo in ["PSZ_M_Spike_AT","M_Titan_AT_long"]) exitWith {};
-
 itc_land_spike_currentMissile = _projectile;
 itc_land_spike_launchTime = cba_missionTime;
 itc_land_spike_activationTime = cba_missionTime;
