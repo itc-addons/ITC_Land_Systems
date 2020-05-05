@@ -11,20 +11,17 @@ if (!isNil "itc_land_spike_currentMissile") then {
  _viewDir = _viewASL vectorFromTo _viewTarget;
 };
 
-if (inputAction "gunElevAuto" > 0 && isNil "_lockObject") then {
-  systemChat str ["LASING", cursorTarget];
-  private _target = if (isNull cursorTarget) then [{nil},{cursorTarget}];
-  private _intersect = [_viewASL, _viewDir] call itc_land_spike_fnc_intersectScreenToWorld;
-  if (!isNil "itc_land_spike_currentMissile") then {
-    private _vectEnd = AGLtoASL (screenToWorld [0.5,0.5]);
-    private _vectStart = _vectEnd vectorAdd (_viewDir vectorMultiply (-100));
-    private _intersectList = lineIntersectsObjs [_vectStart, _vectEnd, objNull, objNull, true];
-    _target = if (count _intersectList > 0) then [{_intersectList # ((count _intersectList) - 1)}, {nil}];
-    //drop ["\a3\data_f\Cl_basic","","Billboard",1,20,ASLtoAGL _intersect,[0,0,0],1,1.275,1.0,0.0,[1],[[1,0,0,1]],[0],0.0,2.0,"","",""];
-    //drop ["\a3\data_f\Cl_basic","","Billboard",1,20,_lockObject modelToWorldVisual _reverseMemes,[0,0,0],1,1.275,1.0,0.0,[1],[[0,1,0,1]],[0],0.0,2.0,"","",""];//red fwd
+private _missileActivationTime = missionNamespace getVariable ["itc_land_spike_activated_" + currentMagazineDetail player, nil];
+if (isNil "_missileActivationTime") then {
+  missionNamespace setVariable ["itc_land_spike_activated_" + currentMagazineDetail player, cba_missionTime];
+} else {
+  if (inputAction "gunElevAuto" > 0 && isNil "_lockObject") then {
+    systemChat str ["LASING", cursorTarget];
+    private _target = [_viewASL, _viewDir, true] call itc_land_spike_fnc_intersectScreenToWorld;
+    private _intersect = [_viewASL, _viewDir] call itc_land_spike_fnc_intersectScreenToWorld;
+    private _targetPos = if (!isNil "_target") then [{_target worldToModelVisual (ASLtoAGL _intersect)}, {[0,0,0]}];
+    itc_land_spike_lockInformation = [_target, _targetPos, nil, _targetPos];
   };
-  private _targetPos = if (!isNil "_target") then [{_target worldToModelVisual (ASLtoAGL _intersect)}, {[0,0,0]}];
-  itc_land_spike_lockInformation = [_target, _targetPos, nil, _targetPos];
 };
 
 //systemChat str itc_land_spike_lockInformation;

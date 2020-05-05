@@ -1,3 +1,6 @@
+/*
+ * itc_land_spike_fnc_fired
+ */
 params ["_seekerTargetPos", "_args", "_attackProfileStateParams"];
 _args params ["_firedEH"];
 _firedEH params ["_shooter","","","","","","_projectile"];

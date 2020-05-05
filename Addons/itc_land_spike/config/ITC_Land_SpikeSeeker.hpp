@@ -331,6 +331,25 @@ class RscIngameUI {
           colorBackground[] = {0,0,0,1};
           colorText[] = {"172/255","255/255","153/255",1};
         };
+        class HotBox: RscPicture {
+          idc = 1018;
+          x = "13.5 * 	(safezoneW / 64) + 	(safeZoneX)";
+          y = "1 * 	(safezoneH / 40) + 	(safeZoneY)";
+          w = "1.12 * 	(safezoneW / 64)";
+          h = "1.12 * 	(safezoneH / 40)";
+          text = "\A3\Ui_f\data\IGUI\RscIngameUI\RscOptics\square.paa";
+        };
+
+        class TimerProgress: RscProgress {
+          idc = -1;
+          x = "14.5 * 	(safezoneW / 64) + 	(safeZoneX)";
+          y = "2.75 * 	(safezoneH / 40) + 	(safeZoneY)";
+          w = "4 * 	(safezoneW / 64)";
+          h = "1* 	(safezoneH / 40)";
+          colorFrame[] = {2,2,2,1};
+          colorBar[] = {1,1,1,1};
+          texture = "#(argb,8,8,3)color(1,1,1,1)";
+        };
         class SeekerBox: RscPicture {
           idc = 1020;
           x = "22 * 	(safezoneW / 64) + 	(0)";

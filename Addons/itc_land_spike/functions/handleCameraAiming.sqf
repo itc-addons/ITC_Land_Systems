@@ -1,3 +1,6 @@
+/*
+ * itc_land_spike_fnc_handleCameraAiming
+ */
 private _traverse = ((-(inputAction "AimLeft")) + (inputAction "AimRight")) * itc_land_spike_traverseModifier;
 private _elevate = ((inputAction "AimUp") + (-(inputAction "AimDown"))) * itc_land_spike_traverseModifier;
 setMousePosition [5,5];
@@ -12,7 +15,7 @@ private _newDir = [
   (_polar # 1) + _traverse,
   (_polar # 2) + _elevate
 ];
-private _intersect = [_originPosition, _newDir # 0, _newDir # 1] call itc_land_spike_fnc_intersectAtPolar;
+private _intersect = [_originPosition, _newDir # 0, _newDir # 1, false] call itc_land_spike_fnc_intersectAtPolar;
 systemchat str ["intersect", _intersect];
 if(!isNil "_intersect") then {
   itc_land_spike_targetPos = _intersect;
