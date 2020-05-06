@@ -1,0 +1,9 @@
+name = "ITC Land Systems"
+prefix = "itc_land"
+author = "ITC Team"
+version = "0"
+files = [
+    "mod.cpp",
+    "itc-combo.paa"
+]
+sig_version = 3
