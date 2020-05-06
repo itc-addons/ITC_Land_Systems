@@ -11,3 +11,5 @@ class RscListBox;
 class RscButton;
 class RscPicture;
 class RscProgress;
+class RscXSliderH;
+class RscCombo;
