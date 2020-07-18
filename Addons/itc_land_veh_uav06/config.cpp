@@ -1,5 +1,5 @@
 class CfgPatches {
-  class itc_land_veh_uav01 {
+  class itc_land_veh_uav06 {
     requiredaddons[] = {"A3_Air_F_Orange_UAV_06","itc_land_packable"};
 		requiredversion = 1.9;
     units[] = {"B_UAV_06_F","O_UAV_06_F","I_UAV_06_F"};
