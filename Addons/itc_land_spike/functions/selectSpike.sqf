@@ -6,7 +6,7 @@ params ["_display"];
 
 [{
   (_this select 0) params ["_display"];
-  if (!alive player || isNull _display) exitWith {
+  if (!alive player || isNull _display || currentWeapon player != "itc_land_spikeLR") exitWith {
     [_this select 1] call CBA_fnc_removePerFrameHandler;
   };
 
