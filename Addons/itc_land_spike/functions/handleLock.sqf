@@ -16,7 +16,7 @@ if (isNil "_missileActivationTime") then {
   missionNamespace setVariable ["itc_land_spike_activated_" + currentMagazineDetail player, cba_missionTime];
 } else {
   if (inputAction "gunElevAuto" > 0 && isNil "_lockObject") then {
-    systemChat str ["LASING", cursorTarget];
+    // systemChat str ["LASING", cursorTarget];
     private _target = [_viewASL, _viewDir, true] call itc_land_spike_fnc_intersectScreenToWorld;
     private _intersect = [_viewASL, _viewDir] call itc_land_spike_fnc_intersectScreenToWorld;
     private _targetPos = if (!isNil "_target") then [{_target worldToModelVisual (ASLtoAGL _intersect)}, {[0,0,0]}];

@@ -2,7 +2,7 @@
  * itc_land_spike_fnc_cameraViewChanged
  */
 
-systemChat str ["VIEW CHANGED", cameraView];
+//systemChat str ["VIEW CHANGED", cameraView];
 
 if (cameraView != "GUNNER" && isNil "itc_land_spike_camera") exitWith {
   [] call itc_land_spike_fnc_sightClosed;
