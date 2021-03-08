@@ -1,4 +1,5 @@
 class CfgVehicles {
+  class LandVehicle;
   class StaticWeapon: LandVehicle {
     class Turrets {
       class MainTurret: NewTurret {};

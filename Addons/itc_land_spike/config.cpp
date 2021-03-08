@@ -5,8 +5,8 @@ class CfgPatches {
 		requiredaddons[] = {"A3_Weapons_F"};
 		requiredversion = 1.9;
 		units[] = {};
-		weapons[] = {};
-		magazines[] = {};
+		weapons[] = {"itc_land_spikeLR"};
+		magazines[] = {"itc_land_spikeLR_1rnd"};
 	};
 };
 class NewTurret;
@@ -16,4 +16,6 @@ class NewTurret;
 #include "config\CfgMagazines.hpp"
 #include "config\CfgWeapons.hpp"
 #include "config\CfgVehicles.hpp"
+#include "config\cfgFunctions.hpp"
+#include "config\ace_missileguidance_AttackProfiles.hpp"
 #include "config\ITC_Land_SpikeSeeker.hpp"

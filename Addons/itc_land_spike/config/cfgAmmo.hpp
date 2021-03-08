@@ -1,14 +1,16 @@
 class CfgAmmo {
-  class M_Titan_AT;
-  class M_Titan_AT_long: M_Titan_AT {};
-  class itc_land_spikeLR: M_Titan_AT_long {
+	class M_Titan_AT;
+	class itc_land_spikeLR: M_Titan_AT {
     irLock = 1;
     laserLock = 0;
     airLock = 0;
-
+    timeToLive = 40;
     // Turn off arma crosshair-guidance
     manualControl = 0;
-    submunitionAmmo = "itc_land_spikeLR_penetrator";
+
+    hit = 1400;         // default: 800
+    indirectHit = 20;
+    indirectHitRange = 2;
     // ACE uses these values
     //trackOversteer = 1;
     //trackLead = 0;
@@ -33,11 +35,5 @@ class CfgAmmo {
       seekLastTargetPos = 1;
       useModeForAttackProfile = 0;
     };
-  };
-  class ammo_Penetrator_Titan_AT_long;
-  class itc_land_spikeLR_penetrator: ammo_Penetrator_Titan_AT_long {
-    hit = 1400;         // default: 800
-    indirectHit = 20;
-    indirectHitRange = 2;
   };
 };
