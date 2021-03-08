@@ -12,27 +12,8 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     magazines[] = {};
-	};
+	};  
 };
-/*
-class Optics_Commander_02: Optics_Armored
-{
-  class Wide: Wide
-  {
-    thermalMode[] = {0, 1};
-    gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_w_F.p3d";
-  };
-  class Medium: Medium
-  {
-    thermalMode[] = {0, 1};
-    gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_m_F.p3d";
-  };
-  class Narrow: Narrow
-  {
-    thermalMode[] = {0, 1};
-    gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-  };
-};
-*/
+
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"

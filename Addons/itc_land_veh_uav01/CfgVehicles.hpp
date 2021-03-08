@@ -88,52 +88,12 @@ class CfgVehicles {
 	};
 
 	class ITC_Land_UAV_AR2i_base: UAV_01_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        turretInfoType = "ITC_Land_RscOptics_UAV_gunner";
-        class OpticsIn {
-          class Wide {
-            opticsDisplayName = "W";
-            initAngleX = 0;
-            minAngleX = -30;
-            maxAngleX = 30;
-            initAngleY = 0;
-            minAngleY = -100;
-            maxAngleY = 100;
-            initFov = 0.25;
-            minFov = 0.25; //0.25 / (0.25) = 1
-            maxFov = 0.25;
-            directionStabilized = 1;
-            visionMode[] = {"Normal", "NVG", "Ti"};
-            thermalMode[] = {0, 1};
-            gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
-            //gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_w_F.p3d";
-          };
-          class Mid: Wide {
-            opticsDisplayName = "M";
-            initFov = 0.05;
-            minFov = 0.05; //0.25 / (0.05) = 5
-            maxFov = 0.05;
-            gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_medium_F.p3d";
-            //gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_m_F.p3d";
-          };
-          class Narrow1: Wide {
-            opticsDisplayName = "N";
-            initFov = 0.025;
-            minFov = 0.025; //0.125 / (0.0125) = 20
-            maxFov = 0.025;
-            gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-            //gunnerOpticsModel = "\A3\Weapons_F\Reticle\Optics_Commander_02_n_F.p3d";
-          };
-          class Narrow2: Narrow1 {
-            initFov = 0.0125;
-            minFov = 0.0125; //0.125 / (0.0125) = 20
-            maxFov = 0.0125;
-          };
+        class Turrets: Turrets {
+            class MainTurret: MainTurret {
+                    turretInfoType = "ITC_Land_RscOptics_UAV_gunner";
+            };
         };
-      };
     };
-  };
 	class ITC_Land_B_UAV_AR2i: ITC_Land_UAV_AR2i_base {
 		author = "Toadball";
 		displayName = "AR-2i Darter 2";
@@ -261,39 +221,39 @@ class CfgVehicles {
 	class ITC_Land_UAV_AR2e_base: UAV_01_base_F {
 		fuelCapacity = 15;
         class Turrets: Turrets {
-          class MainTurret: MainTurret {
-    				class OpticsIn {
-    					class Wide {
-    						opticsDisplayName = "W";
-    						initAngleX = 0;
-    						minAngleX = -30;
-    						maxAngleX = 30;
-    						initAngleY = 0;
-    						minAngleY = -100;
-    						maxAngleY = 100;
-    						initFov = 0.5;
-    						minFov = 0.5;
-    						maxFov = 0.5;
-    						directionStabilized = 1;
-    						visionMode[] = {"Normal","NVG"};
-    						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
-    					};
-    					class Mid: Wide {
-    						opticsDisplayName = "M";
-    						initFov = 0.25;
-    						minFov = 0.25;
-    						maxFov = 0.25;
-    						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-    					};
-    					class Narrow: Wide {
-    						opticsDisplayName = "N";
-    						initFov = 0.125;
-    						minFov = 0.0625;
-    						maxFov = 0.0625;
-    						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
-    					};
-    				};
-          };
+            class MainTurret: MainTurret {
+				class OpticsIn {
+					class Wide {
+						opticsDisplayName = "W";
+						initAngleX = 0;
+						minAngleX = -30;
+						maxAngleX = 30;
+						initAngleY = 0;
+						minAngleY = -100;
+						maxAngleY = 100;
+						initFov = 0.5;
+						minFov = 0.5;
+						maxFov = 0.5;
+						directionStabilized = 1;
+						visionMode[] = {"Normal","NVG"};
+						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
+					};
+					class Mid: Wide {
+						opticsDisplayName = "M";
+						initFov = 0.25;
+						minFov = 0.25;
+						maxFov = 0.25;
+						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+					class Narrow: Wide {
+						opticsDisplayName = "N";
+						initFov = 0.125;
+						minFov = 0.0625;
+						maxFov = 0.0625;
+						gunnerOpticsModel = "A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_narrow_F.p3d";
+					};
+				};
+            };
         };
     };
 	class ITC_Land_B_UAV_AR2e: ITC_Land_UAV_AR2e_base {
