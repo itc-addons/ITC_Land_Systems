@@ -14,10 +14,9 @@ if (!isNil "_intersect" && {(_intersect distance player) > 500}) then {
 	itc_land_spike_targetPos = _intersect;
 	itc_land_spike_targetPosCamera = _intersect;
 } else {
-	private _forward = player modelToWorld [0,1000,0];
+	private _forward = AGLtoASL (player modelToWorld [0,3000,0]);
 	itc_land_spike_targetPos = _forward;
 	itc_land_spike_targetPosCamera = _forward;
 };
 
 [] call itc_land_spike_fnc_startCamera;
-
