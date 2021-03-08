@@ -2,7 +2,16 @@
  *  itc_land_spike_fnc_cameraUpdate
  */
 params ["_display"];
+if (!itc_land_spike_ppEffect) then {
+  "colorCorrections" ppEffectAdjust [0.9, 0.4, 0, [0.9, 0.4, 0, 0], [1, 1, 1, 0], [1, 1, 1, 0]];;
+  "colorCorrections" ppEffectCommit 0;
+  "colorCorrections" ppEffectEnable true;
 
+  "filmGrain" ppEffectAdjust [0.5, 2, 1, 1, 1];
+  "filmGrain" ppEffectCommit 0;
+  "filmGrain" ppEffectEnable true;
+  itc_land_spike_ppEffect = true;
+};
 itc_land_spike_camera camSetPos (itc_land_spike_currentMissile modelToWorld [0,1,0]);
 private _polarToTarget = ((getPosASL itc_land_spike_currentMissile) vectorFromTo itc_land_spike_targetPosCamera) call cba_fnc_vect2polar;
 itc_land_spike_camera setDir (_polarToTarget # 1);
@@ -16,6 +25,9 @@ if (isNull _ui || isNil "itc_land_spike_camera") exitWith {
   itc_land_spike_camera cameraEffect ["terminate", "back"];
   camDestroy itc_land_spike_camera;
   itc_land_spike_camera = nil;
+  "colorCorrections" ppEffectEnable false;
+  "filmGrain" ppEffectEnable false;
+  itc_land_spike_ppEffect = false;  
 };
 (_ui displayCtrl 1011) ctrlShow false;
 (_ui displayCtrl 1018) ctrlShow false;
