@@ -4,7 +4,7 @@ class CfgAmmo {
     irLock = 1;
     laserLock = 0;
     airLock = 0;
-
+    timeToLive = 40;
     // Turn off arma crosshair-guidance
     manualControl = 0;
 
