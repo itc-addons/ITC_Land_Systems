@@ -6,3 +6,4 @@ itc_land_spike_traverseModifier = 0.05;
 itc_land_spike_launchTime = 0;
 itc_land_spike_wobble = [-1, 15, 0.25];
 itc_land_spike_debug = false;
+itc_land_spike_ppEffect = false;

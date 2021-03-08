@@ -15,3 +15,4 @@ if (cameraView != "GUNNER" && isNil "itc_land_spike_camera") exitWith {
 "filmGrain" ppEffectAdjust [0.5, 2, 1, 1, 1];
 "filmGrain" ppEffectCommit 0;
 "filmGrain" ppEffectEnable true;
+itc_land_spike_ppEffect = true;

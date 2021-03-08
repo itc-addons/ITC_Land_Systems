@@ -4,3 +4,4 @@
 
 "colorCorrections" ppEffectEnable false;
 "filmGrain" ppEffectEnable false;
+itc_land_spike_ppEffect = false;

@@ -1,5 +1,18 @@
 itc_land_spike_camera = "camera" camCreate (getPos _projectile);
 itc_land_spike_camera camSetFov 0.08333;
+
+if (!itc_land_spike_ppEffect) then {
+  "colorCorrections" ppEffectAdjust [0.9, 0.4, 0, [0.9, 0.4, 0, 0], [1, 1, 1, 0], [1, 1, 1, 0]];;
+  "colorCorrections" ppEffectCommit 0;
+  "colorCorrections" ppEffectEnable true;
+
+  "filmGrain" ppEffectAdjust [0.5, 2, 1, 1, 1];
+  "filmGrain" ppEffectCommit 0;
+  "filmGrain" ppEffectEnable true;
+  itc_land_spike_ppEffect = true;  
+};
+
+
 //_camera camSetTarget (ASLtoAGL itc_exp_spike_targetPosCamera);
 private _polarToTarget = ((getPosASL _projectile) vectorFromTo itc_land_spike_targetPosCamera) call cba_fnc_vect2polar;
 //systemChat str ["polar", _polarToTarget];
