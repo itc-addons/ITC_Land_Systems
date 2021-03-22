@@ -11,7 +11,7 @@
 	class itc_land_g105hex_chg2: itc_land_g105hex { initSpeed = 160; itc_land_CountInAH = 0;  };
 	class itc_land_g105hex_chg3: itc_land_g105hex { initSpeed = 240; itc_land_CountInAH = 0;  };
 	class itc_land_g105hex_chg4: itc_land_g105hex { initSpeed = 320; itc_land_CountInAH = 0;  };
-	class itc_land_g105hex_chg5: itc_land_g105hex { initSpeed = 320; itc_land_CountInAH = 0;  };
+	class itc_land_g105hex_chg5: itc_land_g105hex { initSpeed = 400; itc_land_CountInAH = 0;  };
 
 	class itc_land_g105smo: itc_land_g155smo {
 		author = "Toadball";
@@ -25,7 +25,7 @@
 	class itc_land_g105smo_chg2: itc_land_g105smo { initSpeed = 160; itc_land_CountInAH = 0;  };
 	class itc_land_g105smo_chg3: itc_land_g105smo { initSpeed = 240; itc_land_CountInAH = 0;  };
 	class itc_land_g105smo_chg4: itc_land_g105smo { initSpeed = 320; itc_land_CountInAH = 0;  };
-	class itc_land_g105smo_chg5: itc_land_g105smo { initSpeed = 320; itc_land_CountInAH = 0;  };
+	class itc_land_g105smo_chg5: itc_land_g105smo { initSpeed = 400; itc_land_CountInAH = 0;  };
 
 	class itc_land_g105ill: itc_land_g155ill {
 		author = "Toadball";
@@ -39,7 +39,7 @@
 	class itc_land_g105ill_chg2: itc_land_g105ill { initSpeed = 160; itc_land_CountInAH = 0;  };
 	class itc_land_g105ill_chg3: itc_land_g105ill { initSpeed = 240; itc_land_CountInAH = 0;  };
 	class itc_land_g105ill_chg4: itc_land_g105ill { initSpeed = 320; itc_land_CountInAH = 0;  };
-	class itc_land_g105ill_chg5: itc_land_g105ill { initSpeed = 320; itc_land_CountInAH = 0;  };
+	class itc_land_g105ill_chg5: itc_land_g105ill { initSpeed = 400; itc_land_CountInAH = 0;  };
 
   class : itc_land_how_mag {
     author = "Toadball";
