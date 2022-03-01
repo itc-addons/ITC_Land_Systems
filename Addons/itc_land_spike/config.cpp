@@ -15,7 +15,7 @@ class NewTurret;
 #include "config\CfgAmmo.hpp"
 #include "config\CfgMagazines.hpp"
 #include "config\CfgWeapons.hpp"
-#include "config\CfgVehicles.hpp"
+//#include "config\CfgVehicles.hpp"
 #include "config\cfgFunctions.hpp"
 #include "config\ace_missileguidance_AttackProfiles.hpp"
 #include "config\ITC_Land_SpikeSeeker.hpp"
